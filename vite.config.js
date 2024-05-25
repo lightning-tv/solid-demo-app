@@ -20,6 +20,7 @@ export default defineConfig({
   resolve: {
     alias: {
       theme: "@lightningjs/l3-ui-theme-base",
+      "@lightningjs/solid": "@lightningtv/solid",
     },
     dedupe: [
       "solid-js",
