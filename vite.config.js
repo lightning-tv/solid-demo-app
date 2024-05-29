@@ -8,7 +8,7 @@ export default defineConfig({
     importChunkUrl(),
     solidPlugin({
       solid: {
-        moduleName: "@lightningjs/solid",
+        moduleName: "@lightningtv/solid",
         generate: "universal",
       },
     }),
@@ -21,25 +21,13 @@ export default defineConfig({
     alias: {
       theme: "@lightningjs/l3-ui-theme-base",
       "@lightningjs/solid": "@lightningtv/solid",
+      "@lightningjs/solid-primitives": "@lightningtv/solid",
     },
     dedupe: [
       "solid-js",
-      "@lightningjs/solid",
+      "@lightningtv/solid",
       "@lightningjs/solid-ui",
-      "@lightningjs/solid-primitives",
       "@lightningjs/renderer",
-    ],
-  },
-  // Close to removing this - SolidUI is the only thing that needs it (renaming _ElementNode for some reason)
-  optimizeDeps: {
-    include: [],
-    exclude: [
-      "@lightningjs/solid",
-      "@lightningjs/solid-ui",
-      "@lightningjs/solid-primitives",
-      "@lightningjs/renderer",
-      "@lightningjs/renderer/core",
-      "@lightningjs/renderer/workers/renderer",
     ],
   },
   server: {
