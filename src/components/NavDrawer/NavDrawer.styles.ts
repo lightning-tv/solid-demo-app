@@ -1,4 +1,4 @@
-import { IntrinsicNodeStyleProps, hexColor } from "@lightningjs/solid";
+import { IntrinsicNodeStyleProps, hexColor } from "@lightningtv/solid";
 import theme from "theme";
 
 export default {

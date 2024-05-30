@@ -5,7 +5,7 @@ import {
   View,
   Text,
   hexColor,
-} from "@lightningjs/solid";
+} from "@lightningtv/solid";
 import { createEffect, on } from "solid-js";
 import theme from "theme";
 
@@ -66,8 +66,8 @@ export default function Background() {
       (img: string) => {
         changeBackgrounds(img);
       },
-      { defer: true },
-    ),
+      { defer: true }
+    )
   );
 
   return (

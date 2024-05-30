@@ -7,7 +7,7 @@ import {
   createSelector,
   For,
 } from "solid-js";
-import { ElementNode, View, activeElement } from "@lightningjs/solid";
+import { ElementNode, View, activeElement } from "@lightningtv/solid";
 import { Column } from "@lightningjs/solid-ui";
 import { useNavigate, useParams } from "@solidjs/router";
 import { TileRow } from "../components";
@@ -34,11 +34,11 @@ const Browse = () => {
 
   const delayedBackgrounds = debounce(
     (img: string) => setGlobalBackground(img),
-    400,
+    400
   );
   const delayedHero = debounce(
     (content: {}) => setHeroContent(content || {}),
-    200,
+    200
   );
 
   createEffect(
@@ -53,8 +53,8 @@ const Browse = () => {
           delayedHero(elm.heroContent);
         }
       },
-      { defer: true },
-    ),
+      { defer: true }
+    )
   );
 
   function onRowFocus(this: ElementNode) {

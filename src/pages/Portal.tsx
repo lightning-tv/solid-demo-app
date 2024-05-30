@@ -1,5 +1,5 @@
 import { createSignal, createSelector, For } from "solid-js";
-import { ElementNode, View, Text } from "@lightningjs/solid";
+import { ElementNode, View, Text } from "@lightningtv/solid";
 import { Column, Row } from "@lightningjs/solid-ui";
 import { useNavigate } from "@solidjs/router";
 import styles from "../styles";

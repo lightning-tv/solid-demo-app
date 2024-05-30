@@ -6,11 +6,11 @@ import {
   Index,
   onMount,
 } from "solid-js";
-import { type ElementNode, View, Text } from "@lightningjs/solid";
+import { type ElementNode, View, Text } from "@lightningtv/solid";
 import { Column, Row } from "@lightningjs/solid-ui";
 import styles from "./gridStyles";
 import { setGlobalBackground } from "../state";
-import { createInfiniteItems } from "@lightningjs/solid-primitives";
+import { createInfiniteItems } from "@lightningtv/solid";
 
 interface ProductsResponse {
   limit: number;
@@ -77,8 +77,8 @@ const Grid = () => {
           setPage((p) => p + 1);
         }
       },
-      { defer: true },
-    ),
+      { defer: true }
+    )
   );
 
   onMount(() => {

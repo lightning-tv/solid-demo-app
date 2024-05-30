@@ -4,7 +4,7 @@ import {
   Text,
   IntrinsicNodeProps,
   ElementNode,
-} from "@lightningjs/solid";
+} from "@lightningtv/solid";
 import { Column } from "@lightningjs/solid-ui";
 import styles from "./NavDrawer.styles";
 import Icon from "../Icon";

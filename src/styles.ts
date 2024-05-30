@@ -2,12 +2,12 @@ import {
   IntrinsicNodeStyleProps,
   IntrinsicTextNodeStyleProps,
   hexColor,
-} from "@lightningjs/solid";
+} from "@lightningtv/solid";
 import theme from "theme";
 
 // Augment existing intrinsic style prop interfaces to include our own
 // app-specific states
-declare module "@lightningjs/solid" {
+declare module "@lightningtv/solid" {
   interface IntrinsicNodeStyleProps {
     // TODO: Refactor states to use a $ prefix
     active?: IntrinsicNodeStyleProps;

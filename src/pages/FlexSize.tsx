@@ -4,7 +4,7 @@ import {
   Text,
   View,
   hexColor,
-} from "@lightningjs/solid";
+} from "@lightningtv/solid";
 import { Column, Row } from "@lightningjs/solid-ui";
 import { createSignal, onMount } from "solid-js";
 import styles from "../styles";

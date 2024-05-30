@@ -1,4 +1,4 @@
-import { render, Config, hexColor } from "@lightningjs/solid";
+import { render, Config, hexColor } from "@lightningtv/solid";
 import { HashRouter, Route } from "@solidjs/router";
 import { lazy } from "solid-js";
 import App from "./pages/App";

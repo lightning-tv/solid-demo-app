@@ -1,4 +1,4 @@
-import { IntrinsicNodeProps, View, Text } from "@lightningjs/solid";
+import { IntrinsicNodeProps, View, Text } from "@lightningtv/solid";
 import { Row } from "@lightningjs/solid-ui";
 import { For, splitProps } from "solid-js";
 import styles, { buttonStyles } from "../styles";

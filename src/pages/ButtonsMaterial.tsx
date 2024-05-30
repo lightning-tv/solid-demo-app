@@ -4,7 +4,7 @@ import {
   Text,
   View,
   hexColor,
-} from "@lightningjs/solid";
+} from "@lightningtv/solid";
 import { Row } from "@lightningjs/solid-ui";
 
 import { MaterialButtonText } from "../styles";

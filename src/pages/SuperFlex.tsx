@@ -1,4 +1,4 @@
-import { View, Text, For } from "@lightningjs/solid";
+import { View, Text, For } from "@lightningtv/solid";
 import { Column, Row } from "@lightningjs/solid-ui";
 import { Show, createSignal } from "solid-js";
 

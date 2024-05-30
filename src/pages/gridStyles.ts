@@ -2,7 +2,7 @@ import {
   IntrinsicNodeStyleProps,
   IntrinsicTextNodeStyleProps,
   hexColor,
-} from "@lightningjs/solid";
+} from "@lightningtv/solid";
 import theme from "theme";
 
 const ROW_HEIGHT = 50;
