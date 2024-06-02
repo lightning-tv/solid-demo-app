@@ -17,11 +17,14 @@ export default defineConfig({
       // additionalLegacyPolyfills: ["whatwg-fetch", "es6-proxy-polyfill"],
     }),
   ],
+  build: {
+    sourcemap: true,
+  },
   resolve: {
     alias: {
       theme: "@lightningjs/l3-ui-theme-base",
       "@lightningjs/solid": "@lightningtv/solid",
-      "@lightningjs/solid-primitives": "@lightningtv/solid",
+      "@lightningjs/solid-primitives": "@lightningtv/solid/primitives",
     },
     dedupe: [
       "solid-js",

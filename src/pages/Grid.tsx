@@ -10,7 +10,7 @@ import { type ElementNode, View, Text } from "@lightningtv/solid";
 import { Column, Row } from "@lightningjs/solid-ui";
 import styles from "./gridStyles";
 import { setGlobalBackground } from "../state";
-import { createInfiniteItems } from "@lightningtv/solid";
+import { createInfiniteItems } from "@lightningtv/solid/primitives";
 
 interface ProductsResponse {
   limit: number;

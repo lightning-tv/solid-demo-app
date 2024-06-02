@@ -1,6 +1,6 @@
 import { View, Text } from "@lightningtv/solid";
 import { For, Show } from "solid-js";
-import { withPadding } from "@lightningtv/solid";
+import { withPadding } from "@lightningtv/solid/primitives";
 import theme from "theme";
 withPadding;
 

@@ -1,11 +1,10 @@
 import { useLocation, useNavigate } from "@solidjs/router";
+import { View, activeElement, renderer } from "@lightningtv/solid";
 import {
-  View,
-  activeElement,
-  renderer,
   useFocusManager,
   useAnnouncer,
-} from "@lightningtv/solid";
+  useMouse,
+} from "@lightningtv/solid/primitives";
 import Background from "../components/Background";
 import NavDrawer from "../components/NavDrawer/NavDrawer";
 import { FPSCounter, setupFPS } from "@lightningjs/solid-ui";
@@ -42,6 +41,7 @@ const App = (props) => {
     Down: ["ArrowDown", 40],
     Enter: ["Enter", 13],
   });
+  useMouse();
   const announcer = useAnnouncer();
   announcer.enabled = false;
   const navigate = useNavigate();

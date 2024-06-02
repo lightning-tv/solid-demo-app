@@ -3,9 +3,21 @@ import { Row } from "@lightningjs/solid-ui";
 import { For, splitProps } from "solid-js";
 import styles, { buttonStyles } from "../styles";
 import { type Tile } from "../api/formatters/ItemFormatter";
+import { INode } from "@lightningjs/renderer";
 
 export function Thumbnail(props: IntrinsicNodeProps) {
-  return <View {...props} style={styles.Thumbnail} />;
+  function changeBackground(node: INode) {
+    node.color = 0xffffffff;
+  }
+  return (
+    <View
+      {...props}
+      color={0x00ff00ff}
+      onLoad={changeBackground}
+      onFail={(node) => (node.src = "failback.png")}
+      style={styles.Thumbnail}
+    />
+  );
 }
 
 export function FocusRing(props: IntrinsicNodeProps) {
