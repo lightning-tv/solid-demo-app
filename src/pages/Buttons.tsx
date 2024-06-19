@@ -6,7 +6,7 @@ import {
   hexColor,
   IntrinsicNodeStyleProps,
 } from "@lightningtv/solid";
-import { withPadding } from "@lightningtv/solid/primitives";
+import { withPadding } from "@lightningjs/solid-ui";
 import { Row } from "@lightningjs/solid-ui";
 import { buttonStyles } from "../styles";
 withPadding;

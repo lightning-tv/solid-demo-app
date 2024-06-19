@@ -103,7 +103,7 @@ const FlexPage = () => {
           <Block marginRight={100} />
         </Row>
 
-        <Text style={rowTitle}>Center - No Margin Support</Text>
+        <Text style={rowTitle}>Center</Text>
         <Row
           gap={gap}
           justifyContent={"center"}
@@ -111,13 +111,13 @@ const FlexPage = () => {
           onFocus={onFocus}
         >
           <Block />
+          <Block marginLeft={80} />
           <Block />
-          <Block />
-          <Block />
+          <Block marginLeft={80} />
           <Block />
         </Row>
 
-        <Text style={rowTitle}>Space Between - No Margin Support</Text>
+        <Text style={rowTitle}>Space Between</Text>
         <Row
           gap={gap}
           justifyContent={"spaceBetween"}
@@ -128,10 +128,10 @@ const FlexPage = () => {
           <Block />
           <Block />
           <Block />
-          <Block />
+          <Block marginRight={40} />
         </Row>
 
-        <Text style={rowTitle}>Space Evenly - No Margin Support</Text>
+        <Text style={rowTitle}>Space Evenly</Text>
         <Row
           gap={gap}
           justifyContent={"spaceEvenly"}
@@ -140,7 +140,7 @@ const FlexPage = () => {
         >
           <Block />
           <Block />
-          <Block />
+          <Block marginLeft={80} />
           <Block />
           <Block />
         </Row>

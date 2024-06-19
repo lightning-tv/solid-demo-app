@@ -28,9 +28,21 @@ export default defineConfig({
     },
     dedupe: [
       "solid-js",
+      "@lightningjs/renderer",
+      "@lightningtv/solid",
+      "@lightningtv/solid/primitives",
+      "@lightningjs/solid-ui",
+    ],
+  },
+  // This is only needed if you pnpm link @lightningtv/solid
+  optimizeDeps: {
+    include: [],
+    exclude: [
       "@lightningtv/solid",
       "@lightningjs/solid-ui",
       "@lightningjs/renderer",
+      "@lightningjs/renderer/core",
+      "@lightningjs/renderer/workers/renderer",
     ],
   },
   server: {
