@@ -35,16 +35,16 @@ export default defineConfig({
     ],
   },
   // This is only needed if you pnpm link @lightningtv/solid
-  optimizeDeps: {
-    include: [],
-    exclude: [
-      "@lightningtv/solid",
-      "@lightningjs/solid-ui",
-      "@lightningjs/renderer",
-      "@lightningjs/renderer/core",
-      "@lightningjs/renderer/workers/renderer",
-    ],
-  },
+  // optimizeDeps: {
+  //   include: [],
+  //   exclude: [
+  //     "@lightningtv/solid",
+  //     "@lightningjs/solid-ui",
+  //     "@lightningjs/renderer",
+  //     "@lightningjs/renderer/core",
+  //     "@lightningjs/renderer/workers/renderer",
+  //   ],
+  // },
   server: {
     port: 5174,
     hmr: true,
