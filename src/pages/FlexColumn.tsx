@@ -5,7 +5,7 @@ import {
   View,
   hexColor,
 } from "@lightningtv/solid";
-import { Column, Row } from "@lightningjs/solid-ui";
+import { Column, Row } from "@lightningtv/solid-ui";
 import { createSignal, onMount } from "solid-js";
 import { setGlobalBackground } from "../state";
 

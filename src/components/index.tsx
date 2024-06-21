@@ -1,5 +1,5 @@
 import { IntrinsicNodeProps, View, Text } from "@lightningtv/solid";
-import { Row } from "@lightningjs/solid-ui";
+import { Row } from "@lightningtv/solid-ui";
 import { For, splitProps } from "solid-js";
 import styles, { buttonStyles } from "../styles";
 import { type Tile } from "../api/formatters/ItemFormatter";

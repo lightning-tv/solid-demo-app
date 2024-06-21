@@ -6,7 +6,7 @@ import {
   hexColor,
   setActiveElement,
 } from "@lightningtv/solid";
-import { Column, Button, Row } from "@lightningjs/solid-ui";
+import { Column, Button, Row } from "@lightningtv/solid-ui";
 import { useParams } from "@solidjs/router";
 import { createEffect, createResource, on, createSignal } from "solid-js";
 import { TileRow } from "../components";

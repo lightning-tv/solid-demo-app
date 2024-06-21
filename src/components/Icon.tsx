@@ -1,5 +1,5 @@
 import { For, IntrinsicNodeProps, View } from "@lightningtv/solid";
-import { createSpriteMap } from "@lightningjs/solid-ui";
+import { createSpriteMap } from "@lightningtv/solid-ui";
 // Icons from https://uxwing.com/
 
 const basePath = import.meta.env.BASE_URL;

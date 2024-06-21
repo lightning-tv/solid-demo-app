@@ -1,5 +1,5 @@
 import { View, Text, For } from "@lightningtv/solid";
-import { Column, Row } from "@lightningjs/solid-ui";
+import { Column, Row } from "@lightningtv/solid-ui";
 import { Show, createSignal } from "solid-js";
 
 const Items = [

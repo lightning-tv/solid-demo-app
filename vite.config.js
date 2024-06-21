@@ -23,28 +23,15 @@ export default defineConfig({
   resolve: {
     alias: {
       theme: "@lightningjs/l3-ui-theme-base",
-      "@lightningjs/solid": "@lightningtv/solid",
-      "@lightningjs/solid-primitives": "@lightningtv/solid/primitives",
     },
     dedupe: [
       "solid-js",
       "@lightningjs/renderer",
       "@lightningtv/solid",
       "@lightningtv/solid/primitives",
-      "@lightningjs/solid-ui",
+      "@lightningtv/solid-ui",
     ],
   },
-  // This is only needed if you pnpm link @lightningtv/solid
-  // optimizeDeps: {
-  //   include: [],
-  //   exclude: [
-  //     "@lightningtv/solid",
-  //     "@lightningjs/solid-ui",
-  //     "@lightningjs/renderer",
-  //     "@lightningjs/renderer/core",
-  //     "@lightningjs/renderer/workers/renderer",
-  //   ],
-  // },
   server: {
     port: 5174,
     hmr: true,

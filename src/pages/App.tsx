@@ -7,7 +7,7 @@ import {
 } from "@lightningtv/solid/primitives";
 import Background from "../components/Background";
 import NavDrawer from "../components/NavDrawer/NavDrawer";
-import { FPSCounter, setupFPS } from "@lightningjs/solid-ui";
+import { FPSCounter, setupFPS } from "@lightningtv/solid-ui";
 import { createEffect, createSignal } from "solid-js";
 
 declare module "@lightningtv/solid" {

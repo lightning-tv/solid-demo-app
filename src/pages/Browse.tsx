@@ -8,7 +8,7 @@ import {
   For,
 } from "solid-js";
 import { ElementNode, View, activeElement } from "@lightningtv/solid";
-import { Column } from "@lightningjs/solid-ui";
+import { Column } from "@lightningtv/solid-ui";
 import { useNavigate, useParams } from "@solidjs/router";
 import { TileRow } from "../components";
 import styles from "../styles";

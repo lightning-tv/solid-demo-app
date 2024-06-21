@@ -5,7 +5,7 @@ import {
   IntrinsicNodeProps,
   ElementNode,
 } from "@lightningtv/solid";
-import { Column } from "@lightningjs/solid-ui";
+import { Column } from "@lightningtv/solid-ui";
 import styles from "./NavDrawer.styles";
 import Icon from "../Icon";
 import theme from "theme";
