@@ -42,7 +42,7 @@ const ButtonsPage = () => {
         style={{
           color: hexColor("#000000be"),
           borderRadius: 8,
-          border: { width: 2, color: hexColor("#ffffff") },
+          border: { width: 2, color: "#ffffff" },
         }}
       >
         <Text

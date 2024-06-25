@@ -69,9 +69,9 @@ const TextPage = () => {
 
       <View width={600} display="flex" gap={20} height={42} y={200} x={150}>
         <Text style={Title}>Flex Grow</Text>
-        <View flexGrow={1} height={4} y={19} color={hexColor("#ff3000")} />
-        <View flexGrow={3} height={4} y={19} color={hexColor("#ff30ff")} />
-        <View flexGrow={1} height={4} y={19} color={hexColor("#eeba2c")} />
+        <View flexGrow={1} height={4} y={19} color={"#ff3000"} />
+        <View flexGrow={3} height={4} y={19} color={"#ff30ff"} />
+        <View flexGrow={1} height={4} y={19} color={"#eeba2c"} />
       </View>
     </>
   );

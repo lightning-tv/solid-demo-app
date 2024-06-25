@@ -16,7 +16,7 @@ const FlexPage = () => {
     justifyContent: "flexStart",
     width: 1600,
     height: 110,
-    color: hexColor("#4dabf5"),
+    color: "#4dabf5",
   } satisfies IntrinsicNodeStyleProps;
 
   const rowTitle = {

@@ -47,7 +47,7 @@ const Entity = () => {
   const columnY = 640;
 
   const Backdrop = {
-    color: hexColor("#000000"),
+    color: "#000000",
     alpha: 0,
     width: 1900,
     height: 890,
@@ -150,7 +150,7 @@ const Entity = () => {
       </View>
       <View
         alpha={backdropAlpha()}
-        color={hexColor("#000000")}
+        color={"#000000"}
         skipFocus
         zIndex={200}
         transition={{ alpha: true }}

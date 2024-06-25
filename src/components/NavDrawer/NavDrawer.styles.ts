@@ -24,7 +24,7 @@ export default {
   } satisfies IntrinsicNodeStyleProps,
   Gradient: {
     zIndex: 99,
-    color: hexColor("#000000"),
+    color: "#000000",
     src: "./assets/sidenav.png",
     alpha: 0,
     width: 1200,
@@ -40,7 +40,7 @@ export default {
     width: 100,
     borderRadius: 8,
     focus: {
-      color: hexColor("#424242"),
+      color: "#424242",
     },
     active: {
       width: 328,

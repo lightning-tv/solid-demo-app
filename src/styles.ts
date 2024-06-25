@@ -83,13 +83,13 @@ export default {
     x: 10,
     y: 0,
     fontSize: 36,
-    textColor: hexColor("#ffffff"),
+    textColor: "#ffffff",
   },
   FPSValue: {
     x: 90,
     y: 0,
     fontSize: 36,
-    textColor: hexColor("#ffffff"),
+    textColor: "#ffffff",
   },
   showHeadline: { x: 70, y: 20 },
   headlineBlur: {
@@ -99,14 +99,14 @@ export default {
     y: 0,
     zIndex: 14,
     alpha: 0.9,
-    color: hexColor("#000000"),
+    color: "#000000",
   },
   RowTitle: {
     height: 60,
     width: 300,
     marginBottom: -40,
     fontSize: 36,
-    color: hexColor("#f0f0f0"),
+    color: "#f0f0f0",
     zIndex: 2,
   } satisfies IntrinsicTextNodeStyleProps,
   Row: {
@@ -131,7 +131,7 @@ export default {
     height: 100,
     y: 10,
     x: 300,
-    color: hexColor("#0000ff"),
+    color: "#0000ff",
   },
   peopleBio: {
     ...theme.typography.body1,
@@ -159,7 +159,7 @@ const Button = {
 } satisfies IntrinsicNodeStyleProps;
 
 const TopBar = {
-  color: hexColor("#00A699"),
+  color: "#00A699",
   height: 8,
   y: 2,
   x: -4,
@@ -172,7 +172,7 @@ const ButtonText = {
   // lineHeight: Button.height, // TODO: Add back when lineHeight is supported
   contain: "width",
   textAlign: "center",
-  color: hexColor("#F6F6F9"),
+  color: "#F6F6F9",
   height: Button.height,
   width: Button.width,
 } satisfies IntrinsicTextNodeStyleProps;
@@ -186,12 +186,12 @@ export const buttonStyles = {
 export const MaterialButton = {
   width: 386,
   height: 136,
-  color: hexColor("#715cab"),
+  color: "#715cab",
   focus: {
-    color: hexColor("#5a39a2"),
+    color: "#5a39a2",
   },
   disabled: {
-    color: hexColor("#291d43"),
+    color: "#291d43",
   },
 } satisfies IntrinsicNodeStyleProps;
 
@@ -200,7 +200,7 @@ export const MaterialButtonText = {
   contain: "width",
   textAlign: "center",
   mountY: -0.35,
-  color: hexColor("#FFFFFF"),
+  color: "#FFFFFF",
   height: MaterialButton.height,
   width: MaterialButton.width,
   // lineHeight: MaterialButton.height, // TODO: Add back when lineHeight is supported
@@ -208,6 +208,6 @@ export const MaterialButtonText = {
     fontSize: 40,
   },
   disabled: {
-    color: hexColor("#909090"),
+    color: "#909090",
   },
 } satisfies IntrinsicTextNodeStyleProps;

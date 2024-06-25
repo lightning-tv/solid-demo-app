@@ -79,7 +79,7 @@ const Portal = () => {
       height: 320,
       borderRadius: 6,
       scale: 1,
-      color: 0x182b44ff,
+      color: "#182b44",
       transition: { color: true, scale: true },
       focus: {
         scale: 1.1,

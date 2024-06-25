@@ -14,7 +14,7 @@ export default () => {
     y: -400,
     rotation: 0,
     borderRadius: 50,
-    color: hexColor("#4287f5"),
+    color: "#4287f5",
     transition: {
       x: { duration: 1250, easing: "linear" },
       y: { duration: 1250, easing: "linear" },

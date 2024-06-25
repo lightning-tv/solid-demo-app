@@ -18,7 +18,7 @@ const People = () => {
   const [credits] = createResource(() => ({ ...params }), provider.getCredits);
 
   const Backdrop = {
-    color: hexColor("#000000"),
+    color: "#000000",
     alpha: 0.8,
     width: 800,
     height: 440,

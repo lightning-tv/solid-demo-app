@@ -61,15 +61,15 @@ const CreatePage = () => {
     width: 400,
     height: 300,
     // Solid blue
-    color: hexColor("#0000ff"),
+    color: "#0000ff",
   } as const;
 
   const someOtherStyle = {
     // pretty red
-    color: hexColor("#f54242"),
+    color: "#f54242",
     focus: {
       // pretty blue
-      color: hexColor("#4287f5"),
+      color: "#4287f5",
     },
   };
 
@@ -78,24 +78,18 @@ const CreatePage = () => {
     const resolved = children(() => props.children);
     return (
       <View {...props} style={[someOtherStyle, props.style, [styleChild]]}>
-        <View
-          id="child1"
-          width={100}
-          height={100}
-          color={hexColor("#ff0000")}
-          y={25}
-        >
+        <View id="child1" width={100} height={100} color={"#ff0000"} y={25}>
           {resolved()}
           <View
             id="subChild"
             x={150}
             width={100}
             height={100}
-            color={hexColor("#00ff00")}
+            color={"#00ff00"}
           />
           <Text>{props.title}</Text>
         </View>
-        <View width={100} height={100} color={hexColor("#ffff00")} y={175}>
+        <View width={100} height={100} color={"#ffff00"} y={175}>
           {resolved()}
         </View>
       </View>
@@ -123,19 +117,19 @@ const CreatePage = () => {
 
   const childTestPassedStyles = {
     // grey color
-    color: hexColor("#cccccc"),
+    color: "#cccccc",
     focus: {
       // black
-      color: hexColor("#000000"),
+      color: "#000000",
     },
   };
 
   const childTestPassedStyles2 = {
     // white color
-    color: hexColor("#ffffff"),
+    color: "#ffffff",
     focus: {
       // white something...
-      color: hexColor("#f6f6cc"),
+      color: "#f6f6cc",
     },
   };
 
@@ -167,7 +161,7 @@ const CreatePage = () => {
         style={borderStyles}
         width={100}
         height={100}
-        color={hexColor("#00ff00")}
+        color={"#00ff00"}
         x={900}
         y={400}
         alpha={hasFocus(myBox) ? 1 : 0.2}

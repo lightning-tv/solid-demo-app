@@ -23,7 +23,7 @@ const FlexColumnPage = () => {
     display: "flex",
     flexDirection: "column",
     justifyContent: "flexStart",
-    color: hexColor("#4dabf5"),
+    color: "#4dabf5",
     height: 850,
     width: 80,
   } satisfies IntrinsicNodeStyleProps;
@@ -39,7 +39,7 @@ const FlexColumnPage = () => {
       width: randSize(),
       height: 80,
       x: 5,
-      color: hexColor("#1769aa"),
+      color: "#1769aa",
     };
 
     return <View {...props} style={styles} />;

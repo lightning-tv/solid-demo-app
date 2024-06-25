@@ -34,7 +34,7 @@ export default {
     fontSize: 20,
     fontWeight: 600,
     lineHeight: 24,
-    color: hexColor("#f6f6f6"),
+    color: "#f6f6f6",
     focus: {
       color: 0x141417ff,
     },
