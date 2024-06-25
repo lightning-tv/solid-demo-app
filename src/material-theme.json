@@ -25,7 +25,7 @@
   },
   "typography": {
     "display1": {
-      "fontFamily": "Ubuntu",
+      "fontFamily": "Roboto",
       "fontSize": 72,
       "lineHeight": 88,
       "fontStyle": "600",
@@ -34,12 +34,12 @@
       "maxLineSuffix": "..."
     },
     "display2": {
-      "fontFamily": "Ubuntu",
+      "fontFamily": "Roboto",
       "fontSize": 56,
       "lineHeight": 72
     },
     "headline1": {
-      "fontFamily": "Ubuntu",
+      "fontFamily": "Roboto",
       "fontSize": 36,
       "fontStyle": "600",
       "lineHeight": 48,
@@ -48,27 +48,27 @@
       "maxLineSuffix": "..."
     },
     "headline2": {
-      "fontFamily": "Ubuntu",
+      "fontFamily": "Roboto",
       "fontSize": 32,
       "lineHeight": 44
     },
     "headline3": {
-      "fontFamily": "Ubuntu",
+      "fontFamily": "Roboto",
       "fontSize": 28,
       "lineHeight": 40
     },
     "body1": {
-      "fontFamily": "Ubuntu",
+      "fontFamily": "Roboto",
       "fontSize": 32,
       "lineHeight": 40
     },
     "body2": {
-      "fontFamily": "Ubuntu",
+      "fontFamily": "Roboto",
       "fontSize": 28,
       "lineHeight": 34
     },
     "button1": {
-      "fontFamily": "Ubuntu",
+      "fontFamily": "Roboto",
       "fontSize": 32,
       "lineHeight": 40
     }

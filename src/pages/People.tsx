@@ -57,7 +57,7 @@ const People = () => {
       >
         <Text
           contain="width"
-          fontFamily={"Ubuntu"}
+          fontFamily={"Roboto"}
           style={theme.typography.display2}
         >
           {data().name}

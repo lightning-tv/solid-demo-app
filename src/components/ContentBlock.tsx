@@ -17,7 +17,7 @@ const ContentBlockStyle = {
 
 const HeadlineStyles = {
   ...theme.typography.display2,
-  fontFamily: "Ubuntu",
+  fontFamily: "Roboto",
   fontWeight: 700,
   maxLines: 1,
   width: blockWidth,
@@ -27,7 +27,7 @@ const Headline = (props) => <Text {...props} style={HeadlineStyles}></Text>;
 
 const DescriptionStyles = {
   ...theme.typography.body1,
-  fontFamily: "Ubuntu",
+  fontFamily: "Roboto",
   fontWeight: 400,
   lineHeight: 32,
   width: blockWidth,
@@ -64,7 +64,7 @@ const Badge = (props) => {
 
 const MetaTextStyle = {
   ...theme.typography.body2,
-  fontFamily: "Ubuntu",
+  fontFamily: "Roboto",
   fontWeight: 400,
 };
 

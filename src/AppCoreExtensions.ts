@@ -45,12 +45,12 @@ export default class AppCoreExtension extends CoreExtension {
       new SdfTrFontFace(
         'msdf',
         {
-          fontFamily: 'Ubuntu',
+          fontFamily: 'Roboto',
           descriptors: {
             weight: 700,
           },
-          atlasDataUrl: basePath + 'fonts/Ubuntu-Bold.msdf.json',
-          atlasUrl: basePath + 'fonts/Ubuntu-Bold.msdf.png',
+          atlasDataUrl: basePath + 'fonts/Roboto-Bold.msdf.json',
+          atlasUrl: basePath + 'fonts/Roboto-Bold.msdf.png',
           stage,
         }
       ),
@@ -59,12 +59,12 @@ export default class AppCoreExtension extends CoreExtension {
       new SdfTrFontFace(
         'msdf',
         {
-          fontFamily: 'Ubuntu',
+          fontFamily: 'Roboto',
           descriptors: {
             weight: 400,
           },
-          atlasDataUrl: basePath + 'fonts/Ubuntu-Regular.msdf.json',
-          atlasUrl: basePath + 'fonts/Ubuntu-Regular.msdf.png',
+          atlasDataUrl: basePath + 'fonts/Roboto-Regular.msdf.json',
+          atlasUrl: basePath + 'fonts/Roboto-Regular.msdf.png',
           stage,
         }
       ),
@@ -78,8 +78,8 @@ export default class AppCoreExtension extends CoreExtension {
           descriptors: {
             weight: 500,
           },
-          atlasDataUrl: basePath + 'fonts/Ubuntu-Regular.msdf.json',
-          atlasUrl: basePath + 'fonts/Ubuntu-Regular.msdf.png',
+          atlasDataUrl: basePath + 'fonts/Roboto-Regular.msdf.json',
+          atlasUrl: basePath + 'fonts/Roboto-Regular.msdf.png',
           stage,
         }
       ),

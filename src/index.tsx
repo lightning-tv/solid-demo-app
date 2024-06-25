@@ -24,7 +24,7 @@ const People = lazy(() => import("./pages/People"));
 const logFps = true;
 Config.debug = false;
 Config.animationsEnabled = true;
-Config.fontSettings.fontFamily = "Ubuntu";
+Config.fontSettings.fontFamily = "Roboto";
 Config.fontSettings.color = hexColor("#f6f6f6");
 Config.fontSettings.fontSize = 32;
 Config.rendererOptions = {

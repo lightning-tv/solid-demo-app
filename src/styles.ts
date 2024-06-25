@@ -135,7 +135,7 @@ export default {
   },
   peopleBio: {
     ...theme.typography.body1,
-    fontFamily: "Ubuntu",
+    fontFamily: "Roboto",
     fontWeight: "normal",
     contain: "both",
     width: 780,

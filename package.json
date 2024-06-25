@@ -24,7 +24,7 @@
     "@lightningjs/l3-ui-theme-base": "^0.3.3",
     "@lightningjs/renderer": "^0.9.3",
     "@lightningtv/solid-ui": "^0.18.18",
-    "@lightningtv/solid": "^0.0.16",
+    "@lightningtv/solid": "^0.0.17",
     "@solid-primitives/scheduled": "^1.4.3",
     "@solidjs/router": "^0.13.5",
     "proxy-polyfill": "^0.3.2",
