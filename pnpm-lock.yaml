@@ -15,11 +15,11 @@ importers:
         specifier: ^0.9.3
         version: 0.9.3
       '@lightningtv/solid':
-        specifier: ^0.0.17
-        version: 0.0.17(@lightningjs/renderer@0.9.3)(solid-js@1.8.17)
+        specifier: ^0.1.1
+        version: 0.1.1(@lightningjs/renderer@0.9.3)(solid-js@1.8.17)
       '@lightningtv/solid-ui':
         specifier: ^0.18.18
-        version: 0.18.18(@lightningtv/solid@0.0.17(@lightningjs/renderer@0.9.3)(solid-js@1.8.17))(solid-js@1.8.17)
+        version: 0.18.18(@lightningtv/solid@0.1.1(@lightningjs/renderer@0.9.3)(solid-js@1.8.17))(solid-js@1.8.17)
       '@solid-primitives/scheduled':
         specifier: ^1.4.3
         version: 1.4.3(solid-js@1.8.17)
@@ -40,8 +40,8 @@ importers:
         specifier: ^0.3.1
         version: 0.3.1(vite@5.3.1(terser@5.31.1))
       '@lightningtv/vite-hex-transform':
-        specifier: ^1.0.0
-        version: 1.0.0
+        specifier: ^1.0.1
+        version: 1.0.1
       '@vitejs/plugin-legacy':
         specifier: ^5.4.1
         version: 5.4.1(terser@5.31.1)(vite@5.3.1(terser@5.31.1))
@@ -842,8 +842,8 @@ packages:
     peerDependencies:
       vite: '*'
 
-  '@lightningtv/core@0.0.13':
-    resolution: {integrity: sha512-ri5sFPQGpitPIidJAS2aUjMCBYpDVlfQaab5kVtzbpZpU/+wAcaqC6Zu7H1sfhTeHfZVzBw95EgZCnAcXxDzBw==}
+  '@lightningtv/core@0.1.0':
+    resolution: {integrity: sha512-oOdUNa05ddXqh7bIBiv0UC+lNUbV1iQsDQzWDtwR7UXdlSJz3YKFnY7/ixan9awfPmRSuaa86htgUSHA/jc7zQ==}
     peerDependencies:
       '@lightningjs/renderer': ^0.9.0
 
@@ -853,14 +853,14 @@ packages:
       '@lightningtv/solid': ^0.0.15
       solid-js: '*'
 
-  '@lightningtv/solid@0.0.17':
-    resolution: {integrity: sha512-10rsSAiHQh5SKxrF/fbzy8Sg1keInMEtIMSftaYarMCUUEfXMogMTk5R1xt59FmFZP5klDk8ZsOnpKVy+bn/pw==}
+  '@lightningtv/solid@0.1.1':
+    resolution: {integrity: sha512-ntFyQyGTEL+qJSx27KrRS7p5bBo2wRgKt27VSU9XXO1KnEMEljpoS6xy8h1sJN9Z43/x7CQhbm6p2LgDtrlmsA==}
     peerDependencies:
       '@lightningjs/renderer': ^0.9.3
       solid-js: '*'
 
-  '@lightningtv/vite-hex-transform@1.0.0':
-    resolution: {integrity: sha512-UmNvD+WDJt/blOm5xt3ie9f6CoGjv/FDOrg8v0O/zGYp6JgBw5GprNHhZMbF9BeMfcHMZX8/Hh6ugC9H6uDvSA==}
+  '@lightningtv/vite-hex-transform@1.0.1':
+    resolution: {integrity: sha512-7E/wC8jSd1x86pAk96o9PHPUbS3IIsr1vu3S99R3Qolp5ZzHBnEir7LRs7evoVwNNdR8795Vu800QIYqljWd+w==}
 
   '@protobufjs/eventemitter@1.1.0':
     resolution: {integrity: sha512-j9ednRT81vYJ9OfVuXG6ERSTdEL1xVsNgqpkxMsbIabzSo3goCjDIveeGv5d03om39ML71RdmrGNjG5SReBP/Q==}
@@ -2750,27 +2750,27 @@ snapshots:
     dependencies:
       vite: 5.3.1(terser@5.31.1)
 
-  '@lightningtv/core@0.0.13(@lightningjs/renderer@0.9.3)':
+  '@lightningtv/core@0.1.0(@lightningjs/renderer@0.9.3)':
     dependencies:
       '@lightningjs/renderer': 0.9.3
 
-  '@lightningtv/solid-ui@0.18.18(@lightningtv/solid@0.0.17(@lightningjs/renderer@0.9.3)(solid-js@1.8.17))(solid-js@1.8.17)':
+  '@lightningtv/solid-ui@0.18.18(@lightningtv/solid@0.1.1(@lightningjs/renderer@0.9.3)(solid-js@1.8.17))(solid-js@1.8.17)':
     dependencies:
-      '@lightningtv/solid': 0.0.17(@lightningjs/renderer@0.9.3)(solid-js@1.8.17)
+      '@lightningtv/solid': 0.1.1(@lightningjs/renderer@0.9.3)(solid-js@1.8.17)
       '@solid-primitives/refs': 1.0.8(solid-js@1.8.17)
       solid-js: 1.8.17
 
-  '@lightningtv/solid@0.0.17(@lightningjs/renderer@0.9.3)(solid-js@1.8.17)':
+  '@lightningtv/solid@0.1.1(@lightningjs/renderer@0.9.3)(solid-js@1.8.17)':
     dependencies:
       '@lightningjs/renderer': 0.9.3
-      '@lightningtv/core': 0.0.13(@lightningjs/renderer@0.9.3)
+      '@lightningtv/core': 0.1.0(@lightningjs/renderer@0.9.3)
       '@solid-primitives/event-listener': 2.3.3(solid-js@1.8.17)
       '@solid-primitives/keyboard': 1.2.8(solid-js@1.8.17)
       '@solid-primitives/mouse': 2.0.19(solid-js@1.8.17)
       '@solid-primitives/scheduled': 1.4.3(solid-js@1.8.17)
       solid-js: 1.8.17
 
-  '@lightningtv/vite-hex-transform@1.0.0': {}
+  '@lightningtv/vite-hex-transform@1.0.1': {}
 
   '@protobufjs/eventemitter@1.1.0': {}
 
