@@ -33,16 +33,24 @@ const TextPage = () => {
 
   const Title = {
     fontSize: 42,
+    fontWeight: "bold",
+  };
+
+  const SubTitle = {
+    fontSize: 38,
+    fontWeight: 500,
   };
 
   const Overview = {
     width: OverviewContainer.width,
     fontSize: 26,
+    fontWeight: "normal",
     contain: "width",
   } satisfies IntrinsicTextNodeStyleProps;
 
   const Subline = {
     fontSize: 26,
+    fontWeight: 100,
   };
 
   onMount(() => {
@@ -53,6 +61,7 @@ const TextPage = () => {
     <>
       <View autofocus style={OverviewContainer}>
         <Text style={Title}>Title of the Page</Text>
+        <Text style={SubTitle}>Tag line for the page</Text>
         <Text style={Overview}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel
           tempor tellus. Sed eu leo purus. Vestibulum sollicitudin eget tellus a
