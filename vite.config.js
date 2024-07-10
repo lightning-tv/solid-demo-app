@@ -34,6 +34,14 @@ export default defineConfig({
       "@lightningtv/solid-ui",
     ],
   },
+  optimizeDeps: {
+    exclude: [
+      "@lightningtv/solid",
+      "@lightningtv/core",
+      "@lightningjs/renderer",
+      "@lightningtv/solid-ui",
+    ],
+  },
   server: {
     port: 5174,
     hmr: true,

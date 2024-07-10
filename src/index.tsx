@@ -1,10 +1,10 @@
-import { render, Config, hexColor } from "@lightningtv/solid";
+import { createRenderer, Config } from "@lightningtv/solid";
 import { HashRouter, Route } from "@solidjs/router";
 import { lazy } from "solid-js";
 import App from "./pages/App";
 import Browse from "./pages/Browse";
 import NotFound from "./pages/NotFound";
-import coreExtensionModuleUrl from "./AppCoreExtensions.js?importChunkUrl";
+import { loadFonts } from "./loadFonts";
 
 const Grid = lazy(() => import("./pages/Grid"));
 const Portal = lazy(() => import("./pages/Portal"));
@@ -21,21 +21,23 @@ const SuperFlexPage = lazy(() => import("./pages/SuperFlex"));
 const Entity = lazy(() => import("./pages/Entity"));
 const People = lazy(() => import("./pages/People"));
 
-const logFps = true;
+const logFps = false;
 Config.debug = false;
 Config.animationsEnabled = true;
 Config.fontSettings.fontFamily = "Roboto";
 Config.fontSettings.color = "#f6f6f6";
 Config.fontSettings.fontSize = 32;
 Config.rendererOptions = {
-  coreExtensionModule: coreExtensionModuleUrl,
   fpsUpdateInterval: logFps ? 200 : 0,
   enableInspector: true,
+  numImageWorkers: 2, // temp fix for renderer bug
   // Set the resolution based on window height
   // 720p = 0.666667, 1080p = 1, 1440p = 1.5, 2160p = 2
   deviceLogicalPixelRatio: window.innerHeight / 1080,
 };
 
+const { renderer, render } = createRenderer();
+loadFonts(renderer.stage);
 render(() => (
   <HashRouter root={(props) => <App {...props} />}>
     <Route path="" component={Browse} />
