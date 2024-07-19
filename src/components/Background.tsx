@@ -82,6 +82,18 @@ export default function Background() {
           width={1920}
           height={1080}
         />
+        {/* <View
+          ref={heroMask}
+          effects={{
+            radialGradient: {
+              colors: ["#000000FF", "#00000000", 0x000000ff],
+              stops: [0, 0.4, 1.0],
+              height: 720,
+              width: 1920,
+              pivot: [0.8, 0],
+            },
+          }}
+        /> */}
       </View>
     </>
   );
