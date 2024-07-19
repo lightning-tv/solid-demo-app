@@ -12,14 +12,14 @@ importers:
         specifier: ^0.3.3
         version: 0.3.3
       '@lightningjs/renderer':
-        specifier: 1.0.0-rc.3
-        version: 1.0.0-rc.3
+        specifier: 1.0.1
+        version: 1.0.1
       '@lightningtv/solid':
-        specifier: 1.0.0-rc1
-        version: 1.0.0-rc1(@lightningjs/renderer@1.0.0-rc.3)(solid-js@1.8.18)
+        specifier: 1.0.3
+        version: 1.0.3(@lightningjs/renderer@1.0.1)(solid-js@1.8.18)
       '@lightningtv/solid-ui':
-        specifier: ^0.18.18
-        version: 0.18.18(@lightningtv/solid@1.0.0-rc1(@lightningjs/renderer@1.0.0-rc.3)(solid-js@1.8.18))(solid-js@1.8.18)
+        specifier: ^0.19.1
+        version: 0.19.1(@lightningtv/solid@1.0.3(@lightningjs/renderer@1.0.1)(solid-js@1.8.18))(solid-js@1.8.18)
       '@solid-primitives/scheduled':
         specifier: ^1.4.3
         version: 1.4.3(solid-js@1.8.18)
@@ -830,8 +830,8 @@ packages:
   '@lightningjs/l3-ui-theme-base@0.3.3':
     resolution: {integrity: sha512-lbEO8OChUokt6CcudGZt7SL2laEDDbfPmeN6ttgGaid8/n3CN1eFgPXngZSG2mNNOrruUadGh3j81thphgFUdg==}
 
-  '@lightningjs/renderer@1.0.0-rc.3':
-    resolution: {integrity: sha512-IE5itkQ7j7o4N5JpqbtC38MDGQHUGfPToxhn9nxSs7QwNmaqWQ++iH3ZDPQvU4fZ/NXWkAs0eJrw7CpRRnCh+Q==}
+  '@lightningjs/renderer@1.0.1':
+    resolution: {integrity: sha512-vtA8tBn7xaLVShCwj1ygCsdT1YCIARGcb/i1zIyDX/6Ttj/J+nF5G8xNmUsRApt7fn05LBXoqCeqvc4MZjZmow==}
     engines: {node: '>= 20.9.0', npm: '>= 10.0.0', pnpm: '>= 8.9.2'}
 
   '@lightningjs/threadx@0.3.5':
@@ -842,21 +842,21 @@ packages:
     peerDependencies:
       vite: '*'
 
-  '@lightningtv/core@1.0.0-rc1.2':
-    resolution: {integrity: sha512-enrEFP3Oj2l4GuIzmfqlgrZzn42txxXU6E3xEAK4nDXzuuYcWJ4kRf738psSmBFcibSb9MZryfNX9PFfGSswQQ==}
+  '@lightningtv/core@1.0.3':
+    resolution: {integrity: sha512-gFU8vDHGh1im09v4l2Sg15BJ8ti7VfFhWaMPGv3xw+Gn11lWoYvys4uReSfPElmf2YfS7fpPq+3jo/idZWLn6w==}
     peerDependencies:
-      '@lightningjs/renderer': ^1.0.0-rc.1
+      '@lightningjs/renderer': ^1.0.0
 
-  '@lightningtv/solid-ui@0.18.18':
-    resolution: {integrity: sha512-v6uv1Elx1gbjeGuUxLPgdbw6SKw1DDT+P0zAC7VPChB9owCCbqC3kGAhvfkGGbkze5bYlAAFWutSOzKt7mNbTA==}
+  '@lightningtv/solid-ui@0.19.1':
+    resolution: {integrity: sha512-kE62qsQOVucaXOmHXuAh/GpJ8tlvuZFSjKNbBgEDKCBvL3OgMQZj2eL0cIEJNSR6JT/lp7T0R+8/6nVNGp394w==}
     peerDependencies:
-      '@lightningtv/solid': ^0.0.15
+      '@lightningtv/solid': ^1.0.0
       solid-js: '*'
 
-  '@lightningtv/solid@1.0.0-rc1':
-    resolution: {integrity: sha512-LSl2a6Rx2vyMaz1vA4iMzoJStYRM6SkJuFvuoZ8eWonHNpWkGnHh5xVubMMIJDezjx3Ft88E8qYg4FozPyIXmg==}
+  '@lightningtv/solid@1.0.3':
+    resolution: {integrity: sha512-XIgx7aPohSwCTOa3Zly+0lli9u/XcUfzttPnwb56xrgIJw9tpJQgyEMR+5NRSfAcabpzRVFAcTj/yoIl6I7eEg==}
     peerDependencies:
-      '@lightningjs/renderer': ^1.0.0-rc.1
+      '@lightningjs/renderer': ^1.0.0
       solid-js: '*'
 
   '@lightningtv/vite-hex-transform@1.1.0':
@@ -2738,7 +2738,7 @@ snapshots:
 
   '@lightningjs/l3-ui-theme-base@0.3.3': {}
 
-  '@lightningjs/renderer@1.0.0-rc.3':
+  '@lightningjs/renderer@1.0.1':
     dependencies:
       '@lightningjs/threadx': 0.3.5
       '@protobufjs/eventemitter': 1.1.0
@@ -2750,20 +2750,20 @@ snapshots:
     dependencies:
       vite: 5.3.3(terser@5.31.2)
 
-  '@lightningtv/core@1.0.0-rc1.2(@lightningjs/renderer@1.0.0-rc.3)':
+  '@lightningtv/core@1.0.3(@lightningjs/renderer@1.0.1)':
     dependencies:
-      '@lightningjs/renderer': 1.0.0-rc.3
+      '@lightningjs/renderer': 1.0.1
 
-  '@lightningtv/solid-ui@0.18.18(@lightningtv/solid@1.0.0-rc1(@lightningjs/renderer@1.0.0-rc.3)(solid-js@1.8.18))(solid-js@1.8.18)':
+  '@lightningtv/solid-ui@0.19.1(@lightningtv/solid@1.0.3(@lightningjs/renderer@1.0.1)(solid-js@1.8.18))(solid-js@1.8.18)':
     dependencies:
-      '@lightningtv/solid': 1.0.0-rc1(@lightningjs/renderer@1.0.0-rc.3)(solid-js@1.8.18)
+      '@lightningtv/solid': 1.0.3(@lightningjs/renderer@1.0.1)(solid-js@1.8.18)
       '@solid-primitives/refs': 1.0.8(solid-js@1.8.18)
       solid-js: 1.8.18
 
-  '@lightningtv/solid@1.0.0-rc1(@lightningjs/renderer@1.0.0-rc.3)(solid-js@1.8.18)':
+  '@lightningtv/solid@1.0.3(@lightningjs/renderer@1.0.1)(solid-js@1.8.18)':
     dependencies:
-      '@lightningjs/renderer': 1.0.0-rc.3
-      '@lightningtv/core': 1.0.0-rc1.2(@lightningjs/renderer@1.0.0-rc.3)
+      '@lightningjs/renderer': 1.0.1
+      '@lightningtv/core': 1.0.3(@lightningjs/renderer@1.0.1)
       '@solid-primitives/event-listener': 2.3.3(solid-js@1.8.18)
       '@solid-primitives/keyboard': 1.2.8(solid-js@1.8.18)
       '@solid-primitives/mouse': 2.0.19(solid-js@1.8.18)
