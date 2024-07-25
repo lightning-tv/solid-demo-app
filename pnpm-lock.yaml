@@ -36,9 +36,6 @@ importers:
         specifier: ^1.2.0
         version: 1.2.0(@babel/core@7.24.9)(vite@5.3.5(terser@5.31.3))
     devDependencies:
-      '@lightningjs/vite-plugin-import-chunk-url':
-        specifier: ^0.3.1
-        version: 0.3.1(vite@5.3.5(terser@5.31.3))
       '@lightningtv/vite-hex-transform':
         specifier: ^1.1.0
         version: 1.1.0(terser@5.31.3)
@@ -836,11 +833,6 @@ packages:
 
   '@lightningjs/threadx@0.3.5':
     resolution: {integrity: sha512-aUIUfP/d3S0Vg/Ror7CLbqQR6qu5AAdGRnQ5RQuSQz4t9X2p8TomKD7ShRxI1/FnRR7om2MwKIe1Dix/Axdgpg==}
-
-  '@lightningjs/vite-plugin-import-chunk-url@0.3.1':
-    resolution: {integrity: sha512-jD/3Lelj2axT1eCPpV92APkMb4oXyBxRvj3oN8tEkph/in7b4KOp92SbBqhdPi5SmRWERNej78i9jE+6psDm6w==}
-    peerDependencies:
-      vite: '*'
 
   '@lightningtv/core@1.1.0':
     resolution: {integrity: sha512-h6kM0Iu84AUWIUNuE8SeHF82R4rQwQ4i0nLmQrk920qSfOCtWPICAXfn5MiPTOJ9pHapzD0pctpEP+GQcSIonA==}
@@ -2745,10 +2737,6 @@ snapshots:
       memize: 2.1.0
 
   '@lightningjs/threadx@0.3.5': {}
-
-  '@lightningjs/vite-plugin-import-chunk-url@0.3.1(vite@5.3.5(terser@5.31.3))':
-    dependencies:
-      vite: 5.3.5(terser@5.31.3)
 
   '@lightningtv/core@1.1.0(@lightningjs/renderer@1.0.1)':
     dependencies:

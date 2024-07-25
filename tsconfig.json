@@ -8,10 +8,7 @@
     "esModuleInterop": true,
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
-    "types": [
-      "vite/client",
-      "@lightningjs/vite-plugin-import-chunk-url/client"
-    ],
+    "types": ["vite/client"],
     "noEmit": true,
     "isolatedModules": true,
     "noImplicitAny": false,
