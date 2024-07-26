@@ -57,14 +57,14 @@ const Entity = () => {
   };
 
   function onRowFocus(this: ElementNode) {
-    this.children.selected?.setFocus();
+    this.children[this.selected || 0].setFocus();
     columnRef.y = columnY;
     backdropRef.y = columnY;
     backdropRef.alpha = 0;
   }
 
   function onRowFocusAnimate(this: ElementNode) {
-    this.children.selected?.setFocus();
+    this.children[this.selected || 0].setFocus();
     columnRef.y = 200;
     backdropRef.y = 160;
     backdropRef.alpha = 0.9;

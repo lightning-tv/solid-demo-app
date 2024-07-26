@@ -58,7 +58,7 @@ const Browse = () => {
   );
 
   function onRowFocus(this: ElementNode) {
-    this.children.selected?.setFocus();
+    this.children[this.selected || 0].setFocus();
     setcolumnY((this.y || 0) * -1 + 24);
     let numPages = provider().pages().length;
     this.parent!.selected = this.parent!.children.indexOf(this);

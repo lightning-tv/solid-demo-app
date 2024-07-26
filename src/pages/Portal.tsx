@@ -12,7 +12,7 @@ const Portal = () => {
   });
 
   function onEnter(this: ElementNode) {
-    let entity = this.children.selected;
+    let entity = this.children[this.selected || 0];
     assertTruthy(entity && entity.id);
     navigate("/" + entity.id);
   }

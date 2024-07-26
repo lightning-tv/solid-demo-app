@@ -47,7 +47,7 @@ const FlexColumnPage = () => {
 
   const [columnY, setColumnY] = createSignal(50);
   function onFocus(this: ElementNode) {
-    this.children.selected?.setFocus();
+    this.children[this.selected || 0].setFocus();
     setColumnY(150 + (this.y || 0) * -1);
   }
 

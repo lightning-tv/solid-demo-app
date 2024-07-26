@@ -45,7 +45,7 @@ export default function NavDrawer(props) {
   function onFocus(this: ElementNode) {
     backdrop.states.add("focus");
     this.children.forEach((c) => c.states!.add("active"));
-    this.children.selected!.setFocus();
+    this.children[this.selected || 0].setFocus();
   }
 
   function onBlur(this: ElementNode) {

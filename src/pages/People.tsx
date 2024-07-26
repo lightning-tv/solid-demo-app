@@ -28,7 +28,7 @@ const People = () => {
   };
 
   function onEnter(this: ElementNode) {
-    let entity = this.children.selected;
+    let entity = this.children[this.selected || 0];
     assertTruthy(entity && entity.href);
     navigate(entity.href);
   }
