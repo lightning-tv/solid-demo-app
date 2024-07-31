@@ -1,6 +1,6 @@
 import { IntrinsicNodeProps, View, Text } from "@lightningtv/solid";
 import { Row } from "@lightningtv/solid-ui";
-import { For, splitProps } from "solid-js";
+import { Index, splitProps } from "solid-js";
 import styles, { buttonStyles } from "../styles";
 import { type Tile } from "../api/formatters/ItemFormatter";
 import { INode } from "@lightningjs/renderer";
@@ -33,7 +33,7 @@ export function TileRow(props: TileRowProps) {
 
   return (
     <Row {...others} style={styles.Row}>
-      <For each={local.items}>{(item) => <Thumbnail {...item} />}</For>
+      <Index each={local.items}>{(item) => <Thumbnail {...item} />}</Index>
     </Row>
   );
 }

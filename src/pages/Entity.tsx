@@ -92,8 +92,14 @@ const Entity = () => {
 
   let columnRef, backdropRef, entityActions;
 
+  /**
+   * I used to have keyed on Show - This would cause the entire tree to be destroyed and recreated. Without keyed, the data is diffed and the nodes are reused and passed in new props.
+   * Only one element gets deleted and recreated - a text node for reviews.
+   *
+   * However this causes problems with elements which have internal state like Row & Column because the selected does not get reset.
+   */
   return (
-    <Show when={data()} keyed>
+    <Show when={data()}>
       <View x={170} onUp={() => entityActions.setFocus()} onEscape={onEscape}>
         <ContentBlock y={260} content={data().heroContent}></ContentBlock>
         <Row
@@ -106,7 +112,7 @@ const Entity = () => {
           onDown={() => columnRef.setFocus()}
           onEnter={onEnterTrailer}
         >
-          <Button width={300} autofocus>
+          <Button width={300} autofocus={data()}>
             Play
           </Button>
           <Button width={300}>Resume</Button>

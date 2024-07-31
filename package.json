@@ -23,7 +23,7 @@
   "dependencies": {
     "@lightningjs/l3-ui-theme-base": "^0.3.3",
     "@lightningjs/renderer": "1.0.1",
-    "@lightningtv/solid": "1.4.0",
+    "@lightningtv/solid": "1.4.8",
     "@lightningtv/solid-ui": "^0.21.0",
     "@solid-primitives/scheduled": "^1.4.3",
     "@solidjs/router": "^0.14.1",
@@ -35,7 +35,7 @@
     "@lightningtv/vite-hex-transform": "^1.1.0",
     "@vitejs/plugin-legacy": "^5.4.1",
     "gh-pages": "^6.1.1",
-    "husky": "^9.1.2",
+    "husky": "^9.1.4",
     "lint-staged": "^15.2.7",
     "prettier": "^3.3.3",
     "terser": "^5.31.3",

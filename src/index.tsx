@@ -21,7 +21,7 @@ const SuperFlexPage = lazy(() => import("./pages/SuperFlex"));
 const Entity = lazy(() => import("./pages/Entity"));
 const People = lazy(() => import("./pages/People"));
 
-const logFps = true;
+const logFps = false;
 Config.debug = false;
 Config.animationsEnabled = true;
 Config.fontSettings.fontFamily = "Roboto";
