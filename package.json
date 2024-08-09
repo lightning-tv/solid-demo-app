@@ -23,24 +23,30 @@
   "dependencies": {
     "@lightningjs/l3-ui-theme-base": "^0.3.3",
     "@lightningjs/renderer": "1.0.1",
-    "@lightningtv/solid": "1.4.8",
-    "@lightningtv/solid-ui": "^0.21.0",
+    "@lightningtv/core": "^1.4.1",
+    "@lightningtv/solid": "1.5.0",
+    "@lightningtv/solid-ui": "^0.22.1",
     "@solid-primitives/scheduled": "^1.4.3",
     "@solidjs/router": "^0.14.1",
     "proxy-polyfill": "^0.3.2",
-    "solid-js": "^1.8.19",
+    "solid-js": "^1.8.20",
     "vite-plugin-babel": "^1.2.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "@lightningtv/core": "$@lightningtv/core"
+    }
   },
   "devDependencies": {
     "@lightningtv/vite-hex-transform": "^1.1.0",
     "@vitejs/plugin-legacy": "^5.4.1",
     "gh-pages": "^6.1.1",
     "husky": "^9.1.4",
-    "lint-staged": "^15.2.7",
+    "lint-staged": "^15.2.8",
     "prettier": "^3.3.3",
-    "terser": "^5.31.3",
+    "terser": "^5.31.5",
     "typescript": "^5.5.4",
-    "vite": "^5.3.5",
+    "vite": "^5.4.0",
     "vite-bundle-visualizer": "^1.2.1",
     "vite-plugin-cross-origin-isolation": "^0.1.6",
     "vite-plugin-solid": "^2.10.2"

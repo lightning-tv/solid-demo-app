@@ -27,6 +27,11 @@ export const styles = {
   },
 } as const;
 
+const SpecialFont = {
+  color: 0xff0000ff,
+  focus: { color: 0xffffffff },
+};
+
 export default () => {
   const [lazyShow, setLazyShow] = createSignal(false);
   let PageLoader;
@@ -36,13 +41,18 @@ export default () => {
     PageLoader.alpha = 0;
   }, 2000);
 
+  setTimeout(() => {
+    setLazyShow(false);
+  }, 3000);
+
   return (
-    <>
+    <Column display="block">
       <View ref={PageLoader} style={styles.PageContainer}>
         <Text>Center - gif doesnt animate</Text>
         <View autosize src="./assets/spinner.gif" />
         <Text>Spinner</Text>
       </View>
+
       <Row
         scroll="always"
         gap={20}
@@ -95,7 +105,11 @@ export default () => {
           transition={{ x: { duration: 350 } }}
         >
           <For each={Items}>
-            {(item, index) => <Text fontSize={24}>{item}</Text>}
+            {(item, index) => (
+              <Text style={SpecialFont} fontSize={24}>
+                {item} <Show when={lazyShow()}>Add Text</Show>
+              </Text>
+            )}
           </For>
         </Row>
       </Show>
@@ -103,10 +117,14 @@ export default () => {
       <Show when={lazyShow()}>
         <Column scroll="none" gap={20} selected={2} x={350} y={450}>
           <For each={Items}>
-            {(item, index) => <Text fontSize={24}>{item}</Text>}
+            {(item, index) => (
+              <Text style={SpecialFont} fontSize={24}>
+                {item}
+              </Text>
+            )}
           </For>
         </Column>
       </Show>
-    </>
+    </Column>
   );
 };
