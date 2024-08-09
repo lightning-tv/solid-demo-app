@@ -20,6 +20,7 @@ const ButtonsMaterialPage = lazy(() => import("./pages/ButtonsMaterial"));
 const SuperFlexPage = lazy(() => import("./pages/SuperFlex"));
 const Entity = lazy(() => import("./pages/Entity"));
 const People = lazy(() => import("./pages/People"));
+const LoginPage = lazy(() => import("./pages/Login"));
 
 const logFps = true;
 Config.debug = false;
@@ -45,6 +46,7 @@ render(() => (
     <Route path="browse/:filter" component={Browse} />
     <Route path="grid" component={Grid} />
     <Route path="text" component={TextPage} />
+    <Route path="login" component={LoginPage} />
     <Route path="buttons" component={ButtonsPage} />
     <Route path="flex" component={FlexPage} />
     <Route path="create" component={CreatePage} />

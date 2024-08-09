@@ -57,6 +57,11 @@ const Portal = () => {
       description: "Demo a few buttons",
     },
     {
+      title: "Login",
+      id: "login",
+      description: "Login example",
+    },
+    {
       title: "Text",
       id: "text",
       description: "Text layout with flexbox",

@@ -22,9 +22,9 @@ export default function Background() {
     color: 0xffffffff,
   } satisfies IntrinsicNodeStyleProps;
 
-  function changeBackgrounds(img: string) {
-    if (img.startsWith("#")) {
-      bg1.color = hexColor(img);
+  function changeBackgrounds(img: string | number) {
+    if (typeof img !== "string") {
+      bg1.color = img;
       bg1.src = "";
       bg1.alpha = 1;
       active = 1;
