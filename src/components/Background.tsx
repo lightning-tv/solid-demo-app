@@ -1,9 +1,8 @@
-import { type AnimationSettings } from "@lightningjs/renderer";
 import { globalBackground } from "../state.js";
 import {
   type IntrinsicNodeStyleProps,
+  type AnimationSettings,
   View,
-  Text,
   hexColor,
 } from "@lightningtv/solid";
 import { createEffect, on } from "solid-js";

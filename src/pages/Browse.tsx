@@ -7,7 +7,12 @@ import {
   createSelector,
   For,
 } from "solid-js";
-import { ElementNode, View, activeElement } from "@lightningtv/solid";
+import {
+  ElementNode,
+  View,
+  activeElement,
+  assertTruthy,
+} from "@lightningtv/solid";
 import { Column } from "@lightningtv/solid-ui";
 import { useNavigate, useParams } from "@solidjs/router";
 import { TileRow } from "../components";
@@ -16,7 +21,6 @@ import { setGlobalBackground } from "../state";
 import browseProvider from "../api/providers/browse";
 import { createInfiniteScroll } from "../components/pagination";
 import ContentBlock from "../components/ContentBlock";
-import { assertTruthy } from "@lightningjs/renderer/utils";
 import { debounce } from "@solid-primitives/scheduled";
 
 const Browse = () => {

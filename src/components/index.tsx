@@ -3,7 +3,7 @@ import { Row } from "@lightningtv/solid-ui";
 import { Index, splitProps } from "solid-js";
 import styles, { buttonStyles } from "../styles";
 import { type Tile } from "../api/formatters/ItemFormatter";
-import { INode } from "@lightningjs/renderer";
+import { INode } from "@lightningtv/solid";
 
 export function Thumbnail(props: IntrinsicNodeProps) {
   function changeBackground(node: INode) {

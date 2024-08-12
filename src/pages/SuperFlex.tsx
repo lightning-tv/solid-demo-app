@@ -41,10 +41,6 @@ export default () => {
     PageLoader.alpha = 0;
   }, 2000);
 
-  setTimeout(() => {
-    setLazyShow(false);
-  }, 3000);
-
   return (
     <Column display="block">
       <View ref={PageLoader} style={styles.PageContainer}>

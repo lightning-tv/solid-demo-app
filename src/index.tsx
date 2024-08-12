@@ -1,10 +1,10 @@
-import { createRenderer, Config } from "@lightningtv/solid";
+import { createRenderer, Config, loadFonts } from "@lightningtv/solid";
 import { HashRouter, Route } from "@solidjs/router";
 import { lazy } from "solid-js";
 import App from "./pages/App";
 import Browse from "./pages/Browse";
 import NotFound from "./pages/NotFound";
-import { loadFonts } from "./loadFonts";
+import fonts from "./fonts";
 
 const Grid = lazy(() => import("./pages/Grid"));
 const Portal = lazy(() => import("./pages/Portal"));
@@ -37,8 +37,8 @@ Config.rendererOptions = {
   deviceLogicalPixelRatio: window.innerHeight / 1080,
 };
 
-const { renderer, render } = createRenderer();
-loadFonts(renderer.stage);
+const { render } = createRenderer();
+loadFonts(fonts);
 render(() => (
   <HashRouter root={(props) => <App {...props} />}>
     <Route path="" component={Browse} />

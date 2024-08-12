@@ -1,8 +1,6 @@
 import { View, Text } from "@lightningtv/solid";
 import { For, Show } from "solid-js";
-import { withPadding } from "@lightningtv/solid-ui";
 import theme from "theme";
-withPadding;
 
 const blockWidth = 900;
 
@@ -38,6 +36,8 @@ const DescriptionStyles = {
 const BadgeStyle = {
   fontSize: 16,
   lineHeight: 20,
+  marginLeft: 13,
+  marginRight: 13,
 };
 
 const Description = (props) => (
@@ -46,19 +46,22 @@ const Description = (props) => (
   </Text>
 );
 
-const Badge = (props) => {
+export const Badge = (props) => {
   return (
-    <node
-      use:withPadding={[8, 13, 11, 13]}
+    <View
       {...props}
       style={{
         color: "0x00000099",
         borderRadius: 8,
         border: { width: 2, color: "0xffffffff" },
+        display: "flex",
+        height: 36,
       }}
     >
-      <Text style={BadgeStyle}>{props.children}</Text>
-    </node>
+      <Text lineHeight={36} style={BadgeStyle}>
+        {props.children}
+      </Text>
+    </View>
   );
 };
 

@@ -1,4 +1,10 @@
-import { ElementNode, Text, View, Show, hexColor } from "@lightningtv/solid";
+import {
+  ElementNode,
+  Text,
+  View,
+  Show,
+  assertTruthy,
+} from "@lightningtv/solid";
 import { Column } from "@lightningtv/solid-ui";
 import { useParams } from "@solidjs/router";
 import { createResource, onMount } from "solid-js";
@@ -8,7 +14,6 @@ import { useNavigate } from "@solidjs/router";
 import theme from "theme";
 import styles from "../styles";
 import * as provider from "../api/providers/people";
-import { assertTruthy } from "@lightningjs/renderer/utils";
 
 const People = () => {
   const params = useParams();

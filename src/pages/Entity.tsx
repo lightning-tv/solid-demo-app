@@ -3,7 +3,7 @@ import {
   Text,
   View,
   Show,
-  hexColor,
+  assertTruthy,
   setActiveElement,
 } from "@lightningtv/solid";
 import { Column, Button, Row } from "@lightningtv/solid-ui";
@@ -15,7 +15,6 @@ import ContentBlock from "../components/ContentBlock";
 import { useNavigate } from "@solidjs/router";
 import styles from "../styles";
 import * as provider from "../api/providers/entity";
-import { assertTruthy } from "@lightningjs/renderer/utils";
 import type { Tile } from "../api/formatters/ItemFormatter";
 import { playVideo, closeVideo } from "../video";
 
