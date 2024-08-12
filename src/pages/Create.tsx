@@ -1,6 +1,5 @@
 import {
   IntrinsicNodeStyleProps,
-  IntrinsicTextNodeStyleProps,
   Text,
   View,
   hexColor,
@@ -96,6 +95,29 @@ const CreatePage = () => {
     );
   }
 
+  function PosTest(props) {
+    return (
+      <View {...props} width={400} height={400} color={"#0000ff"}>
+        <View width={50} height={50} color={"#ff0000"} right={0}>
+          <Text fontSize={18}>Right</Text>
+        </View>
+        <View width={50} height={50} color={"#ff0000"} bottom={0}>
+          <Text fontSize={18}>Bottom</Text>
+        </View>
+        <View
+          width={50}
+          height={50}
+          color={"#ff0000"}
+          bottom={0}
+          right={0}
+          data={{ id: "BR" }}
+        >
+          <Text fontSize={18}>BR</Text>
+        </View>
+      </View>
+    );
+  }
+
   const borderStyles = {
     borderLeft: {
       width: 8,
@@ -166,6 +188,7 @@ const CreatePage = () => {
         y={400}
         alpha={hasFocus(myBox) ? 1 : 0.2}
       />
+      <PosTest x={100} y={100} />
     </View>
   );
 };

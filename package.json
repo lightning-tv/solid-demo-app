@@ -23,6 +23,7 @@
   "dependencies": {
     "@lightningjs/l3-ui-theme-base": "^0.3.3",
     "@lightningjs/renderer": "^1.0.1",
+    "@lightningtv/core": "1.5.2",
     "@lightningtv/solid": "1.6.0",
     "@lightningtv/solid-ui": "^0.23.0-rc",
     "@solid-primitives/scheduled": "^1.4.3",
@@ -44,6 +45,12 @@
     "vite-bundle-visualizer": "^1.2.1",
     "vite-plugin-cross-origin-isolation": "^0.1.6",
     "vite-plugin-solid": "^2.10.2"
+  },
+  "pnpm": {
+    "overrides": {
+      "@lightningtv/core": "$@lightningtv/core",
+      "@lightningtv/solid": "$@lightningtv/solid"
+    }
   },
   "lint-staged": {
     "*.{ts,tsx}": [

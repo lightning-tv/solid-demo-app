@@ -4,6 +4,10 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  '@lightningtv/core': 1.5.2
+  '@lightningtv/solid': 1.6.0
+
 importers:
 
   .:
@@ -14,12 +18,15 @@ importers:
       '@lightningjs/renderer':
         specifier: ^1.0.1
         version: 1.0.1
+      '@lightningtv/core':
+        specifier: 1.5.2
+        version: 1.5.2
       '@lightningtv/solid':
         specifier: 1.6.0
         version: 1.6.0(solid-js@1.8.20)
       '@lightningtv/solid-ui':
         specifier: ^0.23.0-rc
-        version: 0.23.0-rc(@lightningtv/core@1.5.0)(@lightningtv/solid@1.6.0(solid-js@1.8.20))(solid-js@1.8.20)
+        version: 0.23.0-rc(@lightningtv/core@1.5.2)(@lightningtv/solid@1.6.0(solid-js@1.8.20))(solid-js@1.8.20)
       '@solid-primitives/scheduled':
         specifier: ^1.4.3
         version: 1.4.3(solid-js@1.8.20)
@@ -830,14 +837,14 @@ packages:
   '@lightningjs/threadx@0.3.5':
     resolution: {integrity: sha512-aUIUfP/d3S0Vg/Ror7CLbqQR6qu5AAdGRnQ5RQuSQz4t9X2p8TomKD7ShRxI1/FnRR7om2MwKIe1Dix/Axdgpg==}
 
-  '@lightningtv/core@1.5.0':
-    resolution: {integrity: sha512-Acb74Rue/ppc5eRRzrMLlgEJzhLio2cDpA4IAlqneGJwZggoFSJ11PPSnIvybHfRG1W86oMIHZtF3zqhg0yxbg==}
+  '@lightningtv/core@1.5.2':
+    resolution: {integrity: sha512-VQeF60BpnsAJ/iO4WZEsOSQXVH7e4UgR7ZIBNChT4ve+4qQIf37/yyfexsy2cXDwuWvKlRsGrwFOSZZTx3ZF8A==}
 
   '@lightningtv/solid-ui@0.23.0-rc':
     resolution: {integrity: sha512-Q33qCjhMCCUszKvKNsb11Ns/v3oynQTNZqlY2+OpnwarJq/krYXScmVCEa4uXJwUkX1Mt+dA83IgGNFlaNSiMg==}
     peerDependencies:
-      '@lightningtv/core': ^1.5.0
-      '@lightningtv/solid': ^1.6.0
+      '@lightningtv/core': 1.5.2
+      '@lightningtv/solid': 1.6.0
       solid-js: '*'
 
   '@lightningtv/solid@1.6.0':
@@ -2724,20 +2731,20 @@ snapshots:
 
   '@lightningjs/threadx@0.3.5': {}
 
-  '@lightningtv/core@1.5.0':
+  '@lightningtv/core@1.5.2':
     dependencies:
       '@lightningjs/renderer': 1.0.1
 
-  '@lightningtv/solid-ui@0.23.0-rc(@lightningtv/core@1.5.0)(@lightningtv/solid@1.6.0(solid-js@1.8.20))(solid-js@1.8.20)':
+  '@lightningtv/solid-ui@0.23.0-rc(@lightningtv/core@1.5.2)(@lightningtv/solid@1.6.0(solid-js@1.8.20))(solid-js@1.8.20)':
     dependencies:
-      '@lightningtv/core': 1.5.0
+      '@lightningtv/core': 1.5.2
       '@lightningtv/solid': 1.6.0(solid-js@1.8.20)
       '@solid-primitives/refs': 1.0.8(solid-js@1.8.20)
       solid-js: 1.8.20
 
   '@lightningtv/solid@1.6.0(solid-js@1.8.20)':
     dependencies:
-      '@lightningtv/core': 1.5.0
+      '@lightningtv/core': 1.5.2
       '@solid-primitives/event-listener': 2.3.3(solid-js@1.8.20)
       '@solid-primitives/mouse': 2.0.19(solid-js@1.8.20)
       '@solid-primitives/scheduled': 1.4.3(solid-js@1.8.20)
