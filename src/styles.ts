@@ -21,6 +21,9 @@ declare module "@lightningtv/solid" {
   }
 }
 
+const params = new URLSearchParams(window.location.search);
+const roundPoster = params.get("roundPoster") !== "false";
+
 export default {
   Page: {
     width: 1920,
@@ -54,7 +57,7 @@ export default {
     zIndex: 2,
   },
   Thumbnail: {
-    borderRadius: 16,
+    borderRadius: roundPoster ? 16 : 0,
     width: 185,
     height: 278,
     scale: 1,

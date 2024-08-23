@@ -31,6 +31,9 @@ Config.fontSettings.fontSize = 32;
 Config.rendererOptions = {
   fpsUpdateInterval: logFps ? 200 : 0,
   enableInspector: true,
+  textureMemory: {
+    criticalThreshold: 80e6,
+  },
   numImageWorkers: 0, // temp fix for renderer bug
   // Set the resolution based on window height
   // 720p = 0.666667, 1080p = 1, 1440p = 1.5, 2160p = 2

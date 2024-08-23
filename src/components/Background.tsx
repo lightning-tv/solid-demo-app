@@ -5,10 +5,13 @@ import {
   View,
   hexColor,
 } from "@lightningtv/solid";
-import { createEffect, on } from "solid-js";
+import { createEffect, on, onMount } from "solid-js";
 import theme from "theme";
 
 export default function Background() {
+  const params = new URLSearchParams(window.location.search);
+  const disableBG = params.get("disableBG") === "true";
+
   let bg1, bg2, heroMask;
   let active = 0;
   const alpha = 1;
@@ -21,7 +24,23 @@ export default function Background() {
     color: 0xffffffff,
   } satisfies IntrinsicNodeStyleProps;
 
+  onMount(() => {
+    if (disableBG) {
+      heroMask.src = "";
+      heroMask.colorLeft = "#000000";
+      heroMask.colorRight = "#00000000";
+      return;
+    }
+  });
+
   function changeBackgrounds(img: string | number) {
+    if (disableBG) {
+      heroMask.src = "";
+      heroMask.colorLeft = "#000000";
+      heroMask.colorRight = "#00000000";
+      return;
+    }
+
     if (typeof img !== "string") {
       bg1.color = img;
       bg1.src = "";
