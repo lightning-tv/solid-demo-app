@@ -1,4 +1,9 @@
 import { createRenderer, Config, loadFonts } from "@lightningtv/solid";
+import {
+  WebGlCoreRenderer,
+  SdfTextRenderer,
+} from "@lightningjs/renderer/webgl";
+import { Inspector } from "@lightningjs/renderer/inspector";
 import { HashRouter, Route } from "@solidjs/router";
 import { lazy } from "solid-js";
 import App from "./pages/App";
@@ -30,7 +35,9 @@ Config.fontSettings.color = "#f6f6f6";
 Config.fontSettings.fontSize = 32;
 Config.rendererOptions = {
   fpsUpdateInterval: logFps ? 200 : 0,
-  enableInspector: true,
+  fontEngines: [SdfTextRenderer],
+  renderEngine: WebGlCoreRenderer,
+  inspector: true && Inspector,
   textureMemory: {
     criticalThreshold: 80e6,
   },

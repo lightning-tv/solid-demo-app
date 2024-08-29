@@ -5,8 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@lightningtv/core': 1.5.7
-  '@lightningtv/solid': 1.6.6
+  '@lightningtv/core': 2.0.0
+  '@lightningtv/solid': 2.0.0
+  '@lightningjs/renderer': ^2.0.0
 
 importers:
 
@@ -16,17 +17,17 @@ importers:
         specifier: ^0.3.3
         version: 0.3.3
       '@lightningjs/renderer':
-        specifier: ^1.0.1
-        version: 1.0.1
+        specifier: ^2.0.0
+        version: 2.0.0
       '@lightningtv/core':
-        specifier: 1.5.7
-        version: 1.5.7
+        specifier: 2.0.0
+        version: 2.0.0
       '@lightningtv/solid':
-        specifier: 1.6.6
-        version: 1.6.6(solid-js@1.8.20)
+        specifier: 2.0.0
+        version: 2.0.0(solid-js@1.8.20)
       '@lightningtv/solid-ui':
         specifier: ^0.23.0-rc1
-        version: 0.23.0-rc1(@lightningtv/core@1.5.7)(@lightningtv/solid@1.6.6(solid-js@1.8.20))(solid-js@1.8.20)
+        version: 0.23.0-rc1(@lightningtv/core@2.0.0)(@lightningtv/solid@2.0.0(solid-js@1.8.20))(solid-js@1.8.20)
       '@solid-primitives/scheduled':
         specifier: ^1.4.3
         version: 1.4.3(solid-js@1.8.20)
@@ -830,33 +831,27 @@ packages:
   '@lightningjs/l3-ui-theme-base@0.3.3':
     resolution: {integrity: sha512-lbEO8OChUokt6CcudGZt7SL2laEDDbfPmeN6ttgGaid8/n3CN1eFgPXngZSG2mNNOrruUadGh3j81thphgFUdg==}
 
-  '@lightningjs/renderer@1.0.1':
-    resolution: {integrity: sha512-vtA8tBn7xaLVShCwj1ygCsdT1YCIARGcb/i1zIyDX/6Ttj/J+nF5G8xNmUsRApt7fn05LBXoqCeqvc4MZjZmow==}
+  '@lightningjs/renderer@2.0.0':
+    resolution: {integrity: sha512-7AKxd+CuDwfkROK+NTX1VpD4YueKYfFdTJxtY+e9mUEi9YGhgf2YrzWDFPVA3ub3godXRSJvu2L/24rAPcqr3w==}
     engines: {node: '>= 20.9.0', npm: '>= 10.0.0', pnpm: '>= 8.9.2'}
 
-  '@lightningjs/threadx@0.3.5':
-    resolution: {integrity: sha512-aUIUfP/d3S0Vg/Ror7CLbqQR6qu5AAdGRnQ5RQuSQz4t9X2p8TomKD7ShRxI1/FnRR7om2MwKIe1Dix/Axdgpg==}
-
-  '@lightningtv/core@1.5.7':
-    resolution: {integrity: sha512-OpDdruG7VImRuviRJ4wET6ZqJs0v1LXs7VC3Ehp4vUV6KnTjv5uNQTaqQeqS2XNovgqoRbmkgG22BPfizaThRQ==}
+  '@lightningtv/core@2.0.0':
+    resolution: {integrity: sha512-aBzCpgOCOFD37KxYTqPYp3IpDbOKb5JE/RaSCDRiwkLldXunvBHP6k8F+nSGtWe/MludcEex6nkZY/YhJTSRCA==}
 
   '@lightningtv/solid-ui@0.23.0-rc1':
     resolution: {integrity: sha512-z/BJg49l3Kbw0U7OxqwgAcfW868/rNL4ug0aClf3yU0hTY419stIxjVNlbJ5EOSDwxOoK2ywqFrKrUbED/LU0g==}
     peerDependencies:
-      '@lightningtv/core': 1.5.7
-      '@lightningtv/solid': 1.6.6
+      '@lightningtv/core': 2.0.0
+      '@lightningtv/solid': 2.0.0
       solid-js: '*'
 
-  '@lightningtv/solid@1.6.6':
-    resolution: {integrity: sha512-PCYE8VzjGX3RzVfDa5U7L3g/snTC8iC3KKvbf4ti1bPccpdaf/HE8Yn01+YqxzPJ9ta1YcfT7kVjFaz31KIa5A==}
+  '@lightningtv/solid@2.0.0':
+    resolution: {integrity: sha512-gyBDfG8aVIdFGYYZO4lHf7u3IJYPjw/XZpuIfMV2syOp4LBJRFlD2RZBKdfcwkCXTxbeW9AKxBHTZdt5ZVUJrA==}
     peerDependencies:
       solid-js: '*'
 
   '@lightningtv/vite-hex-transform@1.1.0':
     resolution: {integrity: sha512-rz//Xessfta3rRISPSW5IpMySdQYlXDJ7N1sVNrQVnsT6Ns+z9LYnj5JAxoc1qCLqj56eLkUXLYQhdLjIwQGLg==}
-
-  '@protobufjs/eventemitter@1.1.0':
-    resolution: {integrity: sha512-j9ednRT81vYJ9OfVuXG6ERSTdEL1xVsNgqpkxMsbIabzSo3goCjDIveeGv5d03om39ML71RdmrGNjG5SReBP/Q==}
 
   '@rollup/rollup-android-arm-eabi@4.20.0':
     resolution: {integrity: sha512-TSpWzflCc4VGAUJZlPpgAJE1+V60MePDQnBd7PPkpuEmOy8i87aL6tinFGKBFKuEDikYpig72QzdT3QPYIi+oA==}
@@ -1417,9 +1412,6 @@ packages:
   make-dir@3.1.0:
     resolution: {integrity: sha512-g3FeP20LNwhALb/6Cz6Dd4F2ngze0jz7tbzrD2wAV+o9FeNHe4rL+yK2md0J/fiSf1sa1ADhXqi5+oVwOM/eGw==}
     engines: {node: '>=8'}
-
-  memize@2.1.0:
-    resolution: {integrity: sha512-yywVJy8ctVlN5lNPxsep5urnZ6TTclwPEyigM9M3Bi8vseJBOfqNrGWN/r8NzuIt3PovM323W04blJfGQfQSVg==}
 
   meow@13.2.0:
     resolution: {integrity: sha512-pxQJQzB6djGPXh08dacEloMFopsOqGVRKFPYvPOt9XDZ1HasbgDZA74CJGreSU4G3Ak7EFJGoiH2auq+yXISgA==}
@@ -2723,28 +2715,22 @@ snapshots:
 
   '@lightningjs/l3-ui-theme-base@0.3.3': {}
 
-  '@lightningjs/renderer@1.0.1':
-    dependencies:
-      '@lightningjs/threadx': 0.3.5
-      '@protobufjs/eventemitter': 1.1.0
-      memize: 2.1.0
+  '@lightningjs/renderer@2.0.0': {}
 
-  '@lightningjs/threadx@0.3.5': {}
-
-  '@lightningtv/core@1.5.7':
+  '@lightningtv/core@2.0.0':
     dependencies:
-      '@lightningjs/renderer': 1.0.1
+      '@lightningjs/renderer': 2.0.0
 
-  '@lightningtv/solid-ui@0.23.0-rc1(@lightningtv/core@1.5.7)(@lightningtv/solid@1.6.6(solid-js@1.8.20))(solid-js@1.8.20)':
+  '@lightningtv/solid-ui@0.23.0-rc1(@lightningtv/core@2.0.0)(@lightningtv/solid@2.0.0(solid-js@1.8.20))(solid-js@1.8.20)':
     dependencies:
-      '@lightningtv/core': 1.5.7
-      '@lightningtv/solid': 1.6.6(solid-js@1.8.20)
+      '@lightningtv/core': 2.0.0
+      '@lightningtv/solid': 2.0.0(solid-js@1.8.20)
       '@solid-primitives/refs': 1.0.8(solid-js@1.8.20)
       solid-js: 1.8.20
 
-  '@lightningtv/solid@1.6.6(solid-js@1.8.20)':
+  '@lightningtv/solid@2.0.0(solid-js@1.8.20)':
     dependencies:
-      '@lightningtv/core': 1.5.7
+      '@lightningtv/core': 2.0.0
       '@solid-primitives/event-listener': 2.3.3(solid-js@1.8.20)
       '@solid-primitives/mouse': 2.0.19(solid-js@1.8.20)
       '@solid-primitives/scheduled': 1.4.3(solid-js@1.8.20)
@@ -2762,8 +2748,6 @@ snapshots:
       - stylus
       - sugarss
       - terser
-
-  '@protobufjs/eventemitter@1.1.0': {}
 
   '@rollup/rollup-android-arm-eabi@4.20.0':
     optional: true
@@ -3305,8 +3289,6 @@ snapshots:
   make-dir@3.1.0:
     dependencies:
       semver: 6.3.1
-
-  memize@2.1.0: {}
 
   meow@13.2.0: {}
 

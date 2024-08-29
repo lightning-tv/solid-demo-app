@@ -22,9 +22,9 @@
   "license": "ISC",
   "dependencies": {
     "@lightningjs/l3-ui-theme-base": "^0.3.3",
-    "@lightningjs/renderer": "^1.0.1",
-    "@lightningtv/core": "1.5.7",
-    "@lightningtv/solid": "1.6.6",
+    "@lightningjs/renderer": "^2.0.0",
+    "@lightningtv/core": "2.0.0",
+    "@lightningtv/solid": "2.0.0",
     "@lightningtv/solid-ui": "^0.23.0-rc1",
     "@solid-primitives/scheduled": "^1.4.3",
     "@solidjs/router": "^0.14.1",
@@ -49,7 +49,8 @@
   "pnpm": {
     "overrides": {
       "@lightningtv/core": "$@lightningtv/core",
-      "@lightningtv/solid": "$@lightningtv/solid"
+      "@lightningtv/solid": "$@lightningtv/solid",
+      "@lightningjs/renderer": "$@lightningjs/renderer"
     }
   },
   "lint-staged": {
