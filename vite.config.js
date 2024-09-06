@@ -13,11 +13,14 @@ export default defineConfig({
       },
     }),
     legacy({
-      targets: ["defaults", "Chrome >= 49"],
+      targets: ["chrome>=49"],
+      modernPolyfills: true,
       // additionalLegacyPolyfills: ["whatwg-fetch", "es6-proxy-polyfill"],
     }),
   ],
   build: {
+    targets: ["chrome>=49"],
+    minify: false,
     sourcemap: true,
   },
   resolve: {

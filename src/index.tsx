@@ -27,6 +27,13 @@ const Entity = lazy(() => import("./pages/Entity"));
 const People = lazy(() => import("./pages/People"));
 const LoginPage = lazy(() => import("./pages/Login"));
 
+const urlParams = new URLSearchParams(window.location.search);
+let numImageWorkers = 2;
+const numWorkers = urlParams.get("numImageWorkers");
+if (numWorkers) {
+  numImageWorkers = parseInt(numWorkers);
+}
+
 const logFps = true;
 Config.debug = false;
 Config.animationsEnabled = true;
@@ -41,7 +48,7 @@ Config.rendererOptions = {
   textureMemory: {
     criticalThreshold: 80e6,
   },
-  numImageWorkers: 0, // temp fix for renderer bug
+  numImageWorkers, // temp fix for renderer bug
   // Set the resolution based on window height
   // 720p = 0.666667, 1080p = 1, 1440p = 1.5, 2160p = 2
   deviceLogicalPixelRatio: window.innerHeight / 1080,
