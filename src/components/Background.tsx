@@ -16,7 +16,7 @@ export default function Background() {
   let active = 0;
   const alpha = 1;
   const animationSettings = {
-    duration: 750,
+    duration: 550,
     easing: "ease-in-out",
   } satisfies Partial<AnimationSettings>;
   const bgStyles = {
@@ -54,28 +54,20 @@ export default function Background() {
       heroMask.alpha = 1;
     }
 
+    const currentBg = active === 1 ? bg2 : bg1;
+    const nextBg = active === 1 ? bg1 : bg2;
+
+    currentBg.src = img;
     if (active === 0) {
-      bg1.src = img;
-      active = 1;
-      return;
+      // First time
+      currentBg.alpha = 1;
+    } else {
+      currentBg.alpha = 0.01;
+      currentBg.animate({ alpha: 1 }, animationSettings).start();
     }
 
-    if (active === 1) {
-      bg2.src = img;
-      active = 2;
-      bg2.alpha = 0;
-      bg2.animate({ alpha }, animationSettings).start();
-      bg1.animate({ alpha: 0 }, animationSettings).start();
-      return;
-    }
-
-    if (active === 2) {
-      bg1.src = img;
-      active = 1;
-      bg1.alpha = 0;
-      bg1.animate({ alpha }, animationSettings).start();
-      bg2.animate({ alpha: 0 }, animationSettings).start();
-    }
+    nextBg.animate({ alpha: 0.01 }, animationSettings).start();
+    active = active === 1 ? 2 : 1;
   }
 
   createEffect(
