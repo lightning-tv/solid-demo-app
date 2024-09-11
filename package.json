@@ -31,7 +31,8 @@
     "browserlist": "^1.0.1",
     "proxy-polyfill": "^0.3.2",
     "solid-js": "^1.8.20",
-    "vite-plugin-babel": "^1.2.0"
+    "vite-plugin-babel": "^1.2.0",
+    "whatwg-fetch": "^3.6.20"
   },
   "devDependencies": {
     "@lightningtv/vite-hex-transform": "^1.1.0",
@@ -52,6 +53,9 @@
       "@lightningtv/core": "$@lightningtv/core",
       "@lightningtv/solid": "$@lightningtv/solid",
       "@lightningjs/renderer": "$@lightningjs/renderer"
+    },
+    "patchedDependencies": {
+      "solid-js": "patches/solid-js.patch"
     }
   },
   "lint-staged": {

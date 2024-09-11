@@ -1,0 +1,12 @@
+diff --git a/dist/solid.cjs b/dist/solid.cjs
+index d59cc1959d51c4ce9bc603c710118d352d7ad56d..585d17daed1fdc694ca8735e0b9977773de26224 100644
+--- a/dist/solid.cjs
++++ b/dist/solid.cjs
+@@ -1285,6 +1285,7 @@ function mergeProps(...sources) {
+   for (let i = 0; i < sources.length; i++) {
+     const s = sources[i];
+     proxy = proxy || !!s && $PROXY in s;
++    proxy = typeof Proxy !== 'undefined';
+     sources[i] = typeof s === "function" ? (proxy = true, createMemo(s)) : s;
+   }
+   if (proxy) {

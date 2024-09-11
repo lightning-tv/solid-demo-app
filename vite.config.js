@@ -13,15 +13,16 @@ export default defineConfig({
       },
     }),
     legacy({
-      targets: ["chrome>=49"],
+      targets: ["chrome>=38"],
+      // polyfills: ["es.promise.finally", "es/map", "es/set"],
       modernPolyfills: true,
-      // additionalLegacyPolyfills: ["whatwg-fetch", "es6-proxy-polyfill"],
+      additionalLegacyPolyfills: ["whatwg-fetch"],
     }),
   ],
   build: {
-    targets: ["chrome>=49"],
+    targets: ["chrome>=38"],
     minify: false,
-    sourcemap: true,
+    sourcemap: false,
   },
   resolve: {
     alias: {

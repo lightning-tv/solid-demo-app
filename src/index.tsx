@@ -30,9 +30,17 @@ const LoginPage = lazy(() => import("./pages/Login"));
 const urlParams = new URLSearchParams(window.location.search);
 let numImageWorkers = 2;
 const numWorkers = urlParams.get("numImageWorkers");
+const screenSize = urlParams.get("size") || "default";
 if (numWorkers) {
   numImageWorkers = parseInt(numWorkers);
 }
+
+const deviceLogicalPixelRatio = {
+  "720": 0.666667,
+  "1080": 1,
+  "4k": 2,
+  default: window.innerHeight / 1080,
+}[screenSize];
 
 const logFps = true;
 Config.debug = false;
@@ -51,7 +59,7 @@ Config.rendererOptions = {
   numImageWorkers, // temp fix for renderer bug
   // Set the resolution based on window height
   // 720p = 0.666667, 1080p = 1, 1440p = 1.5, 2160p = 2
-  deviceLogicalPixelRatio: window.innerHeight / 1080,
+  deviceLogicalPixelRatio,
 };
 
 const { render } = createRenderer();
