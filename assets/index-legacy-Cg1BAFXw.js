@@ -26926,10 +26926,6 @@
             View,
             mergeProps(props, {
               color: 16711935,
-              onLoad: changeBackground,
-              onFail: function onFail(node) {
-                return (node.src = "failback.png");
-              },
               get style() {
                 return styles.Thumbnail;
               },
