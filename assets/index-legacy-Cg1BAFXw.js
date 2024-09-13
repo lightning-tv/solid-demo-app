@@ -18047,7 +18047,7 @@
             if (v !== undefined) return v;
           }
         }
-        const HAS_PROXY = typeof Proxy !== "undefined";
+        var HAS_PROXY = typeof Proxy !== "undefined";
         function mergeProps$1() {
           for (
             var _len18 = arguments.length,
