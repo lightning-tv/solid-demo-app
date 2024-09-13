@@ -26778,17 +26778,10 @@
             zIndex: 2,
           },
           Thumbnail: {
-            borderRadius: roundPoster ? 16 : 0,
             width: 185,
             height: 278,
             scale: 1,
             zIndex: 2,
-            transition: {
-              scale: {
-                duration: 250,
-                easing: "ease-in-out",
-              },
-            },
             border: {
               width: 0,
               color: 0,
