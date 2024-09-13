@@ -18042,9 +18042,13 @@
           return !(s = typeof s === "function" ? s() : s) ? {} : s;
         }
         function resolveSources() {
-          for (var i = 0, length = this.length; i < length; ++i) {
-            var v = this[i]();
-            if (v !== undefined) return v;
+          try {
+            for (var i = 0, length = this.length; i < length; ++i) {
+              var v = this[i]();
+              if (v !== undefined) return v;
+            }
+          } catch (e) {
+            console.log(e);
           }
         }
         var HAS_PROXY = typeof Proxy !== "undefined";
