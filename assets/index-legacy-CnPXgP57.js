@@ -794,7 +794,9 @@
     if (void 0 !== e) {
       var i = e.call(t, r || "default");
       if ("object" != typeof i) return i;
-      throw new TypeError("@@toPrimitive must return a primitive value.");
+      console.log("oh no", t, r);
+      return i;
+      //throw new TypeError("@@toPrimitive must return a primitive value.");
     }
     return ("string" === r ? String : Number)(t);
   }
