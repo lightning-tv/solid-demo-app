@@ -26838,6 +26838,7 @@
                     return props.items;
                   },
                   children: function children(item) {
+                    console.log("item: ", item);
                     return createComponent(Thumbnail, item);
                   },
                 });
