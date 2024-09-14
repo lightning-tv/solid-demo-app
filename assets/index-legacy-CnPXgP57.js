@@ -18063,6 +18063,7 @@
           for (var i = 0; i < sources.length; i++) {
             var s = sources[i];
             proxy = proxy || (!!s && $PROXY in s);
+            console.warn("proxy is now true??");
             sources[i] =
               typeof s === "function" ? ((proxy = true), createMemo(s)) : s;
           }
