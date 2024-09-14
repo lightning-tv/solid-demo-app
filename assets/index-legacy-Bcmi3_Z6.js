@@ -26835,6 +26835,7 @@
               get children() {
                 return createComponent(Index, {
                   get each() {
+                    console.log("Hi ", props.items);
                     return props.items;
                   },
                   children: function children(item) {
