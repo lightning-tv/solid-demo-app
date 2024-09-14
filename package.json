@@ -8,7 +8,7 @@
     "start": "vite --open --host --force",
     "start:prod": "vite --open --host --force --mode production",
     "build": "vite build --sourcemap=true",
-    "build:github": "vite build --sourcemap=true --base=/solid-demo-app/",
+    "build:github": "vite build --sourcemap=false --base=/solid-demo-app/",
     "build:github:dev": "NODE_ENV=development vite build --sourcemap=true --mode development --base=/solid-demo-app/",
     "build:analyze": "vite-bundle-visualizer",
     "deploy": "gh-pages -d dist",
@@ -22,7 +22,7 @@
   "license": "ISC",
   "dependencies": {
     "@lightningjs/l3-ui-theme-base": "^0.3.3",
-    "@lightningjs/renderer": "^2.1.0",
+    "@lightningjs/renderer": "^2.1.2",
     "@lightningtv/core": "2.0.1",
     "@lightningtv/solid": "2.0.1",
     "@lightningtv/solid-ui": "^0.25.1",

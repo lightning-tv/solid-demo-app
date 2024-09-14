@@ -1,6 +1,6 @@
 import { IntrinsicNodeProps, View, Text } from "@lightningtv/solid";
 import { Row } from "@lightningtv/solid-ui";
-import { Index, splitProps } from "solid-js";
+import { For } from "solid-js";
 import styles, { buttonStyles } from "../styles";
 import { type Tile } from "../api/formatters/ItemFormatter";
 import { INode } from "@lightningtv/solid";
@@ -12,7 +12,7 @@ export function Thumbnail(props: IntrinsicNodeProps) {
   return (
     <View
       {...props}
-      color={0x00ff00ff}
+      color={"#808080"}
       onLoad={changeBackground}
       onFail={(node) => (node.src = "failback.png")}
       style={styles.Thumbnail}
@@ -29,11 +29,9 @@ export interface TileRowProps extends IntrinsicNodeProps {
 }
 
 export function TileRow(props: TileRowProps) {
-  const [local, others] = splitProps(props, ["items"]);
-
   return (
-    <Row {...others} style={styles.Row}>
-      <Index each={local.items}>{(item) => <Thumbnail {...item} />}</Index>
+    <Row {...props} style={styles.Row}>
+      <For each={props.items}>{(item) => <Thumbnail {...item} />}</For>
     </Row>
   );
 }
