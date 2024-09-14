@@ -26819,10 +26819,6 @@
             View,
             mergeProps(props, {
               color: 16711935,
-              onLoad: changeBackground,
-              onFail: function onFail(node) {
-                return (node.src = "failback.png");
-              },
               get style() {
                 return styles.Thumbnail;
               },
@@ -27648,4 +27644,3 @@
     };
   });
 })();
-//# sourceMappingURL=index-legacy-Bcmi3_Z6.js.map
