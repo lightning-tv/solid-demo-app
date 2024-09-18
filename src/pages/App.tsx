@@ -106,7 +106,7 @@ const App = (props) => {
         height={28}
         x={1910}
         y={190}
-        color={0x000000cc}
+        color={0x000000ff}
         hidden={!showWidgets()}
       >
         <Text fontSize={20} y={4} x={4}>
