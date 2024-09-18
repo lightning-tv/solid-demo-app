@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from "@solidjs/router";
-import { View, activeElement, renderer } from "@lightningtv/solid";
+import { View, Text, activeElement, renderer } from "@lightningtv/solid";
 import {
   useFocusManager,
   useAnnouncer,
@@ -8,7 +8,7 @@ import {
 import Background from "../components/Background";
 import NavDrawer from "../components/NavDrawer/NavDrawer";
 import { FPSCounter, setupFPS } from "@lightningtv/solid-ui";
-import { createEffect, createSignal } from "solid-js";
+import { createEffect, createSignal, onCleanup } from "solid-js";
 
 declare module "@lightningtv/solid" {
   // Augment the FocusManager KeyMap interface with our custom keys
@@ -72,6 +72,21 @@ const App = (props) => {
     setShowWidgets(matchesPartial);
   });
 
+  const [lastKey, setLastKey] = createSignal<string | undefined>();
+  const [lastError, setLastError] = createSignal<string | undefined>();
+  const keyPressHandler = (e) => {
+    setLastKey(`Last key: ${e.key}, Code: ${e.keyCode}`);
+  };
+  document.addEventListener("keydown", keyPressHandler);
+  const displayError = (e) => {
+    setLastError((p) => (p || "") + "\n" + e.message);
+  };
+  document.addEventListener("onerror", displayError);
+  onCleanup(() => {
+    document.removeEventListener("onerror", displayError);
+    document.removeEventListener("keydown", keyPressHandler);
+  });
+
   return (
     <View
       ref={window.APP}
@@ -84,7 +99,24 @@ const App = (props) => {
       onRight={() => navDrawer.states.has("focus") && lastFocused.setFocus()}
     >
       <Background />
-      <FPSCounter mountX={1} x={1910} y={10} alpha={showWidgets() ? 1 : 0} />
+      <FPSCounter mountX={1} x={1910} y={10} alpha={showWidgets() ? 1 : 0.01} />
+      <View
+        mountX={1}
+        width={330}
+        height={28}
+        x={1910}
+        y={190}
+        color={0x000000cc}
+        hidden={!showWidgets()}
+      >
+        <Text fontSize={20} y={4} x={4}>
+          {lastKey()}
+        </Text>
+      </View>
+
+      <Text x={270} y={20} fontSize={24} contain="width" width={800}>
+        {lastError()}
+      </Text>
 
       {props.children}
       <NavDrawer

@@ -38,11 +38,11 @@ const Browse = () => {
 
   const delayedBackgrounds = debounce(
     (img: string) => setGlobalBackground(img),
-    400
+    800
   );
   const delayedHero = debounce(
     (content: {}) => setHeroContent(content || {}),
-    200
+    600
   );
 
   createEffect(

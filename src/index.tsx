@@ -28,7 +28,7 @@ const People = lazy(() => import("./pages/People"));
 const LoginPage = lazy(() => import("./pages/Login"));
 
 const urlParams = new URLSearchParams(window.location.search);
-let numImageWorkers = 2;
+let numImageWorkers = 3;
 const numWorkers = urlParams.get("numImageWorkers");
 const screenSize = urlParams.get("size") || "default";
 if (numWorkers) {
@@ -49,23 +49,24 @@ Config.fontSettings.fontFamily = "Roboto";
 Config.fontSettings.color = "#f6f6f6";
 Config.fontSettings.fontSize = 32;
 Config.rendererOptions = {
-  fpsUpdateInterval: logFps ? 200 : 0,
+  fpsUpdateInterval: logFps ? 1000 : 0,
   fontEngines: [SdfTextRenderer],
   renderEngine: WebGlCoreRenderer,
-  inspector: true && Inspector,
-  textureMemory: {
-    criticalThreshold: 80e6,
-  },
+  // inspector: true && Inspector,
+  // textureMemory: {
+  //   criticalThreshold: 80e6,
+  // },
   numImageWorkers, // temp fix for renderer bug
   // Set the resolution based on window height
   // 720p = 0.666667, 1080p = 1, 1440p = 1.5, 2160p = 2
   deviceLogicalPixelRatio,
+  devicePhysicalPixelRatio: 1,
 };
 
 const { render } = createRenderer();
 loadFonts(fonts);
 render(() => (
-  <HashRouter root={(props) => <App {...props} />}>
+  <HashRouter customSetup={() => null} root={(props) => <App {...props} />}>
     <Route path="" component={Browse} />
     <Route path="examples" component={Portal} />
     <Route path="browse/:filter" component={Browse} />
