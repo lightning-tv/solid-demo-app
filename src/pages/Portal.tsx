@@ -46,6 +46,11 @@ const Portal = () => {
 
   const demos = [
     {
+      title: "Positioning",
+      id: "positioning",
+      description: "Positioning Elements",
+    },
+    {
       title: "Grid",
       id: "grid",
       description: "Infinite Scroll Grid",
