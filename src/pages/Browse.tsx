@@ -9,6 +9,7 @@ import {
 } from "solid-js";
 import {
   ElementNode,
+  ElementText,
   View,
   activeElement,
   assertTruthy,
@@ -49,6 +50,7 @@ const Browse = () => {
     on(
       activeElement,
       (elm) => {
+        if (!elm) return;
         if (elm.backdrop) {
           delayedBackgrounds(elm.backdrop);
         }
@@ -62,21 +64,23 @@ const Browse = () => {
   );
 
   function onRowFocus(this: ElementNode) {
-    this.children[this.selected || 0].setFocus();
+    (this.children[this.selected || 0] as ElementNode).setFocus();
     setcolumnY((this.y || 0) * -1 + 24);
     let numPages = provider().pages().length;
     this.parent!.selected = this.parent!.children.indexOf(this);
 
     if (
       numPages === 0 ||
-      (this.parent.selected && this.parent.selected >= numPages - 2)
+      (this.parent!.selected && this.parent!.selected >= numPages - 2)
     ) {
       provider().setPage((p) => p + 1);
     }
   }
 
   function onEnter(this: ElementNode) {
-    let entity = this.children.find((c) => c.states!.has("focus"));
+    let entity = this.children.find((c) =>
+      c.states!.has("focus")
+    ) as ElementNode;
     assertTruthy(entity && entity.href);
     navigate(entity.href);
     return true;

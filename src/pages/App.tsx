@@ -18,9 +18,6 @@ declare module "@lightningtv/solid" {
     Escape: (string | number)[];
     Backspace: (string | number)[];
   }
-}
-
-declare module "@lightningtv/solid" {
   interface ElementNode {
     heroContent?: boolean;
     backdrop?: any;

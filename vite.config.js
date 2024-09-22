@@ -13,14 +13,14 @@ export default defineConfig({
       },
     }),
     legacy({
-      targets: ["chrome>=38"],
+      targets: ["chrome>=34"],
       // polyfills: ["es.promise.finally", "es/map", "es/set"],
       modernPolyfills: true,
       additionalLegacyPolyfills: ["whatwg-fetch"],
     }),
   ],
   build: {
-    targets: ["chrome>=38"],
+    targets: ["chrome>=68"],
     minify: false,
     sourcemap: false,
   },

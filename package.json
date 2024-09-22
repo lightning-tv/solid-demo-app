@@ -23,8 +23,9 @@
   "dependencies": {
     "@lightningjs/l3-ui-theme-base": "^0.3.3",
     "@lightningjs/renderer": "^2.1.2",
-    "@lightningtv/core": "2.0.1",
-    "@lightningtv/solid": "2.0.1",
+    "@lightningtv/l3-ui-theme-base": "^0.4.1",
+    "@lightningtv/core": "2.1.1",
+    "@lightningtv/solid": "2.1.1",
     "@lightningtv/solid-ui": "^0.25.1",
     "@solid-primitives/scheduled": "^1.4.3",
     "@solidjs/router": "^0.14.1",
