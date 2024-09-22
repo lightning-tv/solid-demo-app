@@ -2,7 +2,7 @@ import { Text, View } from "@lightningtv/solid";
 import { createSignal, onCleanup } from "solid-js";
 import { setGlobalBackground } from "../state";
 
-const FlexPage = () => {
+const PositioningPage = () => {
   setGlobalBackground("#1e293b");
 
   // this would be easier with a store, but then it wouldn't work pre-proxy
@@ -218,4 +218,4 @@ const FlexPage = () => {
   );
 };
 
-export default FlexPage;
+export default PositioningPage;
