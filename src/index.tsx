@@ -18,6 +18,7 @@ const CreatePage = lazy(() => import("./pages/Create"));
 const ViewportPage = lazy(() => import("./pages/Viewport"));
 const ButtonsPage = lazy(() => import("./pages/Buttons"));
 const PositioningPage = lazy(() => import("./pages/Positioning"));
+const GradientsPage = lazy(() => import("./pages/Gradients"));
 const FlexPage = lazy(() => import("./pages/Flex"));
 const FlexSizePage = lazy(() => import("./pages/FlexSize"));
 const FlexColumnSizePage = lazy(() => import("./pages/FlexColumnSize"));
@@ -76,6 +77,7 @@ render(() => (
     <Route path="login" component={LoginPage} />
     <Route path="buttons" component={ButtonsPage} />
     <Route path="positioning" component={PositioningPage} />
+    <Route path="gradients" component={GradientsPage} />
     <Route path="flex" component={FlexPage} />
     <Route path="create" component={CreatePage} />
     <Route path="viewport" component={ViewportPage} />

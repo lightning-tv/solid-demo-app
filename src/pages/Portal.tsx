@@ -51,6 +51,11 @@ const Portal = () => {
       description: "Positioning Elements",
     },
     {
+      title: "Gradients",
+      id: "Gradients",
+      description: "Gradients",
+    },
+    {
       title: "Grid",
       id: "grid",
       description: "Infinite Scroll Grid",
@@ -141,7 +146,7 @@ const Portal = () => {
         </Text>
         <View y={140} height={1} width={1800} color={0xe8d7f9ff} />
       </View>
-      <Column scroll="none" y={200} x={170} gap={80}>
+      <Column scroll="none" y={200} x={170} gap={80} autofocus>
         <Row
           onEnter={onEnter}
           style={styles.Row}
@@ -149,9 +154,7 @@ const Portal = () => {
           gap={40}
         >
           <For each={demos}>
-            {(demo, i) => (
-              <DemoTile autofocus={isFirst(i())} index={i()} {...demo} />
-            )}
+            {(demo, i) => <DemoTile index={i()} {...demo} />}
           </For>
         </Row>
 

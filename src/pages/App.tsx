@@ -84,6 +84,8 @@ const App = (props) => {
     document.removeEventListener("keydown", keyPressHandler);
   });
 
+  let pageContainer;
+
   return (
     <View
       ref={window.APP}
@@ -114,8 +116,7 @@ const App = (props) => {
       <Text x={270} y={20} fontSize={24} contain="width" width={800}>
         {lastError()}
       </Text>
-
-      {props.children}
+      <View ref={pageContainer}>{props.children}</View>
       <NavDrawer
         ref={navDrawer}
         focusPage={() => lastFocused.setFocus()}
