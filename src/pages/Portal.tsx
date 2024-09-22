@@ -53,12 +53,17 @@ const Portal = () => {
     {
       title: "Gradients",
       id: "gradients",
-      description: "Gradients",
+      description: "Basic Gradients",
     },
     {
       title: "Transitions",
       id: "transitions",
-      description: "Transitions",
+      description: "Comparing different Transitions",
+    },
+    {
+      title: "Components",
+      id: "components",
+      description: "Reusable Components",
     },
     {
       title: "Grid",
