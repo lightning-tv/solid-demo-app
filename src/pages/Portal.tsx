@@ -66,6 +66,11 @@ const Portal = () => {
       description: "Reusable Components",
     },
     {
+      title: "Focus Handling",
+      id: "focushandling",
+      description: "Dealing with Focus Handling",
+    },
+    {
       title: "Grid",
       id: "grid",
       description: "Infinite Scroll Grid",
