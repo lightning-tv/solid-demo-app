@@ -115,17 +115,16 @@ const Portal = () => {
         color: 0xffffffff,
       },
     };
-    const [color, setColor] = createSignal(0xffffffff);
+    const [hasFocus, setHasFocus] = createSignal(false);
 
     return (
-      <View
-        {...props}
-        onFocus={() => setColor(0x000000ff)}
-        onBlur={() => setColor(0xffffffff)}
-        style={Container}
-      >
+      <View {...props} onFocusChanged={setHasFocus} style={Container}>
         <View x={30}>
-          <Text y={30} fontSize={84} color={color()}>
+          <Text
+            y={30}
+            fontSize={84}
+            color={hasFocus() ? 0x000000ff : 0xffffffff}
+          >
             {props.index}
           </Text>
           <Text
@@ -134,7 +133,7 @@ const Portal = () => {
             width={340}
             height={42}
             contain="both"
-            color={color()}
+            color={hasFocus() ? 0x000000ff : 0xffffffff}
           >
             {props.title}
           </Text>
@@ -143,7 +142,7 @@ const Portal = () => {
             fontSize={28}
             width={330}
             contain="width"
-            color={color()}
+            color={hasFocus() ? 0x000000ff : 0xffffffff}
           >
             {props.description}
           </Text>
@@ -162,23 +161,13 @@ const Portal = () => {
         <View y={140} height={1} width={1800} color={0xe8d7f9ff} />
       </View>
       <Column scroll="none" y={200} x={170} gap={80} autofocus>
-        <Row
-          onEnter={onEnter}
-          style={styles.Row}
-          justifyContent={"flexStart"}
-          gap={40}
-        >
+        <Row onEnter={onEnter} gap={40} height={320}>
           <For each={demos}>
             {(demo, i) => <DemoTile index={i()} {...demo} />}
           </For>
         </Row>
 
-        <Row
-          onEnter={onEnter}
-          style={styles.Row}
-          justifyContent={"flexStart"}
-          gap={40}
-        >
+        <Row onEnter={onEnter} gap={40} height={320}>
           <For each={flexDemos}>
             {(demo, i) => <DemoTile index={i()} {...demo} />}
           </For>

@@ -85,7 +85,7 @@ const Grid = () => {
     setGlobalBackground("#000000");
   });
 
-  function changeRow(elm, active, selectedIndex, lastSelectedIndex) {
+  function changeRow(selectedIndex, elm, active, lastSelectedIndex) {
     setcolumnY((active.y || 0) * -1 + 50);
     setRowIndex(selectedIndex);
   }

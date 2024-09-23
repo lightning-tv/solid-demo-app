@@ -57,7 +57,7 @@ Config.rendererOptions = {
   fpsUpdateInterval: logFps ? 1000 : 0,
   fontEngines: [SdfTextRenderer],
   renderEngine: WebGlCoreRenderer,
-  // inspector: true && Inspector,
+  inspector: Inspector,
   // textureMemory: {
   //   criticalThreshold: 80e6,
   // },

@@ -34,8 +34,8 @@ importers:
         specifier: 2.1.1
         version: 2.1.1(@lightningjs/renderer@2.1.2)(solid-js@1.8.20(patch_hash=57rsfwldt3tegsvhmqog75grya))
       '@lightningtv/solid-ui':
-        specifier: ^0.25.1
-        version: 0.25.1(@lightningtv/core@2.1.1(@lightningjs/renderer@2.1.2))(@lightningtv/solid@2.1.1(@lightningjs/renderer@2.1.2)(solid-js@1.8.20(patch_hash=57rsfwldt3tegsvhmqog75grya)))(solid-js@1.8.20(patch_hash=57rsfwldt3tegsvhmqog75grya))
+        specifier: ^0.28.0
+        version: 0.28.0(@lightningtv/core@2.1.1(@lightningjs/renderer@2.1.2))(@lightningtv/solid@2.1.1(@lightningjs/renderer@2.1.2)(solid-js@1.8.20(patch_hash=57rsfwldt3tegsvhmqog75grya)))(solid-js@1.8.20(patch_hash=57rsfwldt3tegsvhmqog75grya))
       '@solid-primitives/scheduled':
         specifier: ^1.4.3
         version: 1.4.3(solid-js@1.8.20(patch_hash=57rsfwldt3tegsvhmqog75grya))
@@ -857,8 +857,8 @@ packages:
   '@lightningtv/l3-ui-theme-base@0.4.1':
     resolution: {integrity: sha512-c179cg8Bb2PjGB1FNafac5Fc7h1Cu2NMBYZW/4LEWWEQfRHaxVLX0jYVHlHBKrxgBWR5tQBjvPGXz+y3dVsBWQ==}
 
-  '@lightningtv/solid-ui@0.25.1':
-    resolution: {integrity: sha512-eiriFIJroFA5DuXLVOD1U7GaW7g1Uqn62592AmA+xv7kRh3fWezfCj2/9ByWDiCJqeT9lNIfoIBieGTiKwk3QA==}
+  '@lightningtv/solid-ui@0.28.0':
+    resolution: {integrity: sha512-ROIRIbllg5gilBbj7hDBqxCR9eTVahItQqQHExqwkPb1bReyaaGEqj7UiTw/Qp7wu9L+ZNPeythHGqVIvW6Tqw==}
     peerDependencies:
       '@lightningtv/core': 2.1.1
       '@lightningtv/solid': 2.1.1
@@ -2749,8 +2749,9 @@ snapshots:
 
   '@lightningtv/l3-ui-theme-base@0.4.1': {}
 
-  '@lightningtv/solid-ui@0.25.1(@lightningtv/core@2.1.1(@lightningjs/renderer@2.1.2))(@lightningtv/solid@2.1.1(@lightningjs/renderer@2.1.2)(solid-js@1.8.20(patch_hash=57rsfwldt3tegsvhmqog75grya)))(solid-js@1.8.20(patch_hash=57rsfwldt3tegsvhmqog75grya))':
+  '@lightningtv/solid-ui@0.28.0(@lightningtv/core@2.1.1(@lightningjs/renderer@2.1.2))(@lightningtv/solid@2.1.1(@lightningjs/renderer@2.1.2)(solid-js@1.8.20(patch_hash=57rsfwldt3tegsvhmqog75grya)))(solid-js@1.8.20(patch_hash=57rsfwldt3tegsvhmqog75grya))':
     dependencies:
+      '@lightningjs/renderer': 2.1.2
       '@lightningtv/core': 2.1.1(@lightningjs/renderer@2.1.2)
       '@lightningtv/solid': 2.1.1(@lightningjs/renderer@2.1.2)(solid-js@1.8.20(patch_hash=57rsfwldt3tegsvhmqog75grya))
       '@solid-primitives/refs': 1.0.8(solid-js@1.8.20(patch_hash=57rsfwldt3tegsvhmqog75grya))
