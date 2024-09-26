@@ -4,12 +4,10 @@ import {
   on,
   createSignal,
   Show,
-  createSelector,
   For,
 } from "solid-js";
 import {
   ElementNode,
-  ElementText,
   View,
   activeElement,
   assertTruthy,
@@ -29,9 +27,6 @@ const Browse = () => {
   const [columnY, setcolumnY] = createSignal(0);
   const [heroContent, setHeroContent] = createSignal({});
   const navigate = useNavigate();
-  const isFirst = createSelector(() => {
-    return 0;
-  });
 
   const provider = createMemo(() => {
     return createInfiniteScroll(browseProvider(params.filter || "all"));
@@ -78,6 +73,7 @@ const Browse = () => {
   }
 
   function onEnter(this: ElementNode) {
+    this.display = "flex";
     let entity = this.children.find((c) =>
       c.states!.has("focus")
     ) as ElementNode;
@@ -96,12 +92,12 @@ const Browse = () => {
           announce="All Trending - Week"
           y={columnY()}
           scroll="none"
+          autofocus
           style={styles.Column}
         >
           <For each={provider().pages()}>
-            {(items, i) => (
+            {(items) => (
               <TileRow
-                autofocus={isFirst(i())}
                 items={items}
                 width={1620}
                 onFocus={onRowFocus}
