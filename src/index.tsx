@@ -10,6 +10,7 @@ import App from "./pages/App";
 import Browse from "./pages/Browse";
 import NotFound from "./pages/NotFound";
 import fonts from "./fonts";
+import { entityPreload } from "./api/entityPreload";
 
 const Grid = lazy(() => import("./pages/Grid"));
 const Portal = lazy(() => import("./pages/Portal"));
@@ -93,7 +94,7 @@ render(() => (
     <Route path="superflex" component={SuperFlexPage} />
     <Route path="buttonsmaterial" component={ButtonsMaterialPage} />
     <Route path="entity/people/:id" component={People} />
-    <Route path="entity/:type/:id" component={Entity} />
+    <Route path="entity/:type/:id" component={Entity} preload={entityPreload} />
     <Route path="*all" component={NotFound} />
   </HashRouter>
 ));

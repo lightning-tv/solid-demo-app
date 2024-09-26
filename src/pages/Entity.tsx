@@ -7,35 +7,22 @@ import {
   setActiveElement,
 } from "@lightningtv/solid";
 import { Column, Button, Row } from "@lightningtv/solid-ui";
-import { useParams } from "@solidjs/router";
-import { createEffect, createResource, on, createSignal } from "solid-js";
+
+import { createEffect, on, createSignal } from "solid-js";
 import { TileRow } from "../components";
 import { setGlobalBackground } from "../state";
 import ContentBlock from "../components/ContentBlock";
 import { useNavigate } from "@solidjs/router";
 import styles from "../styles";
-import * as provider from "../api/providers/entity";
-import type { Tile } from "../api/formatters/ItemFormatter";
 import { playVideo, closeVideo } from "../video";
 
-const Entity = () => {
-  const params = useParams();
-  const navigate = useNavigate();
-
-  const [data] = createResource(() => ({ ...params }), provider.getInfo);
-  const [credits] = createResource<any, Tile[]>(
-    () => ({ ...params }),
-    provider.getCredits
-  );
-  const [recommendations] = createResource<any, Tile[]>(
-    () => ({ ...params }),
-    provider.getRecommendations
-  );
+const Entity = (props) => {
   const [backdropAlpha, setBackdropAlpha] = createSignal(0);
+  const navigate = useNavigate();
 
   createEffect(
     on(
-      data,
+      props.data.entity,
       (data) => {
         setGlobalBackground(data.backgroundImage);
       },
@@ -98,9 +85,12 @@ const Entity = () => {
    * However this causes problems with elements which have internal state like Row & Column because the selected does not get reset.
    */
   return (
-    <Show when={data()}>
+    <Show when={props.data.entity()}>
       <View x={170} onUp={() => entityActions.setFocus()} onEscape={onEscape}>
-        <ContentBlock y={260} content={data().heroContent}></ContentBlock>
+        <ContentBlock
+          y={260}
+          content={props.data.entity().heroContent}
+        ></ContentBlock>
         <Row
           ref={entityActions}
           y={500}
@@ -111,7 +101,7 @@ const Entity = () => {
           onDown={() => columnRef.setFocus()}
           onEnter={onEnterTrailer}
         >
-          <Button width={300} autofocus={data()}>
+          <Button width={300} autofocus={props.data.entity()}>
             Play
           </Button>
           <Button width={300}>Resume</Button>
@@ -126,14 +116,14 @@ const Entity = () => {
           scroll="none"
           zIndex={5}
         >
-          <Show when={recommendations() && credits()}>
+          <Show when={props.data.recommendations() && props.data.credits()}>
             <Text skipFocus style={styles.RowTitle}>
               Recommendations
             </Text>
             <TileRow
               onFocus={onRowFocus}
               onEnter={onEnter}
-              items={recommendations()}
+              items={props.data.recommendations()}
               width={1620}
             />
             <Text skipFocus style={styles.RowTitle}>
@@ -142,7 +132,7 @@ const Entity = () => {
             <TileRow
               onFocus={onRowFocusAnimate}
               onEnter={onEnter}
-              items={credits()}
+              items={props.data.credits()}
               width={1620}
             />
           </Show>
