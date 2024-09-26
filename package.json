@@ -28,7 +28,7 @@
     "@lightningtv/solid": "2.1.2",
     "@lightningtv/solid-ui": "^0.29.4",
     "@solid-primitives/scheduled": "^1.4.3",
-    "@solidjs/router": "^0.14.5",
+    "@solidjs/router": "^0.14.6",
     "browserlist": "^1.0.1",
     "proxy-polyfill": "^0.3.2",
     "solid-js": "^1.9.1",
