@@ -27,12 +27,13 @@ export default {
     color: "#000000",
     src: "./assets/sidenav.png",
     alpha: 0,
-    width: 1200,
+    width: 200,
     height: 1080,
     focus: {
       alpha: 1,
+      width: 1600,
     },
-    transition: { alpha: true },
+    transition: { alpha: true, width: true },
   } satisfies IntrinsicNodeStyleProps,
   NavButton: {
     zIndex: 102,
