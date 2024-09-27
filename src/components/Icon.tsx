@@ -15,9 +15,10 @@ interface IconProps extends IntrinsicNodeProps {
   name: string;
 }
 
+let sprite;
 function Icon(props: IconProps) {
-  const sprite = createSpriteMap(basePath + "assets/icons_white.png", icons);
-
+  sprite =
+    sprite || createSpriteMap(basePath + "assets/icons_white.png", icons);
   return (
     <View
       {...props}
