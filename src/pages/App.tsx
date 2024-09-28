@@ -95,7 +95,10 @@ const App = (props) => {
       style={{ width: 1920, height: 1080 }}
       onBackspace={focusNavDrawer}
       onLeft={focusNavDrawer}
-      onRight={() => navDrawer.states.has("focus") && lastFocused.setFocus()}
+      onRight={() =>
+        navDrawer.states.has("focus") &&
+        (lastFocused || pageContainer).setFocus()
+      }
     >
       <Background />
       <FPSCounter mountX={1} x={1910} y={10} alpha={showWidgets() ? 1 : 0.01} />
@@ -116,7 +119,9 @@ const App = (props) => {
       <Text x={270} y={20} fontSize={24} contain="width" width={800}>
         {lastError()}
       </Text>
-      <View ref={pageContainer}>{props.children}</View>
+      <View ref={pageContainer} forwardFocus={0}>
+        {props.children}
+      </View>
       <NavDrawer
         ref={navDrawer}
         focusPage={() => lastFocused.setFocus()}
