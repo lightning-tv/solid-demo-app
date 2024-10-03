@@ -56,7 +56,7 @@
       "@lightningjs/renderer": "$@lightningjs/renderer"
     },
     "patchedDependencies": {
-      "solid-js": "patches/solid-js.patch"
+      "@solidjs/router": "patches/@solidjs__router.patch"
     }
   },
   "lint-staged": {
