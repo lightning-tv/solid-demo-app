@@ -22,8 +22,8 @@
   "license": "ISC",
   "dependencies": {
     "@lightningjs/l3-ui-theme-base": "^0.3.3",
-    "@lightningjs/renderer": "^2.2.0",
-    "@lightningtv/core": "2.1.6",
+    "@lightningjs/renderer": "^2.3.1",
+    "@lightningtv/core": "2.2.0-beta",
     "@lightningtv/l3-ui-theme-base": "^0.4.1",
     "@lightningtv/solid": "2.1.4",
     "@lightningtv/solid-ui": "^0.29.4",

@@ -19,21 +19,31 @@ function justYear(dateString) {
   return parts[0];
 }
 
+export function ensureItems(items, minCount) {
+  const remainingCount = minCount - items.length;
+  if (remainingCount > 0) {
+    return items.concat(Array(remainingCount).fill({}));
+  }
+  return items;
+}
+
 export function getRecommendations({ type, id }) {
   return api.get(`/${type}/${id}/recommendations`).then(({ results }) => {
     if (results.length) {
-      return convertItemsToTiles(results.slice(0, 7));
+      return ensureItems(convertItemsToTiles(results.slice(0, 7)), 7);
     }
     return api
       .get(`/trending/${type}/week?page=1`)
-      .then(({ results }) => convertItemsToTiles(results.slice(0, 7)));
+      .then(({ results }) =>
+        ensureItems(convertItemsToTiles(results.slice(0, 7)), 7)
+      );
   });
 }
 
 export function getCredits({ type, id }) {
   return api
     .get(`/${type}/${id}/credits`)
-    .then(({ cast }) => convertItemsToTiles(cast.slice(0, 7)));
+    .then(({ cast }) => ensureItems(convertItemsToTiles(cast.slice(0, 7)), 7));
 }
 
 export function getInfo({ type, id }) {

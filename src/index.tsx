@@ -4,7 +4,8 @@ import {
   SdfTextRenderer,
 } from "@lightningjs/renderer/webgl";
 import { Inspector } from "@lightningjs/renderer/inspector";
-import { HashRouter, Route } from "@solidjs/router";
+import { HashRouter } from "./components/router";
+import { Route } from "@solidjs/router";
 import { lazy } from "solid-js";
 import App from "./pages/App";
 import Browse from "./pages/Browse";
@@ -72,7 +73,7 @@ Config.rendererOptions = {
 const { render } = createRenderer();
 loadFonts(fonts);
 render(() => (
-  <HashRouter customSetup={() => null} root={(props) => <App {...props} />}>
+  <HashRouter root={(props) => <App {...props} />}>
     <Route path="" component={Browse} />
     <Route path="examples" component={Portal} />
     <Route path="browse/:filter" component={Browse} />
