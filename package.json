@@ -16,7 +16,7 @@
     "tsc": "tsc",
     "lint:prettier": "prettier --check \"**/*.{ts,js,cjs,md,tsx}\"",
     "lint:fix:prettier": "prettier --write \"**/*.{ts,js,cjs,md,tsx}\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest"
   },
   "author": "",
   "license": "ISC",
@@ -33,6 +33,7 @@
     "proxy-polyfill": "^0.3.2",
     "solid-js": "^1.9.1",
     "vite-plugin-babel": "^1.2.0",
+    "vitest": "^2.1.2",
     "whatwg-fetch": "^3.6.20"
   },
   "devDependencies": {

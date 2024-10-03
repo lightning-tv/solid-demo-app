@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import solidPlugin from "vite-plugin-solid";
 import legacy from "@vitejs/plugin-legacy";
 import hexColorTransform from "@lightningtv/vite-hex-transform";
+import { configDefaults } from "vitest/config";
 
 export default defineConfig({
   plugins: [
@@ -51,5 +52,9 @@ export default defineConfig({
       "Cross-Origin-Opener-Policy": "same-origin",
       "Cross-Origin-Embedder-Policy": "require-corp",
     },
+  },
+  test: {
+    exclude: [...configDefaults.exclude, "packages/template/*"],
+    globals: true,
   },
 });
