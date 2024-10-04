@@ -1,6 +1,6 @@
 const basePath = import.meta.env.BASE_URL;
 
-export default [
+export default [ 
 { type: 'msdf',
   fontFamily: 'Roboto',
   descriptors: {
@@ -26,3 +26,7 @@ export default [
   atlasUrl: basePath + 'fonts/Roboto-Regular.msdf.png',
 } as const
 ];
+
+export const canvasFonts = [{ fontFamily: 'Roboto',
+  fontUrl: basePath + 'fonts/Roboto-Regular.ttf',
+} as const];
