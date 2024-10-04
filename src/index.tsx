@@ -3,6 +3,11 @@ import {
   WebGlCoreRenderer,
   SdfTextRenderer,
 } from "@lightningjs/renderer/webgl";
+import {
+  CanvasCoreRenderer,
+  CanvasTextRenderer,
+} from "@lightningjs/renderer/canvas";
+
 import { Inspector } from "@lightningjs/renderer/inspector";
 import { HashRouter } from "./components/router";
 import { Route } from "@solidjs/router";
@@ -10,7 +15,7 @@ import { lazy } from "solid-js";
 import App from "./pages/App";
 import Browse from "./pages/Browse";
 import NotFound from "./pages/NotFound";
-import fonts from "./fonts";
+import fonts, { canvasFonts } from "./fonts";
 import { entityPreload } from "./api/entityPreload";
 
 const Grid = lazy(() => import("./pages/Grid"));
@@ -38,6 +43,8 @@ const urlParams = new URLSearchParams(window.location.search);
 let numImageWorkers = 3;
 const numWorkers = urlParams.get("numImageWorkers");
 const screenSize = urlParams.get("size") || "default";
+const rendererMode = urlParams.get("mode") || "webgl";
+
 if (numWorkers) {
   numImageWorkers = parseInt(numWorkers);
 }
@@ -55,10 +62,18 @@ Config.animationsEnabled = true;
 Config.fontSettings.fontFamily = "Roboto";
 Config.fontSettings.color = "#f6f6f6";
 Config.fontSettings.fontSize = 32;
+let fontEngines = [SdfTextRenderer];
+let renderEngine = WebGlCoreRenderer;
+// Ideally you'd do two separate builds for canvas and webgl to reduce bundle size.
+if (rendererMode === "canvas") {
+  fontEngines = [CanvasTextRenderer];
+  renderEngine = CanvasCoreRenderer;
+}
+
 Config.rendererOptions = {
   fpsUpdateInterval: logFps ? 1000 : 0,
-  fontEngines: [SdfTextRenderer],
-  renderEngine: WebGlCoreRenderer,
+  fontEngines,
+  renderEngine,
   inspector: Inspector,
   // textureMemory: {
   //   criticalThreshold: 80e6,
@@ -71,7 +86,7 @@ Config.rendererOptions = {
 };
 
 const { render } = createRenderer();
-loadFonts(fonts);
+loadFonts(rendererMode === "canvas" ? canvasFonts : fonts);
 render(() => (
   <HashRouter root={(props) => <App {...props} />}>
     <Route path="" component={Browse} />
