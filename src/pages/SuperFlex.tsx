@@ -103,7 +103,7 @@ export default () => {
           <For each={Items}>
             {(item, index) => (
               <Text style={SpecialFont} fontSize={24}>
-                {item} <Show when={lazyShow()}>Add Text</Show>
+                {item} {lazyShow() ? "Add Text" : ""}
               </Text>
             )}
           </For>

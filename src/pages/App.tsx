@@ -9,6 +9,7 @@ import Background from "../components/Background";
 import NavDrawer from "../components/NavDrawer/NavDrawer";
 import { FPSCounter, setupFPS } from "@lightningtv/solid-ui";
 import { createEffect, createSignal, onCleanup } from "solid-js";
+import { KeyMap } from "@lightningtv/core/focusManager";
 
 declare module "@lightningtv/solid" {
   // Augment the FocusManager KeyMap interface with our custom keys
@@ -37,7 +38,7 @@ const App = (props) => {
     Up: ["ArrowUp", 38],
     Down: ["ArrowDown", 40],
     Enter: ["Enter", 13],
-  });
+  } as unknown as KeyMap);
   useMouse();
   const announcer = useAnnouncer();
   announcer.enabled = false;
@@ -88,7 +89,7 @@ const App = (props) => {
 
   return (
     <View
-      ref={window.APP}
+      ref={window.APP as any}
       onAnnouncer={() => (announcer.enabled = !announcer.enabled)}
       onLast={() => history.back()}
       onMenu={() => navigate("/")}

@@ -57,7 +57,7 @@ const Entity = (props) => {
   }
 
   function onEnter(this: ElementNode) {
-    let entity = this.children.find((c) => c.states!.has("focus"));
+    let entity = this.children.find((c) => c.states.has("focus"));
     assertTruthy(entity && entity.href);
     navigate(entity.href as string);
   }

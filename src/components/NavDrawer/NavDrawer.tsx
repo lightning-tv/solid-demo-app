@@ -4,11 +4,12 @@ import {
   Text,
   IntrinsicNodeProps,
   ElementNode,
+  Styles,
+  NodeStyles,
 } from "@lightningtv/solid";
 import { Column } from "@lightningtv/solid-ui";
 import styles from "./NavDrawer.styles";
 import Icon from "../Icon";
-import theme from "theme";
 
 interface NavButtonProps extends IntrinsicNodeProps {
   icon: string;
@@ -40,16 +41,16 @@ function NavButton(props: NavButtonProps) {
 }
 
 export default function NavDrawer(props) {
-  let backdrop;
+  let backdrop: ElementNode | undefined;
   const navigate = useNavigate();
   function onFocus(this: ElementNode) {
-    backdrop.states.add("focus");
+    backdrop!.states.add("focus");
     this.children.forEach((c) => c.states!.add("active"));
     this.children[this.selected || 0].setFocus();
   }
 
   function onBlur(this: ElementNode) {
-    backdrop.states.remove("focus");
+    backdrop!.states.remove("focus");
     this.selected = 0;
     this.children.forEach((c) => c.states!.remove("active"));
   }

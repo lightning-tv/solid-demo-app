@@ -1,10 +1,4 @@
-import {
-  ElementNode,
-  IntrinsicNodeStyleProps,
-  Text,
-  View,
-  hexColor,
-} from "@lightningtv/solid";
+import { ElementNode, Text, View, hexColor } from "@lightningtv/solid";
 import { Column, Row } from "@lightningtv/solid-ui";
 import { createSignal, onMount } from "solid-js";
 import { setGlobalBackground } from "../state";
@@ -17,7 +11,7 @@ const FlexColumnPage = () => {
     y: 100,
     height: 880,
     color: hexColor("00000000"),
-  } satisfies IntrinsicNodeStyleProps;
+  } as const;
 
   const ColumnStyles = {
     display: "flex",
@@ -26,7 +20,7 @@ const FlexColumnPage = () => {
     color: "#4dabf5",
     height: 850,
     width: 60,
-  } satisfies IntrinsicNodeStyleProps;
+  } as const;
 
   const rowTitle = {
     fontSize: 44,

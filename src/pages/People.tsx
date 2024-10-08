@@ -14,13 +14,17 @@ import { useNavigate } from "@solidjs/router";
 import theme from "theme";
 import styles from "../styles";
 import * as provider from "../api/providers/people";
+import { Tile } from "../api/formatters/ItemFormatter";
 
 const People = () => {
   const params = useParams();
   const navigate = useNavigate();
 
   const [data] = createResource(() => ({ ...params }), provider.getInfo);
-  const [credits] = createResource(() => ({ ...params }), provider.getCredits);
+  const [credits] = createResource<any, Tile[]>(
+    () => ({ ...params }),
+    provider.getCredits
+  );
 
   const Backdrop = {
     color: "#000000",
