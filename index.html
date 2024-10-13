@@ -1,28 +1,16 @@
 <!doctype html>
 <html>
-  <head>
-    <title>Solid Demo</title>
-    <meta charset="UTF-8" />
-    <!-- Don't inline styles for Tizen CSP rules -->
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
 
-  <body>
-    <div id="app"></div>
-    <video
-      id="video"
-      width="640"
-      hidden
-      class="center-element"
-      poster="//shaka-player-demo.appspot.com/assets/poster.jpg"
-      controls
-      autoplay
-    ></video>
-    <script type="module" src="./src/index.tsx"></script>
-    <script
-      src="https://ajax.googleapis.com/ajax/libs/shaka-player/4.7.0/shaka-player.compiled.js"
-      defer
-    ></script>
-    <script type="module" src="./src/video.js" defer></script>
-  </body>
+<head>
+  <title>Solid Demo</title>
+  <meta charset="UTF-8" />
+  <!-- Don't inline styles for Tizen CSP rules -->
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <div id="app"></div>
+  <script type="module" src="./src/index.tsx"></script>
+</body>
+
 </html>

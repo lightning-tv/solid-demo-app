@@ -48,6 +48,9 @@ importers:
       proxy-polyfill:
         specifier: ^0.3.2
         version: 0.3.2
+      shaka-player:
+        specifier: ^4.11.7
+        version: 4.11.7
       solid-js:
         specifier: ^1.9.1
         version: 1.9.1
@@ -1297,6 +1300,9 @@ packages:
   email-addresses@5.0.0:
     resolution: {integrity: sha512-4OIPYlA6JXqtVn8zpHpGiI7vE6EQOAg16aGnDMIAlZVinnoZ8208tW1hAbjWydgN/4PLTT9q+O1K6AH/vALJGw==}
 
+  eme-encryption-scheme-polyfill@2.1.5:
+    resolution: {integrity: sha512-z9BKXV4TCYjmar0wiZLObZ0J8HE13VIg7Zq/iyPWdbEfROtxVXEJalknWKtBR5XNezzy15/zWS964TGbcAWlPg==}
+
   emoji-regex@10.4.0:
     resolution: {integrity: sha512-EC+0oUMY1Rqm4O6LLrgjtYDvcVYTy7chDnM4Q7030tP4Kwj3u/pR6gP9ygnp2CJMK5Gq+9Q2oqmrFJAz01DXjw==}
 
@@ -1824,6 +1830,10 @@ packages:
   seroval@1.1.1:
     resolution: {integrity: sha512-rqEO6FZk8mv7Hyv4UCj3FD3b6Waqft605TLfsCe/BiaylRpyyMC0b+uA5TJKawX3KzMrdi3wsLbCaLplrQmBvQ==}
     engines: {node: '>=10'}
+
+  shaka-player@4.11.7:
+    resolution: {integrity: sha512-jNsdQd4pa24w2QwXHGNBs8MQ33YajYiZclWaSuGt+dLJ7/D9+NG1LJQGnTrGd0G1aDdbEzmEpppG3ic4OsGpyw==}
+    engines: {node: '>=14'}
 
   shebang-command@2.0.0:
     resolution: {integrity: sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==}
@@ -3500,6 +3510,8 @@ snapshots:
 
   email-addresses@5.0.0: {}
 
+  eme-encryption-scheme-polyfill@2.1.5: {}
+
   emoji-regex@10.4.0: {}
 
   emoji-regex@8.0.0: {}
@@ -4039,6 +4051,10 @@ snapshots:
       seroval: 1.1.1
 
   seroval@1.1.1: {}
+
+  shaka-player@4.11.7:
+    dependencies:
+      eme-encryption-scheme-polyfill: 2.1.5
 
   shebang-command@2.0.0:
     dependencies:

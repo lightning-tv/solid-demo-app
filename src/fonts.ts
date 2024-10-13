@@ -24,6 +24,14 @@ export default [
   },
   atlasDataUrl: basePath + 'fonts/Roboto-Regular.msdf.json',
   atlasUrl: basePath + 'fonts/Roboto-Regular.msdf.png',
+} as const,
+{ type:    'msdf',
+  fontFamily: 'Raleway',
+  descriptors: {
+    weight: 800,
+  },
+  atlasDataUrl: basePath + 'fonts/Raleway-ExtraBold.msdf.json',
+  atlasUrl: basePath + 'fonts/Raleway-ExtraBold.msdf.png',
 } as const
 ];
 

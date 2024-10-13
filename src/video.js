@@ -1,71 +1,93 @@
-// Documentation from Shaka player:
-// https://shaka-player-demo.appspot.com/docs/api/tutorial-basic-usage.html
+import shaka from "shaka-player";
 
-const manifestUri =
-  "https://storage.googleapis.com/shaka-demo-assets/angel-one/dash.mpd";
+let player;
+let videoElement;
 
-function initApp() {
-  // Install built-in polyfills to patch browser incompatibilities.
-  shaka.polyfill.installAll();
+export const state = {
+  playingState: false,
+};
 
-  // Check to see if the browser supports the basic APIs Shaka needs.
-  if (shaka.Player.isBrowserSupported()) {
-    // Everything looks good!
-    initPlayer();
-  } else {
-    // This browser does not have the minimum set of APIs we need.
-    console.error("Browser not supported!");
+const init = async (element) => {
+  shaka.polyfill.installAll(); // polyfilling for devices that need it.
+
+  videoElement = element;
+
+  if (!videoElement) {
+    videoElement = document.createElement("video");
+
+    videoElement.style.cssText =
+      "position: absolute; top: 0; left: 0; z-index: -1";
+
+    videoElement.width = window.innerWidth;
+    videoElement.height = window.innerHeight;
+
+    player = new shaka.Player();
+    await player.attach(videoElement);
+
+    videoElement.autoplay = false;
+
+    player.addEventListener("error", (err) => {
+      console.error(err);
+    });
+    document.body.insertBefore(videoElement, document.body.firstChild);
   }
-}
-
-async function initPlayer() {
-  // Create a Player instance.
-  const video = document.getElementById("video");
-  const player = new shaka.Player();
-  await player.attach(video);
-
-  // Attach player to the window to make it easy to access in the JS console.
-  window.player = player;
-
-  // Listen for error events.
-  player.addEventListener("error", onErrorEvent);
-
-  // Try to load a manifest.
-  // This is an asynchronous process.
-  try {
-    await player.load(manifestUri);
-    // This runs if the asynchronous load is successful.
-    console.log("The video has now been loaded!");
-  } catch (e) {
-    // onError is executed if the asynchronous load fails.
-    onError(e);
+};
+/**
+ * Loads the player.
+ * @param {Object} config - The player configuration.
+ * @returns {Promise<void>}
+ */
+const load = async (config) => {
+  if (!player || !videoElement) {
+    throw "Player not initialized yet";
   }
-}
 
-function onErrorEvent(event) {
-  // Extract the shaka.util.Error object from the event.
-  onError(event.detail);
-}
+  await player.load(config.streamUrl);
+};
 
-function onError(error) {
-  // Log the error.
-  console.error("Error code", error.code, "object", error);
-}
+const play = () => {
+  videoElement.play().then(() => {
+    state.playingState = true;
+  });
+};
 
-export function playVideo() {
-  const video = document.getElementById("video");
-  video.hidden = false;
-  // Needs delay from hidden to play in Chrome
-  setTimeout(() => video.play(), 50);
-  video.focus();
-  return video;
-}
+const pause = () => {
+  videoElement.pause();
+  state.playingState = false;
+};
 
-export function closeVideo() {
-  const video = document.getElementById("video");
-  video.hidden = true;
-  video.pause();
-  return video;
-}
+const destroy = async () => {
+  await player.destroy();
 
-//document.addEventListener("DOMContentLoaded", initApp);
+  player = null;
+  videoElement.remove();
+  videoElement = null;
+};
+
+const getCurrentTime = () => {
+  return videoElement.currentTime;
+};
+
+const getVideoDuration = () => {
+  return videoElement.duration;
+};
+
+const getTimeFormat = () => {
+  let secondsToMmSs = (seconds) =>
+    new Date(seconds * 1000).toISOString().substr(14, 5);
+  return `${secondsToMmSs(videoElement.currentTime)} : ${secondsToMmSs(
+    Math.floor(videoElement.duration)
+  )}`;
+};
+
+export default {
+  init,
+  load,
+  play,
+  pause,
+  getCurrentTime,
+  getVideoDuration,
+  getTimeFormat,
+  state,
+  destroy,
+};

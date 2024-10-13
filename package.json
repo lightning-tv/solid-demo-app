@@ -31,6 +31,7 @@
     "@solidjs/router": "^0.14.6",
     "browserlist": "^1.0.1",
     "proxy-polyfill": "^0.3.2",
+    "shaka-player": "^4.11.7",
     "solid-js": "^1.9.1",
     "vite-plugin-babel": "^1.2.0",
     "vitest": "^2.1.2",

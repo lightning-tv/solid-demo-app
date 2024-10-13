@@ -22,6 +22,7 @@ export interface Tile {
   href: string;
   shortTitle: string;
   title: string;
+  overview: string;
   item: unknown;
   entityInfo: {
     type: string;
@@ -42,6 +43,7 @@ export function convertItemsToTiles(items: any[] = []): Tile[] {
     href: `/entity/${item.media_type || "people"}/${item.id}`,
     shortTitle: truncateString(item.title || item.name, 30),
     title: item.title || item.name,
+    overview: item.overview,
     item,
     entityInfo: {
       type: item.media_type || "people",

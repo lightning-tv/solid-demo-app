@@ -61,6 +61,11 @@ const Portal = () => {
       description: "Comparing different Transitions",
     },
     {
+      title: "TMDB",
+      id: "tmdb",
+      description: "TMDB Example",
+    },
+    {
       title: "Components",
       id: "components",
       description: "Reusable Components",

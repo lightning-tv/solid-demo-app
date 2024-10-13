@@ -14,6 +14,8 @@ import { Route } from "@solidjs/router";
 import { lazy } from "solid-js";
 import App from "./pages/App";
 import Browse from "./pages/Browse";
+import TMDB from "./pages/TMDB";
+import { tmdbData } from "./api/tmdbData";
 import NotFound from "./pages/NotFound";
 import fonts, { canvasFonts } from "./fonts";
 import { entityPreload } from "./api/entityPreload";
@@ -92,6 +94,7 @@ render(() => (
     <Route path="" component={Browse} />
     <Route path="examples" component={Portal} />
     <Route path="browse/:filter" component={Browse} />
+    <Route path="tmdb" component={TMDB} preload={tmdbData} />
     <Route path="grid" component={Grid} />
     <Route path="text" component={TextPage} />
     <Route path="login" component={LoginPage} />

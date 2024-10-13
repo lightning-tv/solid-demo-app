@@ -14,7 +14,7 @@ import { setGlobalBackground } from "../state";
 import ContentBlock from "../components/ContentBlock";
 import { useNavigate } from "@solidjs/router";
 import styles from "../styles";
-import { playVideo, closeVideo } from "../video";
+import * as player from "../video";
 
 const Entity = (props) => {
   const [backdropAlpha, setBackdropAlpha] = createSignal(0);
@@ -63,7 +63,7 @@ const Entity = (props) => {
   }
 
   function onEscape() {
-    closeVideo();
+    //closeVideo();
     // Set focus back to lightning app
     document.getElementsByTagName("canvas")[0].focus();
     entityActions.setFocus();
@@ -71,8 +71,8 @@ const Entity = (props) => {
   }
 
   function onEnterTrailer() {
-    const video = playVideo();
-    setActiveElement(video);
+    //const video = playVideo();
+    //setActiveElement(video);
     setBackdropAlpha(0.9);
   }
 
