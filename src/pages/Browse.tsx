@@ -27,6 +27,7 @@ const Browse = () => {
   const [columnY, setcolumnY] = createSignal(0);
   const [heroContent, setHeroContent] = createSignal({});
   const navigate = useNavigate();
+  let firstRun = true;
 
   const provider = createMemo(() => {
     return createInfiniteScroll(browseProvider(params.filter || "all"));
@@ -46,6 +47,21 @@ const Browse = () => {
       activeElement,
       (elm) => {
         if (!elm) return;
+
+        if (firstRun) {
+          // no content set yet, set right away
+          if (elm.backdrop) {
+            setGlobalBackground(elm.backdrop);
+          }
+
+          if (elm.heroContent) {
+            setHeroContent(elm.heroContent);
+          }
+
+          firstRun = false;
+          return;
+        }
+
         if (elm.backdrop) {
           delayedBackgrounds(elm.backdrop);
         }

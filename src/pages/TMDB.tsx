@@ -17,7 +17,8 @@ const TMDB = (props) => {
   const [offsetY, setoffsetY] = createSignal(500);
   const [heroContent, setHeroContent] = createSignal({});
   const navigate = useNavigate();
-  let contentBlock;
+  let contentBlock,
+    firstRun = true;
 
   const delayedBackgrounds = debounce(
     (img: string) => setGlobalBackground(img),
@@ -33,6 +34,21 @@ const TMDB = (props) => {
       activeElement,
       (elm) => {
         if (!elm) return;
+
+        if (firstRun) {
+          // no content set yet, set right away
+          if (elm.backdrop) {
+            setGlobalBackground(elm.backdrop);
+          }
+
+          if (elm.heroContent) {
+            setHeroContent(elm.heroContent);
+          }
+
+          firstRun = false;
+          return;
+        }
+
         if (elm.backdrop) {
           delayedBackgrounds(elm.backdrop);
         }
