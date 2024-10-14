@@ -1,3 +1,4 @@
+import h from "solid-js/h";
 import api, { getImageUrl } from ".";
 import { convertItemsToTiles } from "./formatters/ItemFormatter";
 import { createResource } from "solid-js";
@@ -36,6 +37,19 @@ type RowItem = {
     type: "Poster" | "Hero" | "PosterTitle";
     height: number;
 };
+
+export function destroyData() {
+  const heroRow = {
+    title: "Best Adventure and Action movies",
+    items: createResource(() => fetchGenreMovies(["adventure", "action"]))[0],
+    type: "Hero",
+    height: 800,
+  } as const;
+
+  return {
+    heroRow,
+  };
+}
 export function tmdbData() {
   const rows: RowItem[] = [];
 
@@ -69,12 +83,13 @@ export function tmdbData() {
     height: 400,
   });
 
-  rows.push({
+  const heroRow = {
     title: "Best Adventure and Action movies",
     items: createResource(() => fetchGenreMovies(["adventure", "action"]))[0],
     type: "Hero",
     height: 800,
-  });
+  } as const;
+  rows.push(heroRow);
 
   rows.push({
     title: "Best Documentaries",

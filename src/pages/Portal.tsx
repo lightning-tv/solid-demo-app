@@ -81,6 +81,11 @@ const Portal = () => {
       description: "Infinite Scroll Grid",
     },
     {
+      title: "Destroy",
+      id: "destroy",
+      description: "Using onDestroy to animate destruction",
+    },
+    {
       title: "Buttons",
       id: "buttons",
       description: "Demo a few buttons",
