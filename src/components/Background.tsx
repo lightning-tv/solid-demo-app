@@ -73,7 +73,7 @@ export default function Background() {
   createEffect(
     on(
       globalBackground,
-      (img: string) => {
+      (img: string | number) => {
         changeBackgrounds(img);
       },
       { defer: true }
