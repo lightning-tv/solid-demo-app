@@ -39,7 +39,7 @@ const App = (props) => {
     Down: ["ArrowDown", 40],
     Enter: ["Enter", 13],
   } as unknown as KeyMap);
-  // useMouse();
+  useMouse();
   const announcer = useAnnouncer();
   announcer.enabled = false;
   const navigate = useNavigate();
