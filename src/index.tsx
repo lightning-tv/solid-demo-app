@@ -18,7 +18,7 @@ import TMDB from "./pages/TMDB";
 import DestroyPage from "./pages/Destroy";
 import { tmdbData, destroyData } from "./api/tmdbData";
 import NotFound from "./pages/NotFound";
-import fonts, { canvasFonts } from "./fonts";
+import fonts from "./fonts";
 import { entityPreload } from "./api/entityPreload";
 
 const Grid = lazy(() => import("./pages/Grid"));
@@ -65,19 +65,11 @@ Config.animationsEnabled = true;
 Config.fontSettings.fontFamily = "Roboto";
 Config.fontSettings.color = "#f6f6f6";
 Config.fontSettings.fontSize = 32;
-let fontEngines = [SdfTextRenderer];
-let renderEngine = WebGlCoreRenderer;
-// Ideally you'd do two separate builds for canvas and webgl to reduce bundle size.
-if (rendererMode === "canvas") {
-  fontEngines = [CanvasTextRenderer];
-  renderEngine = CanvasCoreRenderer;
-}
+// Config.focusDebug = true;
 
 Config.rendererOptions = {
   fpsUpdateInterval: logFps ? 1000 : 0,
-  fontEngines,
-  renderEngine,
-  inspector: Inspector,
+  //inspector: Inspector,
   // textureMemory: {
   //   criticalThreshold: 80e6,
   // },
@@ -88,8 +80,17 @@ Config.rendererOptions = {
   devicePhysicalPixelRatio: 1,
 };
 
+// Ideally you'd do two separate builds for canvas and webgl to reduce bundle size.
+if (rendererMode === "canvas") {
+  Config.rendererOptions.fontEngines = [CanvasTextRenderer];
+  Config.rendererOptions.renderEngine = CanvasCoreRenderer;
+} else {
+  Config.rendererOptions.fontEngines = [SdfTextRenderer];
+  Config.rendererOptions.renderEngine = WebGlCoreRenderer;
+}
+
 const { render } = createRenderer();
-loadFonts(rendererMode === "canvas" ? canvasFonts : fonts);
+loadFonts(fonts);
 render(() => (
   <HashRouter root={(props) => <App {...props} />}>
     <Route path="" component={Browse} />

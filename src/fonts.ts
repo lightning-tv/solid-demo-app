@@ -1,3 +1,5 @@
+import { WebTrFontFaceOptions } from "@lightningtv/solid";
+
 const basePath = import.meta.env.BASE_URL;
 
 export default [ 
@@ -32,9 +34,8 @@ export default [
   },
   atlasDataUrl: basePath + 'fonts/Raleway-ExtraBold.msdf.json',
   atlasUrl: basePath + 'fonts/Raleway-ExtraBold.msdf.png',
-} as const
-];
-
-export const canvasFonts = [{ fontFamily: 'Roboto',
+} as const,
+{ fontFamily: 'Roboto',
   fontUrl: basePath + 'fonts/Roboto-Regular.ttf',
-} as const];
+} as WebTrFontFaceOptions
+];

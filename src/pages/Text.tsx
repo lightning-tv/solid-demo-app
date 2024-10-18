@@ -34,7 +34,7 @@ const TextPage = () => {
   const Title = {
     fontSize: 42,
     fontWeight: "bold",
-  };
+  } as const;
 
   const SubTitle = {
     fontSize: 38,

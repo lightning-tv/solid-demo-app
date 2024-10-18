@@ -10,6 +10,7 @@ import { createSignal, For, Index } from "solid-js";
 import styles, { buttonStyles } from "../styles";
 import { type Tile } from "../api/formatters/ItemFormatter";
 import { INode } from "@lightningtv/solid";
+import { LazyUp } from "@lightningtv/solid/primitives";
 
 export function Thumbnail(props: IntrinsicNodeProps) {
   function changeBackground(node: INode) {
@@ -73,13 +74,18 @@ export function TitleRow(props: TileRowProps) {
       >
         {props.title}
       </Text>
-      <Row y={50} height={props.height}>
-        <For each={props.items}>
-          {(item) => (
-            <Dynamic component={typeToComponent[props.row.type]} {...item} />
-          )}
-        </For>
-      </Row>
+      <LazyUp
+        component={Row}
+        direction="row"
+        upCount={props.row.type === "Hero" ? 3 : 10}
+        each={props.items}
+        y={50}
+        height={props.height}
+      >
+        {(item) => (
+          <Dynamic component={typeToComponent[props.row.type]} {...item()} />
+        )}
+      </LazyUp>
     </View>
   );
 }
@@ -127,9 +133,9 @@ const posterTitleStyles = {
     y: heroTransition,
     alpha: heroTransition,
   },
-};
+} as const;
 
-export function PosterTitle(props: NodeProps) {
+export function PosterTitle(props: NodeProps & { title: string }) {
   return (
     <View
       {...props}
@@ -162,7 +168,14 @@ const heroTextStyles = {
   contain: "width",
 } as const;
 
-export function Hero(props: NodeProps) {
+export function Hero(
+  props: NodeProps & {
+    src: string;
+    backdrop: string;
+    title: string;
+    overview: string;
+  }
+) {
   const [hasFocus, setHasFocus] = createSignal(false);
   return (
     <View

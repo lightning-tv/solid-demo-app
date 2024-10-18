@@ -5,6 +5,7 @@ import {
   activeElement,
   assertTruthy,
 } from "@lightningtv/solid";
+import { LazyUp } from "@lightningtv/solid/primitives";
 import { Column } from "@lightningtv/solid-ui";
 import { useNavigate } from "@solidjs/router";
 import { TitleRow } from "../components";
@@ -91,28 +92,29 @@ const TMDB = (props) => {
         content={heroContent()}
       />
       <View y={offsetY()} transition={{ y: yTransition }}>
-        <Column
+        <LazyUp
+          component={Column}
+          direction="column"
+          upCount={3}
+          each={props.data.rows}
           id="BrowseColumn"
           plinko
-          announce="All Trending - Week"
           scroll="always"
           onSelectedChanged={onSelectedChanged}
           autofocus={props.data.rows[0].items()}
-          style={styles.Column}
           gap={40}
           transition={{ y: yTransition }}
+          style={styles.Column}
         >
-          <For each={props.data.rows}>
-            {(row) => (
-              <TitleRow
-                row={row}
-                title={row.title}
-                height={row.height}
-                items={row.items()}
-              />
-            )}
-          </For>
-        </Column>
+          {(row) => (
+            <TitleRow
+              row={row()}
+              title={row().title}
+              height={row().height}
+              items={row().items()}
+            />
+          )}
+        </LazyUp>
       </View>
     </>
   );
