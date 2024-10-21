@@ -40,6 +40,7 @@ export default {
     height: 70,
     width: 100,
     borderRadius: 8,
+    color: 0,
     focus: {
       color: "#424242",
     },
