@@ -125,7 +125,6 @@ const posterTitleStyles = {
   maxLines: 2,
   alpha: 0,
   focus: {
-    scale: 1.1,
     alpha: 1,
     y: 288,
   },
