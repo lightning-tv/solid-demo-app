@@ -50,8 +50,10 @@ const Default = () => {
         y={y()}
         color="#93c5fd"
         transition={{ y: { duration: 1000 } }}
-        onAnimationStarted={onStart}
-        onAnimationFinished={onEnd}
+        onAnimation={{
+          animating: onStart,
+          stopped: onEnd,
+        }}
       />
 
       {/* transition with custom duration and wait */}
@@ -62,8 +64,10 @@ const Default = () => {
         y={y()}
         color="#60a5fa"
         transition={{ y: { duration: 500, delay: 1000 } }}
-        onAnimationStarted={onStart}
-        onAnimationFinished={onEnd}
+        onAnimation={{
+          animating: onStart,
+          stopped: onEnd,
+        }}
       />
 
       {/* transition with built-in easing function */}
@@ -74,7 +78,9 @@ const Default = () => {
         y={y()}
         color="#3b82f6"
         transition={{ y: { duration: 500, easing: "ease-in-out" } }}
-        onAnimationFinished={onEnd}
+        onAnimation={{
+          stopped: onEnd,
+        }}
       />
 
       {/* transition with custom duration and a built-in easing function */}
@@ -85,7 +91,9 @@ const Default = () => {
         y={y()}
         color="#2563eb"
         transition={{ y: { duration: 3000, easing: "ease-in-out-back" } }}
-        onAnimationFinished={onEnd}
+        onAnimation={{
+          stopped: onEnd,
+        }}
       />
 
       {/* transition with custom duration and a custom bezier function */}

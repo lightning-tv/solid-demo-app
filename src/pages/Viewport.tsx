@@ -5,7 +5,7 @@ import { setGlobalBackground } from "../state";
 export default () => {
   let ball, invervalTimer;
 
-  const [ballStatus, setBallStatus] = createSignal([]);
+  const [ballStatus, setBallStatus] = createSignal<string[]>([]);
 
   const styleBall = {
     width: 100,
@@ -63,12 +63,12 @@ export default () => {
         autofocus
         style={styleBall}
         ref={ball}
-        onEvents={[
-          ["inBounds", (elm) => logEvent("inBounds", elm)],
-          ["outOfBounds", (elm) => logEvent("outOfBounds", elm)],
-          ["inViewport", (elm) => logEvent("inViewport", elm)],
-          ["outOfViewport", (elm) => logEvent("outOfViewport", elm)],
-        ]}
+        onEvent={{
+          inBounds: (elm) => logEvent("inBounds", elm),
+          outOfBounds: (elm) => logEvent("outOfBounds", elm),
+          inViewport: (elm) => logEvent("inViewport", elm),
+          outOfViewport: (elm) => logEvent("outOfViewport", elm),
+        }}
       />
     </View>
   );
