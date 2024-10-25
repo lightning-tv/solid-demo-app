@@ -13,7 +13,7 @@ import {
   assertTruthy,
 } from "@lightningtv/solid";
 import { Column } from "@lightningtv/solid-ui";
-import { useNavigate } from "@solidjs/router";
+import { useNavigate, usePreloadRoute } from "@solidjs/router";
 import { TileRow } from "../components";
 import styles from "../styles";
 import { setGlobalBackground } from "../state";
@@ -23,6 +23,7 @@ import { debounce } from "@solid-primitives/scheduled";
 
 const Browse = (props) => {
   const [columnY, setcolumnY] = createSignal(0);
+  const preload = usePreloadRoute();
   const [heroContent, setHeroContent] = createSignal({});
   const navigate = useNavigate();
   let firstRun = true;
@@ -56,8 +57,15 @@ const Browse = (props) => {
             setHeroContent(elm.heroContent);
           }
 
+          preload(`/browse/tv`, { preloadData: true });
+          preload(`/browse/movie`, { preloadData: true });
+
           firstRun = false;
           return;
+        }
+
+        if (elm.href) {
+          preload(elm.href, { preloadData: true });
         }
 
         if (elm.backdrop) {
