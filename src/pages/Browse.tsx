@@ -13,24 +13,22 @@ import {
   assertTruthy,
 } from "@lightningtv/solid";
 import { Column } from "@lightningtv/solid-ui";
-import { useNavigate, useParams } from "@solidjs/router";
+import { useNavigate } from "@solidjs/router";
 import { TileRow } from "../components";
 import styles from "../styles";
 import { setGlobalBackground } from "../state";
-import browseProvider from "../api/providers/browse";
 import { createInfiniteScroll } from "../components/pagination";
 import ContentBlock from "../components/ContentBlock";
 import { debounce } from "@solid-primitives/scheduled";
 
-const Browse = () => {
-  const params = useParams();
+const Browse = (props) => {
   const [columnY, setcolumnY] = createSignal(0);
   const [heroContent, setHeroContent] = createSignal({});
   const navigate = useNavigate();
   let firstRun = true;
 
   const provider = createMemo(() => {
-    return createInfiniteScroll(browseProvider(params.filter || "all"));
+    return createInfiniteScroll(props.data());
   });
 
   const delayedBackgrounds = debounce(

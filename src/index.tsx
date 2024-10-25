@@ -19,6 +19,7 @@ import DestroyPage from "./pages/Destroy";
 import { tmdbData, destroyData } from "./api/tmdbData";
 import NotFound from "./pages/NotFound";
 import fonts from "./fonts";
+import { browsePreload } from "./api/browsePreload";
 import { entityPreload } from "./api/entityPreload";
 
 const Grid = lazy(() => import("./pages/Grid"));
@@ -93,9 +94,9 @@ const { render } = createRenderer();
 loadFonts(fonts);
 render(() => (
   <HashRouter root={(props) => <App {...props} />}>
-    <Route path="" component={Browse} />
+    <Route path="" component={Browse} preload={browsePreload} />
     <Route path="examples" component={Portal} />
-    <Route path="browse/:filter" component={Browse} />
+    <Route path="browse/:filter" component={Browse} preload={browsePreload} />
     <Route path="tmdb" component={TMDB} preload={tmdbData} />
     <Route path="destroy" component={DestroyPage} preload={destroyData} />
     <Route path="grid" component={Grid} />

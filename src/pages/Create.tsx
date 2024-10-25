@@ -2,6 +2,7 @@ import {
   IntrinsicNodeStyleProps,
   Text,
   View,
+  combineStyles,
   hexColor,
 } from "@lightningtv/solid";
 import { Show, children, createSignal, onMount } from "solid-js";
@@ -76,7 +77,10 @@ const CreatePage = () => {
     // This causes a parent not rendered error since we're rendering it twice in the template
     const resolved = children(() => props.children);
     return (
-      <View {...props} style={[someOtherStyle, props.style, [styleChild]]}>
+      <View
+        {...props}
+        style={combineStyles(someOtherStyle, props.style, styleChild)}
+      >
         <View id="child1" width={100} height={100} color={"#ff0000"} y={25}>
           {resolved()}
           <View
@@ -174,7 +178,7 @@ const CreatePage = () => {
       <ChildTest
         autofocus
         ref={childRef}
-        style={[childTestPassedStyles2, childTestPassedStyles]}
+        style={combineStyles(childTestPassedStyles2, childTestPassedStyles)}
       >
         <Text>Child Test</Text>
       </ChildTest>
