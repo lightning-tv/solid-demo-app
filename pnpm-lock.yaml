@@ -34,8 +34,8 @@ importers:
         specifier: 2.4.2
         version: 2.4.2(@lightningjs/renderer@2.4.0)(@solidjs/router@0.14.10(patch_hash=hnhvc47baca25dviao74hiryf4)(solid-js@1.9.2))(solid-js@1.9.2)
       '@lightningtv/solid-ui':
-        specifier: ^0.30.2
-        version: 0.30.2(@lightningtv/core@2.4.3(@lightningjs/renderer@2.4.0))(@lightningtv/solid@2.4.2(@lightningjs/renderer@2.4.0)(@solidjs/router@0.14.10(patch_hash=hnhvc47baca25dviao74hiryf4)(solid-js@1.9.2))(solid-js@1.9.2))(solid-js@1.9.2)
+        specifier: ^0.30.4
+        version: 0.30.4(@lightningtv/core@2.4.3(@lightningjs/renderer@2.4.0))(@lightningtv/solid@2.4.2(@lightningjs/renderer@2.4.0)(@solidjs/router@0.14.10(patch_hash=hnhvc47baca25dviao74hiryf4)(solid-js@1.9.2))(solid-js@1.9.2))(solid-js@1.9.2)
       '@solid-primitives/scheduled':
         specifier: ^1.4.3
         version: 1.4.3(solid-js@1.9.2)
@@ -786,8 +786,8 @@ packages:
   '@lightningtv/l3-ui-theme-base@0.4.1':
     resolution: {integrity: sha512-c179cg8Bb2PjGB1FNafac5Fc7h1Cu2NMBYZW/4LEWWEQfRHaxVLX0jYVHlHBKrxgBWR5tQBjvPGXz+y3dVsBWQ==}
 
-  '@lightningtv/solid-ui@0.30.2':
-    resolution: {integrity: sha512-lIhDCmsUwnNenFbek3yKD4jzzmYX7Sx7Tgf94h7QgrRMBCsaHtSfNGdjmQdHpwkiuXNwQHpxu9whdW37Cmh29Q==}
+  '@lightningtv/solid-ui@0.30.4':
+    resolution: {integrity: sha512-7RBMw+i6bVaYwlK9EdGq57S+/5UJTuRr11gj4l7isLyOsYi+gYqXCKspdKGDL3aiwvWfWXv9dMvzwkV2KQa+Ww==}
     peerDependencies:
       '@lightningtv/core': 2.4.3
       '@lightningtv/solid': 2.4.2
@@ -2896,7 +2896,7 @@ snapshots:
 
   '@lightningtv/l3-ui-theme-base@0.4.1': {}
 
-  '@lightningtv/solid-ui@0.30.2(@lightningtv/core@2.4.3(@lightningjs/renderer@2.4.0))(@lightningtv/solid@2.4.2(@lightningjs/renderer@2.4.0)(@solidjs/router@0.14.10(patch_hash=hnhvc47baca25dviao74hiryf4)(solid-js@1.9.2))(solid-js@1.9.2))(solid-js@1.9.2)':
+  '@lightningtv/solid-ui@0.30.4(@lightningtv/core@2.4.3(@lightningjs/renderer@2.4.0))(@lightningtv/solid@2.4.2(@lightningjs/renderer@2.4.0)(@solidjs/router@0.14.10(patch_hash=hnhvc47baca25dviao74hiryf4)(solid-js@1.9.2))(solid-js@1.9.2))(solid-js@1.9.2)':
     dependencies:
       '@lightningjs/renderer': 2.4.0
       '@lightningtv/core': 2.4.3(@lightningjs/renderer@2.4.0)

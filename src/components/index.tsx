@@ -77,7 +77,8 @@ export function TitleRow(props: TileRowProps) {
       <LazyUp
         component={Row}
         direction="row"
-        upCount={props.row.type === "Hero" ? 3 : 10}
+        gap={props.row.type === "Hero" ? 80 : 20}
+        upCount={props.row.type === "Hero" ? 3 : 11}
         each={props.items}
         y={50}
         height={props.height}
@@ -152,14 +153,13 @@ const heroStyles = {
   height: 720,
   scale: 1,
   zIndex: 2,
-  marginRight: 90,
   colorTop: "#fff",
   colorBottom: "#000",
   //borderRadius: 8,
   transition: {
     scale: heroTransition,
   },
-  focus: { scale: 1.1 },
+  focus: { scale: 1.05 },
 };
 
 const heroTextStyles = {
