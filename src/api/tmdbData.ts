@@ -57,7 +57,7 @@ export function tmdbData() {
     title: "Popular Movies",
     items: createResource(() => fetchPopular("movie"))[0],
     type: "Poster",
-    height: 300,
+    height: 328,
   };
 
   rows.push(featured);
@@ -66,7 +66,7 @@ export function tmdbData() {
     title: "Best Western movies",
     items: createResource(() => fetchGenreMovies(["Western"]))[0],
     type: "Hero",
-    height: 800,
+    height: 720,
   });
 
   rows.push({
@@ -87,7 +87,7 @@ export function tmdbData() {
     title: "Best Adventure and Action movies",
     items: createResource(() => fetchGenreMovies(["adventure", "action"]))[0],
     type: "Hero",
-    height: 800,
+    height: 720,
   } as const;
   rows.push(heroRow);
 

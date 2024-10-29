@@ -17,6 +17,7 @@ const FlexColumnPage = () => {
     display: "flex",
     flexDirection: "column",
     justifyContent: "flexStart",
+    //flexBoundary: "fixed",
     color: "#4dabf5",
     height: 850,
     width: 60,
@@ -77,6 +78,7 @@ const FlexColumnPage = () => {
           gap={gap}
           justifyContent={"flexEnd"}
           style={ColumnStyles}
+          debug
           onFocus={onFocus}
         >
           <Block />

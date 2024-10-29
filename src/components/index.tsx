@@ -67,18 +67,14 @@ const titleRowStyles = {
 export function TitleRow(props: TileRowProps) {
   return (
     <View height={props.height} forwardFocus={1} marginTop={30}>
-      <Text
-        skipFocus
-        style={titleRowStyles}
-        alpha={props.row.type === "Hero" ? 0 : 1}
-      >
+      <Text skipFocus style={titleRowStyles}>
         {props.title}
       </Text>
       <LazyUp
         component={Row}
         direction="row"
-        gap={props.row.type === "Hero" ? 80 : 20}
-        upCount={props.row.type === "Hero" ? 3 : 11}
+        gap={20}
+        upCount={11}
         each={props.items}
         y={50}
         height={props.height}
