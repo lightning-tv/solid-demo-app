@@ -77,7 +77,6 @@ export function TitleRow(props: TileRowProps) {
         upCount={11}
         each={props.items}
         y={50}
-        height={props.height}
       >
         {(item) => (
           <Dynamic component={typeToComponent[props.row.type]} {...item()} />
