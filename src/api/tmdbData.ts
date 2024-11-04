@@ -1,5 +1,4 @@
-import h from "solid-js/h";
-import api, { getImageUrl } from ".";
+import api from ".";
 import { convertItemsToTiles } from "./formatters/ItemFormatter";
 import { createResource } from "solid-js";
 
@@ -107,5 +106,6 @@ export function tmdbData() {
 
   return {
     featured,
-    rows};
+    rows
+  };
 }

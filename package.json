@@ -22,7 +22,7 @@
   "license": "ISC",
   "dependencies": {
     "@lightningjs/l3-ui-theme-base": "^0.3.3",
-    "@lightningjs/renderer": "^2.5.0",
+    "@lightningjs/renderer": "^2.5.1",
     "@lightningtv/core": "2.4.4",
     "@lightningtv/l3-ui-theme-base": "^0.4.1",
     "@lightningtv/solid": "2.4.4",

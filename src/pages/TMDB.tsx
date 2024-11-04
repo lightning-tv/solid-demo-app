@@ -38,25 +38,12 @@ const TMDB = (props) => {
         if (!elm) return;
 
         if (firstRun) {
-          // no content set yet, set right away
-          if (elm.backdrop) {
-            setGlobalBackground(elm.backdrop);
-          }
-
-          if (elm.heroContent) {
-            setHeroContent(elm.heroContent);
-          }
-
+          elm.backdrop && setGlobalBackground(elm.backdrop);
+          elm.heroContent && setHeroContent(elm.heroContent);
           firstRun = false;
-          return;
-        }
-
-        if (elm.backdrop) {
-          delayedBackgrounds(elm.backdrop);
-        }
-
-        if (elm.heroContent) {
-          delayedHero(elm.heroContent);
+        } else {
+          elm.backdrop && delayedBackgrounds(elm.backdrop);
+          elm.heroContent && delayedHero(elm.heroContent);
         }
       },
       { defer: true }
