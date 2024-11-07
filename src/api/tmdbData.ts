@@ -1,6 +1,6 @@
 import api from ".";
 import { convertItemsToTiles } from "./formatters/ItemFormatter";
-import { createResource } from "solid-js";
+import { createResource, createSignal } from "solid-js";
 
 const handleResults = (response) => {
   return response.then(({ results }) => {
@@ -52,14 +52,12 @@ export function destroyData() {
 export function tmdbData() {
   const rows: RowItem[] = [];
 
-  const featured: RowItem = {
+  rows.push({
     title: "Popular Movies",
     items: createResource(() => fetchPopular("movie"))[0],
     type: "Poster",
     height: 328,
-  };
-
-  rows.push(featured);
+  });
 
   rows.push({
     title: "Best Western movies",
@@ -105,7 +103,6 @@ export function tmdbData() {
   });
 
   return {
-    featured,
     rows
   };
 }

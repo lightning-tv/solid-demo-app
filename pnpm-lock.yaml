@@ -5,7 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@lightningtv/core': 2.4.4
+  '@lightningtv/core': 2.4.6
   '@lightningtv/solid': 2.4.4
   '@lightningjs/renderer': ^2.5.1
 
@@ -25,8 +25,8 @@ importers:
         specifier: ^2.5.1
         version: 2.5.1
       '@lightningtv/core':
-        specifier: 2.4.4
-        version: 2.4.4(@lightningjs/renderer@2.5.1)
+        specifier: 2.4.6
+        version: 2.4.6(@lightningjs/renderer@2.5.1)
       '@lightningtv/l3-ui-theme-base':
         specifier: ^0.4.1
         version: 0.4.1
@@ -35,7 +35,7 @@ importers:
         version: 2.4.4(@lightningjs/renderer@2.5.1)(@solidjs/router@0.14.10(patch_hash=hnhvc47baca25dviao74hiryf4)(solid-js@1.9.2))(solid-js@1.9.2)
       '@lightningtv/solid-ui':
         specifier: ^0.31.0
-        version: 0.31.0(@lightningtv/core@2.4.4(@lightningjs/renderer@2.5.1))(@lightningtv/solid@2.4.4(@lightningjs/renderer@2.5.1)(@solidjs/router@0.14.10(patch_hash=hnhvc47baca25dviao74hiryf4)(solid-js@1.9.2))(solid-js@1.9.2))(solid-js@1.9.2)
+        version: 0.31.0(@lightningtv/core@2.4.6(@lightningjs/renderer@2.5.1))(@lightningtv/solid@2.4.4(@lightningjs/renderer@2.5.1)(@solidjs/router@0.14.10(patch_hash=hnhvc47baca25dviao74hiryf4)(solid-js@1.9.2))(solid-js@1.9.2))(solid-js@1.9.2)
       '@solid-primitives/scheduled':
         specifier: ^1.4.3
         version: 1.4.3(solid-js@1.9.2)
@@ -778,8 +778,8 @@ packages:
     resolution: {integrity: sha512-zCnuMUBQG4BekEvXcutgPb9zZu2dxYX/hcNIE9ZGMC6Usm+p2FPSyhB3W8QqKHS64pP1hhWTcfoEO1rPKdK43Q==}
     engines: {node: '>= 20.9.0', npm: '>= 10.0.0', pnpm: '>= 8.9.2'}
 
-  '@lightningtv/core@2.4.4':
-    resolution: {integrity: sha512-XizRKEeqREm2bsCWXaLXbmDMrqqOri520nWjMgkDuz4Q7cRCV2uP0KTXHvb5eANAmWIfqB8sdgmwG54UWtMg9A==}
+  '@lightningtv/core@2.4.6':
+    resolution: {integrity: sha512-oAaonvipAbk7nxnatQHz2tNJtX9IMKX3SBIPEc/B9xLvOinbCCSfN9c30Vjg4JB4sZG9P3mtOLKidPsvN7ocsA==}
     peerDependencies:
       '@lightningjs/renderer': ^2.5.1
 
@@ -789,7 +789,7 @@ packages:
   '@lightningtv/solid-ui@0.31.0':
     resolution: {integrity: sha512-wABr+FP7CxRhaynqUcWVMPnWAXodelt+bkVHruV60IFf/qcMszowbmmz1T9DfsO7IbqlR1voI200zM6fkpLzqQ==}
     peerDependencies:
-      '@lightningtv/core': 2.4.4
+      '@lightningtv/core': 2.4.6
       '@lightningtv/solid': 2.4.4
       solid-js: '*'
 
@@ -2890,16 +2890,16 @@ snapshots:
 
   '@lightningjs/renderer@2.5.1': {}
 
-  '@lightningtv/core@2.4.4(@lightningjs/renderer@2.5.1)':
+  '@lightningtv/core@2.4.6(@lightningjs/renderer@2.5.1)':
     dependencies:
       '@lightningjs/renderer': 2.5.1
 
   '@lightningtv/l3-ui-theme-base@0.4.1': {}
 
-  '@lightningtv/solid-ui@0.31.0(@lightningtv/core@2.4.4(@lightningjs/renderer@2.5.1))(@lightningtv/solid@2.4.4(@lightningjs/renderer@2.5.1)(@solidjs/router@0.14.10(patch_hash=hnhvc47baca25dviao74hiryf4)(solid-js@1.9.2))(solid-js@1.9.2))(solid-js@1.9.2)':
+  '@lightningtv/solid-ui@0.31.0(@lightningtv/core@2.4.6(@lightningjs/renderer@2.5.1))(@lightningtv/solid@2.4.4(@lightningjs/renderer@2.5.1)(@solidjs/router@0.14.10(patch_hash=hnhvc47baca25dviao74hiryf4)(solid-js@1.9.2))(solid-js@1.9.2))(solid-js@1.9.2)':
     dependencies:
       '@lightningjs/renderer': 2.5.1
-      '@lightningtv/core': 2.4.4(@lightningjs/renderer@2.5.1)
+      '@lightningtv/core': 2.4.6(@lightningjs/renderer@2.5.1)
       '@lightningtv/solid': 2.4.4(@lightningjs/renderer@2.5.1)(@solidjs/router@0.14.10(patch_hash=hnhvc47baca25dviao74hiryf4)(solid-js@1.9.2))(solid-js@1.9.2)
       '@solid-primitives/refs': 1.0.8(solid-js@1.9.2)
       solid-js: 1.9.2
@@ -2907,7 +2907,7 @@ snapshots:
   '@lightningtv/solid@2.4.4(@lightningjs/renderer@2.5.1)(@solidjs/router@0.14.10(patch_hash=hnhvc47baca25dviao74hiryf4)(solid-js@1.9.2))(solid-js@1.9.2)':
     dependencies:
       '@lightningjs/renderer': 2.5.1
-      '@lightningtv/core': 2.4.4(@lightningjs/renderer@2.5.1)
+      '@lightningtv/core': 2.4.6(@lightningjs/renderer@2.5.1)
       '@solid-primitives/event-listener': 2.3.3(solid-js@1.9.2)
       '@solid-primitives/mouse': 2.0.20(solid-js@1.9.2)
       '@solid-primitives/scheduled': 1.4.3(solid-js@1.9.2)

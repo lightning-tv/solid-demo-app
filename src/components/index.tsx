@@ -174,19 +174,13 @@ export function Hero(
   return (
     <View
       {...props}
-      src={props.backdrop as string}
+      src={props.backdrop}
       style={heroStyles}
       onFocusChanged={setHasFocus}
       forwardStates
     >
       <View transition={{ alpha: heroTransition }} alpha={hasFocus() ? 1 : 0}>
-        <View
-          width={185}
-          height={278}
-          x={54}
-          y={220}
-          src={props.src as string}
-        />
+        <View width={185} height={278} x={54} y={220} src={props.src} />
         <Text
           y={520}
           x={54}

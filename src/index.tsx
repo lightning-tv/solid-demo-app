@@ -25,6 +25,7 @@ import { entityPreload } from "./api/entityPreload";
 const Grid = lazy(() => import("./pages/Grid"));
 const Portal = lazy(() => import("./pages/Portal"));
 const TextPage = lazy(() => import("./pages/Text"));
+const TextPosterPage = lazy(() => import("./pages/TextPoster"));
 const CreatePage = lazy(() => import("./pages/Create"));
 const ViewportPage = lazy(() => import("./pages/Viewport"));
 const ButtonsPage = lazy(() => import("./pages/Buttons"));
@@ -101,6 +102,7 @@ render(() => (
     <Route path="destroy" component={DestroyPage} preload={destroyData} />
     <Route path="grid" component={Grid} />
     <Route path="text" component={TextPage} />
+    <Route path="textposter" component={TextPosterPage} />
     <Route path="login" component={LoginPage} />
     <Route path="buttons" component={ButtonsPage} />
     <Route path="positioning" component={PositioningPage} />

@@ -101,6 +101,11 @@ const Portal = () => {
       description: "Text layout with flexbox",
     },
     {
+      title: "TextPoster",
+      id: "textposter",
+      description: "Text layout with flex and Poster",
+    },
+    {
       title: "Create Elements",
       id: "create",
       description: "Testing Show + children + inserting text",
