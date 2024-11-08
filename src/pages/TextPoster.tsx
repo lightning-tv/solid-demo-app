@@ -1,6 +1,70 @@
-import { Text, View } from "@lightningtv/solid";
+import { Text, View, type NodeStyles } from "@lightningtv/solid";
 import { onMount } from "solid-js";
 import { setGlobalBackground } from "../state";
+
+const ButtonContainer: NodeStyles = {
+  display: "flex",
+  color: "#ffffff",
+  alignItems: "center",
+  padding: 32,
+  gap: 8,
+  height: 50,
+  effects: {
+    radius: { radius: 8 },
+    border: {
+      width: 2,
+      color: "#000000CC",
+    },
+  },
+};
+
+const CircleContainer: NodeStyles = {
+  height: 50,
+  width: 50,
+  color: "#ffffff",
+  effects: {
+    radius: { radius: 50 },
+    border: {
+      width: 2,
+      color: "#000000CC",
+    },
+  },
+};
+const ButtonIcon = (props) => {
+  return (
+    <View style={ButtonContainer}>
+      <View src={props.icon} width={26} height={26}></View>
+      <Text fontSize={28} lineHeight={50} color={"#000000"}>
+        {props.children}
+      </Text>
+    </View>
+  );
+};
+
+const Button = (props) => {
+  return (
+    <View style={ButtonContainer}>
+      <Text fontSize={28} lineHeight={50} color={"#000000"}>
+        {props.children}
+      </Text>
+    </View>
+  );
+};
+
+const CircleIcon = (props) => {
+  return (
+    <View style={CircleContainer}>
+      <View
+        x={25}
+        y={25}
+        mount={0.5}
+        src={props.icon}
+        width={30}
+        height={30}
+      ></View>
+    </View>
+  );
+};
 
 const TextPosterPage = () => {
   const styles = {
@@ -95,6 +159,12 @@ const TextPosterPage = () => {
           kasd gubergren, no sea takimata Cast : Tom cruise, ma3ti
           benabdelkader, oussama ramzi
         </Text>
+        <View display="flex" gap={20}>
+          <ButtonIcon icon="./assets/playIcon.png">Play</ButtonIcon>
+          <Button>More Info</Button>
+          <CircleIcon icon="./assets/thumbsUp.png"></CircleIcon>
+          <CircleIcon icon="./assets/thumbsDown.png"></CircleIcon>
+        </View>
       </View>
     </View>
   );
