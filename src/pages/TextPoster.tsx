@@ -1,4 +1,5 @@
 import { Text, View, type NodeStyles } from "@lightningtv/solid";
+import { Row } from "@lightningtv/solid/primitives";
 import { onMount } from "solid-js";
 import { setGlobalBackground } from "../state";
 
@@ -159,12 +160,12 @@ const TextPosterPage = () => {
           kasd gubergren, no sea takimata Cast : Tom cruise, ma3ti
           benabdelkader, oussama ramzi
         </Text>
-        <View display="flex" gap={20}>
+        <Row gap={20} autofocus>
           <ButtonIcon icon="./assets/playIcon.png">Play</ButtonIcon>
           <Button>More Info</Button>
           <CircleIcon icon="./assets/thumbsUp.png"></CircleIcon>
           <CircleIcon icon="./assets/thumbsDown.png"></CircleIcon>
-        </View>
+        </Row>
       </View>
     </View>
   );
