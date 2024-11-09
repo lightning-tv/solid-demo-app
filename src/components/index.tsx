@@ -5,7 +5,7 @@ import {
   type NodeProps,
   Dynamic,
 } from "@lightningtv/solid";
-import { Row } from "@lightningtv/solid-ui";
+import { Row } from "@lightningtv/solid/primitives";
 import { createSignal, For, Index } from "solid-js";
 import styles, { buttonStyles } from "../styles";
 import { type Tile } from "../api/formatters/ItemFormatter";

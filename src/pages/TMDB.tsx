@@ -7,7 +7,7 @@ import {
   Text,
 } from "@lightningtv/solid";
 import { LazyUp } from "@lightningtv/solid/primitives";
-import { Column, Row } from "@lightningtv/solid-ui";
+import { Column, Row } from "@lightningtv/solid/primitives";
 import { useNavigate } from "@solidjs/router";
 import { Hero, TitleRow } from "../components";
 import styles from "../styles";

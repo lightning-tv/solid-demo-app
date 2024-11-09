@@ -12,7 +12,7 @@ import {
   activeElement,
   assertTruthy,
 } from "@lightningtv/solid";
-import { Column } from "@lightningtv/solid-ui";
+import { Column } from "@lightningtv/solid/primitives";
 import { useNavigate, usePreloadRoute } from "@solidjs/router";
 import { TileRow } from "../components";
 import styles from "../styles";

@@ -1,5 +1,5 @@
 import { View } from "@lightningtv/solid";
-import { Row, Column } from "@lightningtv/solid-ui";
+import { Row, Column } from "@lightningtv/solid/primitives";
 import { setGlobalBackground } from "../state";
 
 const styles = {

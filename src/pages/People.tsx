@@ -5,7 +5,7 @@ import {
   Show,
   assertTruthy,
 } from "@lightningtv/solid";
-import { Column } from "@lightningtv/solid-ui";
+import { Column } from "@lightningtv/solid/primitives";
 import { useParams } from "@solidjs/router";
 import { createResource, onMount } from "solid-js";
 import { TileRow } from "../components";

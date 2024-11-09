@@ -7,7 +7,7 @@ import {
   Styles,
   NodeStyles,
 } from "@lightningtv/solid";
-import { Column } from "@lightningtv/solid-ui";
+import { Column } from "@lightningtv/solid/primitives";
 import styles from "./NavDrawer.styles";
 import Icon from "../Icon";
 

@@ -5,7 +5,8 @@ import {
   View,
 } from "@lightningtv/solid";
 import { createSignal, onMount } from "solid-js";
-import { Keyboard, Input, Column } from "@lightningtv/solid-ui";
+import { Keyboard, Input } from "@lightningtv/solid-ui";
+import { Column } from "@lightningtv/solid/primitives";
 import { setGlobalBackground } from "../state";
 
 const TextPage = () => {

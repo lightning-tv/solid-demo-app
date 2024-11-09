@@ -5,7 +5,7 @@ import {
   IntrinsicNodeStyleProps,
 } from "@lightningtv/solid";
 import { Button, Badge } from "@lightningtv/solid-ui";
-import { Row } from "@lightningtv/solid-ui";
+import { Row } from "@lightningtv/solid/primitives";
 
 const ButtonsPage = () => {
   function onEnter(this: ElementNode, event, elm) {

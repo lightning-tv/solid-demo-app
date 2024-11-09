@@ -7,7 +7,7 @@ import {
   onMount,
 } from "solid-js";
 import { type ElementNode, View, Text } from "@lightningtv/solid";
-import { Column, Row } from "@lightningtv/solid-ui";
+import { Column, Row } from "@lightningtv/solid/primitives";
 import styles from "./gridStyles";
 import { setGlobalBackground } from "../state";
 import { createInfiniteItems } from "@lightningtv/solid/primitives";

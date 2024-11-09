@@ -6,7 +6,8 @@ import {
   assertTruthy,
   setActiveElement,
 } from "@lightningtv/solid";
-import { Column, Button, Row } from "@lightningtv/solid-ui";
+import { Column, Row } from "@lightningtv/solid/primitives";
+import { Button } from "@lightningtv/solid-ui";
 
 import { createEffect, on, createSignal } from "solid-js";
 import { TileRow } from "../components";

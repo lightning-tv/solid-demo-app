@@ -5,7 +5,7 @@ import {
   View,
   hexColor,
 } from "@lightningtv/solid";
-import { Row } from "@lightningtv/solid-ui";
+import { Row } from "@lightningtv/solid/primitives";
 
 import { MaterialButtonText } from "../styles";
 
