@@ -64,7 +64,7 @@ export default {
     zIndex: 2,
     transition: { scale: { duration: 250, easing: "ease-in-out" } },
     border: { width: 0, color: 0x00000000 },
-    focus: { scale: 1.1, border: { color: '#2c4f7cE8', width: 8 } },
+    $focus: { scale: 1.1, border: { color: '#2c4f7cE8', width: 8 } },
   },
   FocusRing: {
     borderRadius: 16,
@@ -147,17 +147,11 @@ export default {
 } as const;
 
 const Button = {
-  width: 120,
-  height: 40,
-  mount: 0.5,
-  color: 0x000000b3,
-  borderRadius: 8,
-  borderBottom: { width: 2, color: 0xff00faff },
-  border: { width: 2, color: 0xfafafa33 },
-  focus: {
-    color: 0xfafafaff,
-    borderRadius: 20,
-    borderBottom: { width: 0, color: 0x00000000 },
+  width: 300,
+  height: 90,
+  color: "#FFF",
+  $focus: {
+    color: "#3d3d3d",
   },
 } satisfies IntrinsicNodeStyleProps;
 
@@ -170,14 +164,16 @@ const TopBar = {
 } satisfies IntrinsicNodeStyleProps;
 
 const ButtonText = {
-  fontSize: 12,
-  y: 12,
-  // lineHeight: Button.height, // TODO: Add back when lineHeight is supported
+  fontSize: 26,
+  lineHeight: Button.height,
   contain: "width",
   textAlign: "center",
-  color: "#F6F6F9",
+  color: "#000",
   height: Button.height,
   width: Button.width,
+  $focus: {
+    color: "#FFF",
+  }
 } satisfies IntrinsicTextNodeStyleProps;
 
 export const buttonStyles = {
@@ -190,10 +186,10 @@ export const MaterialButton = {
   width: 386,
   height: 136,
   color: "#715cab",
-  focus: {
+  $focus: {
     color: "#5a39a2",
   },
-  disabled: {
+  $disabled: {
     color: "#291d43",
   },
 } satisfies IntrinsicNodeStyleProps;
@@ -207,10 +203,10 @@ export const MaterialButtonText = {
   height: MaterialButton.height,
   width: MaterialButton.width,
   // lineHeight: MaterialButton.height, // TODO: Add back when lineHeight is supported
-  focus: {
+  $focus: {
     fontSize: 40,
   },
-  disabled: {
+  $disabled: {
     color: "#909090",
   },
 } satisfies IntrinsicTextNodeStyleProps;

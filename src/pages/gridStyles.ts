@@ -19,7 +19,7 @@ export default {
     active: {
       color: 0x39393cff,
     },
-    focus: {
+    $focus: {
       color: 0xf6f6f9ff,
       border: { color: 0x008085ff, width: 6 },
     },
@@ -35,7 +35,7 @@ export default {
     fontWeight: 600,
     lineHeight: 24,
     color: "#f6f6f6",
-    focus: {
+    $focus: {
       color: 0x141417ff,
     },
   },

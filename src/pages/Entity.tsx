@@ -7,10 +7,9 @@ import {
   setActiveElement,
 } from "@lightningtv/solid";
 import { Column, Row } from "@lightningtv/solid/primitives";
-import { Button } from "@lightningtv/solid-ui";
 
 import { createEffect, on, createSignal } from "solid-js";
-import { TileRow } from "../components";
+import { TileRow, Button } from "../components";
 import { setGlobalBackground } from "../state";
 import ContentBlock from "../components/ContentBlock";
 import { useNavigate } from "@solidjs/router";

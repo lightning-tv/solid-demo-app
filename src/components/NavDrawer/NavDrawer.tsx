@@ -4,8 +4,6 @@ import {
   Text,
   IntrinsicNodeProps,
   ElementNode,
-  Styles,
-  NodeStyles,
 } from "@lightningtv/solid";
 import { Column } from "@lightningtv/solid/primitives";
 import styles from "./NavDrawer.styles";
@@ -16,26 +14,24 @@ interface NavButtonProps extends IntrinsicNodeProps {
   children: string;
 }
 
+const NavButtonTextStyles = {
+  fontSize: 38,
+  x: 116,
+  y: 18,
+  height: 50,
+  alpha: 0,
+  $active: {
+    alpha: 1,
+  },
+};
+
 function NavButton(props: NavButtonProps) {
   return (
     <View {...props} forwardStates style={styles.NavButton}>
       <View y={-16}>
         <Icon scale={0.5} name={props.icon} />
       </View>
-      <Text
-        style={{
-          fontSize: 38,
-          x: 116,
-          y: 18,
-          height: 50,
-          alpha: 0,
-          active: {
-            alpha: 1,
-          },
-        }}
-      >
-        {props.children}
-      </Text>
+      <Text style={NavButtonTextStyles}>{props.children}</Text>
     </View>
   );
 }
@@ -44,15 +40,15 @@ export default function NavDrawer(props) {
   let backdrop: ElementNode | undefined;
   const navigate = useNavigate();
   function onFocus(this: ElementNode) {
-    backdrop!.states.add("focus");
-    this.children.forEach((c) => c.states!.add("active"));
+    backdrop!.states.add("$focus");
+    this.children.forEach((c) => c.states!.add("$active"));
     this.children[this.selected || 0].setFocus();
   }
 
   function onBlur(this: ElementNode) {
-    backdrop!.states.remove("focus");
+    backdrop!.states.remove("$focus");
     this.selected = 0;
-    this.children.forEach((c) => c.states!.remove("active"));
+    this.children.forEach((c) => c.states!.remove("$active"));
   }
 
   function handleNavigate(page: string) {

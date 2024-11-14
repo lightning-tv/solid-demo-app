@@ -29,7 +29,7 @@ const MaterialButtonsPage = () => {
     width: 386,
     height: 136,
     color: "0x715cabff",
-    focus: {
+    $focus: {
       color: "0x5a39a2ff",
     },
     disabled: {

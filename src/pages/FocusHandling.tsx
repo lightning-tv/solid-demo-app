@@ -5,7 +5,7 @@ import { setGlobalBackground } from "../state";
 const styles = {
   button: {
     alpha: 0.4,
-    focus: {
+    $focus: {
       alpha: 1,
     },
   },
@@ -28,7 +28,7 @@ const PositioningPage = () => {
   const leftMenuStyle = {
     width: 200,
     height: 240,
-    focus: {
+    $focus: {
       width: 900,
       transition: true,
     },

@@ -67,7 +67,7 @@ const CreatePage = () => {
   const someOtherStyle = {
     // pretty red
     color: "#f54242",
-    focus: {
+    $focus: {
       // pretty blue
       color: "#4287f5",
     },
@@ -144,7 +144,7 @@ const CreatePage = () => {
   const childTestPassedStyles = {
     // grey color
     color: "#cccccc",
-    focus: {
+    $focus: {
       // black
       color: "#000000",
     },
@@ -153,7 +153,7 @@ const CreatePage = () => {
   const childTestPassedStyles2 = {
     // white color
     color: "#ffffff",
-    focus: {
+    $focus: {
       // white something...
       color: "#f6f6cc",
     },

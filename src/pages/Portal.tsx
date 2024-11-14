@@ -86,11 +86,6 @@ const Portal = () => {
       description: "Using onDestroy to animate destruction",
     },
     {
-      title: "Buttons",
-      id: "buttons",
-      description: "Demo a few buttons",
-    },
-    {
       title: "Login",
       id: "login",
       description: "Login example",
@@ -125,7 +120,7 @@ const Portal = () => {
       scale: 1,
       color: "#182b44",
       transition: { color: true, scale: true },
-      focus: {
+      $focus: {
         scale: 1.1,
         color: 0xffffffff,
       },

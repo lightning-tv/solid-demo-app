@@ -1,4 +1,5 @@
 import { Text, View, Dynamic } from "@lightningtv/solid";
+import { Visible } from "@lightningtv/solid/primitives";
 import { Button } from "@lightningtv/solid-ui";
 import { createSignal, For, onCleanup } from "solid-js";
 import { setGlobalBackground } from "../state";
@@ -49,9 +50,17 @@ const PositioningPage = () => {
   return (
     <View x={150} autofocus>
       {/* Simple square components with different sizes */}
-      <Square x={100} y={100} size={50} color="#ef4444" />
-      <Square x={100} y={200} size={100} color="#22c55e" />
-      <Square x={100} y={350} size={200} color="#3b82f6" />
+      <Visible when={size()}>
+        <Square
+          onDestroy={() => console.log("destroyed")}
+          x={100}
+          y={100}
+          size={50}
+          color="#ef4444"
+        />
+        <Square x={100} y={200} size={100} color="#22c55e" />
+        <Square x={100} y={350} size={200} color="#3b82f6" />
+      </Visible>
 
       {/* Reactive square with animated x position */}
       <Square

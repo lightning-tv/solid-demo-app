@@ -13,18 +13,7 @@ import { INode } from "@lightningtv/solid";
 import { LazyUp } from "@lightningtv/solid/primitives";
 
 export function Thumbnail(props: IntrinsicNodeProps) {
-  function changeBackground(node: INode) {
-    node.color = 0xffffffff;
-  }
-  return (
-    <View
-      {...props}
-      color={"#808080"}
-      onLoad={changeBackground}
-      onFail={(node) => (node.src = "failback.png")}
-      style={styles.Thumbnail}
-    />
-  );
+  return <View {...props} style={styles.Thumbnail} />;
 }
 
 export function FocusRing(props: IntrinsicNodeProps) {
@@ -96,7 +85,7 @@ const posterStyles = {
   transition: {
     scale: { duration: 200, easing: "cubic-bezier(0.20, 1.00, 0.80, 1.00)" },
   },
-  focus: { scale: 1.1, color: "#fff" },
+  $focus: { scale: 1.1, color: "#fff" },
 };
 
 export function Poster(props: NodeProps) {
@@ -120,7 +109,7 @@ const posterTitleStyles = {
   width: 185,
   maxLines: 2,
   alpha: 0,
-  focus: {
+  $focus: {
     alpha: 1,
     y: 288,
   },
@@ -154,7 +143,7 @@ const heroStyles = {
   transition: {
     scale: heroTransition,
   },
-  focus: { scale: 1.05 },
+  $focus: { scale: 1.05 },
 };
 
 const heroTextStyles = {

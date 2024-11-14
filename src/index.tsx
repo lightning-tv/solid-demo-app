@@ -28,7 +28,6 @@ const TextPage = lazy(() => import("./pages/Text"));
 const TextPosterPage = lazy(() => import("./pages/TextPoster"));
 const CreatePage = lazy(() => import("./pages/Create"));
 const ViewportPage = lazy(() => import("./pages/Viewport"));
-const ButtonsPage = lazy(() => import("./pages/Buttons"));
 const PositioningPage = lazy(() => import("./pages/Positioning"));
 const TransitionsPage = lazy(() => import("./pages/Transitions"));
 const ComponentsPage = lazy(() => import("./pages/Components"));
@@ -104,7 +103,6 @@ render(() => (
     <Route path="text" component={TextPage} />
     <Route path="textposter" component={TextPosterPage} />
     <Route path="login" component={LoginPage} />
-    <Route path="buttons" component={ButtonsPage} />
     <Route path="positioning" component={PositioningPage} />
     <Route path="transitions" component={TransitionsPage} />
     <Route path="components" component={ComponentsPage} />

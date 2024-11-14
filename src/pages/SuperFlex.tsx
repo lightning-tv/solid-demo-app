@@ -29,7 +29,7 @@ export const styles = {
 
 const SpecialFont = {
   color: 0xff0000ff,
-  focus: { color: 0xffffffff },
+  $focus: { color: 0xffffffff },
 };
 
 export default () => {
@@ -63,7 +63,7 @@ export default () => {
             <View
               width={100}
               height={200}
-              style={{ color: 0xff0000ff, focus: { color: 0xffffffff } }}
+              style={{ color: 0xff0000ff, $focus: { color: 0xffffffff } }}
             />
           )}
         </For>
@@ -84,7 +84,7 @@ export default () => {
               <View
                 width={100}
                 height={200}
-                style={{ color: 0xff0000ff, focus: { color: 0xffffffff } }}
+                style={{ color: 0xff0000ff, $focus: { color: 0xffffffff } }}
               />
             )}
           </For>

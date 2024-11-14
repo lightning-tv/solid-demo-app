@@ -1,4 +1,4 @@
-import { IntrinsicNodeStyleProps, hexColor } from "@lightningtv/solid";
+import { IntrinsicNodeStyleProps } from "@lightningtv/solid";
 import theme from "theme";
 
 export default {
@@ -17,7 +17,7 @@ export default {
       },
     },
     x: 8,
-    focus: {
+    $focus: {
       width: 500,
       x: theme.layout.marginX,
     },
@@ -29,7 +29,7 @@ export default {
     alpha: 0,
     width: 200,
     height: 1080,
-    focus: {
+    $focus: {
       alpha: 1,
       width: 1600,
     },
@@ -41,10 +41,10 @@ export default {
     width: 100,
     borderRadius: 8,
     color: 0,
-    focus: {
+    $focus: {
       color: "#424242",
     },
-    active: {
+    $active: {
       width: 328,
       height: 70,
     },
