@@ -149,9 +149,9 @@ export default {
 const Button = {
   width: 300,
   height: 90,
-  color: "#FFF",
+  color: "#323232cc",
   $focus: {
-    color: "#3d3d3d",
+    color: "#FFF",
   },
 } satisfies IntrinsicNodeStyleProps;
 
@@ -168,11 +168,11 @@ const ButtonText = {
   lineHeight: Button.height,
   contain: "width",
   textAlign: "center",
-  color: "#000",
   height: Button.height,
   width: Button.width,
+  color: "#FFF",
   $focus: {
-    color: "#FFF",
+    color: "#000",
   }
 } satisfies IntrinsicTextNodeStyleProps;
 
