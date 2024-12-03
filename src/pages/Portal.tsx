@@ -1,4 +1,4 @@
-import { createSignal, createSelector, For } from "solid-js";
+import { createSignal, createSelector, For, onCleanup } from "solid-js";
 import { ElementNode, View, Text, assertTruthy } from "@lightningtv/solid";
 import { Column, Row } from "@lightningtv/solid/primitives";
 import { useNavigate } from "@solidjs/router";
@@ -127,6 +127,10 @@ const Portal = () => {
     };
     const [hasFocus, setHasFocus] = createSignal(false);
 
+    onCleanup(() => {
+      console.log("cleaning");
+    });
+
     return (
       <View {...props} onFocusChanged={setHasFocus} style={Container}>
         <View x={30}>
@@ -161,8 +165,16 @@ const Portal = () => {
     );
   }
 
+  let ColumnContainer;
+
   return (
-    <View colorTop={0x446b9eff} colorBottom={0x2c4f7cff}>
+    <View
+      id="Portal"
+      persist
+      forwardFocus={() => ColumnContainer.setFocus()}
+      colorTop={0x446b9eff}
+      colorBottom={0x2c4f7cff}
+    >
       <View x={120}>
         <View src="./assets/solidjs.png" width={101} height={90} y={40} />
         <Text fontSize={90} x={110} y={40}>
@@ -170,7 +182,14 @@ const Portal = () => {
         </Text>
         <View y={140} height={1} width={1800} color={0xe8d7f9ff} />
       </View>
-      <Column scroll="none" y={200} x={170} gap={80} autofocus>
+      <Column
+        ref={ColumnContainer}
+        scroll="none"
+        y={200}
+        x={170}
+        gap={80}
+        autofocus
+      >
         <Row
           onEnter={onEnter}
           gap={40}

@@ -11,19 +11,26 @@ import {
 import { Inspector } from "@lightningjs/renderer/inspector";
 import { HashRouter } from "./components/router";
 import { Route } from "@solidjs/router";
-import { lazy } from "solid-js";
+import {
+  lazy,
+  createSignal,
+  createRoot,
+  getOwner,
+  runWithOwner,
+  createRenderEffect,
+} from "solid-js";
 import App from "./pages/App";
 import Browse from "./pages/Browse";
 import TMDB from "./pages/TMDB";
+import Portal from "./pages/Portal";
 import DestroyPage from "./pages/Destroy";
 import { tmdbData, destroyData } from "./api/tmdbData";
 import NotFound from "./pages/NotFound";
 import fonts from "./fonts";
 import { browsePreload } from "./api/browsePreload";
 import { entityPreload } from "./api/entityPreload";
-
 const Grid = lazy(() => import("./pages/Grid"));
-const Portal = lazy(() => import("./pages/Portal"));
+//const Portal = lazy(() => import("./pages/Portal"));
 const TextPage = lazy(() => import("./pages/Text"));
 const TextPosterPage = lazy(() => import("./pages/TextPoster"));
 const CreatePage = lazy(() => import("./pages/Create"));
@@ -92,32 +99,70 @@ if (rendererMode === "canvas") {
 
 const { render } = createRenderer();
 loadFonts(fonts);
-render(() => (
-  <HashRouter root={(props) => <App {...props} />}>
-    <Route path="" component={Browse} preload={browsePreload} />
-    <Route path="examples" component={Portal} />
-    <Route path="browse/:filter" component={Browse} preload={browsePreload} />
-    <Route path="tmdb" component={TMDB} preload={tmdbData} />
-    <Route path="destroy" component={DestroyPage} preload={destroyData} />
-    <Route path="grid" component={Grid} />
-    <Route path="text" component={TextPage} />
-    <Route path="textposter" component={TextPosterPage} />
-    <Route path="login" component={LoginPage} />
-    <Route path="positioning" component={PositioningPage} />
-    <Route path="transitions" component={TransitionsPage} />
-    <Route path="components" component={ComponentsPage} />
-    <Route path="focushandling" component={FocusHandlingPage} />
-    <Route path="gradients" component={GradientsPage} />
-    <Route path="flex" component={FlexPage} />
-    <Route path="create" component={CreatePage} />
-    <Route path="viewport" component={ViewportPage} />
-    <Route path="flexsize" component={FlexSizePage} />
-    <Route path="flexcolumnsize" component={FlexColumnSizePage} />
-    <Route path="flexcolumn" component={FlexColumnPage} />
-    <Route path="superflex" component={SuperFlexPage} />
-    <Route path="buttonsmaterial" component={ButtonsMaterialPage} />
-    <Route path="entity/people/:id" component={People} />
-    <Route path="entity/:type/:id" component={Entity} preload={entityPreload} />
-    <Route path="*all" component={NotFound} />
-  </HashRouter>
-));
+let rootOwner;
+render(() => {
+  return (
+    <HashRouter
+      root={(props) => {
+        rootOwner = getOwner();
+        return <App {...props} />;
+      }}
+    >
+      <Route path="" component={Browse} preload={browsePreload} />
+      <Route path="examples" component={Persist(Portal)} />
+      <Route path="browse/:filter" component={Browse} preload={browsePreload} />
+      <Route path="tmdb" component={TMDB} preload={tmdbData} />
+      <Route path="destroy" component={DestroyPage} preload={destroyData} />
+      <Route path="grid" component={Grid} />
+      <Route path="text" component={TextPage} />
+      <Route path="textposter" component={TextPosterPage} />
+      <Route path="login" component={LoginPage} />
+      <Route path="positioning" component={PositioningPage} />
+      <Route path="transitions" component={TransitionsPage} />
+      <Route path="components" component={ComponentsPage} />
+      <Route path="focushandling" component={FocusHandlingPage} />
+      <Route path="gradients" component={GradientsPage} />
+      <Route path="flex" component={FlexPage} />
+      <Route path="create" component={CreatePage} />
+      <Route path="viewport" component={ViewportPage} />
+      <Route path="flexsize" component={FlexSizePage} />
+      <Route path="flexcolumnsize" component={FlexColumnSizePage} />
+      <Route path="flexcolumn" component={FlexColumnPage} />
+      <Route path="superflex" component={SuperFlexPage} />
+      <Route path="buttonsmaterial" component={ButtonsMaterialPage} />
+      <Route path="entity/people/:id" component={People} />
+      <Route
+        path="entity/:type/:id"
+        component={Entity}
+        preload={entityPreload}
+      />
+      <Route path="*all" component={NotFound} />
+    </HashRouter>
+  );
+});
+
+function Persist(RawComp) {
+  let dispose;
+  return createRoot((_dispose) => {
+    let node;
+    dispose = () => {
+      console.log("disposing");
+      _dispose();
+    };
+    return (props) => {
+      return runWithOwner(rootOwner, () => {
+        if (node) {
+          node.setFocus();
+        } else {
+          node = RawComp(props);
+        }
+
+        return node;
+      });
+    };
+  }, rootOwner);
+
+  // return runWithOwner(rootOwner, (props) => {
+  //   return RawComp(props);
+  // });
+}
