@@ -1,14 +1,7 @@
 import { createEffect, on, createSignal } from "solid-js";
-import {
-  ElementNode,
-  activeElement,
-  assertTruthy,
-  View,
-  Text,
-} from "@lightningtv/solid";
+import { ElementNode, activeElement, View, Text } from "@lightningtv/solid";
 import { LazyUp } from "@lightningtv/solid/primitives";
 import { Column, Row } from "@lightningtv/solid/primitives";
-import { useNavigate } from "@solidjs/router";
 import { Hero, TitleRow } from "../components";
 import styles from "../styles";
 import { setGlobalBackground } from "../state";
@@ -17,15 +10,11 @@ import { debounce } from "@solid-primitives/scheduled";
 
 const TMDB = (props) => {
   const [heroContent, setHeroContent] = createSignal({});
-  const navigate = useNavigate();
   let contentBlock,
     solidLogo,
     firstRun = true;
 
-  const delayedBackgrounds = debounce(
-    (img: string) => setGlobalBackground(img),
-    800
-  );
+  const delayedBackgrounds = debounce(setGlobalBackground, 800);
   const delayedHero = debounce(
     (content: {}) => setHeroContent(content || {}),
     600
@@ -63,18 +52,6 @@ const TMDB = (props) => {
       .animate(values2, { duration: 300, easing: "ease-in-out" })
       .start();
   }
-
-  function onEnter(this: ElementNode) {
-    this.display = "flex";
-    let entity = this.children.find((c) =>
-      c.states!.has("focus")
-    ) as ElementNode;
-    assertTruthy(entity && entity.href);
-    navigate(entity.href);
-    return true;
-  }
-
-  const yTransition = { duration: 300, easing: "ease-in-out" };
 
   return (
     <>
@@ -115,13 +92,13 @@ const TMDB = (props) => {
         y={500}
         component={Column}
         direction="column"
-        upCount={3}
+        upCount={2}
         each={props.data.rows}
         id="BrowseColumn"
         onSelectedChanged={onSelectedChanged}
         autofocus={props.data.rows[0].items()}
         gap={40}
-        transition={{ y: yTransition }}
+        transition={{ y: { duration: 300, easing: "ease-in-out" } }}
         style={styles.Column}
       >
         {(row) =>
