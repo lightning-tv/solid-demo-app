@@ -1,8 +1,0 @@
-html, body, * { padding: 0; margin: 0 }
-video { position: absolute; top: 0; left: 0; z-index: 2; outline: none; }
-.center-element {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
