@@ -83,7 +83,7 @@ const TextPage = () => {
     display: "flex",
     flexDirection: "row",
     justifyContent: "flexStart",
-    color: hexColor("00000000"),
+    color: "#00000000",
   } satisfies IntrinsicNodeStyleProps;
 
   const Title = {

@@ -18,6 +18,16 @@ const Portal = () => {
 
   const flexDemos = [
     {
+      title: "Focus Basics",
+      id: "focusbasics",
+      description: "Quick guide on Focus",
+    },
+    {
+      title: "Layout Basics",
+      id: "layout",
+      description: "Quick guide on Layout",
+    },
+    {
       title: "Flex Row",
       id: "flex",
       description: "Flex Row Implementation",

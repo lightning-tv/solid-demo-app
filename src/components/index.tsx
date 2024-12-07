@@ -202,3 +202,23 @@ const typeToComponent = {
   Hero: Hero,
   PosterTitle: PosterTitle,
 };
+
+const BlockStyle = {
+  alpha: 0.85,
+  border: { width: 0, color: "#000000" },
+  $focus: {
+    border: { width: 4, color: "#FFF" },
+    alpha: 1,
+  },
+};
+export function Block(props) {
+  return (
+    <View
+      {...props}
+      width={100}
+      height={100}
+      style={BlockStyle}
+      color={props.color || "#e0e0e0"}
+    />
+  );
+}

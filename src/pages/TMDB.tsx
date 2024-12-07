@@ -92,7 +92,7 @@ const TMDB = (props) => {
         y={500}
         component={Column}
         direction="column"
-        upCount={2}
+        upCount={3}
         each={props.data.rows}
         id="BrowseColumn"
         onSelectedChanged={onSelectedChanged}

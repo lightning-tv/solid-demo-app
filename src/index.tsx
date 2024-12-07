@@ -29,6 +29,8 @@ const TextPosterPage = lazy(() => import("./pages/TextPoster"));
 const CreatePage = lazy(() => import("./pages/Create"));
 const ViewportPage = lazy(() => import("./pages/Viewport"));
 const PositioningPage = lazy(() => import("./pages/Positioning"));
+const LayoutPage = lazy(() => import("./pages/Layout"));
+const FocusBasicsPage = lazy(() => import("./pages/FocusBasics"));
 const TransitionsPage = lazy(() => import("./pages/Transitions"));
 const ComponentsPage = lazy(() => import("./pages/Components"));
 const FocusHandlingPage = lazy(() => import("./pages/FocusHandling"));
@@ -66,6 +68,7 @@ Config.animationsEnabled = true;
 Config.fontSettings.fontFamily = "Roboto";
 Config.fontSettings.color = "#f6f6f6";
 Config.fontSettings.fontSize = 32;
+Config.enableShaderCaching = false;
 // Config.focusDebug = true;
 
 Config.rendererOptions = {
@@ -104,6 +107,8 @@ render(() => (
     <Route path="textposter" component={TextPosterPage} />
     <Route path="login" component={LoginPage} />
     <Route path="positioning" component={PositioningPage} />
+    <Route path="layout" component={LayoutPage} />
+    <Route path="focusbasics" component={FocusBasicsPage} />
     <Route path="transitions" component={TransitionsPage} />
     <Route path="components" component={ComponentsPage} />
     <Route path="focushandling" component={FocusHandlingPage} />
