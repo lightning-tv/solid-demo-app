@@ -73,7 +73,7 @@ Config.enableShaderCaching = false;
 
 Config.rendererOptions = {
   fpsUpdateInterval: logFps ? 1000 : 0,
-  inspector: Inspector,
+  inspector: import.meta.env.DEV ? Inspector : undefined,
   // textureMemory: {
   //   criticalThreshold: 80e6,
   // },
