@@ -5,9 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@lightningtv/core': 2.5.9
-  '@lightningtv/solid': 2.5.5
-  '@lightningjs/renderer': 2.9.0-beta1
+  '@lightningtv/core': 2.6.2
+  '@lightningtv/solid': 2.6.2
+  '@lightningjs/renderer': 2.9.0
 
 patchedDependencies:
   '@solidjs/router':
@@ -18,6 +18,9 @@ importers:
 
   .:
     dependencies:
+      '@firebolt-js/sdk':
+        specifier: ^1.4.1
+        version: 1.4.1
       '@lightningjs/l3-ui-theme-base':
         specifier: ^0.3.3
         version: 0.3.3
@@ -921,6 +924,9 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@firebolt-js/sdk@1.4.1':
+    resolution: {integrity: sha512-gIt1EJqsATAU6P3GHWEPpEv3WziRgV5JtgBkRJW4Lwx1n0vEryrsY7QR6WdYBeU+N67fd4tYo/FuildYy0fkMQ==}
+
   '@jridgewell/gen-mapping@0.3.8':
     resolution: {integrity: sha512-imAbBGkb+ebQyxKgzv5Hu2nmROxoDOXHh80evxdoXNOrvAnVx7zimzc1Oo5h9RlfV4vPXaE2iM5pOFbvOCClWA==}
     engines: {node: '>=6.0.0'}
@@ -949,19 +955,10 @@ packages:
     resolution: {integrity: sha512-JeRdAaD401c/ifecf6cP0vDbA0ebCqvy0iI5J9hiP0ZP5NK8rDmvTnLlPHR4YhuM59JAnLUJ19AbB36fD580BQ==}
     engines: {node: '>= 20.9.0', npm: '>= 10.0.0', pnpm: '>= 8.9.2'}
 
-  '@lightningjs/renderer@2.9.0-beta1':
-    resolution: {integrity: sha512-wBkwtfS1If+nDet9JjUuKmO9ssfxW3SDpWefav1b14/T8k82jQSZphQLJ9Wu4XhDo7crARkWc1z47TPqZcsnzA==}
-    engines: {node: '>= 20.9.0', npm: '>= 10.0.0', pnpm: '>= 8.9.2'}
-
-  '@lightningtv/core@2.5.9':
-    resolution: {integrity: sha512-pIEXcfXbC5QWZ7XFzmGrvr1RzI5JYggam1yr9dT5Af6mK0/I3OJ1A8MMLdeRzrnNxL+zpNU6E8iuD+7gnG51YA==}
-    peerDependencies:
-      '@lightningjs/renderer': 2.9.0-beta1
-
   '@lightningtv/core@2.6.2':
     resolution: {integrity: sha512-nmSOhWeCsgHXriz2P6D46h22cULTtzuSGYPRQZWcfPfhf4K/vRutg5FRzZRHhuELtPOUlKlc6I4f9LgrBnKpuA==}
     peerDependencies:
-      '@lightningjs/renderer': 2.9.0-beta1
+      '@lightningjs/renderer': 2.9.0
 
   '@lightningtv/l3-ui-theme-base@1.0.0':
     resolution: {integrity: sha512-yxjhkNfcN4cDwsrD5Nd1jRqxM/ZetqVG9EppCIEbqaECflw11RI0GvhS7+Wpi4R++4lqsQEYqTN+UVRs56iTMQ==}
@@ -969,14 +966,14 @@ packages:
   '@lightningtv/solid-ui@1.0.0':
     resolution: {integrity: sha512-4YLiPLJzOk7zLscM+DZh1nzkhipD98qWLrf9TI6JF7/1J4MHuoGnqR5drgA4LIePtQgEdhCGJB8n5vAJKvJGTQ==}
     peerDependencies:
-      '@lightningtv/core': 2.5.9
-      '@lightningtv/solid': 2.5.5
+      '@lightningtv/core': 2.6.2
+      '@lightningtv/solid': 2.6.2
       solid-js: '*'
 
   '@lightningtv/solid@2.6.2':
     resolution: {integrity: sha512-EWoogCMNL6VZfjXA+ErjsAEGOLl17pGMrzem5A+r96lkAwAcXs/StPrKK6BmUb2iicEVO+cDKmN6R9FgVhTbXA==}
     peerDependencies:
-      '@lightningjs/renderer': 2.9.0-beta1
+      '@lightningjs/renderer': 2.9.0
       '@solidjs/router': ^0.15.1
       solid-js: '*'
 
@@ -1942,7 +1939,6 @@ packages:
 
   shaka-player@4.12.7:
     resolution: {integrity: sha512-xfViJ2yhSlG4J1WwLy6tvtEJJ7aYprYhtrpEw76C/CaDEnswgS+4tdp83eAXRfzd9uVZzrycrNaMS2+Ig2Jz7Q==}
-    engines: {node: '>=18'}
 
   shebang-command@2.0.0:
     resolution: {integrity: sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==}
@@ -3177,6 +3173,8 @@ snapshots:
   '@esbuild/win32-x64@0.24.2':
     optional: true
 
+  '@firebolt-js/sdk@1.4.1': {}
+
   '@jridgewell/gen-mapping@0.3.8':
     dependencies:
       '@jridgewell/set-array': 1.2.1
@@ -3203,12 +3201,6 @@ snapshots:
 
   '@lightningjs/renderer@2.9.0': {}
 
-  '@lightningjs/renderer@2.9.0-beta1': {}
-
-  '@lightningtv/core@2.5.9(@lightningjs/renderer@2.9.0)':
-    dependencies:
-      '@lightningjs/renderer': 2.9.0
-
   '@lightningtv/core@2.6.2(@lightningjs/renderer@2.9.0)':
     dependencies:
       '@lightningjs/renderer': 2.9.0
@@ -3217,7 +3209,7 @@ snapshots:
 
   '@lightningtv/solid-ui@1.0.0(@lightningtv/core@2.6.2(@lightningjs/renderer@2.9.0))(@lightningtv/solid@2.6.2(@lightningjs/renderer@2.9.0)(@solidjs/router@0.15.3(patch_hash=hnhvc47baca25dviao74hiryf4)(solid-js@1.9.4))(solid-js@1.9.4))(solid-js@1.9.4)':
     dependencies:
-      '@lightningjs/renderer': 2.9.0-beta1
+      '@lightningjs/renderer': 2.9.0
       '@lightningtv/core': 2.6.2(@lightningjs/renderer@2.9.0)
       '@lightningtv/solid': 2.6.2(@lightningjs/renderer@2.9.0)(@solidjs/router@0.15.3(patch_hash=hnhvc47baca25dviao74hiryf4)(solid-js@1.9.4))(solid-js@1.9.4)
       '@solid-primitives/refs': 1.0.8(solid-js@1.9.4)
@@ -3226,7 +3218,7 @@ snapshots:
   '@lightningtv/solid@2.6.2(@lightningjs/renderer@2.9.0)(@solidjs/router@0.15.3(patch_hash=hnhvc47baca25dviao74hiryf4)(solid-js@1.9.4))(solid-js@1.9.4)':
     dependencies:
       '@lightningjs/renderer': 2.9.0
-      '@lightningtv/core': 2.5.9(@lightningjs/renderer@2.9.0)
+      '@lightningtv/core': 2.6.2(@lightningjs/renderer@2.9.0)
       '@solid-primitives/event-listener': 2.3.3(solid-js@1.9.4)
       '@solid-primitives/mouse': 2.0.21(solid-js@1.9.4)
       '@solid-primitives/scheduled': 1.4.4(solid-js@1.9.4)

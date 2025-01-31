@@ -76,6 +76,11 @@ const Portal = () => {
       description: "TMDB Example",
     },
     {
+      title: "Firebolt Integration",
+      id: "firebolt",
+      description: "Firebolt API Integration",
+    },
+    {
       title: "Components",
       id: "components",
       description: "Reusable Components",

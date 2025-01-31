@@ -44,6 +44,7 @@ const SuperFlexPage = lazy(() => import("./pages/SuperFlex"));
 const Entity = lazy(() => import("./pages/Entity"));
 const People = lazy(() => import("./pages/People"));
 const LoginPage = lazy(() => import("./pages/Login"));
+const FireboltPage = lazy(() => import("./pages/Firebolt"));
 
 const urlParams = new URLSearchParams(window.location.search);
 let numImageWorkers = 3;
@@ -104,6 +105,7 @@ render(() => (
     <Route path="destroy" component={DestroyPage} preload={destroyData} />
     <Route path="grid" component={Grid} />
     <Route path="text" component={TextPage} />
+    <Route path="firebolt" component={FireboltPage} />
     <Route path="textposter" component={TextPosterPage} />
     <Route path="login" component={LoginPage} />
     <Route path="positioning" component={PositioningPage} />

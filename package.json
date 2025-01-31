@@ -21,6 +21,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@firebolt-js/sdk": "^1.4.1",
     "@lightningjs/l3-ui-theme-base": "^0.3.3",
     "@lightningjs/renderer": "2.9.0",
     "@lightningtv/core": "2.6.2",
