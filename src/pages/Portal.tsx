@@ -23,6 +23,11 @@ const Portal = () => {
       description: "Quick guide on Focus",
     },
     {
+      title: "Key Handling",
+      id: "keyhandling",
+      description: "Understanding Key Handling",
+    },
+    {
       title: "Layout Basics",
       id: "layout",
       description: "Quick guide on Layout",

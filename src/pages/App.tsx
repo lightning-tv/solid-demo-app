@@ -9,7 +9,7 @@ import Background from "../components/Background";
 import NavDrawer from "../components/NavDrawer/NavDrawer";
 import { FPSCounter, setupFPS } from "@lightningtv/solid-ui";
 import { createEffect, createSignal, onCleanup } from "solid-js";
-import { KeyMap } from "@lightningtv/core/focusManager";
+import { KeyMap, KeyHoldMap  } from "@lightningtv/core/focusManager";
 
 declare module "@lightningtv/solid" {
   // Augment the FocusManager KeyMap interface with our custom keys
@@ -38,7 +38,13 @@ const App = (props) => {
     Up: ["ArrowUp", 38],
     Down: ["ArrowDown", 40],
     Enter: ["Enter", 13],
-  } as unknown as KeyMap);
+  } as unknown as KeyMap, {
+    userKeyHoldMap: {
+      EnterHold: [ 'Enter', 13 ],
+      BackHold: [ 'b', 66 ],
+    } as unknown as KeyHoldMap,
+    holdThreshold: 1000,
+  });
   // useMouse();
   const announcer = useAnnouncer();
   announcer.enabled = false;

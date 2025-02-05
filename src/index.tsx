@@ -31,6 +31,7 @@ const ViewportPage = lazy(() => import("./pages/Viewport"));
 const PositioningPage = lazy(() => import("./pages/Positioning"));
 const LayoutPage = lazy(() => import("./pages/Layout"));
 const FocusBasicsPage = lazy(() => import("./pages/FocusBasics"));
+const KeyHandlingPage = lazy(() => import("./pages/KeyHandling"));
 const TransitionsPage = lazy(() => import("./pages/Transitions"));
 const ComponentsPage = lazy(() => import("./pages/Components"));
 const FocusHandlingPage = lazy(() => import("./pages/FocusHandling"));
@@ -65,11 +66,11 @@ const deviceLogicalPixelRatio = {
 
 const logFps = true;
 Config.debug = false;
+// Config.keyDebug = true;
 Config.animationsEnabled = true;
 Config.fontSettings.fontFamily = "Roboto";
 Config.fontSettings.color = "#f6f6f6";
 Config.fontSettings.fontSize = 32;
-Config.enableShaderCaching = false;
 // Config.focusDebug = true;
 
 Config.rendererOptions = {
@@ -114,6 +115,7 @@ render(() => (
     <Route path="transitions" component={TransitionsPage} />
     <Route path="components" component={ComponentsPage} />
     <Route path="focushandling" component={FocusHandlingPage} />
+    <Route path="keyhandling" component={KeyHandlingPage} />
     <Route path="gradients" component={GradientsPage} />
     <Route path="flex" component={FlexPage} />
     <Route path="create" component={CreatePage} />
