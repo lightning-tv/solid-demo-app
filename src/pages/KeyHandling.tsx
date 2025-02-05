@@ -10,7 +10,7 @@ const KeyHandling = () => {
     <>
       <Text x={400} y={200} contain="both" width={900}>
         Move the block with the arrow keys, enter to change color, enterHold to reset color.
-        Open inspector to see console log messages
+        Open inspector to see console log messages. Use M to test release.
       </Text>
       <Block
         ref={myBlock}
@@ -19,6 +19,15 @@ const KeyHandling = () => {
         y={1080/2 - 50}
         isBlack={false}
         color="#1212df"
+        onMenu={() => {
+          // This will be called when you press M key, and keep being called until you release M key
+          return true;
+        }}
+        onMenuRelease={() => {
+          // This wont be logged until you release M key, and only called once even if held
+          console.log("menu release");
+          return true;
+        }}
         onUp={() => myBlock.y = Math.max(0, myBlock.y - 20)}
         onDown={() => {
           console.log("down press");
