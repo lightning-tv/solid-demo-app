@@ -8,6 +8,7 @@
     "start": "vite --open --host --force",
     "start:prod": "vite --open --host --force --mode production",
     "build": "vite build --sourcemap=true",
+    "build:tizen": "vite build --sourcemap=false --base=./ --outDir tizen --emptyOutDir false",
     "build:github": "vite build --sourcemap=false --base=/solid-demo-app/",
     "build:github:dev": "NODE_ENV=development vite build --sourcemap=true --mode development --base=/solid-demo-app/",
     "build:analyze": "vite-bundle-visualizer",

@@ -1,0 +1,33 @@
+<!--
+***********************************************************************************************
+<Directory.Build.targets>
+WARNING:  DO NOT MODIFY this file. Incorrect changes to this file will make it
+          impossible to load or build your projects from the IDE.
+
+***********************************************************************************************
+-->
+
+<Project>
+<Target Name="Build" >
+        <Message Text="Tizen Web project Build starts here ------------" Importance="high"/>
+        <Message Text="$(MSBuildProjectDirectory)" Importance="high"/>
+        <PropertyGroup>
+            <WorkspaceFolder>$([System.IO.Path]::GetDirectoryName($(MSBuildProjectDirectory)))</WorkspaceFolder>
+        </PropertyGroup>
+        <Message Text="Workspace: '$(ProjectDir)'"  Importance="high" />
+        
+        <Exec Command="/Users/chief/tizen-sdk/tools/tizen-core/tz pack-chain -S $(ProjectDir) $(ProjectDir)"> </Exec>
+    </Target>
+
+    
+       <Target Name="Clean" >
+        <Message Text="Tizen Web project Clean starts here ------------" Importance="high"/>
+        <Message Text="$(MSBuildProjectDirectory)" Importance="high"/>
+        <PropertyGroup>
+            <WorkspaceFolder>$([System.IO.Path]::GetDirectoryName($(MSBuildProjectDirectory)))</WorkspaceFolder>
+        </PropertyGroup>
+        <Message Text="Workspace: '$(ProjectDir)'"  Importance="high" />
+
+        <Exec Command="/Users/chief/tizen-sdk/tools/tizen-core/tz clean -S $(ProjectDir)"> </Exec>
+    </Target>
+</Project>

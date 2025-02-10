@@ -14,14 +14,18 @@ export default defineConfig({
       },
     }),
     legacy({
-      targets: ["chrome>=34"],
+      targets: ["chrome>=47"],
       // polyfills: ["es.promise.finally", "es/map", "es/set"],
-      modernPolyfills: true,
-      additionalLegacyPolyfills: ["whatwg-fetch"],
+      // modernPolyfills: true,
+      // additionalLegacyPolyfills: ["whatwg-fetch"],
+      modernPolyfills: [
+        // Safari 11 has modules, but throws > ReferenceError: Can't find variable: globalThis
+        "es.global-this",
+      ],
     }),
   ],
   build: {
-    targets: ["chrome>=68"],
+    targets: ["chrome>=69"],
     minify: false,
     sourcemap: false,
   },

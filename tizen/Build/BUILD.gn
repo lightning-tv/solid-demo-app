@@ -1,0 +1,33 @@
+import("$tizen_core/build/workspace.gni")
+
+tizen_workspace("${hyb_final_pkg_id}") {
+
+    package_file = "$root_out_dir/${hyb_final_pkg}"
+
+    
+    projects = []
+    manifests = []
+    executables = []
+    projects += [
+        "//tizen",
+    ]
+
+    if (!test_build) {      
+        #  there can be only one main project
+        main_web_project = "tizen"
+
+        dep_web_widgets = [
+        ]
+
+        dep_web_projects = [
+        ]
+
+        executables += [
+            "tizen",
+        ]
+    }
+
+    if (test_build) {
+    }
+   
+}

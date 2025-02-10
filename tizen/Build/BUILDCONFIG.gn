@@ -1,0 +1,120 @@
+declare_args() {
+    # Default Tizen profile for the build
+    profile = "tv-samsung"
+
+    # Default Tizen version for the build
+    api_version = "9.0"
+
+    # Default Build type [Debug/ Release/ Test]
+    build_type = "Debug"
+
+    ws_path = "/Users/chief/Documents/Code/Lightning/solid-demo-app/tizen"
+
+    # Build with debug info
+    debug_build = true
+
+    # Build with tests
+    test_build = false
+}
+
+contains_native_proj = false
+
+target_os = "linux"
+
+
+# hybrid ws
+hyb_web_pkg = "tizen.wgt"
+hyb_native_pkg = ""
+hyb_native_pkg_id = ""
+hyb_native_pkg_ver = ""
+hyb_dotnet_pkg = ""
+hyb_dotnet_dep_pkgs = ""
+hyb_resource_pkg = ""
+hyb_base_pkg = "tizen.wgt"
+hyb_final_pkg = "tizen.wgt"
+hyb_final_pkg_id = "bOtIKaCrZa"
+hyb_final_app_id = ""
+hyb_final_pkg_type = "web"
+hyb_web_widget_id = ""
+utc_bin_path = ""
+native_test_path = ""
+hyb_action_code = ""
+unity_pkg = ""
+deps_type = "single"
+multi_build = false
+arch_version = false
+hyb_pack_check = true
+contains_ime_category = false
+widget_app = false
+
+native_projects_path = [
+]
+
+profiles_path = "/Users/chief/tizen-sdk-data/profile/profiles.xml"
+signing_profile = ""
+# set opt if non empty web projects
+if (hyb_web_pkg != ""){
+    opt = false
+}
+
+# using native toolchain for hybrid build,
+rootstrap = "public"
+compiler = "llvm"
+arch = "x86"
+verbose_build = false
+strip_debug_info = false
+
+
+# Use default signing profile for packaging
+default_signing_profile = "false"
+
+# Author certificate for package signing
+author_cert = "/Users/chief/tizen-sdk-data/keystore/author/tizen-cert.p12"
+
+# Distributor certificate for package signing
+distributor_cert = "/Users/chief/tizen-sdk/tools/certificate-generator/certificates/distributor/tizen-distributor-signer.p12"
+
+# Distributor2 certificate for package signing
+distributor2_cert = ""
+
+# Author profile item password attr 
+author_pass_attr = "/Users/chief/tizen-sdk-data/keystore/author/tizen-cert.pwd"
+
+# Distributor profile item password attr 
+distributor_pass_attr = "/Users/chief/tizen-sdk-data/tools/certificate-generator/certificates/distributor/tizen-distributor-signer.pwd"
+
+# Distributor2 profile item password attr 
+distributor2_pass_attr = ""
+
+# Tizen Studio path
+tizen_studio = "/Users/chief/tizen-sdk"
+
+# Tizen core path
+tizen_core = "/Users/chief/tizen-sdk/tools/tizen-core"
+
+# Out directory for native package file
+native_out_dir = "tpk"
+
+web_out_dir = "wgt"
+
+resource_out_dir = "rpk"
+
+
+# Source path filter patterns
+exclude_patterns = [
+]
+
+# Test source path pattern
+test_src_patterns = [
+]
+
+if (!test_build) {
+    exclude_patterns += test_src_patterns
+}
+
+set_sources_assignment_filter(exclude_patterns)
+if (contains_native_proj){
+    set_default_toolchain(":${arch}_${compiler}")
+} else {
+    set_default_toolchain("${tizen_core}/dotnet/toolchains:dotnet_builder")
+}
