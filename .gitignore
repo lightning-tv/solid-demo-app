@@ -5,5 +5,9 @@ src/api/key.ts
 # This project uses `pnpm` for package management
 package-lock.json
 # These are part of the build
+tizen/index.html
 tizen/assets
 tizen/fonts
+tizen/Debug
+tizen/obj
+tizen/Build

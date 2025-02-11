@@ -13,8 +13,9 @@
    default-src 'self'; 
   script-src 'self' 'unsafe-inline' 'unsafe-eval'; 
   style-src 'self' 'unsafe-inline'; 
-  object-src 'none'; 
-  connect-src 'self' https://api.themoviedb.org/3/;
+  object-src 'none';
+  worker-src 'self' blob:;
+  connect-src 'self' https://api.themoviedb.org/3/ https://image.tmdb.org/;
    </tizen:content-security-policy>
    <tizen:profile name="tv"></tizen:profile>
 </widget>
