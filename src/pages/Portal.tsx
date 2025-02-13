@@ -81,6 +81,11 @@ const Portal = () => {
       description: "TMDB Example",
     },
     {
+      title: "Grid Primitive for Layout",
+      id: "tmdbgrid",
+      description: "Using Grid component",
+    },
+    {
       title: "Firebolt Integration",
       id: "firebolt",
       description: "Firebolt API Integration",

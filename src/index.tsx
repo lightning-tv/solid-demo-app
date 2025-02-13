@@ -23,6 +23,7 @@ import { browsePreload } from "./api/browsePreload";
 import { entityPreload } from "./api/entityPreload";
 
 const Grid = lazy(() => import("./pages/Grid"));
+const TMDBGrid = lazy(() => import("./pages/TMDBGrid"));
 const Portal = lazy(() => import("./pages/Portal"));
 const TextPage = lazy(() => import("./pages/Text"));
 const TextPosterPage = lazy(() => import("./pages/TextPoster"));
@@ -103,6 +104,7 @@ render(() => (
     <Route path="examples" component={Portal} />
     <Route path="browse/:filter" component={Browse} preload={browsePreload} />
     <Route path="tmdb" component={TMDB} preload={tmdbData} />
+    <Route path="tmdbgrid" component={TMDBGrid} preload={tmdbData} />
     <Route path="destroy" component={DestroyPage} preload={destroyData} />
     <Route path="grid" component={Grid} />
     <Route path="text" component={TextPage} />
