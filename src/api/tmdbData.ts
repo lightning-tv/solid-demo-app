@@ -33,6 +33,7 @@ const fetchGenreMovies = (genres) => {
 type RowItem = {
     title: string;
     items: any;
+    setItems?: any;
     type: "Poster" | "Hero" | "PosterTitle";
     height: number;
 };
@@ -51,10 +52,11 @@ export function destroyData() {
 }
 export function tmdbData() {
   const rows: RowItem[] = [];
-
+  const popularMovies = createResource(() => fetchPopular("movie"));
   rows.push({
     title: "Popular Movies",
-    items: createResource(() => fetchPopular("movie"))[0],
+    items: popularMovies[0],
+    setItems: popularMovies[1].mutate,
     type: "Poster",
     height: 328,
   });

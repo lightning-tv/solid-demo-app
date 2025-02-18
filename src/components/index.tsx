@@ -83,7 +83,7 @@ const posterStyles = {
   color: "#b0b0b0",
   //borderRadius: 8,
   transition: {
-    scale: { duration: 200, easing: "cubic-bezier(0.20, 1.00, 0.80, 1.00)" },
+    scale: { duration: 200, easing: "linear" },
   },
   $focus: { scale: 1.1, color: "#fff" },
 };

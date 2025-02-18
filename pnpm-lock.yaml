@@ -39,6 +39,9 @@ importers:
       '@lightningtv/solid-ui':
         specifier: ^1.0.0
         version: 1.0.0(@lightningtv/core@2.7.1(@lightningjs/renderer@2.11.1))(@lightningtv/solid@2.7.3(@lightningjs/renderer@2.11.1)(@solidjs/router@0.15.3(patch_hash=hnhvc47baca25dviao74hiryf4)(solid-js@1.9.4))(solid-js@1.9.4))(solid-js@1.9.4)
+      '@solid-primitives/list':
+        specifier: ^0.1.0
+        version: 0.1.0(solid-js@1.9.4)
       '@solid-primitives/scheduled':
         specifier: ^1.4.4
         version: 1.4.4(solid-js@1.9.4)
@@ -1089,6 +1092,11 @@ packages:
 
   '@solid-primitives/event-listener@2.3.3':
     resolution: {integrity: sha512-DAJbl+F0wrFW2xmcV8dKMBhk9QLVLuBSW+TR4JmIfTaObxd13PuL7nqaXnaYKDWOYa6otB00qcCUIGbuIhSUgQ==}
+    peerDependencies:
+      solid-js: ^1.6.12
+
+  '@solid-primitives/list@0.1.0':
+    resolution: {integrity: sha512-Io71EkTyS10/YtlMbPDNU96kyz1HZwg501+EqW/EL0NzMU9W/vxfwAURGOBi1Es6Yixu5eYkxJHBTkcC4F5hAw==}
     peerDependencies:
       solid-js: ^1.6.12
 
@@ -3310,6 +3318,10 @@ snapshots:
   '@solid-primitives/event-listener@2.3.3(solid-js@1.9.4)':
     dependencies:
       '@solid-primitives/utils': 6.2.3(solid-js@1.9.4)
+      solid-js: 1.9.4
+
+  '@solid-primitives/list@0.1.0(solid-js@1.9.4)':
+    dependencies:
       solid-js: 1.9.4
 
   '@solid-primitives/mouse@2.0.21(solid-js@1.9.4)':

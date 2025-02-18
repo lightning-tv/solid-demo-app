@@ -28,6 +28,11 @@ const Portal = () => {
       description: "Understanding Key Handling",
     },
     {
+      title: "Loop Basics",
+      id: "loops",
+      description: "Understanding For, Index, Lazy and List",
+    },
+    {
       title: "Layout Basics",
       id: "layout",
       description: "Quick guide on Layout",

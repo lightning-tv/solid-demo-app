@@ -23,6 +23,7 @@ import { browsePreload } from "./api/browsePreload";
 import { entityPreload } from "./api/entityPreload";
 
 const Grid = lazy(() => import("./pages/Grid"));
+const Loops = lazy(() => import("./pages/Loops"));
 const TMDBGrid = lazy(() => import("./pages/TMDBGrid"));
 const Portal = lazy(() => import("./pages/Portal"));
 const TextPage = lazy(() => import("./pages/Text"));
@@ -76,7 +77,7 @@ Config.fontSettings.fontSize = 32;
 
 Config.rendererOptions = {
   fpsUpdateInterval: logFps ? 1000 : 0,
-  inspector: import.meta.env.DEV ? Inspector : undefined,
+  //inspector: import.meta.env.DEV ? Inspector : undefined,
   // textureMemory: {
   //   criticalThreshold: 80e6,
   // },
@@ -104,6 +105,7 @@ render(() => (
     <Route path="examples" component={Portal} />
     <Route path="browse/:filter" component={Browse} preload={browsePreload} />
     <Route path="tmdb" component={TMDB} preload={tmdbData} />
+    <Route path="loops" component={Loops} preload={tmdbData} />
     <Route path="tmdbgrid" component={TMDBGrid} preload={tmdbData} />
     <Route path="destroy" component={DestroyPage} preload={destroyData} />
     <Route path="grid" component={Grid} />
