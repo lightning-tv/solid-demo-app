@@ -36,6 +36,7 @@ export default defineConfig({
     dedupe: [
       "solid-js",
       "@lightningjs/renderer",
+      "@lightningtv/core",
       "@lightningtv/solid",
       "@lightningtv/solid/primitives",
       "@lightningtv/solid-ui",

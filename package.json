@@ -5,15 +5,15 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "vite --open --host --force",
-    "start:prod": "vite --open --host --force --mode production",
+    "start": "vite --host --force",
+    "start:prod": "vite --host --force --mode production",
     "build": "vite build --sourcemap=true",
     "build:tizen": "vite build --sourcemap=false --base=./ --outDir tizen --emptyOutDir false",
     "build:github": "vite build --sourcemap=false --base=/solid-demo-app/",
     "build:github:dev": "NODE_ENV=development vite build --sourcemap=true --mode development --base=/solid-demo-app/",
     "build:analyze": "vite-bundle-visualizer",
     "deploy": "gh-pages -d dist",
-    "preview": "vite preview --open --port 8080",
+    "preview": "vite preview --port 8080",
     "tsc": "tsc",
     "lint:prettier": "prettier --check \"**/*.{ts,js,cjs,md,tsx}\"",
     "lint:fix:prettier": "prettier --write \"**/*.{ts,js,cjs,md,tsx}\"",
@@ -50,8 +50,6 @@
     "terser": "^5.37.0",
     "typescript": "^5.7.3",
     "vite": "^6.0.7",
-    "vite-bundle-visualizer": "^1.2.1",
-    "vite-plugin-cross-origin-isolation": "^0.1.6",
     "vite-plugin-solid": "^2.11.0"
   },
   "pnpm": {
