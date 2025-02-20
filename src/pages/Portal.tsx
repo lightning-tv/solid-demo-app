@@ -33,6 +33,11 @@ const Portal = () => {
       description: "Understanding For, Index, Lazy and List",
     },
     {
+      title: "Infinite Items",
+      id: "infinite",
+      description: "Learn how to manage large list of items",
+    },
+    {
       title: "Layout Basics",
       id: "layout",
       description: "Quick guide on Layout",

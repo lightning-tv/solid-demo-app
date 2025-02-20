@@ -24,6 +24,7 @@ import { entityPreload } from "./api/entityPreload";
 
 const Grid = lazy(() => import("./pages/Grid"));
 const Loops = lazy(() => import("./pages/Loops"));
+const Infinite = lazy(() => import("./pages/Infinite"));
 const TMDBGrid = lazy(() => import("./pages/TMDBGrid"));
 const Portal = lazy(() => import("./pages/Portal"));
 const TextPage = lazy(() => import("./pages/Text"));
@@ -106,6 +107,7 @@ render(() => (
     <Route path="browse/:filter" component={Browse} preload={browsePreload} />
     <Route path="tmdb" component={TMDB} preload={tmdbData} />
     <Route path="loops" component={Loops} preload={tmdbData} />
+    <Route path="infinite" component={Infinite} preload={tmdbData} />
     <Route path="tmdbgrid" component={TMDBGrid} preload={tmdbData} />
     <Route path="destroy" component={DestroyPage} preload={destroyData} />
     <Route path="grid" component={Grid} />
