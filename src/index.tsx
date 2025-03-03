@@ -40,6 +40,7 @@ const ComponentsPage = lazy(() => import("./pages/Components"));
 const FocusHandlingPage = lazy(() => import("./pages/FocusHandling"));
 const GradientsPage = lazy(() => import("./pages/Gradients"));
 const FlexPage = lazy(() => import("./pages/Flex"));
+const FlexGrowPage = lazy(() => import("./pages/FlexGrow"));
 const FlexSizePage = lazy(() => import("./pages/FlexSize"));
 const FlexColumnSizePage = lazy(() => import("./pages/FlexColumnSize"));
 const FlexColumnPage = lazy(() => import("./pages/FlexColumn"));
@@ -78,7 +79,7 @@ Config.fontSettings.fontSize = 32;
 
 Config.rendererOptions = {
   fpsUpdateInterval: logFps ? 1000 : 0,
-  //inspector: import.meta.env.DEV ? Inspector : undefined,
+  inspector: import.meta.env.DEV ? Inspector : undefined,
   // textureMemory: {
   //   criticalThreshold: 80e6,
   // },
@@ -98,8 +99,26 @@ if (rendererMode === "canvas") {
   Config.rendererOptions.renderEngine = WebGlCoreRenderer;
 }
 
-const { render } = createRenderer();
+const { renderer, render } = createRenderer();
 loadFonts(fonts);
+// Prepare for RC3 of Renderer
+// import {
+//   Rounded,
+//   RoundedWithBorder,
+//   RoundedWithShadow,
+//   RoundedWithBorderAndShadow,
+//   RadialGradient,
+//   LinearGradient,
+//   HolePunch,
+// } from '@lightningjs/renderer/webgl/shaders';
+// const shManager = renderer.stage.shManager;
+// shManager.registerShaderType('rounded', Rounded)
+// shManager.registerShaderType('roundedWithBorder', RoundedWithBorder)
+// shManager.registerShaderType('roundedWithShadow', RoundedWithShadow)
+// shManager.registerShaderType('roundedWithBorderAndShadow', RoundedWithBorderAndShadow)
+// shManager.registerShaderType('radialGradient', RadialGradient)
+// shManager.registerShaderType('linearGradient', LinearGradient)
+// shManager.registerShaderType('holePunch', HolePunch)
 render(() => (
   <HashRouter root={(props) => <App {...props} />}>
     <Route path="" component={Browse} preload={browsePreload} />
@@ -129,6 +148,7 @@ render(() => (
     <Route path="flexsize" component={FlexSizePage} />
     <Route path="flexcolumnsize" component={FlexColumnSizePage} />
     <Route path="flexcolumn" component={FlexColumnPage} />
+    <Route path="flexgrow" component={FlexGrowPage} />
     <Route path="superflex" component={SuperFlexPage} />
     <Route path="buttonsmaterial" component={ButtonsMaterialPage} />
     <Route path="entity/people/:id" component={People} />

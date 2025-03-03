@@ -53,6 +53,11 @@ const Portal = () => {
       description: "Flex Column Implementation",
     },
     {
+      title: "Flex Grow",
+      id: "flexgrow",
+      description: "Flex Grow Examples",
+    },
+    {
       title: "Flex Row Vertical Align",
       id: "flexsize",
       description: "Flex Row Vertical Align Implementation",

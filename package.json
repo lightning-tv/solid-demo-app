@@ -25,7 +25,7 @@
     "@firebolt-js/sdk": "^1.4.1",
     "@lightningjs/l3-ui-theme-base": "^0.3.3",
     "@lightningjs/renderer": "2.11.1",
-    "@lightningtv/core": "2.7.1",
+    "@lightningtv/core": "2.7.3",
     "@lightningtv/l3-ui-theme-base": "^1.0.0",
     "@lightningtv/solid": "2.7.3",
     "@lightningtv/solid-ui": "^1.0.0",
