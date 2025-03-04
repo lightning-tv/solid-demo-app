@@ -15,8 +15,8 @@ function formatDate(dateString) {
 }
 
 function justYear(dateString) {
-  const parts = dateString.split("-");
-  return parts[0];
+  const parts = dateString?.split("-") || [];
+  return parts[0] || "";
 }
 
 export function ensureItems(items, minCount) {
