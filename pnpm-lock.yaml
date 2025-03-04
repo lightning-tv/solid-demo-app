@@ -5,9 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@lightningtv/core': 2.7.3
-  '@lightningtv/solid': 2.7.3
-  '@lightningjs/renderer': 2.11.1
+  '@lightningtv/core': 2.7.4
+  '@lightningtv/solid': 2.7.8
+  '@lightningjs/renderer': 2.13.0
 
 patchedDependencies:
   '@solidjs/router':
@@ -25,20 +25,20 @@ importers:
         specifier: ^0.3.3
         version: 0.3.3
       '@lightningjs/renderer':
-        specifier: 2.11.1
-        version: 2.11.1
+        specifier: 2.13.0
+        version: 2.13.0
       '@lightningtv/core':
-        specifier: 2.7.3
-        version: 2.7.3(@lightningjs/renderer@2.11.1)
+        specifier: 2.7.4
+        version: 2.7.4(@lightningjs/renderer@2.13.0)
       '@lightningtv/l3-ui-theme-base':
         specifier: ^1.0.0
         version: 1.0.0
       '@lightningtv/solid':
-        specifier: 2.7.3
-        version: 2.7.3(@lightningjs/renderer@2.11.1)(@solidjs/router@0.15.3(patch_hash=hnhvc47baca25dviao74hiryf4)(solid-js@1.9.4))(solid-js@1.9.4)
+        specifier: 2.7.8
+        version: 2.7.8(@lightningjs/renderer@2.13.0)(@solidjs/router@0.15.3(patch_hash=hnhvc47baca25dviao74hiryf4)(solid-js@1.9.4))(solid-js@1.9.4)
       '@lightningtv/solid-ui':
         specifier: ^1.0.0
-        version: 1.0.0(@lightningtv/core@2.7.3(@lightningjs/renderer@2.11.1))(@lightningtv/solid@2.7.3(@lightningjs/renderer@2.11.1)(@solidjs/router@0.15.3(patch_hash=hnhvc47baca25dviao74hiryf4)(solid-js@1.9.4))(solid-js@1.9.4))(solid-js@1.9.4)
+        version: 1.0.0(@lightningtv/core@2.7.4(@lightningjs/renderer@2.13.0))(@lightningtv/solid@2.7.8(@lightningjs/renderer@2.13.0)(@solidjs/router@0.15.3(patch_hash=hnhvc47baca25dviao74hiryf4)(solid-js@1.9.4))(solid-js@1.9.4))(solid-js@1.9.4)
       '@solid-primitives/list':
         specifier: ^0.1.0
         version: 0.1.0(solid-js@1.9.4)
@@ -951,14 +951,14 @@ packages:
   '@lightningjs/l3-ui-theme-base@0.3.3':
     resolution: {integrity: sha512-lbEO8OChUokt6CcudGZt7SL2laEDDbfPmeN6ttgGaid8/n3CN1eFgPXngZSG2mNNOrruUadGh3j81thphgFUdg==}
 
-  '@lightningjs/renderer@2.11.1':
-    resolution: {integrity: sha512-fXj7BGLHPqCHt8Fedbsx14Q4QdZJ5x8t7zzIyu8IKhmK1+cZe1UZLp2jEFlSW5//xZROFRHkAhU1u8xe75y0Qw==}
+  '@lightningjs/renderer@2.13.0':
+    resolution: {integrity: sha512-vGnteU7x8jPKjClCzdRZejbMnItpcUbigxwlnruPH5r+pZfnFJy0cmlE7d8ghkjQrIyuHvHlFmlPNy2z+9i2Bw==}
     engines: {node: '>= 20.9.0', npm: '>= 10.0.0', pnpm: '>= 8.9.2'}
 
-  '@lightningtv/core@2.7.3':
-    resolution: {integrity: sha512-Bk0/FrBtoFcc3oEO2FQq2gMIFggQAxKuey/SttOgsIXlmMVdyci69pYG2WqFaZ4qcsZ8hPm1PBvNmie/lWGAyg==}
+  '@lightningtv/core@2.7.4':
+    resolution: {integrity: sha512-B8LISd5Ko6MkbjefOOg+EJRZrKuJGAaUr8zaJM7JENFBYZOqc+oHqSDvhQOQ29gix5KCByFevsjwcjR6XXnqSA==}
     peerDependencies:
-      '@lightningjs/renderer': 2.11.1
+      '@lightningjs/renderer': 2.13.0
 
   '@lightningtv/l3-ui-theme-base@1.0.0':
     resolution: {integrity: sha512-yxjhkNfcN4cDwsrD5Nd1jRqxM/ZetqVG9EppCIEbqaECflw11RI0GvhS7+Wpi4R++4lqsQEYqTN+UVRs56iTMQ==}
@@ -966,14 +966,14 @@ packages:
   '@lightningtv/solid-ui@1.0.0':
     resolution: {integrity: sha512-4YLiPLJzOk7zLscM+DZh1nzkhipD98qWLrf9TI6JF7/1J4MHuoGnqR5drgA4LIePtQgEdhCGJB8n5vAJKvJGTQ==}
     peerDependencies:
-      '@lightningtv/core': 2.7.3
-      '@lightningtv/solid': 2.7.3
+      '@lightningtv/core': 2.7.4
+      '@lightningtv/solid': 2.7.8
       solid-js: '*'
 
-  '@lightningtv/solid@2.7.3':
-    resolution: {integrity: sha512-WSm/yxlELgJRRQeBhoyIJJSUnG9fw4TB8Sij5+uEaUlCE+l1w1dXQuYhbB6q4p1eWdzxoet4RBdBBU/fOHvByQ==}
+  '@lightningtv/solid@2.7.8':
+    resolution: {integrity: sha512-se7CvQGu3qsCnqKyyOhwvDxEiVJM5DWrPruARefJv/ji7GCyjr259qt8cwYT/E3rErPoGoVRsiqf5ZztSNRBPg==}
     peerDependencies:
-      '@lightningjs/renderer': 2.11.1
+      '@lightningjs/renderer': 2.13.0
       '@solidjs/router': ^0.15.1
       solid-js: '*'
 
@@ -3201,26 +3201,26 @@ snapshots:
 
   '@lightningjs/l3-ui-theme-base@0.3.3': {}
 
-  '@lightningjs/renderer@2.11.1': {}
+  '@lightningjs/renderer@2.13.0': {}
 
-  '@lightningtv/core@2.7.3(@lightningjs/renderer@2.11.1)':
+  '@lightningtv/core@2.7.4(@lightningjs/renderer@2.13.0)':
     dependencies:
-      '@lightningjs/renderer': 2.11.1
+      '@lightningjs/renderer': 2.13.0
 
   '@lightningtv/l3-ui-theme-base@1.0.0': {}
 
-  '@lightningtv/solid-ui@1.0.0(@lightningtv/core@2.7.3(@lightningjs/renderer@2.11.1))(@lightningtv/solid@2.7.3(@lightningjs/renderer@2.11.1)(@solidjs/router@0.15.3(patch_hash=hnhvc47baca25dviao74hiryf4)(solid-js@1.9.4))(solid-js@1.9.4))(solid-js@1.9.4)':
+  '@lightningtv/solid-ui@1.0.0(@lightningtv/core@2.7.4(@lightningjs/renderer@2.13.0))(@lightningtv/solid@2.7.8(@lightningjs/renderer@2.13.0)(@solidjs/router@0.15.3(patch_hash=hnhvc47baca25dviao74hiryf4)(solid-js@1.9.4))(solid-js@1.9.4))(solid-js@1.9.4)':
     dependencies:
-      '@lightningjs/renderer': 2.11.1
-      '@lightningtv/core': 2.7.3(@lightningjs/renderer@2.11.1)
-      '@lightningtv/solid': 2.7.3(@lightningjs/renderer@2.11.1)(@solidjs/router@0.15.3(patch_hash=hnhvc47baca25dviao74hiryf4)(solid-js@1.9.4))(solid-js@1.9.4)
+      '@lightningjs/renderer': 2.13.0
+      '@lightningtv/core': 2.7.4(@lightningjs/renderer@2.13.0)
+      '@lightningtv/solid': 2.7.8(@lightningjs/renderer@2.13.0)(@solidjs/router@0.15.3(patch_hash=hnhvc47baca25dviao74hiryf4)(solid-js@1.9.4))(solid-js@1.9.4)
       '@solid-primitives/refs': 1.0.8(solid-js@1.9.4)
       solid-js: 1.9.4
 
-  '@lightningtv/solid@2.7.3(@lightningjs/renderer@2.11.1)(@solidjs/router@0.15.3(patch_hash=hnhvc47baca25dviao74hiryf4)(solid-js@1.9.4))(solid-js@1.9.4)':
+  '@lightningtv/solid@2.7.8(@lightningjs/renderer@2.13.0)(@solidjs/router@0.15.3(patch_hash=hnhvc47baca25dviao74hiryf4)(solid-js@1.9.4))(solid-js@1.9.4)':
     dependencies:
-      '@lightningjs/renderer': 2.11.1
-      '@lightningtv/core': 2.7.3(@lightningjs/renderer@2.11.1)
+      '@lightningjs/renderer': 2.13.0
+      '@lightningtv/core': 2.7.4(@lightningjs/renderer@2.13.0)
       '@solid-primitives/event-listener': 2.3.3(solid-js@1.9.4)
       '@solid-primitives/mouse': 2.0.21(solid-js@1.9.4)
       '@solid-primitives/scheduled': 1.4.4(solid-js@1.9.4)

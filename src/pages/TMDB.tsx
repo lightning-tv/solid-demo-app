@@ -1,7 +1,6 @@
 import { createEffect, on, createSignal } from "solid-js";
 import { ElementNode, activeElement, View, Text } from "@lightningtv/solid";
-import { LazyUp } from "@lightningtv/solid/primitives";
-import { Column, Row } from "@lightningtv/solid/primitives";
+import { LazyRow, LazyColumn } from "@lightningtv/solid/primitives";
 import { Hero, TitleRow } from "../components";
 import styles from "../styles";
 import { setGlobalBackground } from "../state";
@@ -88,10 +87,8 @@ const TMDB = (props) => {
         x={162}
         content={heroContent()}
       />
-      <LazyUp
+      <LazyColumn
         y={500}
-        component={Column}
-        direction="column"
         upCount={3}
         each={props.data.rows}
         id="BrowseColumn"
@@ -103,9 +100,7 @@ const TMDB = (props) => {
       >
         {(row) =>
           row().type === "Hero" ? (
-            <LazyUp
-              component={Row}
-              direction="row"
+            <LazyRow
               gap={80}
               upCount={3}
               scroll="center"
@@ -115,7 +110,7 @@ const TMDB = (props) => {
               height={row().height}
             >
               {(item) => <Hero {...item()} />}
-            </LazyUp>
+            </LazyRow>
           ) : (
             <TitleRow
               row={row()}
@@ -125,7 +120,7 @@ const TMDB = (props) => {
             />
           )
         }
-      </LazyUp>
+      </LazyColumn>
     </>
   );
 };

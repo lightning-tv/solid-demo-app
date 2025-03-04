@@ -11,6 +11,11 @@ roundPoster=false to turn off rounded images on poster
 
 https://lightning-tv.github.io/solid-demo-app/?size=720&disableBG=true#/
 
+## Main Repo
+
+Solid
+[https://github.com/lightning-tv/solid](https://github.com/lightning-tv/solid)
+
 ## Getting started
 
 Get an api key from [TMDB API](https://developers.themoviedb.org/3/getting-started/introduction)
