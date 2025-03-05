@@ -56,6 +56,7 @@ let numImageWorkers = 3;
 const numWorkers = urlParams.get("numImageWorkers");
 const screenSize = urlParams.get("size") || "default";
 const rendererMode = urlParams.get("mode") || "webgl";
+const animationsEnabled = urlParams.get("animate") || "true";
 
 if (numWorkers) {
   numImageWorkers = parseInt(numWorkers);
@@ -71,7 +72,7 @@ const deviceLogicalPixelRatio = {
 const logFps = true;
 Config.debug = false;
 // Config.keyDebug = true;
-Config.animationsEnabled = true;
+Config.animationsEnabled = animationsEnabled === "true";
 Config.fontSettings.fontFamily = "Roboto";
 Config.fontSettings.color = "#f6f6f6";
 Config.fontSettings.fontSize = 32;
@@ -88,6 +89,7 @@ Config.rendererOptions = {
   // 720p = 0.666667, 1080p = 1, 1440p = 1.5, 2160p = 2
   deviceLogicalPixelRatio,
   devicePhysicalPixelRatio: 1,
+  createImageBitmapSupport: "auto",
 };
 
 // Ideally you'd do two separate builds for canvas and webgl to reduce bundle size.
