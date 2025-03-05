@@ -9,11 +9,10 @@ import { Row } from "@lightningtv/solid/primitives";
 import { createSignal, For, Index } from "solid-js";
 import styles, { buttonStyles } from "../styles";
 import { type Tile } from "../api/formatters/ItemFormatter";
-import { INode } from "@lightningtv/solid";
-import { LazyUp } from "@lightningtv/solid/primitives";
+import { LazyRow } from "@lightningtv/solid/primitives";
 
-export function Thumbnail(props: IntrinsicNodeProps) {
-  return <View {...props} style={styles.Thumbnail} />;
+export function Thumbnail(props: IntrinsicNodeProps & { item: Tile }) {
+  return <View {...props} src={props.item.src} item={props.item} style={styles.Thumbnail} />;
 }
 
 export function FocusRing(props: IntrinsicNodeProps) {
@@ -28,7 +27,7 @@ export interface TileRowProps extends IntrinsicNodeProps {
 export function TileRow(props: TileRowProps) {
   return (
     <Row {...props} style={styles.Row}>
-      <Index each={props.items}>{(item) => <Thumbnail {...item} />}</Index>
+      <Index each={props.items}>{(item) => <Thumbnail item={item()} />}</Index>
     </Row>
   );
 }
@@ -59,18 +58,16 @@ export function TitleRow(props: TileRowProps) {
       <Text skipFocus style={titleRowStyles}>
         {props.title}
       </Text>
-      <LazyUp
-        component={Row}
-        direction="row"
+      <LazyRow
         gap={20}
         upCount={11}
         each={props.items}
         y={50}
       >
         {(item) => (
-          <Dynamic component={typeToComponent[props.row.type]} {...item()} />
+          <Dynamic component={typeToComponent[props.row.type]} item={item()} />
         )}
-      </LazyUp>
+      </LazyRow>
     </View>
   );
 }
@@ -91,6 +88,8 @@ const posterStyles = {
 export function Poster(props: NodeProps) {
   return (
     <View
+      src={props.item?.src}
+      backdrop={props.item?.backdrop}
       {...props}
       onFail={(node) => (node.src = "failback.png")}
       style={posterStyles}
@@ -122,12 +121,14 @@ const posterTitleStyles = {
 export function PosterTitle(props: NodeProps & { title: string }) {
   return (
     <View
+      src={props.item?.src}
+      backdrop={props.item?.backdrop}
       {...props}
       onFail={(node) => (node.src = "failback.png")}
       style={posterStyles}
       forwardStates
     >
-      <Text style={posterTitleStyles}>{props.title}</Text>
+      <Text style={posterTitleStyles}>{props.item?.title}</Text>
     </View>
   );
 }
@@ -153,23 +154,25 @@ const heroTextStyles = {
 
 export function Hero(
   props: NodeProps & {
-    src: string;
-    backdrop: string;
-    title: string;
-    overview: string;
+    item: {
+      src: string;
+      backdrop: string;
+      title: string;
+      overview: string;
+    };
   }
 ) {
   const [hasFocus, setHasFocus] = createSignal(false);
   return (
     <View
       {...props}
-      src={props.backdrop}
+      src={props.item.backdrop}
       style={heroStyles}
       onFocusChanged={setHasFocus}
       forwardStates
     >
       <View transition={{ alpha: heroTransition }} alpha={hasFocus() ? 1 : 0}>
-        <View width={185} height={278} x={54} y={220} src={props.src} />
+        <View width={185} height={278} x={54} y={220} src={props.item.src} />
         <Text
           y={520}
           x={54}
@@ -178,7 +181,7 @@ export function Hero(
           maxLines={1}
           style={heroTextStyles}
         >
-          {props.title}
+          {props.item.title}
         </Text>
         <Text
           y={620}
@@ -190,7 +193,7 @@ export function Hero(
           color={"#ccc"}
           style={heroTextStyles}
         >
-          {props.overview}
+          {props.item.overview}
         </Text>
       </View>
     </View>

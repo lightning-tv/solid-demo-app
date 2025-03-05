@@ -47,14 +47,16 @@ const Browse = (props) => {
       (elm) => {
         if (!elm) return;
 
+        const item = elm.item || {} as any;
+
         if (firstRun) {
           // no content set yet, set right away
-          if (elm.backdrop) {
-            setGlobalBackground(elm.backdrop);
+          if (item.backdrop) {
+            setGlobalBackground(item.backdrop);
           }
 
-          if (elm.heroContent) {
-            setHeroContent(elm.heroContent);
+          if (item.heroContent) {
+            setHeroContent(item.heroContent);
           }
 
           preload(`/browse/tv`, { preloadData: true });
@@ -64,16 +66,16 @@ const Browse = (props) => {
           return;
         }
 
-        if (elm.href) {
-          preload(elm.href, { preloadData: true });
+        if (item.href) {
+          preload(item.href, { preloadData: true });
         }
 
-        if (elm.backdrop) {
-          delayedBackgrounds(elm.backdrop);
+        if (item.backdrop) {
+          delayedBackgrounds(item.backdrop);
         }
 
-        if (elm.heroContent) {
-          delayedHero(elm.heroContent);
+        if (item.heroContent) {
+          delayedHero(item.heroContent);
         }
       },
       { defer: true }
@@ -99,8 +101,8 @@ const Browse = (props) => {
     let entity = this.children.find((c) =>
       c.states!.has("focus")
     ) as ElementNode;
-    assertTruthy(entity && entity.href);
-    navigate(entity.href);
+    assertTruthy(entity && entity.item?.href);
+    navigate(entity.item.href);
     return true;
   }
 

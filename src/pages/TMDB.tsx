@@ -24,14 +24,15 @@ const TMDB = (props) => {
       activeElement,
       (elm) => {
         if (!elm) return;
+        const item = elm.item || {} as any;
 
         if (firstRun) {
-          elm.backdrop && setGlobalBackground(elm.backdrop);
-          elm.heroContent && setHeroContent(elm.heroContent);
+          item.backdrop && setGlobalBackground(item.backdrop);
+          item.heroContent && setHeroContent(item.heroContent);
           firstRun = false;
         } else {
-          elm.backdrop && delayedBackgrounds(elm.backdrop);
-          elm.heroContent && delayedHero(elm.heroContent);
+          item.backdrop && delayedBackgrounds(item.backdrop);
+          item.heroContent && delayedHero(item.heroContent);
         }
       },
       { defer: true }
@@ -109,7 +110,7 @@ const TMDB = (props) => {
               y={50}
               height={row().height}
             >
-              {(item) => <Hero {...item()} />}
+              {(item) => <Hero item={item()} />}
             </LazyRow>
           ) : (
             <TitleRow

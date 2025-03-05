@@ -72,10 +72,8 @@ const Destroy = (props) => {
           autofocus
           onDestroy={animateOut}
           onCreate={animateIn}
-          src={heroContent()!.src}
-          backdrop={heroContent()!.backdrop}
+          item={heroContent()!}
           title={heroContent()!.title}
-          overview={heroContent()!.overview}
         />
       </Show>
     </View>
