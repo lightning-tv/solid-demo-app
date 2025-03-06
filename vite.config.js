@@ -35,11 +35,12 @@ export default defineConfig({
     },
     dedupe: [
       "solid-js",
+      "solid-js/universal",
+      "@solidjs/router",
       "@lightningjs/renderer",
       "@lightningtv/core",
       "@lightningtv/solid",
       "@lightningtv/solid/primitives",
-      "@lightningtv/solid-ui",
     ],
   },
   optimizeDeps: {
@@ -47,7 +48,6 @@ export default defineConfig({
       "@lightningtv/solid",
       "@lightningtv/core",
       "@lightningjs/renderer",
-      "@lightningtv/solid-ui",
     ],
   },
   server: {

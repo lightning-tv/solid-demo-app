@@ -4,10 +4,10 @@ import {
   useFocusManager,
   useAnnouncer,
   useMouse,
+  FPSCounter, setupFPS
 } from "@lightningtv/solid/primitives";
 import Background from "../components/Background";
 import NavDrawer from "../components/NavDrawer/NavDrawer";
-import { FPSCounter, setupFPS } from "@lightningtv/solid-ui";
 import { createEffect, createSignal, onCleanup } from "solid-js";
 import { KeyMap, KeyHoldMap  } from "@lightningtv/core/focusManager";
 

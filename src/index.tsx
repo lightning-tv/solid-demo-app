@@ -48,7 +48,6 @@ const ButtonsMaterialPage = lazy(() => import("./pages/ButtonsMaterial"));
 const SuperFlexPage = lazy(() => import("./pages/SuperFlex"));
 const Entity = lazy(() => import("./pages/Entity"));
 const People = lazy(() => import("./pages/People"));
-const LoginPage = lazy(() => import("./pages/Login"));
 const FireboltPage = lazy(() => import("./pages/Firebolt"));
 
 const urlParams = new URLSearchParams(window.location.search);
@@ -135,7 +134,6 @@ render(() => (
     <Route path="text" component={TextPage} />
     <Route path="firebolt" component={FireboltPage} />
     <Route path="textposter" component={TextPosterPage} />
-    <Route path="login" component={LoginPage} />
     <Route path="positioning" component={PositioningPage} />
     <Route path="layout" component={LayoutPage} />
     <Route path="focusbasics" component={FocusBasicsPage} />

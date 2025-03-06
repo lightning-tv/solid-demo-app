@@ -1,8 +1,8 @@
 import { Text, View, Dynamic } from "@lightningtv/solid";
 import { Visible } from "@lightningtv/solid/primitives";
-import { Button } from "@lightningtv/solid-ui";
 import { createSignal, For, onCleanup } from "solid-js";
 import { setGlobalBackground } from "../state";
+import { Button } from "../components";
 
 // Define the Square component
 function Square(props) {
@@ -77,7 +77,7 @@ const PositioningPage = () => {
       {/* Dynamic components */}
       <View x={1000} y={100}>
         <Text>Dynamic Components</Text>
-        <Dynamic component={Button} y={50} width={200} children="Button" />
+        <Dynamic component={Button} y={50} width={300} children="Button" />
         <For each={dynamicComponents()}>
           {(Component, index) => (
             <Dynamic

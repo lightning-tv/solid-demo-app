@@ -126,11 +126,6 @@ const Portal = () => {
       description: "Using onDestroy to animate destruction",
     },
     {
-      title: "Login",
-      id: "login",
-      description: "Login example",
-    },
-    {
       title: "Text",
       id: "text",
       description: "Text layout with flexbox",
