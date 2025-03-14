@@ -1,6 +1,6 @@
-import {Text, View} from "@lightningtv/solid";
-import {createSignal, onCleanup} from "solid-js";
-import {setGlobalBackground} from "../state";
+import { Text, View } from "@lightningtv/solid";
+import { createSignal, onCleanup } from "solid-js";
+import { setGlobalBackground } from "../state";
 
 const Default = () => {
   setGlobalBackground("#1e293b");

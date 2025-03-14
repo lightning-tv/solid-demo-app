@@ -1,9 +1,9 @@
 import api from ".";
-import {convertItemsToTiles} from "./formatters/ItemFormatter";
-import {createResource, createSignal} from "solid-js";
+import { convertItemsToTiles } from "./formatters/ItemFormatter";
+import { createResource, createSignal } from "solid-js";
 
 const handleResults = (response) => {
-  return response.then(({results}) => {
+  return response.then(({ results }) => {
     let filteredItems = results.filter((r) => !r.adult);
     return convertItemsToTiles(filteredItems);
   });
@@ -17,7 +17,7 @@ let genreListCache;
 const fetchGenreMovies = (genres) => {
   const genreList = genreListCache || (genreListCache = api.get(`/genre/movie/list`));
   const targetGenre = Array.isArray(genres) ? genres : [genres];
-  return genreList.then(({genres}) => {
+  return genreList.then(({ genres }) => {
     let targetGenreIds: number[] = [];
     genres.forEach((item) => {
       if (targetGenre.includes(item.name)) targetGenreIds.push(item.id);

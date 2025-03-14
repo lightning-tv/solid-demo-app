@@ -1,5 +1,5 @@
-import {View, Text} from "@lightningtv/solid";
-import {For, Show} from "solid-js";
+import { View, Text } from "@lightningtv/solid";
+import { For, Show } from "solid-js";
 import theme from "theme";
 
 const blockWidth = 900;
@@ -53,7 +53,7 @@ export const Badge = (props) => {
       style={{
         color: "0x00000099",
         borderRadius: 8,
-        border: {width: 2, color: "0xffffffff"},
+        border: { width: 2, color: "0xffffffff" },
         display: "flex",
         height: 36,
       }}

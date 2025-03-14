@@ -1,7 +1,7 @@
-import {createMemo} from "solid-js";
+import { createMemo } from "solid-js";
 import browseProvider from "./providers/browse";
 
-export function browsePreload({params}) {
+export function browsePreload({ params }) {
   return createMemo(() => {
     const provider = browseProvider(params.filter || "all");
     provider(1);

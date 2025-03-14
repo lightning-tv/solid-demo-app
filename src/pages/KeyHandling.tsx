@@ -1,6 +1,6 @@
-import {Text} from "@lightningtv/solid";
-import {setGlobalBackground} from "../state";
-import {Block} from "../components";
+import { Text } from "@lightningtv/solid";
+import { setGlobalBackground } from "../state";
+import { Block } from "../components";
 
 const KeyHandling = () => {
   setGlobalBackground("#333");

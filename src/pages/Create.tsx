@@ -1,6 +1,6 @@
-import {IntrinsicNodeStyleProps, Text, View, combineStyles, hexColor} from "@lightningtv/solid";
-import {Show, children, createSignal, onMount} from "solid-js";
-import {setGlobalBackground} from "../state";
+import { IntrinsicNodeStyleProps, Text, View, combineStyles, hexColor } from "@lightningtv/solid";
+import { Show, children, createSignal, onMount } from "solid-js";
+import { setGlobalBackground } from "../state";
 
 const CreatePage = () => {
   const OverviewContainer = {
@@ -36,7 +36,7 @@ const CreatePage = () => {
   let myBox, childRef;
   onMount(() => {
     setGlobalBackground("#000000");
-    myBox.animate({x: 100}, {duration: 2000}).start();
+    myBox.animate({ x: 100 }, { duration: 2000 }).start();
   });
 
   const [insertTest, setInsertTest] = createSignal<string | undefined>();
@@ -47,7 +47,7 @@ const CreatePage = () => {
     childRef
       .getChildById("child1")
       //.searchChildrenById('subChild') - more expensive version of getChildById
-      ?.animate({x: 600}, {duration: 2000})
+      ?.animate({ x: 600 }, { duration: 2000 })
       .start();
   }, 2000);
 
@@ -93,7 +93,7 @@ const CreatePage = () => {
         <View width={50} height={50} color={"#ff0000"} bottom={0}>
           <Text fontSize={18}>Bottom</Text>
         </View>
-        <View width={50} height={50} color={"#ff0000"} bottom={0} right={0} data={{id: "BR"}}>
+        <View width={50} height={50} color={"#ff0000"} bottom={0} right={0} data={{ id: "BR" }}>
           <Text fontSize={18}>BR</Text>
         </View>
       </View>

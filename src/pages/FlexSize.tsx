@@ -1,8 +1,8 @@
-import {ElementNode, IntrinsicNodeStyleProps, Text, View, hexColor} from "@lightningtv/solid";
-import {Column, Row} from "@lightningtv/solid/primitives";
-import {createSignal, onMount} from "solid-js";
+import { ElementNode, IntrinsicNodeStyleProps, Text, View, hexColor } from "@lightningtv/solid";
+import { Column, Row } from "@lightningtv/solid/primitives";
+import { createSignal, onMount } from "solid-js";
 import styles from "../styles";
-import {setGlobalBackground} from "../state";
+import { setGlobalBackground } from "../state";
 
 const FlexSizePage = () => {
   const RowStyles = {

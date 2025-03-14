@@ -1,7 +1,7 @@
-import {ElementNode, IntrinsicNodeStyleProps, Text, View, hexColor} from "@lightningtv/solid";
-import {Row} from "@lightningtv/solid/primitives";
+import { ElementNode, IntrinsicNodeStyleProps, Text, View, hexColor } from "@lightningtv/solid";
+import { Row } from "@lightningtv/solid/primitives";
 
-import {MaterialButtonText} from "../styles";
+import { MaterialButtonText } from "../styles";
 
 const MaterialButtonsPage = () => {
   function onEnter(this: ElementNode, event, elm) {
@@ -30,7 +30,7 @@ const MaterialButtonsPage = () => {
       color: "0x291d43ff",
     },
   };
-  const RoundedRectangle = ["RoundedRectangle", {radius: 65}];
+  const RoundedRectangle = ["RoundedRectangle", { radius: 65 }];
   function Button(props) {
     return (
       <View {...props} forwardStates style={MaterialButton} shader={RoundedRectangle}>
@@ -44,7 +44,7 @@ const MaterialButtonsPage = () => {
       <Button autofocus onEnter={onEnter}>
         Focused
       </Button>
-      <Button states={{active: true, disabled: false}}>Normal</Button>
+      <Button states={{ active: true, disabled: false }}>Normal</Button>
       <Button states="disabled">Disabled</Button>
     </Row>
   );

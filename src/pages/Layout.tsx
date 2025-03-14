@@ -1,6 +1,6 @@
-import {Text, View} from "@lightningtv/solid";
-import {setGlobalBackground} from "../state";
-import {Block} from "../components";
+import { Text, View } from "@lightningtv/solid";
+import { setGlobalBackground } from "../state";
+import { Block } from "../components";
 
 const LayoutPage = () => {
   setGlobalBackground("#000");
@@ -11,7 +11,7 @@ const LayoutPage = () => {
   } as const;
 
   return (
-    <View x={150} y={10} width={1000} height={1000} border={{color: "#ff0000", width: 5}}>
+    <View x={150} y={10} width={1000} height={1000} border={{ color: "#ff0000", width: 5 }}>
       <Block center color="#ffff00" />
 
       <View
@@ -22,14 +22,14 @@ const LayoutPage = () => {
         height={300}
         flexDirection="row"
         gap={20}
-        border={{color: "#ffffff", width: 5}}
+        border={{ color: "#ffffff", width: 5 }}
       >
         <Block color="#ff0000" />
         <Block color="#00ff08" />
         <Block color="#0000ff" />
       </View>
 
-      <View x={500} y={100} width={200} padding={20} height={36} border={{color: "#ffffff", width: 5}}>
+      <View x={500} y={100} width={200} padding={20} height={36} border={{ color: "#ffffff", width: 5 }}>
         <Text contain="both" textAlign="left" lineHeight={36} y={3} fontSize={28}>
           Hello World
         </Text>
@@ -43,7 +43,7 @@ const LayoutPage = () => {
         width={460}
         y={100}
         x={20}
-        border={{color: "#00ff00", width: 5}}
+        border={{ color: "#00ff00", width: 5 }}
         onLayout={(e) => (e.height += 5)}
       >
         <View color={"#0000FF"} marginTop={5} display="flex">

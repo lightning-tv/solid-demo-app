@@ -1,7 +1,7 @@
-import {ElementNode, Text, View, hexColor} from "@lightningtv/solid";
-import {Column, Row} from "@lightningtv/solid/primitives";
-import {createSignal, onMount} from "solid-js";
-import {setGlobalBackground} from "../state";
+import { ElementNode, Text, View, hexColor } from "@lightningtv/solid";
+import { Column, Row } from "@lightningtv/solid/primitives";
+import { createSignal, onMount } from "solid-js";
+import { setGlobalBackground } from "../state";
 
 const FlexColumnPage = () => {
   const RowStyles = {

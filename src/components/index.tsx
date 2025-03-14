@@ -1,11 +1,11 @@
-import {type IntrinsicNodeProps, View, Text, type NodeProps, Dynamic} from "@lightningtv/solid";
-import {Row} from "@lightningtv/solid/primitives";
-import {createSignal, For, Index} from "solid-js";
-import styles, {buttonStyles} from "../styles";
-import {type Tile} from "../api/formatters/ItemFormatter";
-import {LazyRow} from "@lightningtv/solid/primitives";
+import { type IntrinsicNodeProps, View, Text, type NodeProps, Dynamic } from "@lightningtv/solid";
+import { Row } from "@lightningtv/solid/primitives";
+import { createSignal, For, Index } from "solid-js";
+import styles, { buttonStyles } from "../styles";
+import { type Tile } from "../api/formatters/ItemFormatter";
+import { LazyRow } from "@lightningtv/solid/primitives";
 
-export function Thumbnail(props: IntrinsicNodeProps & {item: Tile}) {
+export function Thumbnail(props: IntrinsicNodeProps & { item: Tile }) {
   return <View {...props} src={props.item.src} item={props.item} style={styles.Thumbnail} />;
 }
 
@@ -67,9 +67,9 @@ const posterStyles = {
   color: "#b0b0b0",
   //borderRadius: 8,
   transition: {
-    scale: {duration: 200, easing: "linear"},
+    scale: { duration: 200, easing: "linear" },
   },
-  $focus: {scale: 1.1, color: "#fff"},
+  $focus: { scale: 1.1, color: "#fff" },
 };
 
 export function Poster(props: NodeProps) {
@@ -105,7 +105,7 @@ const posterTitleStyles = {
   },
 } as const;
 
-export function PosterTitle(props: NodeProps & {title: string}) {
+export function PosterTitle(props: NodeProps & { title: string }) {
   return (
     <View
       src={props.item?.src}
@@ -131,7 +131,7 @@ const heroStyles = {
   transition: {
     scale: heroTransition,
   },
-  $focus: {scale: 1.05},
+  $focus: { scale: 1.05 },
 };
 
 const heroTextStyles = {
@@ -152,7 +152,7 @@ export function Hero(
   const [hasFocus, setHasFocus] = createSignal(false);
   return (
     <View {...props} src={props.item.backdrop} style={heroStyles} onFocusChanged={setHasFocus} forwardStates>
-      <View transition={{alpha: heroTransition}} alpha={hasFocus() ? 1 : 0}>
+      <View transition={{ alpha: heroTransition }} alpha={hasFocus() ? 1 : 0}>
         <View width={185} height={278} x={54} y={220} src={props.item.src} />
         <Text y={520} x={54} fontSize={64} width={1000} maxLines={1} style={heroTextStyles}>
           {props.item.title}
@@ -182,9 +182,9 @@ const typeToComponent = {
 
 const BlockStyle = {
   alpha: 0.85,
-  border: {width: 0, color: "#000000"},
+  border: { width: 0, color: "#000000" },
   $focus: {
-    border: {width: 4, color: "#FFF"},
+    border: { width: 4, color: "#FFF" },
     alpha: 1,
   },
 };

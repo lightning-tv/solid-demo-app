@@ -1,10 +1,10 @@
-import {createEffect, on, createSignal, createMemo} from "solid-js";
-import {ElementNode, activeElement, View, Text, NodeProps} from "@lightningtv/solid";
-import {Grid} from "@lightningtv/solid/primitives";
-import {setGlobalBackground} from "../state";
+import { createEffect, on, createSignal, createMemo } from "solid-js";
+import { ElementNode, activeElement, View, Text, NodeProps } from "@lightningtv/solid";
+import { Grid } from "@lightningtv/solid/primitives";
+import { setGlobalBackground } from "../state";
 import ContentBlock from "../components/ContentBlock";
-import {debounce} from "@solid-primitives/scheduled";
-import {Poster} from "../components";
+import { debounce } from "@solid-primitives/scheduled";
+import { Poster } from "../components";
 
 const TMDB = (props) => {
   const [heroContent, setHeroContent] = createSignal({});
@@ -30,16 +30,16 @@ const TMDB = (props) => {
           elm.heroContent && delayedHero(elm.heroContent);
         }
       },
-      {defer: true},
+      { defer: true },
     ),
   );
 
   function onSelectedChanged(this: ElementNode, selectedIndex, column, row) {
-    const values = selectedIndex === 0 ? {y: 300, alpha: 1} : {y: 200, alpha: 0};
-    contentBlock.animate(values, {duration: 300, easing: "ease-in-out"}).start();
+    const values = selectedIndex === 0 ? { y: 300, alpha: 1 } : { y: 200, alpha: 0 };
+    contentBlock.animate(values, { duration: 300, easing: "ease-in-out" }).start();
 
-    const values2 = selectedIndex === 0 ? {y: 80, alpha: 1} : {y: 0, alpha: 0};
-    solidLogo.animate(values2, {duration: 300, easing: "ease-in-out"}).start();
+    const values2 = selectedIndex === 0 ? { y: 80, alpha: 1 } : { y: 0, alpha: 0 };
+    solidLogo.animate(values2, { duration: 300, easing: "ease-in-out" }).start();
   }
 
   const items = createMemo(() => {

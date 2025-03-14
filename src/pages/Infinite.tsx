@@ -1,8 +1,8 @@
-import {createEffect, createSignal, Show} from "solid-js";
-import {ElementNode, View, Text} from "@lightningtv/solid";
-import {Poster} from "../components";
-import {setGlobalBackground} from "../state";
-import {List} from "@solid-primitives/list";
+import { createEffect, createSignal, Show } from "solid-js";
+import { ElementNode, View, Text } from "@lightningtv/solid";
+import { Poster } from "../components";
+import { setGlobalBackground } from "../state";
+import { List } from "@solid-primitives/list";
 
 const Loops = (props) => {
   const [allItems, setAllItems] = createSignal<any[]>([]);
@@ -55,7 +55,7 @@ const Loops = (props) => {
 
   function animateOut(node) {
     return node
-      .animate({y: 200, alpha: 0}, {duration: 500, easing: "ease-in-out"})
+      .animate({ y: 200, alpha: 0 }, { duration: 500, easing: "ease-in-out" })
       .start()
       .waitUntilStopped();
   }
@@ -63,7 +63,10 @@ const Loops = (props) => {
   function animateIn(node) {
     node.alpha = 0;
     node.y = -100;
-    return node.animate({y: 55, alpha: 1}, {duration: 500, easing: "ease-in-out"}).start().waitUntilStopped();
+    return node
+      .animate({ y: 55, alpha: 1 }, { duration: 500, easing: "ease-in-out" })
+      .start()
+      .waitUntilStopped();
   }
 
   setGlobalBackground("#000000");
@@ -75,7 +78,7 @@ const Loops = (props) => {
     lineHeight: 32,
   };
 
-  const withTransition = {x: {duration: 250}, alpha: {duration: 250}};
+  const withTransition = { x: { duration: 250 }, alpha: { duration: 250 } };
 
   return (
     <>

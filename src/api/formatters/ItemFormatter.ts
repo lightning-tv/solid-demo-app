@@ -1,4 +1,4 @@
-import {getImageUrl} from "../index";
+import { getImageUrl } from "../index";
 
 function truncateString(str: string, maxLength: number): string {
   if (str.length > maxLength) {

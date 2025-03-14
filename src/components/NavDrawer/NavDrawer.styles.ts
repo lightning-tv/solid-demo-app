@@ -1,4 +1,4 @@
-import {IntrinsicNodeStyleProps} from "@lightningtv/solid";
+import { IntrinsicNodeStyleProps } from "@lightningtv/solid";
 import theme from "theme";
 
 export default {
@@ -33,7 +33,7 @@ export default {
       alpha: 1,
       width: 1600,
     },
-    transition: {alpha: true, width: true},
+    transition: { alpha: true, width: true },
   } satisfies IntrinsicNodeStyleProps,
   NavButton: {
     zIndex: 102,

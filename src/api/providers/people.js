@@ -1,5 +1,5 @@
-import api, {getImageUrl} from "..";
-import {convertItemsToTiles} from "../formatters/ItemFormatter";
+import api, { getImageUrl } from "..";
+import { convertItemsToTiles } from "../formatters/ItemFormatter";
 
 export function minutesToHMM(minutes) {
   const hours = Math.floor(minutes / 60);
@@ -12,11 +12,11 @@ function justYear(dateString) {
   return parts[0];
 }
 
-export function getCredits({id}) {
-  return api.get(`/person/${id}/combined_credits`).then(({cast}) => convertItemsToTiles(cast.slice(0, 7)));
+export function getCredits({ id }) {
+  return api.get(`/person/${id}/combined_credits`).then(({ cast }) => convertItemsToTiles(cast.slice(0, 7)));
 }
 
-export function getInfo({id}) {
+export function getInfo({ id }) {
   return api.get(`/person/${id}`).then((data) => ({
     backgroundImage: getImageUrl(data.profile_path, "original"),
     heroContent: {

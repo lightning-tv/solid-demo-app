@@ -1,10 +1,10 @@
-import {useLocation, useNavigate} from "@solidjs/router";
-import {View, Text, activeElement, renderer} from "@lightningtv/solid";
-import {useFocusManager, useAnnouncer, useMouse, FPSCounter, setupFPS} from "@lightningtv/solid/primitives";
+import { useLocation, useNavigate } from "@solidjs/router";
+import { View, Text, activeElement, renderer } from "@lightningtv/solid";
+import { useFocusManager, useAnnouncer, useMouse, FPSCounter, setupFPS } from "@lightningtv/solid/primitives";
 import Background from "../components/Background";
 import NavDrawer from "../components/NavDrawer/NavDrawer";
-import {createEffect, createSignal, onCleanup} from "solid-js";
-import {KeyMap, KeyHoldMap} from "@lightningtv/core/focusManager";
+import { createEffect, createSignal, onCleanup } from "solid-js";
+import { KeyMap, KeyHoldMap } from "@lightningtv/core/focusManager";
 
 declare module "@lightningtv/solid" {
   // Augment the FocusManager KeyMap interface with our custom keys
@@ -50,7 +50,7 @@ const LeftNavWrapper = (props) => {
 
   let navDrawer, lastFocused;
 
-  setupFPS({renderer});
+  setupFPS({ renderer });
 
   function focusNavDrawer() {
     if (navDrawer.states.has("focus")) {
@@ -95,7 +95,7 @@ const LeftNavWrapper = (props) => {
       onAnnouncer={() => (announcer.enabled = !announcer.enabled)}
       onLast={() => history.back()}
       onMenu={() => navigate("/")}
-      style={{width: 1920, height: 1080}}
+      style={{ width: 1920, height: 1080 }}
       onBackspace={focusNavDrawer}
       onLeft={focusNavDrawer}
       onRight={() => navDrawer.states.has("focus") && (lastFocused || pageContainer).setFocus()}

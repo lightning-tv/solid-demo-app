@@ -1,13 +1,13 @@
-import {createEffect, createMemo, on, createSignal, Show, For} from "solid-js";
-import {ElementNode, View, activeElement, assertTruthy} from "@lightningtv/solid";
-import {Column} from "@lightningtv/solid/primitives";
-import {useNavigate, usePreloadRoute} from "@solidjs/router";
-import {TileRow} from "../components";
+import { createEffect, createMemo, on, createSignal, Show, For } from "solid-js";
+import { ElementNode, View, activeElement, assertTruthy } from "@lightningtv/solid";
+import { Column } from "@lightningtv/solid/primitives";
+import { useNavigate, usePreloadRoute } from "@solidjs/router";
+import { TileRow } from "../components";
 import styles from "../styles";
-import {setGlobalBackground} from "../state";
-import {createInfiniteScroll} from "../components/pagination";
+import { setGlobalBackground } from "../state";
+import { createInfiniteScroll } from "../components/pagination";
 import ContentBlock from "../components/ContentBlock";
-import {debounce} from "@solid-primitives/scheduled";
+import { debounce } from "@solid-primitives/scheduled";
 
 const Browse = (props) => {
   const [columnY, setcolumnY] = createSignal(0);
@@ -41,15 +41,15 @@ const Browse = (props) => {
             setHeroContent(item.heroContent);
           }
 
-          preload(`/browse/tv`, {preloadData: true});
-          preload(`/browse/movie`, {preloadData: true});
+          preload(`/browse/tv`, { preloadData: true });
+          preload(`/browse/movie`, { preloadData: true });
 
           firstRun = false;
           return;
         }
 
         if (item.href) {
-          preload(item.href, {preloadData: true});
+          preload(item.href, { preloadData: true });
         }
 
         if (item.backdrop) {
@@ -60,7 +60,7 @@ const Browse = (props) => {
           delayedHero(item.heroContent);
         }
       },
-      {defer: true},
+      { defer: true },
     ),
   );
 

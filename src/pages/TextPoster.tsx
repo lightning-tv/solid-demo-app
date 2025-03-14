@@ -1,7 +1,7 @@
-import {Text, View, type NodeStyles} from "@lightningtv/solid";
-import {Row} from "@lightningtv/solid/primitives";
-import {onMount} from "solid-js";
-import {setGlobalBackground} from "../state";
+import { Text, View, type NodeStyles } from "@lightningtv/solid";
+import { Row } from "@lightningtv/solid/primitives";
+import { onMount } from "solid-js";
+import { setGlobalBackground } from "../state";
 
 const ButtonContainer: NodeStyles = {
   display: "flex",
@@ -11,7 +11,7 @@ const ButtonContainer: NodeStyles = {
   gap: 8,
   height: 50,
   effects: {
-    radius: {radius: 8},
+    radius: { radius: 8 },
     border: {
       width: 2,
       color: "#000000CC",
@@ -24,7 +24,7 @@ const CircleContainer: NodeStyles = {
   width: 50,
   color: "#ffffff",
   effects: {
-    radius: {radius: 50},
+    radius: { radius: 50 },
     border: {
       width: 2,
       color: "#000000CC",

@@ -1,4 +1,4 @@
-import {IntrinsicNodeStyleProps, IntrinsicTextNodeStyleProps, hexColor} from "@lightningtv/solid";
+import { IntrinsicNodeStyleProps, IntrinsicTextNodeStyleProps, hexColor } from "@lightningtv/solid";
 import theme from "theme";
 
 // Augment existing intrinsic style prop interfaces to include our own
@@ -58,9 +58,9 @@ export default {
     height: 278,
     scale: 1,
     zIndex: 2,
-    transition: {scale: {duration: 250, easing: "ease-in-out"}},
-    border: {width: 0, color: 0x00000000},
-    $focus: {scale: 1.1, border: {color: "#2c4f7cE8", width: 8}},
+    transition: { scale: { duration: 250, easing: "ease-in-out" } },
+    border: { width: 0, color: 0x00000000 },
+    $focus: { scale: 1.1, border: { color: "#2c4f7cE8", width: 8 } },
   },
   FocusRing: {
     borderRadius: 16,
@@ -90,7 +90,7 @@ export default {
     fontSize: 36,
     textColor: "#ffffff",
   },
-  showHeadline: {x: 70, y: 20},
+  showHeadline: { x: 70, y: 20 },
   headlineBlur: {
     width: 1920,
     height: 150,
@@ -122,7 +122,7 @@ export default {
     width: theme.layout.screenW - 2 * theme.layout.marginX,
     x: theme.layout.marginX + theme.layout.gutterX,
     y: 48,
-    transition: {y: {duration: 250, easing: "ease-in-out"}},
+    transition: { y: { duration: 250, easing: "ease-in-out" } },
     zIndex: 2,
   },
   Rect: {
