@@ -13,7 +13,7 @@ export const init = async (parent) => {
     console.log('videoElement', videoElement);
     videoElement = document.createElement('video');
 
-    videoElement.style.cssText = 'position: absolute; top: 0; left: 0; z-index: 0';
+    videoElement.style.cssText = 'position: absolute; top: 0; left: 0; z-index: -1';
 
     videoElement.width = window.innerWidth;
     videoElement.height = window.innerHeight;
@@ -28,9 +28,7 @@ export const init = async (parent) => {
     player.addEventListener('error', (err) => {
       console.error(err);
     });
-    // document.body.insertBefore(videoElement, document.body.firstChild);
-    parent.appendChild(videoElement);
-    // document.body.appendChild(videoElement);
+    document.body.insertBefore(videoElement, document.body.firstChild);
   }
 };
 /**

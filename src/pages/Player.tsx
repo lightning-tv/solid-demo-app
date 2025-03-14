@@ -12,8 +12,6 @@ import { init, load, play } from '../video';
 let parent;
 
 const Player = () => {
-  let playerRef;
-
   const OverviewContainer = {
     width: 900,
     height: 500,
@@ -126,8 +124,6 @@ const Player = () => {
 
   return (
     <>
-      <View id='player' autofocus style={OverviewContainer} ref={playerRef}></View>
-
       <View width={600} display='flex' gap={20} height={42} y={700} x={150} zIndex={100}>
         <Text style={Title}>Flex Grow</Text>
         <View flexGrow={1} height={4} y={19} color={'#ff3000'} />
