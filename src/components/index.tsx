@@ -6,194 +6,188 @@ import {type Tile} from "../api/formatters/ItemFormatter";
 import {LazyRow} from "@lightningtv/solid/primitives";
 
 export function Thumbnail(props: IntrinsicNodeProps & {item: Tile}) {
-    return <View {...props} src={props.item.src} item={props.item} style={styles.Thumbnail} />;
+  return <View {...props} src={props.item.src} item={props.item} style={styles.Thumbnail} />;
 }
 
 export function FocusRing(props: IntrinsicNodeProps) {
-    return <View {...props} style={styles.FocusRing} />;
+  return <View {...props} style={styles.FocusRing} />;
 }
 
 export interface TileRowProps extends IntrinsicNodeProps {
-    items: Tile[];
-    title?: string;
+  items: Tile[];
+  title?: string;
 }
 
 export function TileRow(props: TileRowProps) {
-    return (
-        <Row {...props} style={styles.Row}>
-            <Index each={props.items}>{(item) => <Thumbnail item={item()} />}</Index>
-        </Row>
-    );
+  return (
+    <Row {...props} style={styles.Row}>
+      <Index each={props.items}>{(item) => <Thumbnail item={item()} />}</Index>
+    </Row>
+  );
 }
 
 export function Button(props) {
-    return (
-        <View {...props} forwardStates style={buttonStyles.container}>
-            <Text style={buttonStyles.text}>{props.children}</Text>
-        </View>
-    );
+  return (
+    <View {...props} forwardStates style={buttonStyles.container}>
+      <Text style={buttonStyles.text}>{props.children}</Text>
+    </View>
+  );
 }
 
 const heroTransition = {
-    duration: 300,
-    easing: "cubic-bezier(0.20, 1.00, 0.80, 1.00)",
+  duration: 300,
+  easing: "cubic-bezier(0.20, 1.00, 0.80, 1.00)",
 };
 
 const titleRowStyles = {
-    fontFamily: "Raleway",
-    fontSize: 24,
-    height: 32,
-    lineHeight: 32,
+  fontFamily: "Raleway",
+  fontSize: 24,
+  height: 32,
+  lineHeight: 32,
 };
 
 export function TitleRow(props: TileRowProps) {
-    return (
-        <View height={props.height} forwardFocus={1} marginTop={30}>
-            <Text skipFocus style={titleRowStyles}>
-                {props.title}
-            </Text>
-            <LazyRow gap={20} upCount={11} each={props.items} y={50}>
-                {(item) => <Dynamic component={typeToComponent[props.row.type]} item={item()} />}
-            </LazyRow>
-        </View>
-    );
+  return (
+    <View height={props.height} forwardFocus={1} marginTop={30}>
+      <Text skipFocus style={titleRowStyles}>
+        {props.title}
+      </Text>
+      <LazyRow gap={20} upCount={11} each={props.items} y={50}>
+        {(item) => <Dynamic component={typeToComponent[props.row.type]} item={item()} />}
+      </LazyRow>
+    </View>
+  );
 }
 
 const posterStyles = {
-    width: 185,
-    height: 278,
-    scale: 1,
-    zIndex: 2,
-    color: "#b0b0b0",
-    //borderRadius: 8,
-    transition: {
-        scale: {duration: 200, easing: "linear"},
-    },
-    $focus: {scale: 1.1, color: "#fff"},
+  width: 185,
+  height: 278,
+  scale: 1,
+  zIndex: 2,
+  color: "#b0b0b0",
+  //borderRadius: 8,
+  transition: {
+    scale: {duration: 200, easing: "linear"},
+  },
+  $focus: {scale: 1.1, color: "#fff"},
 };
 
 export function Poster(props: NodeProps) {
-    return (
-        <View
-            src={props.item?.src}
-            backdrop={props.item?.backdrop}
-            {...props}
-            onFail={(node) => (node.src = "failback.png")}
-            style={posterStyles}
-        />
-    );
+  return (
+    <View
+      src={props.item?.src}
+      backdrop={props.item?.backdrop}
+      {...props}
+      onFail={(node) => (node.src = "failback.png")}
+      style={posterStyles}
+    />
+  );
 }
 
 const posterTitleStyles = {
-    fontFamily: "Raleway",
-    fontSize: 22,
-    lineHeight: 22,
-    height: 22,
-    x: 10,
-    y: 278,
-    contain: "width",
-    width: 185,
-    maxLines: 2,
-    alpha: 0,
-    $focus: {
-        alpha: 1,
-        y: 288,
-    },
-    transition: {
-        y: heroTransition,
-        alpha: heroTransition,
-    },
+  fontFamily: "Raleway",
+  fontSize: 22,
+  lineHeight: 22,
+  height: 22,
+  x: 10,
+  y: 278,
+  contain: "width",
+  width: 185,
+  maxLines: 2,
+  alpha: 0,
+  $focus: {
+    alpha: 1,
+    y: 288,
+  },
+  transition: {
+    y: heroTransition,
+    alpha: heroTransition,
+  },
 } as const;
 
 export function PosterTitle(props: NodeProps & {title: string}) {
-    return (
-        <View
-            src={props.item?.src}
-            backdrop={props.item?.backdrop}
-            {...props}
-            onFail={(node) => (node.src = "failback.png")}
-            style={posterStyles}
-            forwardStates
-        >
-            <Text style={posterTitleStyles}>{props.item?.title}</Text>
-        </View>
-    );
+  return (
+    <View
+      src={props.item?.src}
+      backdrop={props.item?.backdrop}
+      {...props}
+      onFail={(node) => (node.src = "failback.png")}
+      style={posterStyles}
+      forwardStates
+    >
+      <Text style={posterTitleStyles}>{props.item?.title}</Text>
+    </View>
+  );
 }
 
 const heroStyles = {
-    width: 1280,
-    height: 720,
-    scale: 1,
-    zIndex: 2,
-    colorTop: "#fff",
-    colorBottom: "#000",
-    //borderRadius: 8,
-    transition: {
-        scale: heroTransition,
-    },
-    $focus: {scale: 1.05},
+  width: 1280,
+  height: 720,
+  scale: 1,
+  zIndex: 2,
+  colorTop: "#fff",
+  colorBottom: "#000",
+  //borderRadius: 8,
+  transition: {
+    scale: heroTransition,
+  },
+  $focus: {scale: 1.05},
 };
 
 const heroTextStyles = {
-    fontFamily: "Raleway",
-    contain: "width",
+  fontFamily: "Raleway",
+  contain: "width",
 } as const;
 
 export function Hero(
-    props: NodeProps & {
-        item: {
-            src: string;
-            backdrop: string;
-            title: string;
-            overview: string;
-        };
-    },
+  props: NodeProps & {
+    item: {
+      src: string;
+      backdrop: string;
+      title: string;
+      overview: string;
+    };
+  },
 ) {
-    const [hasFocus, setHasFocus] = createSignal(false);
-    return (
-        <View
-            {...props}
-            src={props.item.backdrop}
-            style={heroStyles}
-            onFocusChanged={setHasFocus}
-            forwardStates
+  const [hasFocus, setHasFocus] = createSignal(false);
+  return (
+    <View {...props} src={props.item.backdrop} style={heroStyles} onFocusChanged={setHasFocus} forwardStates>
+      <View transition={{alpha: heroTransition}} alpha={hasFocus() ? 1 : 0}>
+        <View width={185} height={278} x={54} y={220} src={props.item.src} />
+        <Text y={520} x={54} fontSize={64} width={1000} maxLines={1} style={heroTextStyles}>
+          {props.item.title}
+        </Text>
+        <Text
+          y={620}
+          x={60}
+          fontSize={21}
+          width={1000}
+          maxLines={2}
+          lineHeight={36}
+          color={"#ccc"}
+          style={heroTextStyles}
         >
-            <View transition={{alpha: heroTransition}} alpha={hasFocus() ? 1 : 0}>
-                <View width={185} height={278} x={54} y={220} src={props.item.src} />
-                <Text y={520} x={54} fontSize={64} width={1000} maxLines={1} style={heroTextStyles}>
-                    {props.item.title}
-                </Text>
-                <Text
-                    y={620}
-                    x={60}
-                    fontSize={21}
-                    width={1000}
-                    maxLines={2}
-                    lineHeight={36}
-                    color={"#ccc"}
-                    style={heroTextStyles}
-                >
-                    {props.item.overview}
-                </Text>
-            </View>
-        </View>
-    );
+          {props.item.overview}
+        </Text>
+      </View>
+    </View>
+  );
 }
 
 const typeToComponent = {
-    Poster: Poster,
-    Hero: Hero,
-    PosterTitle: PosterTitle,
+  Poster: Poster,
+  Hero: Hero,
+  PosterTitle: PosterTitle,
 };
 
 const BlockStyle = {
-    alpha: 0.85,
-    border: {width: 0, color: "#000000"},
-    $focus: {
-        border: {width: 4, color: "#FFF"},
-        alpha: 1,
-    },
+  alpha: 0.85,
+  border: {width: 0, color: "#000000"},
+  $focus: {
+    border: {width: 4, color: "#FFF"},
+    alpha: 1,
+  },
 };
 export function Block(props) {
-    return <View {...props} width={100} height={100} style={BlockStyle} color={props.color || "#e0e0e0"} />;
+  return <View {...props} width={100} height={100} style={BlockStyle} color={props.color || "#e0e0e0"} />;
 }
