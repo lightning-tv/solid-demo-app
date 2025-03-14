@@ -10,7 +10,7 @@ const ContentBlockStyle = {
   flexBoundary: "fixed",
   width: blockWidth,
   height: 220,
-  gap: 16,
+  gap: 16
 };
 
 const HeadlineStyles = {
@@ -19,7 +19,7 @@ const HeadlineStyles = {
   fontWeight: 700,
   maxLines: 1,
   width: blockWidth,
-  contain: "width",
+  contain: "width"
 };
 const Headline = (props) => <Text {...props} style={HeadlineStyles}></Text>;
 
@@ -30,14 +30,14 @@ const DescriptionStyles = {
   lineHeight: 32,
   width: blockWidth,
   maxLines: 3,
-  contain: "width",
+  contain: "width"
 };
 
 const BadgeStyle = {
   fontSize: 16,
   lineHeight: 20,
   marginLeft: 13,
-  marginRight: 13,
+  marginRight: 13
 };
 
 const Description = (props) => (
@@ -55,7 +55,7 @@ export const Badge = (props) => {
         borderRadius: 8,
         border: { width: 2, color: "0xffffffff" },
         display: "flex",
-        height: 36,
+        height: 36
       }}
     >
       <Text lineHeight={36} style={BadgeStyle}>
@@ -68,7 +68,7 @@ export const Badge = (props) => {
 const MetaTextStyle = {
   ...theme.typography.body2,
   fontFamily: "Roboto",
-  fontWeight: 400,
+  fontWeight: 400
 };
 
 const Metadata = (props) => (
@@ -78,7 +78,7 @@ const Metadata = (props) => (
       flexDirection: "row",
       gap: 18,
       width: blockWidth,
-      height: 48,
+      height: 48
     }}
   >
     <View y={-4} src="./assets/stars.png" width={188} height={31}></View>

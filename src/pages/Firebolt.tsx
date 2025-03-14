@@ -44,8 +44,8 @@ export default function Firebolt() {
     fontWeight: "bold",
     textAlign: "center",
     $focus: {
-      color: "#446b9e",
-    },
+      color: "#446b9e"
+    }
   };
 
   return (

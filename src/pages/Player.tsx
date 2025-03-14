@@ -3,7 +3,7 @@ import {
   IntrinsicTextNodeStyleProps,
   Text,
   View,
-  hexColor,
+  hexColor
 } from "@lightningtv/solid";
 import { onMount } from "solid-js";
 import { setGlobalBackground } from "../state";
@@ -22,7 +22,7 @@ const Player = () => {
     position: "absolute",
     flexDirection: "column",
     justifyContent: "flexStart",
-    color: hexColor("00000000"),
+    color: hexColor("00000000")
   } satisfies IntrinsicNodeStyleProps;
 
   const styles = {
@@ -33,26 +33,26 @@ const Player = () => {
       height: 954,
       border: {
         color: "#535353",
-        width: 1,
+        width: 1
       },
       borderRadius: 15,
       linearGradient: {
         colors: [0x2c2a3bff, 0x3a3847ff, 0x4c4859ff] as number[],
-        angle: 4.1,
-      },
+        angle: 4.1
+      }
     },
     detailTitle: {
       x: 50,
       y: 27,
       fontSize: 30,
-      fontWeight: "bold",
+      fontWeight: "bold"
     },
     detailImage: {
       width: 570,
       height: 839,
       x: 50,
       y: 80,
-      borderRadius: 15,
+      borderRadius: 15
     },
     detailDescriptionPane: {
       x: 679,
@@ -61,24 +61,24 @@ const Player = () => {
       height: 839,
       display: "flex",
       flexDirection: "column",
-      gap: 30,
+      gap: 30
     },
     detailDescription: {
       width: 602,
       display: "flex",
-      flexDirection: "column",
+      flexDirection: "column"
     },
     detailDescriptionTitle: {
       width: 602,
       color: "#F0CB00",
       fontSize: 22,
-      fontWeight: "bold",
+      fontWeight: "bold"
     },
     detailDescriptionText: {
       width: 602,
       fontSize: 22,
-      maxLines: 10,
-    },
+      maxLines: 10
+    }
   } as const;
 
   const SublineContainer = {
@@ -87,29 +87,29 @@ const Player = () => {
     display: "flex",
     flexDirection: "row",
     justifyContent: "flexStart",
-    color: "#00000000",
+    color: "#00000000"
   } satisfies IntrinsicNodeStyleProps;
 
   const Title = {
     fontSize: 42,
-    fontWeight: "bold",
+    fontWeight: "bold"
   } as const;
 
   const SubTitle = {
     fontSize: 38,
-    fontWeight: 500,
+    fontWeight: 500
   };
 
   const Overview = {
     width: OverviewContainer.width,
     fontSize: 26,
     fontWeight: "normal",
-    contain: "width",
+    contain: "width"
   } satisfies IntrinsicTextNodeStyleProps;
 
   const Subline = {
     fontSize: 26,
-    fontWeight: 100,
+    fontWeight: 100
   };
 
   onMount(() => {
@@ -118,7 +118,7 @@ const Player = () => {
     init(parent);
     load({
       streamUrl:
-        "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8",
+        "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8"
     });
     play();
   });

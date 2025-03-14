@@ -4,7 +4,7 @@ import {
   View,
   Show,
   assertTruthy,
-  setActiveElement,
+  setActiveElement
 } from "@lightningtv/solid";
 import { Column, Row } from "@lightningtv/solid/primitives";
 
@@ -26,8 +26,8 @@ const Entity = (props) => {
       (data) => {
         setGlobalBackground(data.backgroundImage);
       },
-      { defer: true },
-    ),
+      { defer: true }
+    )
   );
 
   const columnY = 640;
@@ -39,7 +39,7 @@ const Entity = (props) => {
     height: 890,
     x: -160,
     y: columnY,
-    borderRadius: 30,
+    borderRadius: 30
   };
 
   function onRowFocus(this: ElementNode) {

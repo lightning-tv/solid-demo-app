@@ -1,11 +1,11 @@
 import { createRenderer, Config, loadFonts } from "@lightningtv/solid";
 import {
   WebGlCoreRenderer,
-  SdfTextRenderer,
+  SdfTextRenderer
 } from "@lightningjs/renderer/webgl";
 import {
   CanvasCoreRenderer,
-  CanvasTextRenderer,
+  CanvasTextRenderer
 } from "@lightningjs/renderer/canvas";
 
 import { Inspector } from "@lightningjs/renderer/inspector";
@@ -67,7 +67,7 @@ const deviceLogicalPixelRatio = {
   "720": 0.666667,
   "1080": 1,
   "4k": 2,
-  default: window.innerHeight / 1080,
+  default: window.innerHeight / 1080
 }[screenSize];
 
 const logFps = true;
@@ -90,7 +90,7 @@ Config.rendererOptions = {
   // 720p = 0.666667, 1080p = 1, 1440p = 1.5, 2160p = 2
   deviceLogicalPixelRatio,
   devicePhysicalPixelRatio: 1,
-  createImageBitmapSupport: "auto",
+  createImageBitmapSupport: "auto"
 };
 
 // Ideally you'd do two separate builds for canvas and webgl to reduce bundle size.

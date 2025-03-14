@@ -4,7 +4,7 @@ let player;
 let videoElement;
 
 export const state = {
-  playingState: false,
+  playingState: false
 };
 
 export const init = async (parent) => {
@@ -87,5 +87,5 @@ export default {
   getVideoDuration,
   getTimeFormat,
   state,
-  destroy,
+  destroy
 };

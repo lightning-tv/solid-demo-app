@@ -25,7 +25,7 @@ const Destroy = (props) => {
         img.crossOrigin = "anonymous"; // Enable CORS
         img.src = heros[index + 1].backdrop;
       }
-    }),
+    })
   );
 
   function onDown() {

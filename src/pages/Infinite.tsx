@@ -75,7 +75,7 @@ const Loops = (props) => {
     fontFamily: "Raleway",
     fontSize: 24,
     height: 32,
-    lineHeight: 32,
+    lineHeight: 32
   };
 
   const withTransition = { x: { duration: 250 }, alpha: { duration: 250 } };

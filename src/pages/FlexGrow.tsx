@@ -2,7 +2,7 @@ import {
   ElementNode,
   IntrinsicNodeStyleProps,
   Text,
-  View,
+  View
 } from "@lightningtv/solid";
 import { Column, Row } from "@lightningtv/solid/primitives";
 import { createSignal, onMount } from "solid-js";
@@ -15,14 +15,14 @@ const FlexGrow = () => {
     justifyContent: "flexStart",
     width: 1600,
     height: 110,
-    color: "#FFF",
+    color: "#FFF"
   } satisfies IntrinsicNodeStyleProps;
 
   const rowTitle = {
     fontSize: 44,
     marginTop: 25,
     marginBottom: -20,
-    skipFocus: true,
+    skipFocus: true
   };
 
   const red = "#ff0000ff";
@@ -33,7 +33,7 @@ const FlexGrow = () => {
     const styles = {
       width: props.flexGrow ? undefined : 200, // Allow flexible width if flexGrow exists
       height: 100,
-      y: 5,
+      y: 5
     };
 
     return <View {...props} style={styles} />;

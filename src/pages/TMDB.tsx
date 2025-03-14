@@ -16,7 +16,7 @@ const TMDB = (props) => {
   const delayedBackgrounds = debounce(setGlobalBackground, 800);
   const delayedHero = debounce(
     (content: {}) => setHeroContent(content || {}),
-    600,
+    600
   );
 
   createEffect(
@@ -35,8 +35,8 @@ const TMDB = (props) => {
           item.heroContent && delayedHero(item.heroContent);
         }
       },
-      { defer: true },
-    ),
+      { defer: true }
+    )
   );
 
   function onSelectedChanged(this: ElementNode, selectedIndex, column, row) {

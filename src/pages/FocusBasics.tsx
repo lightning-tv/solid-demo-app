@@ -14,8 +14,8 @@ const FocusPage = () => {
       (elm) => {
         console.log(elm);
       },
-      { defer: true },
-    ),
+      { defer: true }
+    )
   );
 
   return (

@@ -5,7 +5,7 @@ import {
   useAnnouncer,
   useMouse,
   FPSCounter,
-  setupFPS,
+  setupFPS
 } from "@lightningtv/solid/primitives";
 import Background from "../components/Background";
 import NavDrawer from "../components/NavDrawer/NavDrawer";
@@ -39,15 +39,15 @@ const LeftNavWrapper = (props) => {
       Right: ["ArrowRight", 39],
       Up: ["ArrowUp", 38],
       Down: ["ArrowDown", 40],
-      Enter: ["Enter", 13],
+      Enter: ["Enter", 13]
     } as unknown as KeyMap,
     {
       userKeyHoldMap: {
         EnterHold: ["Enter", 13],
-        BackHold: ["b", 66],
+        BackHold: ["b", 66]
       } as unknown as KeyHoldMap,
-      holdThreshold: 1000,
-    },
+      holdThreshold: 1000
+    }
   );
   // useMouse();
   const announcer = useAnnouncer();
@@ -72,7 +72,7 @@ const LeftNavWrapper = (props) => {
   createEffect(() => {
     const currentPath = location.pathname;
     let matchesPartial = showOnPaths.some((path) =>
-      currentPath.startsWith(path),
+      currentPath.startsWith(path)
     );
     if (currentPath === "/") {
       matchesPartial = true;

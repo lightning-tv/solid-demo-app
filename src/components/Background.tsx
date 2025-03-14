@@ -3,7 +3,7 @@ import {
   type IntrinsicNodeStyleProps,
   type AnimationSettings,
   View,
-  hexColor,
+  hexColor
 } from "@lightningtv/solid";
 import { createEffect, on, onMount } from "solid-js";
 import theme from "theme";
@@ -17,11 +17,11 @@ export default function Background() {
   const alpha = 1;
   const animationSettings = {
     duration: 550,
-    easing: "ease-in-out",
+    easing: "ease-in-out"
   } satisfies Partial<AnimationSettings>;
   const bgStyles = {
     alpha,
-    color: 0xffffffff,
+    color: 0xffffffff
   } satisfies IntrinsicNodeStyleProps;
 
   onMount(() => {
@@ -76,8 +76,8 @@ export default function Background() {
       (img: string | number) => {
         changeBackgrounds(img);
       },
-      { defer: true },
-    ),
+      { defer: true }
+    )
   );
 
   return (

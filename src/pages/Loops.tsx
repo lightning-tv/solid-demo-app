@@ -18,7 +18,7 @@ const Loops = (props) => {
     fontFamily: "Raleway",
     fontSize: 24,
     height: 32,
-    lineHeight: 32,
+    lineHeight: 32
   };
 
   function switchRow(e) {

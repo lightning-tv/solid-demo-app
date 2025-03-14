@@ -4,7 +4,7 @@ import {
   activeElement,
   View,
   Text,
-  NodeProps,
+  NodeProps
 } from "@lightningtv/solid";
 import { Grid } from "@lightningtv/solid/primitives";
 import { setGlobalBackground } from "../state";
@@ -21,7 +21,7 @@ const TMDB = (props) => {
   const delayedBackgrounds = debounce(setGlobalBackground, 800);
   const delayedHero = debounce(
     (content: {}) => setHeroContent(content || {}),
-    600,
+    600
   );
 
   createEffect(
@@ -39,8 +39,8 @@ const TMDB = (props) => {
           elm.heroContent && delayedHero(elm.heroContent);
         }
       },
-      { defer: true },
-    ),
+      { defer: true }
+    )
   );
 
   function onSelectedChanged(this: ElementNode, selectedIndex, column, row) {

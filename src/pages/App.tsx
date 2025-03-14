@@ -5,7 +5,7 @@ import {
   useAnnouncer,
   useMouse,
   FPSCounter,
-  setupFPS,
+  setupFPS
 } from "@lightningtv/solid/primitives";
 import Background from "../components/Background";
 import NavDrawer from "../components/NavDrawer/NavDrawer";

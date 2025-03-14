@@ -4,7 +4,7 @@ import {
   createSignal,
   createSelector,
   Index,
-  onMount,
+  onMount
 } from "solid-js";
 import { type ElementNode, View, Text } from "@lightningtv/solid";
 import { Column, Row } from "@lightningtv/solid/primitives";
@@ -77,8 +77,8 @@ const Grid = () => {
           setPage((p) => p + 1);
         }
       },
-      { defer: true },
-    ),
+      { defer: true }
+    )
   );
 
   onMount(() => {

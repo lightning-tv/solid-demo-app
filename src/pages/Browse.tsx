@@ -4,13 +4,13 @@ import {
   on,
   createSignal,
   Show,
-  For,
+  For
 } from "solid-js";
 import {
   ElementNode,
   View,
   activeElement,
-  assertTruthy,
+  assertTruthy
 } from "@lightningtv/solid";
 import { Column } from "@lightningtv/solid/primitives";
 import { useNavigate, usePreloadRoute } from "@solidjs/router";
@@ -34,11 +34,11 @@ const Browse = (props) => {
 
   const delayedBackgrounds = debounce(
     (img: string) => setGlobalBackground(img),
-    800,
+    800
   );
   const delayedHero = debounce(
     (content: {}) => setHeroContent(content || {}),
-    600,
+    600
   );
 
   createEffect(
@@ -78,8 +78,8 @@ const Browse = (props) => {
           delayedHero(item.heroContent);
         }
       },
-      { defer: true },
-    ),
+      { defer: true }
+    )
   );
 
   function onRowFocus(this: ElementNode) {
@@ -99,7 +99,7 @@ const Browse = (props) => {
   function onEnter(this: ElementNode) {
     this.display = "flex";
     let entity = this.children.find((c) =>
-      c.states!.has("focus"),
+      c.states!.has("focus")
     ) as ElementNode;
     assertTruthy(entity && entity.item?.href);
     navigate(entity.item.href);
