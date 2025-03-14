@@ -1,7 +1,6 @@
 import {
   IntrinsicNodeStyleProps,
   IntrinsicTextNodeStyleProps,
-  hexColor
 } from "@lightningtv/solid";
 import theme from "theme";
 
