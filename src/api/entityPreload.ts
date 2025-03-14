@@ -9,8 +9,14 @@ export function entityPreload({ params, intent }) {
     return;
   }
 
-  const [credits] = createResource<any, Tile[]>(() => ({ ...params }), provider.getCredits);
-  const [recommendations] = createResource<any, Tile[]>(() => ({ ...params }), provider.getRecommendations);
+  const [credits] = createResource<any, Tile[]>(
+    () => ({ ...params }),
+    provider.getCredits,
+  );
+  const [recommendations] = createResource<any, Tile[]>(
+    () => ({ ...params }),
+    provider.getRecommendations,
+  );
 
   return { entity, credits, recommendations };
 }

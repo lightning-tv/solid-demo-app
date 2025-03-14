@@ -11,7 +11,15 @@ const styles = {
   },
 };
 function Button(props) {
-  return <View {...props} width={200} height={60} style={styles.button} color={props.color || "#e0e0e0"} />;
+  return (
+    <View
+      {...props}
+      width={200}
+      height={60}
+      style={styles.button}
+      color={props.color || "#e0e0e0"}
+    />
+  );
 }
 
 const PositioningPage = () => {

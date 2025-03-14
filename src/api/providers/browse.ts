@@ -13,9 +13,9 @@ export default function (filter: string) {
 
     let result = api.get(url).then((trending) => {
       let results = trending.results.filter((r) => !r.adult);
-      let tiles = (leftoverTiles.has(filter) ? leftoverTiles.get(filter) : []).concat(
-        convertItemsToTiles(results),
-      );
+      let tiles = (
+        leftoverTiles.has(filter) ? leftoverTiles.get(filter) : []
+      ).concat(convertItemsToTiles(results));
       let chunks = chunkArray(tiles);
       if (chunks[chunks.length - 1].length < 7) {
         leftoverTiles.set(filter, chunks.pop());

@@ -82,14 +82,29 @@ const Loops = (props) => {
 
   return (
     <>
-      <View ref={solidLogo} width={300} height={150} x={162} y={80} zIndex={105}>
+      <View
+        ref={solidLogo}
+        width={300}
+        height={150}
+        x={162}
+        y={80}
+        zIndex={105}
+      >
         <Text x={80} fontSize={28} color={0xf6f6f699}>
           Built With:
         </Text>
         <View y={32} src="./assets/solidWord.png" width={280} height={52} />
         <View x={0} y={110} src="./assets/tmdb.png" width={80} height={41} />
-        <Text x={90} y={110} contain="width" width={160} fontSize={12} color={0xf6f6f699}>
-          This product uses the TMDB API but is not endorsed or certified by TMDB.
+        <Text
+          x={90}
+          y={110}
+          contain="width"
+          width={160}
+          fontSize={12}
+          color={0xf6f6f699}
+        >
+          This product uses the TMDB API but is not endorsed or certified by
+          TMDB.
         </Text>
       </View>
 
@@ -109,7 +124,8 @@ const Loops = (props) => {
           >
             <List each={displayedItems()}>
               {(item, index) => {
-                const isEdgeItem = () => index() === 0 || index() === displayedItems().length - 1;
+                const isEdgeItem = () =>
+                  index() === 0 || index() === displayedItems().length - 1;
                 return (
                   <Poster
                     {...item()}

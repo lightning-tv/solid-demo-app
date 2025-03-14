@@ -1,4 +1,10 @@
-import { type IntrinsicNodeProps, View, Text, type NodeProps, Dynamic } from "@lightningtv/solid";
+import {
+  type IntrinsicNodeProps,
+  View,
+  Text,
+  type NodeProps,
+  Dynamic,
+} from "@lightningtv/solid";
 import { Row } from "@lightningtv/solid/primitives";
 import { createSignal, For, Index } from "solid-js";
 import styles, { buttonStyles } from "../styles";
@@ -6,7 +12,14 @@ import { type Tile } from "../api/formatters/ItemFormatter";
 import { LazyRow } from "@lightningtv/solid/primitives";
 
 export function Thumbnail(props: IntrinsicNodeProps & { item: Tile }) {
-  return <View {...props} src={props.item.src} item={props.item} style={styles.Thumbnail} />;
+  return (
+    <View
+      {...props}
+      src={props.item.src}
+      item={props.item}
+      style={styles.Thumbnail}
+    />
+  );
 }
 
 export function FocusRing(props: IntrinsicNodeProps) {
@@ -53,7 +66,9 @@ export function TitleRow(props: TileRowProps) {
         {props.title}
       </Text>
       <LazyRow gap={20} upCount={11} each={props.items} y={50}>
-        {(item) => <Dynamic component={typeToComponent[props.row.type]} item={item()} />}
+        {(item) => (
+          <Dynamic component={typeToComponent[props.row.type]} item={item()} />
+        )}
       </LazyRow>
     </View>
   );
@@ -151,10 +166,23 @@ export function Hero(
 ) {
   const [hasFocus, setHasFocus] = createSignal(false);
   return (
-    <View {...props} src={props.item.backdrop} style={heroStyles} onFocusChanged={setHasFocus} forwardStates>
+    <View
+      {...props}
+      src={props.item.backdrop}
+      style={heroStyles}
+      onFocusChanged={setHasFocus}
+      forwardStates
+    >
       <View transition={{ alpha: heroTransition }} alpha={hasFocus() ? 1 : 0}>
         <View width={185} height={278} x={54} y={220} src={props.item.src} />
-        <Text y={520} x={54} fontSize={64} width={1000} maxLines={1} style={heroTextStyles}>
+        <Text
+          y={520}
+          x={54}
+          fontSize={64}
+          width={1000}
+          maxLines={1}
+          style={heroTextStyles}
+        >
           {props.item.title}
         </Text>
         <Text
@@ -189,5 +217,13 @@ const BlockStyle = {
   },
 };
 export function Block(props) {
-  return <View {...props} width={100} height={100} style={BlockStyle} color={props.color || "#e0e0e0"} />;
+  return (
+    <View
+      {...props}
+      width={100}
+      height={100}
+      style={BlockStyle}
+      color={props.color || "#e0e0e0"}
+    />
+  );
 }

@@ -1,6 +1,12 @@
 import { createRenderer, Config, loadFonts } from "@lightningtv/solid";
-import { WebGlCoreRenderer, SdfTextRenderer } from "@lightningjs/renderer/webgl";
-import { CanvasCoreRenderer, CanvasTextRenderer } from "@lightningjs/renderer/canvas";
+import {
+  WebGlCoreRenderer,
+  SdfTextRenderer,
+} from "@lightningjs/renderer/webgl";
+import {
+  CanvasCoreRenderer,
+  CanvasTextRenderer,
+} from "@lightningjs/renderer/canvas";
 
 import { Inspector } from "@lightningjs/renderer/inspector";
 import { HashRouter } from "@lightningtv/solid/primitives";
@@ -149,7 +155,11 @@ render(() => (
       <Route path="superflex" component={SuperFlexPage} />
       <Route path="buttonsmaterial" component={ButtonsMaterialPage} />
       <Route path="entity/people/:id" component={People} />
-      <Route path="entity/:type/:id" component={Entity} preload={entityPreload} />
+      <Route
+        path="entity/:type/:id"
+        component={Entity}
+        preload={entityPreload}
+      />
       <Route path="*all" component={NotFound} />
     </Route>
     <Route path="player">

@@ -1,5 +1,17 @@
-import { createEffect, createMemo, on, createSignal, Show, For } from "solid-js";
-import { ElementNode, View, activeElement, assertTruthy } from "@lightningtv/solid";
+import {
+  createEffect,
+  createMemo,
+  on,
+  createSignal,
+  Show,
+  For,
+} from "solid-js";
+import {
+  ElementNode,
+  View,
+  activeElement,
+  assertTruthy,
+} from "@lightningtv/solid";
 import { Column } from "@lightningtv/solid/primitives";
 import { useNavigate, usePreloadRoute } from "@solidjs/router";
 import { TileRow } from "../components";
@@ -20,8 +32,14 @@ const Browse = (props) => {
     return createInfiniteScroll(props.data());
   });
 
-  const delayedBackgrounds = debounce((img: string) => setGlobalBackground(img), 800);
-  const delayedHero = debounce((content: {}) => setHeroContent(content || {}), 600);
+  const delayedBackgrounds = debounce(
+    (img: string) => setGlobalBackground(img),
+    800,
+  );
+  const delayedHero = debounce(
+    (content: {}) => setHeroContent(content || {}),
+    600,
+  );
 
   createEffect(
     on(
@@ -70,14 +88,19 @@ const Browse = (props) => {
     let numPages = provider().pages().length;
     this.parent!.selected = this.parent!.children.indexOf(this);
 
-    if (numPages === 0 || (this.parent!.selected && this.parent!.selected >= numPages - 2)) {
+    if (
+      numPages === 0 ||
+      (this.parent!.selected && this.parent!.selected >= numPages - 2)
+    ) {
       provider().setPage((p) => p + 1);
     }
   }
 
   function onEnter(this: ElementNode) {
     this.display = "flex";
-    let entity = this.children.find((c) => c.states!.has("focus")) as ElementNode;
+    let entity = this.children.find((c) =>
+      c.states!.has("focus"),
+    ) as ElementNode;
     assertTruthy(entity && entity.item?.href);
     navigate(entity.item.href);
     return true;
@@ -97,7 +120,14 @@ const Browse = (props) => {
           style={styles.Column}
         >
           <For each={provider().pages()}>
-            {(items) => <TileRow items={items} width={1620} onFocus={onRowFocus} onEnter={onEnter} />}
+            {(items) => (
+              <TileRow
+                items={items}
+                width={1620}
+                onFocus={onRowFocus}
+                onEnter={onEnter}
+              />
+            )}
           </For>
         </Column>
       </View>

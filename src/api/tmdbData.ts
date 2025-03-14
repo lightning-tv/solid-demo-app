@@ -15,14 +15,17 @@ const fetchPopular = (type) => {
 
 let genreListCache;
 const fetchGenreMovies = (genres) => {
-  const genreList = genreListCache || (genreListCache = api.get(`/genre/movie/list`));
+  const genreList =
+    genreListCache || (genreListCache = api.get(`/genre/movie/list`));
   const targetGenre = Array.isArray(genres) ? genres : [genres];
   return genreList.then(({ genres }) => {
     let targetGenreIds: number[] = [];
     genres.forEach((item) => {
       if (targetGenre.includes(item.name)) targetGenreIds.push(item.id);
     });
-    return handleResults(api.get(`/discover/movie?with_genres=${targetGenreIds.join()}`));
+    return handleResults(
+      api.get(`/discover/movie?with_genres=${targetGenreIds.join()}`),
+    );
   });
 };
 

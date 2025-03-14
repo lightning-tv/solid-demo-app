@@ -1,5 +1,10 @@
 import { useMatch, useNavigate } from "@solidjs/router";
-import { View, Text, IntrinsicNodeProps, ElementNode } from "@lightningtv/solid";
+import {
+  View,
+  Text,
+  IntrinsicNodeProps,
+  ElementNode,
+} from "@lightningtv/solid";
 import { Column } from "@lightningtv/solid/primitives";
 import styles from "./NavDrawer.styles";
 import Icon from "../Icon";
@@ -72,12 +77,29 @@ export default function NavDrawer(props) {
         <View y={22} src="./assets/solidWord.png" width={280} height={52} />
 
         <View x={0} y={110} src="./assets/tmdb.png" width={80} height={41} />
-        <Text x={90} y={110} contain="width" width={160} fontSize={12} color={0xf6f6f644}>
-          This product uses the TMDB API but is not endorsed or certified by TMDB.
+        <Text
+          x={90}
+          y={110}
+          contain="width"
+          width={160}
+          fontSize={12}
+          color={0xf6f6f644}
+        >
+          This product uses the TMDB API but is not endorsed or certified by
+          TMDB.
         </Text>
       </View>
-      <Column {...props} onFocus={onFocus} onBlur={onBlur} style={styles.Column} scroll="none">
-        <NavButton onEnter={() => handleNavigate("/browse/all")} icon="trending">
+      <Column
+        {...props}
+        onFocus={onFocus}
+        onBlur={onBlur}
+        style={styles.Column}
+        scroll="none"
+      >
+        <NavButton
+          onEnter={() => handleNavigate("/browse/all")}
+          icon="trending"
+        >
           Trending
         </NavButton>
         <NavButton icon="movie" onEnter={() => handleNavigate("/browse/movie")}>
@@ -86,7 +108,10 @@ export default function NavDrawer(props) {
         <NavButton icon="tv" onEnter={() => handleNavigate("/browse/tv")}>
           TV
         </NavButton>
-        <NavButton icon="experiment" onEnter={() => handleNavigate("/examples")}>
+        <NavButton
+          icon="experiment"
+          onEnter={() => handleNavigate("/examples")}
+        >
           Examples
         </NavButton>
       </Column>

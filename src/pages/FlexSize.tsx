@@ -1,4 +1,10 @@
-import { ElementNode, IntrinsicNodeStyleProps, Text, View, hexColor } from "@lightningtv/solid";
+import {
+  ElementNode,
+  IntrinsicNodeStyleProps,
+  Text,
+  View,
+  hexColor,
+} from "@lightningtv/solid";
 import { Column, Row } from "@lightningtv/solid/primitives";
 import { createSignal, onMount } from "solid-js";
 import styles from "../styles";
@@ -50,7 +56,14 @@ const FlexSizePage = () => {
 
   return (
     <>
-      <Column x={160} y={columnY()} gap={30} height={850} width={RowStyles.width} style={styles.Column}>
+      <Column
+        x={160}
+        y={columnY()}
+        gap={30}
+        height={850}
+        width={RowStyles.width}
+        style={styles.Column}
+      >
         <Text style={rowTitle}>Flex Start - AlignItems: center</Text>
         <Row alignItems="center" gap={gap} style={RowStyles} onFocus={onFocus}>
           <Block autofocus height={randSize()} />
@@ -59,8 +72,15 @@ const FlexSizePage = () => {
           <Block height={randSize()} />
           <Block height={randSize()} />
         </Row>
-        <Text style={rowTitle}>Flex Start - Margin Left - AlignItems: flexStart</Text>
-        <Row gap={gap} alignItems="flexStart" style={RowStyles} onFocus={onFocus}>
+        <Text style={rowTitle}>
+          Flex Start - Margin Left - AlignItems: flexStart
+        </Text>
+        <Row
+          gap={gap}
+          alignItems="flexStart"
+          style={RowStyles}
+          onFocus={onFocus}
+        >
           <Block marginLeft={100} height={randSize()} />
           <Block height={randSize()} />
           <Block marginLeft={100} height={randSize()} />
@@ -68,7 +88,13 @@ const FlexSizePage = () => {
           <Block height={randSize()} />
         </Row>
         <Text style={rowTitle}>Flex End - AlignItems: flexEnd</Text>
-        <Row gap={gap} justifyContent="flexEnd" alignItems="flexEnd" style={RowStyles} onFocus={onFocus}>
+        <Row
+          gap={gap}
+          justifyContent="flexEnd"
+          alignItems="flexEnd"
+          style={RowStyles}
+          onFocus={onFocus}
+        >
           <Block height={randSize()} />
           <Block height={randSize()} />
           <Block height={randSize()} />
@@ -77,7 +103,12 @@ const FlexSizePage = () => {
         </Row>
 
         <Text style={rowTitle}>Flex End - Margin Right</Text>
-        <Row gap={gap} justifyContent={"flexEnd"} style={RowStyles} onFocus={onFocus}>
+        <Row
+          gap={gap}
+          justifyContent={"flexEnd"}
+          style={RowStyles}
+          onFocus={onFocus}
+        >
           <Block height={randSize()} />
           <Block marginRight={100} height={randSize()} />
           <Block height={randSize()} />
@@ -86,7 +117,12 @@ const FlexSizePage = () => {
         </Row>
 
         <Text style={rowTitle}>Center - No Margin Support</Text>
-        <Row gap={gap} justifyContent={"center"} style={RowStyles} onFocus={onFocus}>
+        <Row
+          gap={gap}
+          justifyContent={"center"}
+          style={RowStyles}
+          onFocus={onFocus}
+        >
           <Block height={randSize()} />
           <Block height={randSize()} />
           <Block height={randSize()} />
@@ -95,7 +131,12 @@ const FlexSizePage = () => {
         </Row>
 
         <Text style={rowTitle}>Space Between - No Margin Support</Text>
-        <Row gap={gap} justifyContent={"spaceBetween"} style={RowStyles} onFocus={onFocus}>
+        <Row
+          gap={gap}
+          justifyContent={"spaceBetween"}
+          style={RowStyles}
+          onFocus={onFocus}
+        >
           <Block height={randSize()} />
           <Block height={randSize()} />
           <Block height={randSize()} />
@@ -104,7 +145,12 @@ const FlexSizePage = () => {
         </Row>
 
         <Text style={rowTitle}>Space Evenly - No Margin Support</Text>
-        <Row gap={gap} justifyContent={"spaceEvenly"} style={RowStyles} onFocus={onFocus}>
+        <Row
+          gap={gap}
+          justifyContent={"spaceEvenly"}
+          style={RowStyles}
+          onFocus={onFocus}
+        >
           <Block height={randSize()} />
           <Block height={randSize()} />
           <Block height={randSize()} />

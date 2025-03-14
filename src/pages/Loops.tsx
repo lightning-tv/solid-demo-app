@@ -41,15 +41,30 @@ const Loops = (props) => {
 
   return (
     <>
-      <View ref={solidLogo} width={300} height={150} x={162} y={80} zIndex={105}>
+      <View
+        ref={solidLogo}
+        width={300}
+        height={150}
+        x={162}
+        y={80}
+        zIndex={105}
+      >
         <Text x={80} fontSize={28} color={0xf6f6f699}>
           Built With:
         </Text>
         <View y={32} src="./assets/solidWord.png" width={280} height={52} />
 
         <View x={0} y={110} src="./assets/tmdb.png" width={80} height={41} />
-        <Text x={90} y={110} contain="width" width={160} fontSize={12} color={0xf6f6f699}>
-          This product uses the TMDB API but is not endorsed or certified by TMDB.
+        <Text
+          x={90}
+          y={110}
+          contain="width"
+          width={160}
+          fontSize={12}
+          color={0xf6f6f699}
+        >
+          This product uses the TMDB API but is not endorsed or certified by
+          TMDB.
         </Text>
       </View>
       <Column autofocus={activeRow()?.items()} y={240} onKeyPress={switchRow}>
@@ -58,7 +73,9 @@ const Loops = (props) => {
             For Loop
           </Text>
           <Row gap={20} y={40} display="block">
-            <For each={activeRow()?.items()}>{(item, index) => <Poster x={index() * 210} {...item} />}</For>
+            <For each={activeRow()?.items()}>
+              {(item, index) => <Poster x={index() * 210} {...item} />}
+            </For>
           </Row>
         </View>
 
@@ -108,7 +125,11 @@ const Loops = (props) => {
           <Row gap={20} y={40} display="block">
             <List each={activeRow()?.items()}>
               {(item, index) => (
-                <Poster x={index() * 210} {...item()} transition={{ x: { duration: 5550 } }} />
+                <Poster
+                  x={index() * 210}
+                  {...item()}
+                  transition={{ x: { duration: 5550 } }}
+                />
               )}
             </List>
           </Row>

@@ -1,6 +1,12 @@
 import { useLocation, useNavigate } from "@solidjs/router";
 import { View, Text, activeElement, renderer } from "@lightningtv/solid";
-import { useFocusManager, useAnnouncer, useMouse, FPSCounter, setupFPS } from "@lightningtv/solid/primitives";
+import {
+  useFocusManager,
+  useAnnouncer,
+  useMouse,
+  FPSCounter,
+  setupFPS,
+} from "@lightningtv/solid/primitives";
 import Background from "../components/Background";
 import NavDrawer from "../components/NavDrawer/NavDrawer";
 import { createEffect, createSignal, onCleanup } from "solid-js";

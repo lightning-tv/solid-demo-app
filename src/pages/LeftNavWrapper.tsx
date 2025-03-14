@@ -1,6 +1,12 @@
 import { useLocation, useNavigate } from "@solidjs/router";
 import { View, Text, activeElement, renderer } from "@lightningtv/solid";
-import { useFocusManager, useAnnouncer, useMouse, FPSCounter, setupFPS } from "@lightningtv/solid/primitives";
+import {
+  useFocusManager,
+  useAnnouncer,
+  useMouse,
+  FPSCounter,
+  setupFPS,
+} from "@lightningtv/solid/primitives";
 import Background from "../components/Background";
 import NavDrawer from "../components/NavDrawer/NavDrawer";
 import { createEffect, createSignal, onCleanup } from "solid-js";
@@ -65,7 +71,9 @@ const LeftNavWrapper = (props) => {
   const showOnPaths = ["/browse", "/entity"];
   createEffect(() => {
     const currentPath = location.pathname;
-    let matchesPartial = showOnPaths.some((path) => currentPath.startsWith(path));
+    let matchesPartial = showOnPaths.some((path) =>
+      currentPath.startsWith(path),
+    );
     if (currentPath === "/") {
       matchesPartial = true;
     }
@@ -98,11 +106,22 @@ const LeftNavWrapper = (props) => {
       style={{ width: 1920, height: 1080 }}
       onBackspace={focusNavDrawer}
       onLeft={focusNavDrawer}
-      onRight={() => navDrawer.states.has("focus") && (lastFocused || pageContainer).setFocus()}
+      onRight={() =>
+        navDrawer.states.has("focus") &&
+        (lastFocused || pageContainer).setFocus()
+      }
     >
       <Background />
       <FPSCounter mountX={1} x={1910} y={10} alpha={showWidgets() ? 1 : 0.01} />
-      <View mountX={1} width={330} height={28} x={1910} y={190} color={0x000000ff} hidden={!showWidgets()}>
+      <View
+        mountX={1}
+        width={330}
+        height={28}
+        x={1910}
+        y={190}
+        color={0x000000ff}
+        hidden={!showWidgets()}
+      >
         <Text fontSize={20} y={4} x={4}>
           {lastKey()}
         </Text>
@@ -114,7 +133,11 @@ const LeftNavWrapper = (props) => {
       <View ref={pageContainer} forwardFocus={0}>
         {props.children}
       </View>
-      <NavDrawer ref={navDrawer} focusPage={() => lastFocused.setFocus()} showWidgets={showWidgets()} />
+      <NavDrawer
+        ref={navDrawer}
+        focusPage={() => lastFocused.setFocus()}
+        showWidgets={showWidgets()}
+      />
     </View>
   );
 };

@@ -1,4 +1,11 @@
-import { ElementNode, Text, View, Show, assertTruthy, setActiveElement } from "@lightningtv/solid";
+import {
+  ElementNode,
+  Text,
+  View,
+  Show,
+  assertTruthy,
+  setActiveElement,
+} from "@lightningtv/solid";
 import { Column, Row } from "@lightningtv/solid/primitives";
 
 import { createEffect, on, createSignal } from "solid-js";
@@ -82,7 +89,10 @@ const Entity = (props) => {
   return (
     <Show when={props.data.entity()}>
       <View x={170} onUp={() => entityActions.setFocus()} onEscape={onEscape}>
-        <ContentBlock y={260} content={props.data.entity().heroContent}></ContentBlock>
+        <ContentBlock
+          y={260}
+          content={props.data.entity().heroContent}
+        ></ContentBlock>
         <Row
           ref={entityActions}
           y={500}
@@ -99,7 +109,15 @@ const Entity = (props) => {
           <Button width={300}>Resume</Button>
         </Row>
 
-        <Column ref={columnRef} x={0} y={columnY} style={styles.Column} height={880} scroll="none" zIndex={5}>
+        <Column
+          ref={columnRef}
+          x={0}
+          y={columnY}
+          style={styles.Column}
+          height={880}
+          scroll="none"
+          zIndex={5}
+        >
           <Show when={props.data.recommendations() && props.data.credits()}>
             <Text skipFocus style={styles.RowTitle}>
               Recommendations
@@ -121,9 +139,19 @@ const Entity = (props) => {
             />
           </Show>
         </Column>
-        <View ref={backdropRef} style={Backdrop} transition={{ alpha: true, y: true }} />
+        <View
+          ref={backdropRef}
+          style={Backdrop}
+          transition={{ alpha: true, y: true }}
+        />
       </View>
-      <View alpha={backdropAlpha()} color={"#000000"} skipFocus zIndex={200} transition={{ alpha: true }} />
+      <View
+        alpha={backdropAlpha()}
+        color={"#000000"}
+        skipFocus
+        zIndex={200}
+        transition={{ alpha: true }}
+      />
     </Show>
   );
 };

@@ -21,7 +21,12 @@ const FocusPage = () => {
   return (
     <View x={250} y={200} onUp={() => myBlock.setFocus()}>
       {/* Autofocus sets focus on this element when it's created */}
-      <Block ref={myBlock} color="#1212df" onDown={() => rowContainer.setFocus()} autofocus />
+      <Block
+        ref={myBlock}
+        color="#1212df"
+        onDown={() => rowContainer.setFocus()}
+        autofocus
+      />
 
       <Row y={200} ref={rowContainer}>
         <Block ref={redBlock} color="#ff0000" />

@@ -4,7 +4,9 @@ import { convertItemsToTiles } from "../formatters/ItemFormatter";
 export function minutesToHMM(minutes) {
   const hours = Math.floor(minutes / 60);
   const remainingMinutes = minutes % 60;
-  return hours + "h " + (remainingMinutes < 10 ? "0" : "") + remainingMinutes + "min";
+  return (
+    hours + "h " + (remainingMinutes < 10 ? "0" : "") + remainingMinutes + "min"
+  );
 }
 
 function formatDate(dateString) {
@@ -32,7 +34,9 @@ export function getRecommendations({ type, id }) {
     }
     return api
       .get(`/trending/${type}/week?page=1`)
-      .then(({ results }) => ensureItems(convertItemsToTiles(results.slice(0, 7)), 7));
+      .then(({ results }) =>
+        ensureItems(convertItemsToTiles(results.slice(0, 7)), 7),
+      );
   });
 }
 

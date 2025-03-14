@@ -13,7 +13,8 @@ export const init = async (parent) => {
     console.log("videoElement", videoElement);
     videoElement = document.createElement("video");
 
-    videoElement.style.cssText = "position: absolute; top: 0; left: 0; z-index: -1";
+    videoElement.style.cssText =
+      "position: absolute; top: 0; left: 0; z-index: -1";
 
     videoElement.width = window.innerWidth;
     videoElement.height = window.innerHeight;
@@ -72,7 +73,8 @@ export const getVideoDuration = () => {
 };
 
 export const getTimeFormat = () => {
-  let secondsToMmSs = (seconds) => new Date(seconds * 1000).toISOString().substr(14, 5);
+  let secondsToMmSs = (seconds) =>
+    new Date(seconds * 1000).toISOString().substr(14, 5);
   return `${secondsToMmSs(videoElement.currentTime)} : ${secondsToMmSs(Math.floor(videoElement.duration))}`;
 };
 

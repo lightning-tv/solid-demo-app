@@ -1,4 +1,10 @@
-import { ElementNode, IntrinsicNodeStyleProps, Text, View, hexColor } from "@lightningtv/solid";
+import {
+  ElementNode,
+  IntrinsicNodeStyleProps,
+  Text,
+  View,
+  hexColor,
+} from "@lightningtv/solid";
 import { Row } from "@lightningtv/solid/primitives";
 
 import { MaterialButtonText } from "../styles";
@@ -33,7 +39,12 @@ const MaterialButtonsPage = () => {
   const RoundedRectangle = ["RoundedRectangle", { radius: 65 }];
   function Button(props) {
     return (
-      <View {...props} forwardStates style={MaterialButton} shader={RoundedRectangle}>
+      <View
+        {...props}
+        forwardStates
+        style={MaterialButton}
+        shader={RoundedRectangle}
+      >
         <Text style={MaterialButtonText}>{props.children}</Text>
       </View>
     );

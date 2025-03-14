@@ -117,14 +117,23 @@ const Player = () => {
     parent = document.querySelector('[data-testid="player"]') as HTMLElement;
     init(parent);
     load({
-      streamUrl: "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8",
+      streamUrl:
+        "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8",
     });
     play();
   });
 
   return (
     <>
-      <View width={600} display="flex" gap={20} height={42} y={700} x={150} zIndex={100}>
+      <View
+        width={600}
+        display="flex"
+        gap={20}
+        height={42}
+        y={700}
+        x={150}
+        zIndex={100}
+      >
         <Text style={Title}>Flex Grow</Text>
         <View flexGrow={1} height={4} y={19} color={"#ff3000"} />
         <View flexGrow={3} height={4} y={19} color={"#ff30ff"} />

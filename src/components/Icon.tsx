@@ -17,7 +17,8 @@ interface IconProps extends IntrinsicNodeProps {
 
 let sprite;
 function Icon(props: IconProps) {
-  sprite = sprite || createSpriteMap(basePath + "assets/icons_white.png", icons);
+  sprite =
+    sprite || createSpriteMap(basePath + "assets/icons_white.png", icons);
   return (
     <View
       {...props}
@@ -34,8 +35,15 @@ export default Icon;
 export function PreviewIcons() {
   return (
     <>
-      <View src={`${basePath}assets/icons.png`} width={375} height={100} y={10} />
-      <For each={icons}>{(icon, i) => <Icon name={icon.name} y={100} x={i() * 105} />}</For>
+      <View
+        src={`${basePath}assets/icons.png`}
+        width={375}
+        height={100}
+        y={10}
+      />
+      <For each={icons}>
+        {(icon, i) => <Icon name={icon.name} y={100} x={i() * 105} />}
+      </For>
     </>
   );
 }

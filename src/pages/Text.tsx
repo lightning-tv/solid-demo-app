@@ -118,10 +118,11 @@ const TextPage = () => {
         <Text style={Title}>Title of the Page</Text>
         <Text style={SubTitle}>Tag line for the page</Text>
         <Text style={Overview}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel tempor tellus. Sed eu leo
-          purus. Vestibulum sollicitudin eget tellus a varius. Phasellus est turpis, volutpat sed blandit sit
-          amet, rutrum sit amet mauris. In dignissim elit orci, a sollicitudin ipsum faucibus et. Quisque vel
-          quam rutrum, faucibus augue sed, scelerisque nunc.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel
+          tempor tellus. Sed eu leo purus. Vestibulum sollicitudin eget tellus a
+          varius. Phasellus est turpis, volutpat sed blandit sit amet, rutrum
+          sit amet mauris. In dignissim elit orci, a sollicitudin ipsum faucibus
+          et. Quisque vel quam rutrum, faucibus augue sed, scelerisque nunc.
         </Text>
         <View style={SublineContainer}>
           <Text style={Subline}>Subline Text</Text>
