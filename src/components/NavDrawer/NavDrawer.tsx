@@ -3,7 +3,7 @@ import {
   View,
   Text,
   IntrinsicNodeProps,
-  ElementNode,
+  ElementNode
 } from "@lightningtv/solid";
 import { Column } from "@lightningtv/solid/primitives";
 import styles from "./NavDrawer.styles";
@@ -21,8 +21,8 @@ const NavButtonTextStyles = {
   height: 50,
   alpha: 0,
   $active: {
-    alpha: 1,
-  },
+    alpha: 1
+  }
 };
 
 function NavButton(props: NavButtonProps) {

@@ -18,8 +18,8 @@ export default () => {
     transition: {
       x: { duration: 1250, easing: "linear" },
       y: { duration: 1250, easing: "linear" },
-      rotation: { duration: 1400, easing: "ease-in-out" },
-    },
+      rotation: { duration: 1400, easing: "ease-in-out" }
+    }
   } as const;
 
   const Title = {
@@ -27,7 +27,7 @@ export default () => {
     x: 960,
     y: 540,
     mount: 0.5,
-    lineheight: 52,
+    lineheight: 52
   };
 
   const randomIntBetween = (from, to) =>
@@ -67,7 +67,7 @@ export default () => {
           inBounds: (elm) => logEvent("inBounds", elm),
           outOfBounds: (elm) => logEvent("outOfBounds", elm),
           inViewport: (elm) => logEvent("inViewport", elm),
-          outOfViewport: (elm) => logEvent("outOfViewport", elm),
+          outOfViewport: (elm) => logEvent("outOfViewport", elm)
         }}
       />
     </View>

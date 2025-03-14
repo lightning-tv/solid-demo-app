@@ -13,7 +13,7 @@ const Items = [
   "was",
   "white",
   "as",
-  "snow",
+  "snow"
 ];
 export const styles = {
   PageContainer: {
@@ -23,13 +23,13 @@ export const styles = {
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    zIndex: 99,
-  },
+    zIndex: 99
+  }
 } as const;
 
 const SpecialFont = {
   color: 0xff0000ff,
-  $focus: { color: 0xffffffff },
+  $focus: { color: 0xffffffff }
 };
 
 export default () => {

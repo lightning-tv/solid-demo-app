@@ -14,9 +14,9 @@ const ButtonContainer: NodeStyles = {
     radius: { radius: 8 },
     border: {
       width: 2,
-      color: "#000000CC",
-    },
-  },
+      color: "#000000CC"
+    }
+  }
 };
 
 const CircleContainer: NodeStyles = {
@@ -27,9 +27,9 @@ const CircleContainer: NodeStyles = {
     radius: { radius: 50 },
     border: {
       width: 2,
-      color: "#000000CC",
-    },
-  },
+      color: "#000000CC"
+    }
+  }
 };
 const ButtonIcon = (props) => {
   return (
@@ -76,26 +76,26 @@ const TextPosterPage = () => {
       height: 954,
       border: {
         color: "#535353",
-        width: 1,
+        width: 1
       },
       borderRadius: 15,
       linearGradient: {
         colors: [0x2c2a3bff, 0x3a3847ff, 0x4c4859ff] as number[],
-        angle: 4.1,
-      },
+        angle: 4.1
+      }
     },
     detailTitle: {
       x: 50,
       y: 27,
       fontSize: 30,
-      fontWeight: "bold",
+      fontWeight: "bold"
     },
     detailImage: {
       width: 570,
       height: 839,
       x: 50,
       y: 80,
-      borderRadius: 15,
+      borderRadius: 15
     },
     detailDescriptionPane: {
       x: 679,
@@ -104,22 +104,22 @@ const TextPosterPage = () => {
       height: 839,
       display: "flex",
       flexDirection: "column",
-      gap: 30,
+      gap: 30
     },
     detailDescription: {
       width: 602,
-      display: "flex",
+      display: "flex"
     },
     detailDescriptionTitle: {
       width: 602,
       color: "#F0CB00",
       fontSize: 22,
-      fontWeight: "bold",
+      fontWeight: "bold"
     },
     detailDescriptionText: {
       width: 602,
-      fontSize: 22,
-    },
+      fontSize: 22
+    }
   } as const;
 
   onMount(() => {

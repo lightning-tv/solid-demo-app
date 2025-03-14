@@ -3,7 +3,7 @@ import {
   IntrinsicNodeStyleProps,
   Text,
   View,
-  hexColor,
+  hexColor
 } from "@lightningtv/solid";
 import { Column, Row } from "@lightningtv/solid/primitives";
 import { createSignal, onMount } from "solid-js";
@@ -16,14 +16,14 @@ const FlexSizePage = () => {
     justifyContent: "flexStart",
     width: 1600,
     height: 110,
-    color: "#4dabf5",
+    color: "#4dabf5"
   } satisfies IntrinsicNodeStyleProps;
 
   const rowTitle = {
     fontSize: 44,
     marginTop: 25,
     marginBottom: -20,
-    skipFocus: true,
+    skipFocus: true
   };
 
   function Block(props) {
@@ -31,7 +31,7 @@ const FlexSizePage = () => {
       width: 200,
       height: 100,
       y: 5,
-      color: 0x1769aaff,
+      color: 0x1769aaff
     };
 
     return <View {...props} style={styles} />;

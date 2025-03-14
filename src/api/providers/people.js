@@ -25,8 +25,8 @@ export function getInfo({ id }) {
     backgroundImage: getImageUrl(data.profile_path, "original"),
     heroContent: {
       title: data.title || data.name,
-      description: data.biography,
+      description: data.biography
     },
-    ...data,
+    ...data
   }));
 }

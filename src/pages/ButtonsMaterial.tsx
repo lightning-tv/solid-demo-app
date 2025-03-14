@@ -3,7 +3,7 @@ import {
   IntrinsicNodeStyleProps,
   Text,
   View,
-  hexColor,
+  hexColor
 } from "@lightningtv/solid";
 import { Row } from "@lightningtv/solid/primitives";
 
@@ -22,7 +22,7 @@ const MaterialButtonsPage = () => {
     color: hexColor("00000000"),
     gap: 26,
     y: 400,
-    x: 100,
+    x: 100
   } satisfies IntrinsicNodeStyleProps;
 
   const MaterialButton = {
@@ -30,11 +30,11 @@ const MaterialButtonsPage = () => {
     height: 136,
     color: "0x715cabff",
     $focus: {
-      color: "0x5a39a2ff",
+      color: "0x5a39a2ff"
     },
     disabled: {
-      color: "0x291d43ff",
-    },
+      color: "0x291d43ff"
+    }
   };
   const RoundedRectangle = ["RoundedRectangle", { radius: 65 }];
   function Button(props) {

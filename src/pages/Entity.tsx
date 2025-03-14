@@ -4,7 +4,7 @@ import {
   View,
   Show,
   assertTruthy,
-  setActiveElement,
+  setActiveElement
 } from "@lightningtv/solid";
 import { Column, Row } from "@lightningtv/solid/primitives";
 
@@ -39,7 +39,7 @@ const Entity = (props) => {
     height: 890,
     x: -160,
     y: columnY,
-    borderRadius: 30,
+    borderRadius: 30
   };
 
   function onRowFocus(this: ElementNode) {
@@ -71,9 +71,7 @@ const Entity = (props) => {
   }
 
   function onEnterTrailer() {
-    //const video = playVideo();
-    //setActiveElement(video);
-    setBackdropAlpha(0.9);
+    navigate("/player/123");
   }
 
   let columnRef, backdropRef, entityActions;

@@ -7,7 +7,7 @@ const LayoutPage = () => {
 
   const Title = {
     fontSize: 42,
-    fontWeight: "bold",
+    fontWeight: "bold"
   } as const;
 
   return (

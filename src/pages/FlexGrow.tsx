@@ -2,7 +2,7 @@ import {
   ElementNode,
   IntrinsicNodeStyleProps,
   Text,
-  View,
+  View
 } from "@lightningtv/solid";
 import { Column, Row } from "@lightningtv/solid/primitives";
 import { createSignal, onMount } from "solid-js";
@@ -15,25 +15,25 @@ const FlexGrow = () => {
     justifyContent: "flexStart",
     width: 1600,
     height: 110,
-    color: "#FFF",
+    color: "#FFF"
   } satisfies IntrinsicNodeStyleProps;
 
   const rowTitle = {
     fontSize: 44,
     marginTop: 25,
     marginBottom: -20,
-    skipFocus: true,
+    skipFocus: true
   };
 
-  const red = '#ff0000ff';
-  const darkorange = '#ff8c00ff';
-  const green = '#00ff00ff';
+  const red = "#ff0000ff";
+  const darkorange = "#ff8c00ff";
+  const green = "#00ff00ff";
 
   function Block(props) {
     const styles = {
       width: props.flexGrow ? undefined : 200, // Allow flexible width if flexGrow exists
       height: 100,
-      y: 5,
+      y: 5
     };
 
     return <View {...props} style={styles} />;
@@ -62,7 +62,7 @@ const FlexGrow = () => {
         style={styles.Column}
       >
         <Text style={rowTitle}>Flex Start RTL</Text>
-        <Row gap={gap} direction={'rtl'} style={RowStyles} onFocus={onFocus}>
+        <Row gap={gap} direction={"rtl"} style={RowStyles} onFocus={onFocus}>
           <Block flexGrow={1} autofocus color={red} />
           <Block flexGrow={2} color={darkorange} />
           <Block color={green} />
@@ -76,7 +76,12 @@ const FlexGrow = () => {
         </Row>
 
         <Text style={rowTitle}>Space Between with Flex Grow</Text>
-        <Row gap={gap} justifyContent={"spaceBetween"} style={RowStyles} onFocus={onFocus}>
+        <Row
+          gap={gap}
+          justifyContent={"spaceBetween"}
+          style={RowStyles}
+          onFocus={onFocus}
+        >
           <Block flexGrow={1} color={red} />
           <Block flexGrow={1} flexOrder={-1} color={darkorange} />
           <Block flexGrow={2} color={green} />

@@ -24,7 +24,7 @@ const TMDB = (props) => {
       activeElement,
       (elm) => {
         if (!elm) return;
-        const item = elm.item || {} as any;
+        const item = elm.item || ({} as any);
 
         if (firstRun) {
           item.backdrop && setGlobalBackground(item.backdrop);

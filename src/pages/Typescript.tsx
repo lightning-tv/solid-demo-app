@@ -38,7 +38,7 @@ import { View, Text } from "@lightningtv/solid";
   data={{
     key1: "value1",
     key2: 123,
-    key3: true,
+    key3: true
   }}
 />;
 
