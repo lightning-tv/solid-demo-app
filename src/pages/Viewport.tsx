@@ -30,8 +30,7 @@ export default () => {
     lineheight: 52,
   };
 
-  const randomIntBetween = (from, to) =>
-    Math.floor(Math.random() * (to - from + 1) + from);
+  const randomIntBetween = (from, to) => Math.floor(Math.random() * (to - from + 1) + from);
 
   onMount(() => {
     setGlobalBackground("#000000");

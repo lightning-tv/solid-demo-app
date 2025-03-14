@@ -44,11 +44,7 @@ export default defineConfig({
     ],
   },
   optimizeDeps: {
-    exclude: [
-      "@lightningtv/solid",
-      "@lightningtv/core",
-      "@lightningjs/renderer",
-    ],
+    exclude: ["@lightningtv/solid", "@lightningtv/core", "@lightningjs/renderer"],
   },
   server: {
     port: 5174,

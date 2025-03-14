@@ -2,19 +2,7 @@ import { View, Text, For } from "@lightningtv/solid";
 import { Column, Row } from "@lightningtv/solid/primitives";
 import { Show, createSignal } from "solid-js";
 
-const Items = [
-  "Mary",
-  "had",
-  "a",
-  "little",
-  "lamb",
-  "her",
-  "fleece",
-  "was",
-  "white",
-  "as",
-  "snow",
-];
+const Items = ["Mary", "had", "a", "little", "lamb", "her", "fleece", "was", "white", "as", "snow"];
 export const styles = {
   PageContainer: {
     width: 1920,
@@ -60,11 +48,7 @@ export default () => {
       >
         <For each={Items}>
           {(item, index) => (
-            <View
-              width={100}
-              height={200}
-              style={{ color: 0xff0000ff, $focus: { color: 0xffffffff } }}
-            />
+            <View width={100} height={200} style={{ color: 0xff0000ff, $focus: { color: 0xffffffff } }} />
           )}
         </For>
       </Row>
@@ -81,25 +65,14 @@ export default () => {
         >
           <For each={Items}>
             {(item, index) => (
-              <View
-                width={100}
-                height={200}
-                style={{ color: 0xff0000ff, $focus: { color: 0xffffffff } }}
-              />
+              <View width={100} height={200} style={{ color: 0xff0000ff, $focus: { color: 0xffffffff } }} />
             )}
           </For>
         </Row>
       </Show>
 
       <Show when={lazyShow()}>
-        <Row
-          scroll="none"
-          gap={20}
-          selected={2}
-          x={150}
-          y={650}
-          transition={{ x: { duration: 350 } }}
-        >
+        <Row scroll="none" gap={20} selected={2} x={150} y={650} transition={{ x: { duration: 350 } }}>
           <For each={Items}>
             {(item, index) => (
               <Text style={SpecialFont} fontSize={24}>

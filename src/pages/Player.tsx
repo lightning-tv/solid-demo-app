@@ -4,10 +4,10 @@ import {
   Text,
   View,
   hexColor,
-} from '@lightningtv/solid';
-import { onMount } from 'solid-js';
-import { setGlobalBackground } from '../state';
-import { init, load, play } from '../video';
+} from "@lightningtv/solid";
+import { onMount } from "solid-js";
+import { setGlobalBackground } from "../state";
+import { init, load, play } from "../video";
 
 let parent;
 
@@ -18,11 +18,11 @@ const Player = () => {
     y: 350,
     x: 150,
     gap: 25,
-    display: 'block',
-    position: 'absolute',
-    flexDirection: 'column',
-    justifyContent: 'flexStart',
-    color: hexColor('00000000'),
+    display: "block",
+    position: "absolute",
+    flexDirection: "column",
+    justifyContent: "flexStart",
+    color: hexColor("00000000"),
   } satisfies IntrinsicNodeStyleProps;
 
   const styles = {
@@ -32,7 +32,7 @@ const Player = () => {
       width: 1326,
       height: 954,
       border: {
-        color: '#535353',
+        color: "#535353",
         width: 1,
       },
       borderRadius: 15,
@@ -45,7 +45,7 @@ const Player = () => {
       x: 50,
       y: 27,
       fontSize: 30,
-      fontWeight: 'bold',
+      fontWeight: "bold",
     },
     detailImage: {
       width: 570,
@@ -59,20 +59,20 @@ const Player = () => {
       y: 80,
       width: 602,
       height: 839,
-      display: 'flex',
-      flexDirection: 'column',
+      display: "flex",
+      flexDirection: "column",
       gap: 30,
     },
     detailDescription: {
       width: 602,
-      display: 'flex',
-      flexDirection: 'column',
+      display: "flex",
+      flexDirection: "column",
     },
     detailDescriptionTitle: {
       width: 602,
-      color: '#F0CB00',
+      color: "#F0CB00",
       fontSize: 22,
-      fontWeight: 'bold',
+      fontWeight: "bold",
     },
     detailDescriptionText: {
       width: 602,
@@ -84,15 +84,15 @@ const Player = () => {
   const SublineContainer = {
     width: 900,
     gap: 6,
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'flexStart',
-    color: '#00000000',
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "flexStart",
+    color: "#00000000",
   } satisfies IntrinsicNodeStyleProps;
 
   const Title = {
     fontSize: 42,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   } as const;
 
   const SubTitle = {
@@ -103,8 +103,8 @@ const Player = () => {
   const Overview = {
     width: OverviewContainer.width,
     fontSize: 26,
-    fontWeight: 'normal',
-    contain: 'width',
+    fontWeight: "normal",
+    contain: "width",
   } satisfies IntrinsicTextNodeStyleProps;
 
   const Subline = {
@@ -113,22 +113,22 @@ const Player = () => {
   };
 
   onMount(() => {
-    setGlobalBackground('#000000');
+    setGlobalBackground("#000000");
     parent = document.querySelector('[data-testid="player"]') as HTMLElement;
     init(parent);
     load({
-      streamUrl: 'https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8',
+      streamUrl: "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8",
     });
     play();
   });
 
   return (
     <>
-      <View width={600} display='flex' gap={20} height={42} y={700} x={150} zIndex={100}>
+      <View width={600} display="flex" gap={20} height={42} y={700} x={150} zIndex={100}>
         <Text style={Title}>Flex Grow</Text>
-        <View flexGrow={1} height={4} y={19} color={'#ff3000'} />
-        <View flexGrow={3} height={4} y={19} color={'#ff30ff'} />
-        <View flexGrow={1} height={4} y={19} color={'#eeba2c'} />
+        <View flexGrow={1} height={4} y={19} color={"#ff3000"} />
+        <View flexGrow={3} height={4} y={19} color={"#ff30ff"} />
+        <View flexGrow={1} height={4} y={19} color={"#eeba2c"} />
       </View>
     </>
   );

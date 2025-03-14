@@ -55,14 +55,7 @@ const Button = (props) => {
 const CircleIcon = (props) => {
   return (
     <View style={CircleContainer}>
-      <View
-        x={25}
-        y={25}
-        mount={0.5}
-        src={props.icon}
-        width={30}
-        height={30}
-      ></View>
+      <View x={25} y={25} mount={0.5} src={props.icon} width={30} height={30}></View>
     </View>
   );
 };
@@ -150,15 +143,12 @@ const TextPosterPage = () => {
           height={400}
           overflowSuffix="..."
         >
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-          rebum. Stet clita kasd gubergren, no sea takimata Lorem ipsum dolor
-          sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-          invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-          At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
-          kasd gubergren, no sea takimata Cast : Tom cruise, ma3ti
-          benabdelkader, oussama ramzi
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+          labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+          et ea rebum. Stet clita kasd gubergren, no sea takimata Lorem ipsum dolor sit amet, consetetur
+          sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+          gubergren, no sea takimata Cast : Tom cruise, ma3ti benabdelkader, oussama ramzi
         </Text>
         <Row gap={20} autofocus>
           <ButtonIcon icon="./assets/playIcon.png">Play</ButtonIcon>

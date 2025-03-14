@@ -23,24 +23,10 @@ const Default = () => {
   return (
     <View x={150} autofocus>
       {/* simple, default transition */}
-      <View
-        width={200}
-        height={200}
-        x={50}
-        y={y()}
-        color="#dbeafe"
-        transition={true}
-      />
+      <View width={200} height={200} x={50} y={y()} color="#dbeafe" transition={true} />
 
       {/* simple, default transition with object syntax */}
-      <View
-        width={200}
-        height={200}
-        x={300}
-        y={y()}
-        color="#bfdbfe"
-        transition={{ y: true }}
-      />
+      <View width={200} height={200} x={300} y={y()} color="#bfdbfe" transition={{ y: true }} />
 
       {/* transition with custom duration */}
       <View

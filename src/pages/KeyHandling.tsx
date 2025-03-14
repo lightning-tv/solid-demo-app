@@ -9,14 +9,14 @@ const KeyHandling = () => {
   return (
     <>
       <Text x={400} y={200} contain="both" width={900}>
-        Move the block with the arrow keys, enter to change color, enterHold to reset color.
-        Open inspector to see console log messages. Use M to test release.
+        Move the block with the arrow keys, enter to change color, enterHold to reset color. Open inspector to
+        see console log messages. Use M to test release.
       </Text>
       <Block
         ref={myBlock}
         autofocus
-        x={1920/2 - 50}
-        y={1080/2 - 50}
+        x={1920 / 2 - 50}
+        y={1080 / 2 - 50}
         isBlack={false}
         color="#1212df"
         onMenu={() => {
@@ -28,17 +28,17 @@ const KeyHandling = () => {
           console.log("menu release");
           return true;
         }}
-        onUp={() => myBlock.y = Math.max(0, myBlock.y - 20)}
+        onUp={() => (myBlock.y = Math.max(0, myBlock.y - 20))}
         onDown={() => {
           console.log("down press");
-          myBlock.y = Math.min(1080, myBlock.y + 20)
+          myBlock.y = Math.min(1080, myBlock.y + 20);
         }}
         onDownRelease={() => {
           console.log("down release");
         }}
-        onRight={() => myBlock.x = Math.min(1920, myBlock.x + 20)}
+        onRight={() => (myBlock.x = Math.min(1920, myBlock.x + 20))}
         onLeft={() => {
-          myBlock.x = Math.max(200, myBlock.x - 20)
+          myBlock.x = Math.max(200, myBlock.x - 20);
           // need to return true so we dont open menu
           return myBlock.x > 200;
         }}
@@ -52,14 +52,14 @@ const KeyHandling = () => {
         onEnter={() => {
           console.log("enter down");
           myBlock.isBlack = !myBlock.isBlack;
-          if (myBlock.isBlack) { 
-            myBlock.color = "#ffffff"
+          if (myBlock.isBlack) {
+            myBlock.color = "#ffffff";
           } else {
             myBlock.color = "#000000";
           }
         }}
       />
-      </>
+    </>
   );
 };
 

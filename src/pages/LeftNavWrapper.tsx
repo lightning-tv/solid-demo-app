@@ -1,12 +1,12 @@
-import { useLocation, useNavigate } from '@solidjs/router';
-import { View, Text, activeElement, renderer } from '@lightningtv/solid';
-import { useFocusManager, useAnnouncer, useMouse, FPSCounter, setupFPS } from '@lightningtv/solid/primitives';
-import Background from '../components/Background';
-import NavDrawer from '../components/NavDrawer/NavDrawer';
-import { createEffect, createSignal, onCleanup } from 'solid-js';
-import { KeyMap, KeyHoldMap } from '@lightningtv/core/focusManager';
+import { useLocation, useNavigate } from "@solidjs/router";
+import { View, Text, activeElement, renderer } from "@lightningtv/solid";
+import { useFocusManager, useAnnouncer, useMouse, FPSCounter, setupFPS } from "@lightningtv/solid/primitives";
+import Background from "../components/Background";
+import NavDrawer from "../components/NavDrawer/NavDrawer";
+import { createEffect, createSignal, onCleanup } from "solid-js";
+import { KeyMap, KeyHoldMap } from "@lightningtv/core/focusManager";
 
-declare module '@lightningtv/solid' {
+declare module "@lightningtv/solid" {
   // Augment the FocusManager KeyMap interface with our custom keys
   interface KeyMap {
     Announcer: (string | number)[];
@@ -25,20 +25,20 @@ declare module '@lightningtv/solid' {
 const LeftNavWrapper = (props) => {
   useFocusManager(
     {
-      Announcer: ['a'],
-      Menu: ['m'],
-      Escape: ['Escape', 27],
-      Backspace: ['Backspace', 8],
-      Left: ['ArrowLeft', 37],
-      Right: ['ArrowRight', 39],
-      Up: ['ArrowUp', 38],
-      Down: ['ArrowDown', 40],
-      Enter: ['Enter', 13],
+      Announcer: ["a"],
+      Menu: ["m"],
+      Escape: ["Escape", 27],
+      Backspace: ["Backspace", 8],
+      Left: ["ArrowLeft", 37],
+      Right: ["ArrowRight", 39],
+      Up: ["ArrowUp", 38],
+      Down: ["ArrowDown", 40],
+      Enter: ["Enter", 13],
     } as unknown as KeyMap,
     {
       userKeyHoldMap: {
-        EnterHold: ['Enter', 13],
-        BackHold: ['b', 66],
+        EnterHold: ["Enter", 13],
+        BackHold: ["b", 66],
       } as unknown as KeyHoldMap,
       holdThreshold: 1000,
     },
@@ -53,7 +53,7 @@ const LeftNavWrapper = (props) => {
   setupFPS({ renderer });
 
   function focusNavDrawer() {
-    if (navDrawer.states.has('focus')) {
+    if (navDrawer.states.has("focus")) {
       return false;
     }
     lastFocused = activeElement();
@@ -62,11 +62,11 @@ const LeftNavWrapper = (props) => {
 
   const [showWidgets, setShowWidgets] = createSignal(true);
   const location = useLocation();
-  const showOnPaths = ['/browse', '/entity'];
+  const showOnPaths = ["/browse", "/entity"];
   createEffect(() => {
     const currentPath = location.pathname;
     let matchesPartial = showOnPaths.some((path) => currentPath.startsWith(path));
-    if (currentPath === '/') {
+    if (currentPath === "/") {
       matchesPartial = true;
     }
     setShowWidgets(matchesPartial);
@@ -77,14 +77,14 @@ const LeftNavWrapper = (props) => {
   const keyPressHandler = (e) => {
     setLastKey(`Last key: ${e.key}, Code: ${e.keyCode}`);
   };
-  document.addEventListener('keydown', keyPressHandler);
+  document.addEventListener("keydown", keyPressHandler);
   const displayError = (e) => {
-    setLastError((p) => (p || '') + '\n' + e.message);
+    setLastError((p) => (p || "") + "\n" + e.message);
   };
-  document.addEventListener('onerror', displayError);
+  document.addEventListener("onerror", displayError);
   onCleanup(() => {
-    document.removeEventListener('onerror', displayError);
-    document.removeEventListener('keydown', keyPressHandler);
+    document.removeEventListener("onerror", displayError);
+    document.removeEventListener("keydown", keyPressHandler);
   });
 
   let pageContainer;
@@ -94,11 +94,11 @@ const LeftNavWrapper = (props) => {
       ref={window.APP as any}
       onAnnouncer={() => (announcer.enabled = !announcer.enabled)}
       onLast={() => history.back()}
-      onMenu={() => navigate('/')}
+      onMenu={() => navigate("/")}
       style={{ width: 1920, height: 1080 }}
       onBackspace={focusNavDrawer}
       onLeft={focusNavDrawer}
-      onRight={() => navDrawer.states.has('focus') && (lastFocused || pageContainer).setFocus()}
+      onRight={() => navDrawer.states.has("focus") && (lastFocused || pageContainer).setFocus()}
     >
       <Background />
       <FPSCounter mountX={1} x={1910} y={10} alpha={showWidgets() ? 1 : 0.01} />
@@ -108,7 +108,7 @@ const LeftNavWrapper = (props) => {
         </Text>
       </View>
 
-      <Text x={270} y={20} fontSize={24} contain='width' width={800}>
+      <Text x={270} y={20} fontSize={24} contain="width" width={800}>
         {lastError()}
       </Text>
       <View ref={pageContainer} forwardFocus={0}>

@@ -9,33 +9,29 @@ const handleResults = (response) => {
   });
 };
 
-
 const fetchPopular = (type) => {
   return handleResults(api.get(`/${type}/popular`));
 };
 
 let genreListCache;
 const fetchGenreMovies = (genres) => {
-  const genreList =
-    genreListCache || (genreListCache = api.get(`/genre/movie/list`));
+  const genreList = genreListCache || (genreListCache = api.get(`/genre/movie/list`));
   const targetGenre = Array.isArray(genres) ? genres : [genres];
   return genreList.then(({ genres }) => {
     let targetGenreIds: number[] = [];
     genres.forEach((item) => {
       if (targetGenre.includes(item.name)) targetGenreIds.push(item.id);
     });
-    return handleResults(
-      api.get(`/discover/movie?with_genres=${targetGenreIds.join()}`)
-    );
+    return handleResults(api.get(`/discover/movie?with_genres=${targetGenreIds.join()}`));
   });
 };
 
 type RowItem = {
-    title: string;
-    items: any;
-    setItems?: any;
-    type: "Poster" | "Hero" | "PosterTitle";
-    height: number;
+  title: string;
+  items: any;
+  setItems?: any;
+  type: "Poster" | "Hero" | "PosterTitle";
+  height: number;
 };
 
 export function destroyData() {
@@ -105,6 +101,6 @@ export function tmdbData() {
   });
 
   return {
-    rows
+    rows,
   };
 }

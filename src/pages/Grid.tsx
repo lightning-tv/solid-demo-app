@@ -1,11 +1,4 @@
-import {
-  createEffect,
-  on,
-  createSignal,
-  createSelector,
-  Index,
-  onMount,
-} from "solid-js";
+import { createEffect, on, createSignal, createSelector, Index, onMount } from "solid-js";
 import { type ElementNode, View, Text } from "@lightningtv/solid";
 import { Column, Row } from "@lightningtv/solid/primitives";
 import styles from "./gridStyles";
@@ -35,12 +28,7 @@ interface Product {
 
 function ProductRow(props) {
   return (
-    <View
-      y={props.y}
-      autofocus={props.autofocus}
-      style={styles.ProductRow}
-      forwardStates
-    >
+    <View y={props.y} autofocus={props.autofocus} style={styles.ProductRow} forwardStates>
       <Text style={styles.ProductText}>{props.item.id}</Text>
       <Text style={styles.ProductText}>{props.item.title}</Text>
       <Text style={styles.ProductText}>{props.item.price}</Text>
@@ -77,8 +65,8 @@ const Grid = () => {
           setPage((p) => p + 1);
         }
       },
-      { defer: true }
-    )
+      { defer: true },
+    ),
   );
 
   onMount(() => {
@@ -94,9 +82,7 @@ const Grid = () => {
     <View clipping style={styles.itemsContainer}>
       <Column plinko y={columnY()} scroll="none" onSelectedChanged={changeRow}>
         <Index each={items()}>
-          {(item, i) => (
-            <ProductRow y={i * 50} item={item()} autofocus={isFirst(i)} />
-          )}
+          {(item, i) => <ProductRow y={i * 50} item={item()} autofocus={isFirst(i)} />}
         </Index>
       </Column>
     </View>

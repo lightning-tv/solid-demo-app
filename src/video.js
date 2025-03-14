@@ -1,4 +1,4 @@
-import shaka from 'shaka-player';
+import shaka from "shaka-player";
 
 let player;
 let videoElement;
@@ -10,10 +10,10 @@ export const state = {
 export const init = async (parent) => {
   shaka.polyfill.installAll(); // polyfilling for devices that need it.
   if (!videoElement) {
-    console.log('videoElement', videoElement);
-    videoElement = document.createElement('video');
+    console.log("videoElement", videoElement);
+    videoElement = document.createElement("video");
 
-    videoElement.style.cssText = 'position: absolute; top: 0; left: 0; z-index: -1';
+    videoElement.style.cssText = "position: absolute; top: 0; left: 0; z-index: -1";
 
     videoElement.width = window.innerWidth;
     videoElement.height = window.innerHeight;
@@ -25,7 +25,7 @@ export const init = async (parent) => {
     videoElement.preload = true;
     videoElement.muted = true;
 
-    player.addEventListener('error', (err) => {
+    player.addEventListener("error", (err) => {
       console.error(err);
     });
     document.body.insertBefore(videoElement, document.body.firstChild);
@@ -38,7 +38,7 @@ export const init = async (parent) => {
  */
 export const load = async (config) => {
   if (!player || !videoElement) {
-    throw 'Player not initialized yet';
+    throw "Player not initialized yet";
   }
 
   await player.load(config.streamUrl);

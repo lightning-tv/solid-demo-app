@@ -25,7 +25,7 @@ const Destroy = (props) => {
         img.crossOrigin = "anonymous"; // Enable CORS
         img.src = heros[index + 1].backdrop;
       }
-    })
+    }),
   );
 
   function onDown() {
@@ -58,14 +58,7 @@ const Destroy = (props) => {
   return (
     <View x={300} y={200} onDown={onDown} onUp={onUp}>
       {/* The keyed attribue makes Solid destroy the old content and create a new copy allowing for the animation */}
-      <View
-        src={"assets/up.svg"}
-        width={350}
-        height={200}
-        x={450}
-        y={-200}
-        rotation={Math.PI}
-      />
+      <View src={"assets/up.svg"} width={350} height={200} x={450} y={-200} rotation={Math.PI} />
       <Show when={heroContent()} keyed>
         <Hero
           id="Hero"

@@ -1,10 +1,5 @@
 import { globalBackground } from "../state.js";
-import {
-  type IntrinsicNodeStyleProps,
-  type AnimationSettings,
-  View,
-  hexColor,
-} from "@lightningtv/solid";
+import { type IntrinsicNodeStyleProps, type AnimationSettings, View, hexColor } from "@lightningtv/solid";
 import { createEffect, on, onMount } from "solid-js";
 import theme from "theme";
 
@@ -76,8 +71,8 @@ export default function Background() {
       (img: string | number) => {
         changeBackgrounds(img);
       },
-      { defer: true }
-    )
+      { defer: true },
+    ),
   );
 
   return (

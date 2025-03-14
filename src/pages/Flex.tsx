@@ -1,9 +1,4 @@
-import {
-  ElementNode,
-  IntrinsicNodeStyleProps,
-  Text,
-  View,
-} from "@lightningtv/solid";
+import { ElementNode, IntrinsicNodeStyleProps, Text, View } from "@lightningtv/solid";
 import { Column, Row } from "@lightningtv/solid/primitives";
 import { createSignal, onMount } from "solid-js";
 import styles from "../styles";
@@ -50,14 +45,7 @@ const FlexPage = () => {
 
   return (
     <>
-      <Column
-        x={160}
-        y={columnY()}
-        gap={30}
-        height={850}
-        width={RowStyles.width}
-        style={styles.Column}
-      >
+      <Column x={160} y={columnY()} gap={30} height={850} width={RowStyles.width} style={styles.Column}>
         <Text style={rowTitle}>Flex Start</Text>
         <Row gap={gap} style={RowStyles} onFocus={onFocus}>
           <Block autofocus />
@@ -75,12 +63,7 @@ const FlexPage = () => {
           <Block />
         </Row>
         <Text style={rowTitle}>Flex End</Text>
-        <Row
-          gap={gap}
-          justifyContent={"flexEnd"}
-          style={RowStyles}
-          onFocus={onFocus}
-        >
+        <Row gap={gap} justifyContent={"flexEnd"} style={RowStyles} onFocus={onFocus}>
           <Block />
           <Block />
           <Block />
@@ -89,12 +72,7 @@ const FlexPage = () => {
         </Row>
 
         <Text style={rowTitle}>Flex End - Margin Right</Text>
-        <Row
-          gap={gap}
-          justifyContent={"flexEnd"}
-          style={RowStyles}
-          onFocus={onFocus}
-        >
+        <Row gap={gap} justifyContent={"flexEnd"} style={RowStyles} onFocus={onFocus}>
           <Block />
           <Block marginRight={100} />
           <Block />
@@ -103,12 +81,7 @@ const FlexPage = () => {
         </Row>
 
         <Text style={rowTitle}>Center</Text>
-        <Row
-          gap={gap}
-          justifyContent={"center"}
-          style={RowStyles}
-          onFocus={onFocus}
-        >
+        <Row gap={gap} justifyContent={"center"} style={RowStyles} onFocus={onFocus}>
           <Block />
           <Block marginLeft={80} />
           <Block />
@@ -117,12 +90,7 @@ const FlexPage = () => {
         </Row>
 
         <Text style={rowTitle}>Space Between</Text>
-        <Row
-          gap={gap}
-          justifyContent={"spaceBetween"}
-          style={RowStyles}
-          onFocus={onFocus}
-        >
+        <Row gap={gap} justifyContent={"spaceBetween"} style={RowStyles} onFocus={onFocus}>
           <Block />
           <Block />
           <Block />
@@ -131,12 +99,7 @@ const FlexPage = () => {
         </Row>
 
         <Text style={rowTitle}>Space Evenly</Text>
-        <Row
-          gap={gap}
-          justifyContent={"spaceEvenly"}
-          style={RowStyles}
-          onFocus={onFocus}
-        >
+        <Row gap={gap} justifyContent={"spaceEvenly"} style={RowStyles} onFocus={onFocus}>
           <Block />
           <Block />
           <Block marginLeft={80} />

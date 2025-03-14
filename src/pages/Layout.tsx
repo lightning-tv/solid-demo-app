@@ -11,13 +11,7 @@ const LayoutPage = () => {
   } as const;
 
   return (
-    <View
-      x={150}
-      y={10}
-      width={1000}
-      height={1000}
-      border={{ color: "#ff0000", width: 5 }}
-    >
+    <View x={150} y={10} width={1000} height={1000} border={{ color: "#ff0000", width: 5 }}>
       <Block center color="#ffff00" />
 
       <View
@@ -35,21 +29,8 @@ const LayoutPage = () => {
         <Block color="#0000ff" />
       </View>
 
-      <View
-        x={500}
-        y={100}
-        width={200}
-        padding={20}
-        height={36}
-        border={{ color: "#ffffff", width: 5 }}
-      >
-        <Text
-          contain="both"
-          textAlign="left"
-          lineHeight={36}
-          y={3}
-          fontSize={28}
-        >
+      <View x={500} y={100} width={200} padding={20} height={36} border={{ color: "#ffffff", width: 5 }}>
+        <Text contain="both" textAlign="left" lineHeight={36} y={3} fontSize={28}>
           Hello World
         </Text>
       </View>
@@ -67,21 +48,19 @@ const LayoutPage = () => {
       >
         <View color={"#0000FF"} marginTop={5} display="flex">
           <Text fontSize={24} contain="width" width={450}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+            esse cillum dolore eu.
           </Text>
         </View>
 
         <View color={"#0000FF"} display="flex">
           <Text fontSize={24} contain="width" width={450}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+            esse cillum dolore eu.
           </Text>
         </View>
       </View>

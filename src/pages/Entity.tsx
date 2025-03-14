@@ -1,13 +1,13 @@
-import { ElementNode, Text, View, Show, assertTruthy, setActiveElement } from '@lightningtv/solid';
-import { Column, Row } from '@lightningtv/solid/primitives';
+import { ElementNode, Text, View, Show, assertTruthy, setActiveElement } from "@lightningtv/solid";
+import { Column, Row } from "@lightningtv/solid/primitives";
 
-import { createEffect, on, createSignal } from 'solid-js';
-import { TileRow, Button } from '../components';
-import { setGlobalBackground } from '../state';
-import ContentBlock from '../components/ContentBlock';
-import { useNavigate } from '@solidjs/router';
-import styles from '../styles';
-import * as player from '../video';
+import { createEffect, on, createSignal } from "solid-js";
+import { TileRow, Button } from "../components";
+import { setGlobalBackground } from "../state";
+import ContentBlock from "../components/ContentBlock";
+import { useNavigate } from "@solidjs/router";
+import styles from "../styles";
+import * as player from "../video";
 
 const Entity = (props) => {
   const [backdropAlpha, setBackdropAlpha] = createSignal(0);
@@ -26,7 +26,7 @@ const Entity = (props) => {
   const columnY = 640;
 
   const Backdrop = {
-    color: '#000000',
+    color: "#000000",
     alpha: 0,
     width: 1900,
     height: 890,
@@ -50,7 +50,7 @@ const Entity = (props) => {
   }
 
   function onEnter(this: ElementNode) {
-    let entity = this.children.find((c) => c.states.has('focus'));
+    let entity = this.children.find((c) => c.states.has("focus"));
     assertTruthy(entity && entity.item?.href);
     navigate(entity.item.href as string);
   }
@@ -58,17 +58,17 @@ const Entity = (props) => {
   function onEscape() {
     //closeVideo();
     // Set focus back to lightning app
-    document.getElementsByTagName('canvas')[0].focus();
+    document.getElementsByTagName("canvas")[0].focus();
     entityActions.setFocus();
     setBackdropAlpha(0);
   }
 
   function onEnterTrailer() {
-    console.log('onEnterTrailer');
+    console.log("onEnterTrailer");
     //const video = playVideo();
     //setActiveElement(video);
     // setBackdropAlpha(0.9);
-    navigate('/player/123');
+    navigate("/player/123");
   }
 
   let columnRef, backdropRef, entityActions;
@@ -86,7 +86,7 @@ const Entity = (props) => {
         <Row
           ref={entityActions}
           y={500}
-          scroll='none'
+          scroll="none"
           height={90}
           width={640}
           gap={40}
@@ -99,7 +99,7 @@ const Entity = (props) => {
           <Button width={300}>Resume</Button>
         </Row>
 
-        <Column ref={columnRef} x={0} y={columnY} style={styles.Column} height={880} scroll='none' zIndex={5}>
+        <Column ref={columnRef} x={0} y={columnY} style={styles.Column} height={880} scroll="none" zIndex={5}>
           <Show when={props.data.recommendations() && props.data.credits()}>
             <Text skipFocus style={styles.RowTitle}>
               Recommendations
@@ -123,7 +123,7 @@ const Entity = (props) => {
         </Column>
         <View ref={backdropRef} style={Backdrop} transition={{ alpha: true, y: true }} />
       </View>
-      <View alpha={backdropAlpha()} color={'#000000'} skipFocus zIndex={200} transition={{ alpha: true }} />
+      <View alpha={backdropAlpha()} color={"#000000"} skipFocus zIndex={200} transition={{ alpha: true }} />
     </Show>
   );
 };
