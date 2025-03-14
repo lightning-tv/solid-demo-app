@@ -1,4 +1,3 @@
-import API_KEY_V4 from "./key";
 const API_BASE = "https://api.themoviedb.org/3";
 let tmdbConfig;
 let baseImageUrl;
@@ -7,7 +6,6 @@ const basePosterSize = "w185";
 const defaultFetchParams = {
   headers: {
     "Content-Type": "application/json",
-    Authorization: "Bearer " + API_KEY_V4,
   },
 };
 
