@@ -71,10 +71,6 @@ const Entity = (props) => {
   }
 
   function onEnterTrailer() {
-    console.log("onEnterTrailer");
-    //const video = playVideo();
-    //setActiveElement(video);
-    // setBackdropAlpha(0.9);
     navigate("/player/123");
   }
 

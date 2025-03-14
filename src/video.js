@@ -7,10 +7,12 @@ export const state = {
   playingState: false
 };
 
-export const init = async (parent) => {
+export const init = async (element) => {
   shaka.polyfill.installAll(); // polyfilling for devices that need it.
+
+  videoElement = element;
+
   if (!videoElement) {
-    console.log("videoElement", videoElement);
     videoElement = document.createElement("video");
 
     videoElement.style.cssText =
