@@ -1,13 +1,7 @@
-import {
-    IntrinsicNodeStyleProps,
-    IntrinsicTextNodeStyleProps,
-    Text,
-    View,
-    hexColor,
-} from "@lightningtv/solid";
-import { onMount } from "solid-js";
-import { setGlobalBackground } from "../state";
-import { init, load, play } from "../video";
+import {IntrinsicNodeStyleProps, IntrinsicTextNodeStyleProps, Text, View, hexColor} from "@lightningtv/solid";
+import {onMount} from "solid-js";
+import {setGlobalBackground} from "../state";
+import {init, load, play} from "../video";
 
 let parent;
 

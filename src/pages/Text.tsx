@@ -1,12 +1,6 @@
-import {
-    IntrinsicNodeStyleProps,
-    IntrinsicTextNodeStyleProps,
-    Text,
-    View,
-    hexColor,
-} from "@lightningtv/solid";
-import { onMount } from "solid-js";
-import { setGlobalBackground } from "../state";
+import {IntrinsicNodeStyleProps, IntrinsicTextNodeStyleProps, Text, View, hexColor} from "@lightningtv/solid";
+import {onMount} from "solid-js";
+import {setGlobalBackground} from "../state";
 
 const TextPage = () => {
     const OverviewContainer = {

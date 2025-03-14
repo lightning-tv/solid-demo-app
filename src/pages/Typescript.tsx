@@ -1,4 +1,4 @@
-import { View, Text } from "@lightningtv/solid";
+import {View, Text} from "@lightningtv/solid";
 
 <View
     x={4}

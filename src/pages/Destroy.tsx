@@ -1,7 +1,7 @@
-import { createEffect, on, createSignal, Show, onMount } from "solid-js";
-import { View } from "@lightningtv/solid";
-import { Hero } from "../components";
-import { setGlobalBackground } from "../state";
+import {createEffect, on, createSignal, Show, onMount} from "solid-js";
+import {View} from "@lightningtv/solid";
+import {Hero} from "../components";
+import {setGlobalBackground} from "../state";
 
 type hero = {
     backdrop: string;
@@ -41,7 +41,7 @@ const Destroy = (props) => {
 
     function animateOut(node) {
         return node
-            .animate({ y: 200, alpha: 0 }, { duration: 500, easing: "ease-in-out" })
+            .animate({y: 200, alpha: 0}, {duration: 500, easing: "ease-in-out"})
             .start()
             .waitUntilStopped();
     }
@@ -50,7 +50,7 @@ const Destroy = (props) => {
         node.alpha = 0;
         node.y = -100;
         return node
-            .animate({ y: 0, alpha: 1 }, { duration: 500, easing: "ease-in-out" })
+            .animate({y: 0, alpha: 1}, {duration: 500, easing: "ease-in-out"})
             .start()
             .waitUntilStopped();
     }

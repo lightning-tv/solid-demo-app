@@ -1,6 +1,6 @@
-import { Text, View } from "@lightningtv/solid";
-import { createSignal, onCleanup } from "solid-js";
-import { setGlobalBackground } from "../state";
+import {Text, View} from "@lightningtv/solid";
+import {createSignal, onCleanup} from "solid-js";
+import {setGlobalBackground} from "../state";
 
 const PositioningPage = () => {
     setGlobalBackground("#1e293b");
@@ -123,8 +123,8 @@ const PositioningPage = () => {
                                 y={state().yNested}
                                 x={state().xNested}
                                 transition={{
-                                    x: { duration: 300, easing: "ease" },
-                                    y: { duration: 300, easing: "ease" },
+                                    x: {duration: 300, easing: "ease"},
+                                    y: {duration: 300, easing: "ease"},
                                 }}
                                 color="#065f46"
                             />
@@ -161,7 +161,7 @@ const PositioningPage = () => {
                     height={100 * 0.3}
                     y={100 * 0.65}
                     x={400 * 0.01}
-                    transition={{ width: { duration: 300, easing: "ease" } }}
+                    transition={{width: {duration: 300, easing: "ease"}}}
                     color="#9f1239"
                 />
             </View>

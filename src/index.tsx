@@ -1,20 +1,20 @@
-import { createRenderer, Config, loadFonts } from "@lightningtv/solid";
-import { WebGlCoreRenderer, SdfTextRenderer } from "@lightningjs/renderer/webgl";
-import { CanvasCoreRenderer, CanvasTextRenderer } from "@lightningjs/renderer/canvas";
+import {createRenderer, Config, loadFonts} from "@lightningtv/solid";
+import {WebGlCoreRenderer, SdfTextRenderer} from "@lightningjs/renderer/webgl";
+import {CanvasCoreRenderer, CanvasTextRenderer} from "@lightningjs/renderer/canvas";
 
-import { Inspector } from "@lightningjs/renderer/inspector";
-import { HashRouter } from "@lightningtv/solid/primitives";
-import { Route } from "@solidjs/router";
-import { lazy } from "solid-js";
+import {Inspector} from "@lightningjs/renderer/inspector";
+import {HashRouter} from "@lightningtv/solid/primitives";
+import {Route} from "@solidjs/router";
+import {lazy} from "solid-js";
 import App from "./pages/App";
 import Browse from "./pages/Browse";
 import TMDB from "./pages/TMDB";
 import DestroyPage from "./pages/Destroy";
-import { tmdbData, destroyData } from "./api/tmdbData";
+import {tmdbData, destroyData} from "./api/tmdbData";
 import NotFound from "./pages/NotFound";
 import fonts from "./fonts";
-import { browsePreload } from "./api/browsePreload";
-import { entityPreload } from "./api/entityPreload";
+import {browsePreload} from "./api/browsePreload";
+import {entityPreload} from "./api/entityPreload";
 import Player from "./pages/Player";
 import LeftNavWrapper from "./pages/LeftNavWrapper";
 
@@ -96,7 +96,7 @@ if (rendererMode === "canvas") {
     Config.rendererOptions.renderEngine = WebGlCoreRenderer;
 }
 
-const { renderer, render } = createRenderer();
+const {renderer, render} = createRenderer();
 loadFonts(fonts);
 // Prepare for RC3 of Renderer
 // import {

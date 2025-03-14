@@ -1,9 +1,9 @@
-import { createEffect, on, createSignal, For, Index } from "solid-js";
-import { ElementNode, View, Text } from "@lightningtv/solid";
-import { LazyUp, Column, Row } from "@lightningtv/solid/primitives";
-import { List } from "@solid-primitives/list";
-import { Poster } from "../components";
-import { setGlobalBackground } from "../state";
+import {createEffect, on, createSignal, For, Index} from "solid-js";
+import {ElementNode, View, Text} from "@lightningtv/solid";
+import {LazyUp, Column, Row} from "@lightningtv/solid/primitives";
+import {List} from "@solid-primitives/list";
+import {Poster} from "../components";
+import {setGlobalBackground} from "../state";
 
 const Loops = (props) => {
     const [activeRow, setActiveRow] = createSignal(props.data.rows[0]);
@@ -110,11 +110,7 @@ const Loops = (props) => {
                     <Row gap={20} y={40} display="block">
                         <List each={activeRow()?.items()}>
                             {(item, index) => (
-                                <Poster
-                                    x={index() * 210}
-                                    {...item()}
-                                    transition={{ x: { duration: 5550 } }}
-                                />
+                                <Poster x={index() * 210} {...item()} transition={{x: {duration: 5550}}} />
                             )}
                         </List>
                     </Row>

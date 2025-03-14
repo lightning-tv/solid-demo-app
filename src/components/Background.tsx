@@ -1,6 +1,6 @@
-import { globalBackground } from "../state.js";
-import { type IntrinsicNodeStyleProps, type AnimationSettings, View, hexColor } from "@lightningtv/solid";
-import { createEffect, on, onMount } from "solid-js";
+import {globalBackground} from "../state.js";
+import {type IntrinsicNodeStyleProps, type AnimationSettings, View, hexColor} from "@lightningtv/solid";
+import {createEffect, on, onMount} from "solid-js";
 import theme from "theme";
 
 export default function Background() {
@@ -58,10 +58,10 @@ export default function Background() {
             currentBg.alpha = 1;
         } else {
             currentBg.alpha = 0.01;
-            currentBg.animate({ alpha: 1 }, animationSettings).start();
+            currentBg.animate({alpha: 1}, animationSettings).start();
         }
 
-        nextBg.animate({ alpha: 0.01 }, animationSettings).start();
+        nextBg.animate({alpha: 0.01}, animationSettings).start();
         active = active === 1 ? 2 : 1;
     }
 
@@ -71,7 +71,7 @@ export default function Background() {
             (img: string | number) => {
                 changeBackgrounds(img);
             },
-            { defer: true },
+            {defer: true},
         ),
     );
 

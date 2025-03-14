@@ -1,11 +1,11 @@
-import { ElementNode, Text, View, Show, assertTruthy, setActiveElement } from "@lightningtv/solid";
-import { Column, Row } from "@lightningtv/solid/primitives";
+import {ElementNode, Text, View, Show, assertTruthy, setActiveElement} from "@lightningtv/solid";
+import {Column, Row} from "@lightningtv/solid/primitives";
 
-import { createEffect, on, createSignal } from "solid-js";
-import { TileRow, Button } from "../components";
-import { setGlobalBackground } from "../state";
+import {createEffect, on, createSignal} from "solid-js";
+import {TileRow, Button} from "../components";
+import {setGlobalBackground} from "../state";
 import ContentBlock from "../components/ContentBlock";
-import { useNavigate } from "@solidjs/router";
+import {useNavigate} from "@solidjs/router";
 import styles from "../styles";
 import * as player from "../video";
 
@@ -19,7 +19,7 @@ const Entity = (props) => {
             (data) => {
                 setGlobalBackground(data.backgroundImage);
             },
-            { defer: true },
+            {defer: true},
         ),
     );
 
@@ -129,14 +129,14 @@ const Entity = (props) => {
                         />
                     </Show>
                 </Column>
-                <View ref={backdropRef} style={Backdrop} transition={{ alpha: true, y: true }} />
+                <View ref={backdropRef} style={Backdrop} transition={{alpha: true, y: true}} />
             </View>
             <View
                 alpha={backdropAlpha()}
                 color={"#000000"}
                 skipFocus
                 zIndex={200}
-                transition={{ alpha: true }}
+                transition={{alpha: true}}
             />
         </Show>
     );

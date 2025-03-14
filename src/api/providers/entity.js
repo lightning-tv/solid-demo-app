@@ -1,5 +1,5 @@
-import api, { getImageUrl } from "..";
-import { convertItemsToTiles } from "../formatters/ItemFormatter";
+import api, {getImageUrl} from "..";
+import {convertItemsToTiles} from "../formatters/ItemFormatter";
 
 export function minutesToHMM(minutes) {
     const hours = Math.floor(minutes / 60);
@@ -25,24 +25,24 @@ export function ensureItems(items, minCount) {
     return items;
 }
 
-export function getRecommendations({ type, id }) {
-    return api.get(`/${type}/${id}/recommendations`).then(({ results }) => {
+export function getRecommendations({type, id}) {
+    return api.get(`/${type}/${id}/recommendations`).then(({results}) => {
         if (results.length) {
             return ensureItems(convertItemsToTiles(results.slice(0, 7)), 7);
         }
         return api
             .get(`/trending/${type}/week?page=1`)
-            .then(({ results }) => ensureItems(convertItemsToTiles(results.slice(0, 7)), 7));
+            .then(({results}) => ensureItems(convertItemsToTiles(results.slice(0, 7)), 7));
     });
 }
 
-export function getCredits({ type, id }) {
+export function getCredits({type, id}) {
     return api
         .get(`/${type}/${id}/credits`)
-        .then(({ cast }) => ensureItems(convertItemsToTiles(cast.slice(0, 7)), 7));
+        .then(({cast}) => ensureItems(convertItemsToTiles(cast.slice(0, 7)), 7));
 }
 
-export function getInfo({ type, id }) {
+export function getInfo({type, id}) {
     let rt =
         type === "movie"
             ? {

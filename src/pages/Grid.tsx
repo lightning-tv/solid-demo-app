@@ -1,9 +1,9 @@
-import { createEffect, on, createSignal, createSelector, Index, onMount } from "solid-js";
-import { type ElementNode, View, Text } from "@lightningtv/solid";
-import { Column, Row } from "@lightningtv/solid/primitives";
+import {createEffect, on, createSignal, createSelector, Index, onMount} from "solid-js";
+import {type ElementNode, View, Text} from "@lightningtv/solid";
+import {Column, Row} from "@lightningtv/solid/primitives";
 import styles from "./gridStyles";
-import { setGlobalBackground } from "../state";
-import { createInfiniteItems } from "@lightningtv/solid/primitives";
+import {setGlobalBackground} from "../state";
+import {createInfiniteItems} from "@lightningtv/solid/primitives";
 
 interface ProductsResponse {
     limit: number;
@@ -42,7 +42,7 @@ const Grid = () => {
     const isFirst = createSelector(() => 0);
     const [rowIndex, setRowIndex] = createSignal(0);
     const [items, setItems] = createSignal<Product[]>([]);
-    const [products, { setPage }] = createInfiniteItems<Product>((page) => {
+    const [products, {setPage}] = createInfiniteItems<Product>((page) => {
         return fetch(`https://dummyjson.com/products?limit=20&skip=${20 * page}`)
             .then((res) => res.json())
             .then((data: ProductsResponse) => {
@@ -65,7 +65,7 @@ const Grid = () => {
                     setPage((p) => p + 1);
                 }
             },
-            { defer: true },
+            {defer: true},
         ),
     );
 

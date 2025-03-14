@@ -1,6 +1,6 @@
-import { Text, View, hexColor } from "@lightningtv/solid";
-import { onMount, onCleanup, createSignal } from "solid-js";
-import { setGlobalBackground } from "../state";
+import {Text, View, hexColor} from "@lightningtv/solid";
+import {onMount, onCleanup, createSignal} from "solid-js";
+import {setGlobalBackground} from "../state";
 
 export default () => {
     let ball, invervalTimer;
@@ -16,9 +16,9 @@ export default () => {
         borderRadius: 50,
         color: "#4287f5",
         transition: {
-            x: { duration: 1250, easing: "linear" },
-            y: { duration: 1250, easing: "linear" },
-            rotation: { duration: 1400, easing: "ease-in-out" },
+            x: {duration: 1250, easing: "linear"},
+            y: {duration: 1250, easing: "linear"},
+            rotation: {duration: 1400, easing: "ease-in-out"},
         },
     } as const;
 

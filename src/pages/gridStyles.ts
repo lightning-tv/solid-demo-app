@@ -1,4 +1,4 @@
-import { IntrinsicNodeStyleProps, IntrinsicTextNodeStyleProps, hexColor } from "@lightningtv/solid";
+import {IntrinsicNodeStyleProps, IntrinsicTextNodeStyleProps, hexColor} from "@lightningtv/solid";
 import theme from "theme";
 
 const ROW_HEIGHT = 50;
@@ -11,19 +11,19 @@ export default {
         height: ROW_HEIGHT,
         borderRadius: 16,
         color: 0xffffff0d,
-        border: { color: 0x008085ff, width: 0 },
+        border: {color: 0x008085ff, width: 0},
         active: {
             color: 0x39393cff,
         },
         $focus: {
             color: 0xf6f6f9ff,
-            border: { color: 0x008085ff, width: 6 },
+            border: {color: 0x008085ff, width: 6},
         },
         transition: {
             // leave easing blank to use default linear
-            x: { duration: 300 },
-            width: { duration: 300 },
-            alpha: { duration: 300 },
+            x: {duration: 300},
+            width: {duration: 300},
+            alpha: {duration: 300},
         },
     },
     ProductText: {

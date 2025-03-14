@@ -1,2 +1,2 @@
-import { createSignal } from "solid-js";
+import {createSignal} from "solid-js";
 export const [globalBackground, setGlobalBackground] = createSignal<string>("");

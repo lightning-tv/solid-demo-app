@@ -1,11 +1,11 @@
-import { createEffect, on, createSignal } from "solid-js";
-import { ElementNode, activeElement, View, Text } from "@lightningtv/solid";
-import { LazyRow, LazyColumn } from "@lightningtv/solid/primitives";
-import { Hero, TitleRow } from "../components";
+import {createEffect, on, createSignal} from "solid-js";
+import {ElementNode, activeElement, View, Text} from "@lightningtv/solid";
+import {LazyRow, LazyColumn} from "@lightningtv/solid/primitives";
+import {Hero, TitleRow} from "../components";
 import styles from "../styles";
-import { setGlobalBackground } from "../state";
+import {setGlobalBackground} from "../state";
 import ContentBlock from "../components/ContentBlock";
-import { debounce } from "@solid-primitives/scheduled";
+import {debounce} from "@solid-primitives/scheduled";
 
 const TMDB = (props) => {
     const [heroContent, setHeroContent] = createSignal({});
@@ -32,16 +32,16 @@ const TMDB = (props) => {
                     item.heroContent && delayedHero(item.heroContent);
                 }
             },
-            { defer: true },
+            {defer: true},
         ),
     );
 
     function onSelectedChanged(this: ElementNode, selectedIndex, column, row) {
-        const values = selectedIndex === 0 ? { y: 300, alpha: 1 } : { y: 200, alpha: 0 };
-        contentBlock.animate(values, { duration: 300, easing: "ease-in-out" }).start();
+        const values = selectedIndex === 0 ? {y: 300, alpha: 1} : {y: 200, alpha: 0};
+        contentBlock.animate(values, {duration: 300, easing: "ease-in-out"}).start();
 
-        const values2 = selectedIndex === 0 ? { y: 80, alpha: 1 } : { y: 0, alpha: 0 };
-        solidLogo.animate(values2, { duration: 300, easing: "ease-in-out" }).start();
+        const values2 = selectedIndex === 0 ? {y: 80, alpha: 1} : {y: 0, alpha: 0};
+        solidLogo.animate(values2, {duration: 300, easing: "ease-in-out"}).start();
     }
 
     return (
@@ -67,7 +67,7 @@ const TMDB = (props) => {
                 onSelectedChanged={onSelectedChanged}
                 autofocus={props.data.rows[0].items()}
                 gap={40}
-                transition={{ y: { duration: 300, easing: "ease-in-out" } }}
+                transition={{y: {duration: 300, easing: "ease-in-out"}}}
                 style={styles.Column}
             >
                 {(row) =>

@@ -1,8 +1,8 @@
-import { View, activeElement } from "@lightningtv/solid";
-import { Row, Column } from "@lightningtv/solid/primitives";
-import { setGlobalBackground } from "../state";
-import { createEffect, on } from "solid-js";
-import { Block } from "../components/";
+import {View, activeElement} from "@lightningtv/solid";
+import {Row, Column} from "@lightningtv/solid/primitives";
+import {setGlobalBackground} from "../state";
+import {createEffect, on} from "solid-js";
+import {Block} from "../components/";
 
 const FocusPage = () => {
     setGlobalBackground("#333");
@@ -14,7 +14,7 @@ const FocusPage = () => {
             (elm) => {
                 console.log(elm);
             },
-            { defer: true },
+            {defer: true},
         ),
     );
 

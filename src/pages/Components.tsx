@@ -1,8 +1,8 @@
-import { Text, View, Dynamic } from "@lightningtv/solid";
-import { Visible } from "@lightningtv/solid/primitives";
-import { createSignal, For, onCleanup } from "solid-js";
-import { setGlobalBackground } from "../state";
-import { Button } from "../components";
+import {Text, View, Dynamic} from "@lightningtv/solid";
+import {Visible} from "@lightningtv/solid/primitives";
+import {createSignal, For, onCleanup} from "solid-js";
+import {setGlobalBackground} from "../state";
+import {Button} from "../components";
 
 // Define the Square component
 function Square(props) {
@@ -63,7 +63,7 @@ const PositioningPage = () => {
             </Visible>
 
             {/* Reactive square with animated x position */}
-            <Square x={x()} y={600} size={50} transition={{ x: { duration: 1000, easing: "linear" } }} />
+            <Square x={x()} y={600} size={50} transition={{x: {duration: 1000, easing: "linear"}}} />
 
             {/* Card components */}
             <Card x={500} y={100} size={size() ? "large" : "small"} />

@@ -1,8 +1,8 @@
-import { defineConfig } from "vite";
+import {defineConfig} from "vite";
 import solidPlugin from "vite-plugin-solid";
 import legacy from "@vitejs/plugin-legacy";
 import hexColorTransform from "@lightningtv/vite-hex-transform";
-import { configDefaults } from "vitest/config";
+import {configDefaults} from "vitest/config";
 
 export default defineConfig({
     plugins: [

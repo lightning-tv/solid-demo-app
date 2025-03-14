@@ -1,14 +1,14 @@
-import { For, IntrinsicNodeProps, View } from "@lightningtv/solid";
-import { createSpriteMap } from "@lightningtv/solid/primitives";
+import {For, IntrinsicNodeProps, View} from "@lightningtv/solid";
+import {createSpriteMap} from "@lightningtv/solid/primitives";
 // Icons from https://uxwing.com/
 
 const basePath = import.meta.env.BASE_URL;
 
 const icons = [
-    { name: "experiment", width: 81, height: 100, x: 0, y: 0 },
-    { name: "trending", width: 100, height: 56, x: 81, y: 0 },
-    { name: "tv", width: 100, height: 68, x: 181, y: 0 },
-    { name: "movie", width: 94, height: 100, x: 282, y: 0 },
+    {name: "experiment", width: 81, height: 100, x: 0, y: 0},
+    {name: "trending", width: 100, height: 56, x: 81, y: 0},
+    {name: "tv", width: 100, height: 68, x: 181, y: 0},
+    {name: "movie", width: 94, height: 100, x: 282, y: 0},
 ];
 
 interface IconProps extends IntrinsicNodeProps {

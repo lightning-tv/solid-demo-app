@@ -1,6 +1,6 @@
-import { Text, View } from "@lightningtv/solid";
-import { createSignal, onCleanup } from "solid-js";
-import { setGlobalBackground } from "../state";
+import {Text, View} from "@lightningtv/solid";
+import {createSignal, onCleanup} from "solid-js";
+import {setGlobalBackground} from "../state";
 
 const Default = () => {
     setGlobalBackground("#1e293b");
@@ -26,7 +26,7 @@ const Default = () => {
             <View width={200} height={200} x={50} y={y()} color="#dbeafe" transition={true} />
 
             {/* simple, default transition with object syntax */}
-            <View width={200} height={200} x={300} y={y()} color="#bfdbfe" transition={{ y: true }} />
+            <View width={200} height={200} x={300} y={y()} color="#bfdbfe" transition={{y: true}} />
 
             {/* transition with custom duration */}
             <View
@@ -35,7 +35,7 @@ const Default = () => {
                 x={550}
                 y={y()}
                 color="#93c5fd"
-                transition={{ y: { duration: 1000 } }}
+                transition={{y: {duration: 1000}}}
                 onAnimation={{
                     animating: onStart,
                     stopped: onEnd,
@@ -49,7 +49,7 @@ const Default = () => {
                 x={800}
                 y={y()}
                 color="#60a5fa"
-                transition={{ y: { duration: 500, delay: 1000 } }}
+                transition={{y: {duration: 500, delay: 1000}}}
                 onAnimation={{
                     animating: onStart,
                     stopped: onEnd,
@@ -63,7 +63,7 @@ const Default = () => {
                 x={1050}
                 y={y()}
                 color="#3b82f6"
-                transition={{ y: { duration: 500, easing: "ease-in-out" } }}
+                transition={{y: {duration: 500, easing: "ease-in-out"}}}
                 onAnimation={{
                     stopped: onEnd,
                 }}
@@ -76,7 +76,7 @@ const Default = () => {
                 x={1300}
                 y={y()}
                 color="#2563eb"
-                transition={{ y: { duration: 3000, easing: "ease-in-out-back" } }}
+                transition={{y: {duration: 3000, easing: "ease-in-out-back"}}}
                 onAnimation={{
                     stopped: onEnd,
                 }}
@@ -90,7 +90,7 @@ const Default = () => {
                 y={y()}
                 color="#1e3a8a"
                 transition={{
-                    y: { duration: 800, easing: "cubic-bezier(1,-0.64,.39,1.44)" },
+                    y: {duration: 800, easing: "cubic-bezier(1,-0.64,.39,1.44)"},
                 }}
             />
         </View>

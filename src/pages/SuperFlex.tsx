@@ -1,6 +1,6 @@
-import { View, Text, For } from "@lightningtv/solid";
-import { Column, Row } from "@lightningtv/solid/primitives";
-import { Show, createSignal } from "solid-js";
+import {View, Text, For} from "@lightningtv/solid";
+import {Column, Row} from "@lightningtv/solid/primitives";
+import {Show, createSignal} from "solid-js";
 
 const Items = ["Mary", "had", "a", "little", "lamb", "her", "fleece", "was", "white", "as", "snow"];
 export const styles = {
@@ -17,7 +17,7 @@ export const styles = {
 
 const SpecialFont = {
     color: 0xff0000ff,
-    $focus: { color: 0xffffffff },
+    $focus: {color: 0xffffffff},
 };
 
 export default () => {
@@ -44,14 +44,14 @@ export default () => {
                 autofocus
                 x={150}
                 y={50}
-                transition={{ x: { duration: 350 } }}
+                transition={{x: {duration: 350}}}
             >
                 <For each={Items}>
                     {(item, index) => (
                         <View
                             width={100}
                             height={200}
-                            style={{ color: 0xff0000ff, $focus: { color: 0xffffffff } }}
+                            style={{color: 0xff0000ff, $focus: {color: 0xffffffff}}}
                         />
                     )}
                 </For>
@@ -65,14 +65,14 @@ export default () => {
                     autofocus
                     x={150}
                     y={350}
-                    transition={{ x: { duration: 350 } }}
+                    transition={{x: {duration: 350}}}
                 >
                     <For each={Items}>
                         {(item, index) => (
                             <View
                                 width={100}
                                 height={200}
-                                style={{ color: 0xff0000ff, $focus: { color: 0xffffffff } }}
+                                style={{color: 0xff0000ff, $focus: {color: 0xffffffff}}}
                             />
                         )}
                     </For>
@@ -80,14 +80,7 @@ export default () => {
             </Show>
 
             <Show when={lazyShow()}>
-                <Row
-                    scroll="none"
-                    gap={20}
-                    selected={2}
-                    x={150}
-                    y={650}
-                    transition={{ x: { duration: 350 } }}
-                >
+                <Row scroll="none" gap={20} selected={2} x={150} y={650} transition={{x: {duration: 350}}}>
                     <For each={Items}>
                         {(item, index) => (
                             <Text style={SpecialFont} fontSize={24}>
