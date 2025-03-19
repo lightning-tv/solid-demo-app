@@ -41,6 +41,7 @@ const FocusHandlingPage = lazy(() => import("./pages/FocusHandling"));
 const GradientsPage = lazy(() => import("./pages/Gradients"));
 const FlexPage = lazy(() => import("./pages/Flex"));
 const FlexGrowPage = lazy(() => import("./pages/FlexGrow"));
+const FlexMenuPage = lazy(() => import("./pages/FlexMenu"));
 const FlexSizePage = lazy(() => import("./pages/FlexSize"));
 const FlexColumnSizePage = lazy(() => import("./pages/FlexColumnSize"));
 const FlexColumnPage = lazy(() => import("./pages/FlexColumn"));
@@ -146,6 +147,7 @@ render(() => (
     <Route path="create" component={CreatePage} />
     <Route path="viewport" component={ViewportPage} />
     <Route path="flexsize" component={FlexSizePage} />
+    <Route path="flexmenu" component={FlexMenuPage} />
     <Route path="flexcolumnsize" component={FlexColumnSizePage} />
     <Route path="flexcolumn" component={FlexColumnPage} />
     <Route path="flexgrow" component={FlexGrowPage} />

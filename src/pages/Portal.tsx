@@ -43,6 +43,11 @@ const Portal = () => {
       description: "Quick guide on Layout",
     },
     {
+      title: "Flex Menu",
+      id: "flexmenu",
+      description: "Flex Menu On Right Implementation",
+    },
+    {
       title: "Flex Row",
       id: "flex",
       description: "Flex Row Implementation",

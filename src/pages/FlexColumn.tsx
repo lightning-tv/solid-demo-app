@@ -139,6 +139,23 @@ const FlexColumnPage = () => {
           <Block />
           <Block />
         </Column>
+
+        <Column
+          gap={gap}
+          rowGap={0}
+          flexWrap="wrap"
+          alignItems="center"
+          style={ColumnStyles}
+          onFocus={onFocus}
+        >
+          <Block height={200} />
+          <Block />
+          <Block />
+          <Block height={200} />
+          <Block />
+          <Block height={200} />
+          <Block />
+        </Column>
       </Row>
     </>
   );

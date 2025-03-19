@@ -143,6 +143,24 @@ const FlexPage = () => {
           <Block />
           <Block />
         </Row>
+
+        <Text style={rowTitle}>Flex Wrap</Text>
+        <Row
+          gap={gap}
+          justifyContent={"flexStart"}
+          flexWrap={"wrap"}
+          alignItems="center"
+          style={RowStyles}
+          onFocus={onFocus}
+        >
+          <Block width={300} />
+          <Block width={300} />
+          <Block width={300} alignSelf="flexStart" />
+          <Block width={300} />
+          <Block width={300} />
+          <Block width={300} alignSelf="flexEnd" />
+          <Block width={300} />
+        </Row>
       </Column>
     </>
   );
