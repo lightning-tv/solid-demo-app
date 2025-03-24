@@ -1,0 +1,9 @@
+{
+  "id": "com.example.soliddemo",
+  "version": "1.0.0",
+  "type": "web",
+  "title": "Solid Demo App",
+  "main": "index.html",
+  "icon": "icon.png",
+  "largeIcon": "largeIcon.png"
+}
