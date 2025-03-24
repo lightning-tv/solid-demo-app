@@ -12,6 +12,7 @@ import { Inspector } from "@lightningjs/renderer/inspector";
 import { HashRouter } from "@lightningtv/solid/primitives";
 import { Route } from "@solidjs/router";
 import { lazy } from "solid-js";
+import 'solid-devtools';
 import App from "./pages/App";
 import Browse from "./pages/Browse";
 import TMDB from "./pages/TMDB";

@@ -1,12 +1,17 @@
 import { defineConfig } from "vite";
 import solidPlugin from "vite-plugin-solid";
 import legacy from "@vitejs/plugin-legacy";
+import devtools from "solid-devtools/vite";
 import hexColorTransform from "@lightningtv/vite-hex-transform";
 import { configDefaults } from "vitest/config";
 
 export default defineConfig({
   plugins: [
     hexColorTransform(),
+    devtools({
+      /* features options - all disabled by default */
+      autoname: true, // e.g. enable autoname
+    }),
     solidPlugin({
       solid: {
         moduleName: "@lightningtv/solid",
