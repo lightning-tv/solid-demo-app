@@ -1,0 +1,272 @@
+diff --git a/dist/index.cjs b/dist/index.cjs
+index e8a593a533ca14c65a60360e64fb3d62e83778db..6b93be3efa4ab47c3eed2ce2f9d04418971e9115 100644
+--- a/dist/index.cjs
++++ b/dist/index.cjs
+@@ -164,7 +164,7 @@ function joinUrlSegments(a, b) {
+   if (!a || !b) {
+     return a || b || "";
+   }
+-  if (a[a.length - 1] === "/") {
++  if (a.endsWith("/")) {
+     a = a.substring(0, a.length - 1);
+   }
+   if (b[0] !== "/") {
+@@ -209,6 +209,7 @@ function viteLegacyPlugin(options = {}) {
+   }
+   const debugFlags = (process.env.DEBUG || "").split(",");
+   const isDebug = debugFlags.includes("vite:*") || debugFlags.includes("vite:legacy");
++  const assumptions = options.assumptions || {};
+   const facadeToLegacyChunkMap = /* @__PURE__ */ new Map();
+   const facadeToLegacyPolyfillMap = /* @__PURE__ */ new Map();
+   const facadeToModernPolyfillMap = /* @__PURE__ */ new Map();
+@@ -345,6 +346,7 @@ function viteLegacyPlugin(options = {}) {
+         await detectPolyfills(
+           `Promise.resolve(); Promise.all();`,
+           targets,
++          assumptions,
+           legacyPolyfills
+         );
+       }
+@@ -454,7 +456,12 @@ function viteLegacyPlugin(options = {}) {
+       }
+       if (!isLegacyChunk(chunk, opts)) {
+         if (options.modernPolyfills && !Array.isArray(options.modernPolyfills) && genModern) {
+-          await detectPolyfills(raw, modernTargets, polyfillsDiscovered.modern);
++          await detectPolyfills(
++            raw,
++            modernTargets,
++            assumptions,
++            polyfillsDiscovered.modern
++          );
+         }
+         const ms = new MagicString__default(raw);
+         if (genLegacy && chunk.isEntry) {
+@@ -510,7 +517,9 @@ function viteLegacyPlugin(options = {}) {
+           ],
+           [
+             (await import('@babel/preset-env')).default,
+-            createBabelPresetEnvOptions(targets, { needPolyfills })
++            createBabelPresetEnvOptions(targets, assumptions, {
++              needPolyfills
++            })
+           ]
+         ]
+       });
+@@ -649,7 +658,7 @@ function viteLegacyPlugin(options = {}) {
+   };
+   return [legacyConfigPlugin, legacyGenerateBundlePlugin, legacyPostPlugin];
+ }
+-async function detectPolyfills(code, targets, list) {
++async function detectPolyfills(code, targets, assumptions, list) {
+   const babel2 = await loadBabel();
+   const result = babel2.transform(code, {
+     ast: true,
+@@ -659,7 +668,7 @@ async function detectPolyfills(code, targets, list) {
+     presets: [
+       [
+         (await import('@babel/preset-env')).default,
+-        createBabelPresetEnvOptions(targets, {})
++        createBabelPresetEnvOptions(targets, assumptions, {})
+       ]
+     ]
+   });
+@@ -672,7 +681,7 @@ async function detectPolyfills(code, targets, list) {
+     }
+   }
+ }
+-function createBabelPresetEnvOptions(targets, { needPolyfills = true }) {
++function createBabelPresetEnvOptions(targets, assumptions, { needPolyfills = true }) {
+   return {
+     targets,
+     bugfixes: true,
+@@ -684,7 +693,8 @@ function createBabelPresetEnvOptions(targets, { needPolyfills = true }) {
+       proposals: false
+     } : void 0,
+     shippedProposals: true,
+-    ignoreBrowserslistConfig: true
++    ignoreBrowserslistConfig: true,
++    assumptions
+   };
+ }
+ async function buildPolyfillChunk(mode, imports, bundle, facadeToChunkMap, buildOptions, format, rollupOutputOptions, excludeSystemJS, prependModenChunkLegacyGuard) {
+@@ -712,7 +722,8 @@ async function buildPolyfillChunk(mode, imports, bundle, facadeToChunkMap, build
+         output: {
+           format,
+           hashCharacters: rollupOutputOptions.hashCharacters,
+-          entryFileNames: rollupOutputOptions.entryFileNames
++          entryFileNames: rollupOutputOptions.entryFileNames,
++          sourcemapBaseUrl: rollupOutputOptions.sourcemapBaseUrl
+         }
+       }
+     },
+diff --git a/dist/index.d.cts b/dist/index.d.cts
+index 3872f9aa9f22bd3f72c20f31b53296fea31db86c..f4adce20734c5bd272bcbb810fd200d8c91fd335 100644
+--- a/dist/index.d.cts
++++ b/dist/index.d.cts
+@@ -31,10 +31,17 @@ interface Options {
+      * default: true
+      */
+     renderModernChunks?: boolean;
++    /**
++     * @see https://babeljs.io/docs/assumptions
++     *
++     * default: {}
++     */
++    assumptions?: Record<string, boolean>;
+ }
+ 
+ declare function viteLegacyPlugin(options?: Options): Plugin[];
+-declare function detectPolyfills(code: string, targets: any, list: Set<string>): Promise<void>;
++declare function detectPolyfills(code: string, targets: any, assumptions: Record<string, boolean>, list: Set<string>): Promise<void>;
+ declare const cspHashes: string[];
+ 
+-export { type Options, cspHashes, viteLegacyPlugin as default, detectPolyfills };
++export = viteLegacyPlugin;
++export { type Options, cspHashes, detectPolyfills };
+diff --git a/dist/index.d.mts b/dist/index.d.mts
+index 3872f9aa9f22bd3f72c20f31b53296fea31db86c..19701da58abdcbfbdedc2499a6fbcc4c60edb165 100644
+--- a/dist/index.d.mts
++++ b/dist/index.d.mts
+@@ -31,10 +31,16 @@ interface Options {
+      * default: true
+      */
+     renderModernChunks?: boolean;
++    /**
++     * @see https://babeljs.io/docs/assumptions
++     *
++     * default: {}
++     */
++    assumptions?: Record<string, boolean>;
+ }
+ 
+ declare function viteLegacyPlugin(options?: Options): Plugin[];
+-declare function detectPolyfills(code: string, targets: any, list: Set<string>): Promise<void>;
++declare function detectPolyfills(code: string, targets: any, assumptions: Record<string, boolean>, list: Set<string>): Promise<void>;
+ declare const cspHashes: string[];
+ 
+ export { type Options, cspHashes, viteLegacyPlugin as default, detectPolyfills };
+diff --git a/dist/index.d.ts b/dist/index.d.ts
+index 3872f9aa9f22bd3f72c20f31b53296fea31db86c..f4adce20734c5bd272bcbb810fd200d8c91fd335 100644
+--- a/dist/index.d.ts
++++ b/dist/index.d.ts
+@@ -31,10 +31,17 @@ interface Options {
+      * default: true
+      */
+     renderModernChunks?: boolean;
++    /**
++     * @see https://babeljs.io/docs/assumptions
++     *
++     * default: {}
++     */
++    assumptions?: Record<string, boolean>;
+ }
+ 
+ declare function viteLegacyPlugin(options?: Options): Plugin[];
+-declare function detectPolyfills(code: string, targets: any, list: Set<string>): Promise<void>;
++declare function detectPolyfills(code: string, targets: any, assumptions: Record<string, boolean>, list: Set<string>): Promise<void>;
+ declare const cspHashes: string[];
+ 
+-export { type Options, cspHashes, viteLegacyPlugin as default, detectPolyfills };
++export = viteLegacyPlugin;
++export { type Options, cspHashes, detectPolyfills };
+diff --git a/dist/index.mjs b/dist/index.mjs
+index e06d4a9fcb81500735f1d550447ffa07095853d5..38ecbb634a2f161eb925fc60038267c7055596b0 100644
+--- a/dist/index.mjs
++++ b/dist/index.mjs
+@@ -152,7 +152,7 @@ function joinUrlSegments(a, b) {
+   if (!a || !b) {
+     return a || b || "";
+   }
+-  if (a[a.length - 1] === "/") {
++  if (a.endsWith("/")) {
+     a = a.substring(0, a.length - 1);
+   }
+   if (b[0] !== "/") {
+@@ -197,6 +197,7 @@ function viteLegacyPlugin(options = {}) {
+   }
+   const debugFlags = (process.env.DEBUG || "").split(",");
+   const isDebug = debugFlags.includes("vite:*") || debugFlags.includes("vite:legacy");
++  const assumptions = options.assumptions || {};
+   const facadeToLegacyChunkMap = /* @__PURE__ */ new Map();
+   const facadeToLegacyPolyfillMap = /* @__PURE__ */ new Map();
+   const facadeToModernPolyfillMap = /* @__PURE__ */ new Map();
+@@ -333,6 +334,7 @@ function viteLegacyPlugin(options = {}) {
+         await detectPolyfills(
+           `Promise.resolve(); Promise.all();`,
+           targets,
++          assumptions,
+           legacyPolyfills
+         );
+       }
+@@ -442,7 +444,12 @@ function viteLegacyPlugin(options = {}) {
+       }
+       if (!isLegacyChunk(chunk, opts)) {
+         if (options.modernPolyfills && !Array.isArray(options.modernPolyfills) && genModern) {
+-          await detectPolyfills(raw, modernTargets, polyfillsDiscovered.modern);
++          await detectPolyfills(
++            raw,
++            modernTargets,
++            assumptions,
++            polyfillsDiscovered.modern
++          );
+         }
+         const ms = new MagicString(raw);
+         if (genLegacy && chunk.isEntry) {
+@@ -498,7 +505,9 @@ function viteLegacyPlugin(options = {}) {
+           ],
+           [
+             (await import('@babel/preset-env')).default,
+-            createBabelPresetEnvOptions(targets, { needPolyfills })
++            createBabelPresetEnvOptions(targets, assumptions, {
++              needPolyfills
++            })
+           ]
+         ]
+       });
+@@ -637,7 +646,7 @@ function viteLegacyPlugin(options = {}) {
+   };
+   return [legacyConfigPlugin, legacyGenerateBundlePlugin, legacyPostPlugin];
+ }
+-async function detectPolyfills(code, targets, list) {
++async function detectPolyfills(code, targets, assumptions, list) {
+   const babel2 = await loadBabel();
+   const result = babel2.transform(code, {
+     ast: true,
+@@ -647,7 +656,7 @@ async function detectPolyfills(code, targets, list) {
+     presets: [
+       [
+         (await import('@babel/preset-env')).default,
+-        createBabelPresetEnvOptions(targets, {})
++        createBabelPresetEnvOptions(targets, assumptions, {})
+       ]
+     ]
+   });
+@@ -660,7 +669,7 @@ async function detectPolyfills(code, targets, list) {
+     }
+   }
+ }
+-function createBabelPresetEnvOptions(targets, { needPolyfills = true }) {
++function createBabelPresetEnvOptions(targets, assumptions, { needPolyfills = true }) {
+   return {
+     targets,
+     bugfixes: true,
+@@ -672,7 +681,8 @@ function createBabelPresetEnvOptions(targets, { needPolyfills = true }) {
+       proposals: false
+     } : void 0,
+     shippedProposals: true,
+-    ignoreBrowserslistConfig: true
++    ignoreBrowserslistConfig: true,
++    assumptions
+   };
+ }
+ async function buildPolyfillChunk(mode, imports, bundle, facadeToChunkMap, buildOptions, format, rollupOutputOptions, excludeSystemJS, prependModenChunkLegacyGuard) {
+@@ -700,7 +710,8 @@ async function buildPolyfillChunk(mode, imports, bundle, facadeToChunkMap, build
+         output: {
+           format,
+           hashCharacters: rollupOutputOptions.hashCharacters,
+-          entryFileNames: rollupOutputOptions.entryFileNames
++          entryFileNames: rollupOutputOptions.entryFileNames,
++          sourcemapBaseUrl: rollupOutputOptions.sourcemapBaseUrl
+         }
+       }
+     },
