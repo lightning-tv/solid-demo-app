@@ -5,9 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@lightningtv/core': 2.7.6
-  '@lightningtv/solid': 2.7.10
-  '@lightningjs/renderer': 2.13.0
+  '@lightningtv/core': 2.7.7
+  '@lightningtv/solid': 2.7.12
+  '@lightningjs/renderer': 2.13.2
 
 patchedDependencies:
   '@solidjs/router':
@@ -28,8 +28,8 @@ importers:
         specifier: 2.13.2
         version: 2.13.2
       '@lightningtv/core':
-        specifier: 2.7.6
-        version: 2.7.6(@lightningjs/renderer@2.13.2)
+        specifier: 2.7.7
+        version: 2.7.7(@lightningjs/renderer@2.13.2)
       '@lightningtv/l3-ui-theme-base':
         specifier: ^1.0.0
         version: 1.0.0
@@ -952,10 +952,10 @@ packages:
     resolution: {integrity: sha512-IUh9OFEpUk0cnnLVw6OqW2m+CzmT2aOkLFzxuErC2xajhDKMRBCMe+kM+W26zqnc7SMSkkW3zs10oAKnrbzPsA==}
     engines: {node: '>= 20.9.0', npm: '>= 10.0.0', pnpm: '>= 8.9.2'}
 
-  '@lightningtv/core@2.7.6':
-    resolution: {integrity: sha512-7U2iF5XXg8p7X13IQi+EBDzKZUGBJLiwJgHTkoxkPog7o3JqbEcJ5fYXca7nGNMx0BdnAd22tWnsgROmjC5ZyA==}
+  '@lightningtv/core@2.7.7':
+    resolution: {integrity: sha512-NLT5vtb0ujio3j/HTvgw52XEaCh5M7ZhydNWr8M8bHnZa9SppOTKzhkTySFqqQqms5sC3Kx8oqJxVYBwChhF2g==}
     peerDependencies:
-      '@lightningjs/renderer': 2.13.0
+      '@lightningjs/renderer': 2.13.2
 
   '@lightningtv/l3-ui-theme-base@1.0.0':
     resolution: {integrity: sha512-yxjhkNfcN4cDwsrD5Nd1jRqxM/ZetqVG9EppCIEbqaECflw11RI0GvhS7+Wpi4R++4lqsQEYqTN+UVRs56iTMQ==}
@@ -963,7 +963,7 @@ packages:
   '@lightningtv/solid@2.7.12':
     resolution: {integrity: sha512-guU+OZ2UviN3VX4CsvFfChdnsxuSZaWIzPZMCELDh6ShnUo6zs/i1bg0CiNiV0ynWZb3thTSiohanuPb3msHvQ==}
     peerDependencies:
-      '@lightningjs/renderer': 2.13.0
+      '@lightningjs/renderer': 2.13.2
       '@solidjs/router': ^0.15.1
       solid-js: '*'
 
@@ -1973,7 +1973,6 @@ packages:
 
   shaka-player@4.14.2:
     resolution: {integrity: sha512-PNhhTIDOmsif/Ghc63hJs6Z3hkSOxp0tF8RPTcK9g1B7bRBrAq3DLJ1g6X+2W6zUGpCAL5Nay/hrcyMdTwZpQw==}
-    engines: {node: '>=18'}
 
   shebang-command@2.0.0:
     resolution: {integrity: sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==}
@@ -3231,7 +3230,7 @@ snapshots:
 
   '@lightningjs/renderer@2.13.2': {}
 
-  '@lightningtv/core@2.7.6(@lightningjs/renderer@2.13.2)':
+  '@lightningtv/core@2.7.7(@lightningjs/renderer@2.13.2)':
     dependencies:
       '@lightningjs/renderer': 2.13.2
 
@@ -3240,7 +3239,7 @@ snapshots:
   '@lightningtv/solid@2.7.12(@lightningjs/renderer@2.13.2)(@solidjs/router@0.15.3(patch_hash=hnhvc47baca25dviao74hiryf4)(solid-js@1.9.5))(solid-js@1.9.5)':
     dependencies:
       '@lightningjs/renderer': 2.13.2
-      '@lightningtv/core': 2.7.6(@lightningjs/renderer@2.13.2)
+      '@lightningtv/core': 2.7.7(@lightningjs/renderer@2.13.2)
       '@solid-primitives/event-listener': 2.4.0(solid-js@1.9.5)
       '@solid-primitives/mouse': 2.1.0(solid-js@1.9.5)
       '@solid-primitives/scheduled': 1.5.0(solid-js@1.9.5)
