@@ -14,7 +14,7 @@ export default defineConfig({
       },
     }),
     legacy({
-      targets: ["chrome>=38"],
+      targets: ["chrome>=38", "not IE 11"],
       // polyfills: ["es.promise.finally", "es/map", "es/set"],
       // modernPolyfills: true,
       additionalLegacyPolyfills: ["whatwg-fetch"],
