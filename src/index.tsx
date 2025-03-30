@@ -9,7 +9,7 @@ import {
 } from "@lightningjs/renderer/canvas";
 
 import { Inspector } from "@lightningjs/renderer/inspector";
-import { HashRouter } from "@lightningtv/solid/primitives";
+import { HashRouter, FocusStackProvider } from "@lightningtv/solid/primitives";
 import { Route } from "@solidjs/router";
 import { lazy } from "solid-js";
 import App from "./pages/App";
@@ -122,39 +122,41 @@ loadFonts(fonts);
 // shManager.registerShaderType('linearGradient', LinearGradient)
 // shManager.registerShaderType('holePunch', HolePunch)
 render(() => (
-  <HashRouter root={(props) => <App {...props} />}>
-    <Route path="" component={Browse} preload={browsePreload} />
-    <Route path="examples" component={Portal} />
-    <Route path="browse/:filter" component={Browse} preload={browsePreload} />
-    <Route path="tmdb" component={TMDB} preload={tmdbData} />
-    <Route path="loops" component={Loops} preload={tmdbData} />
-    <Route path="infinite" component={Infinite} preload={tmdbData} />
-    <Route path="tmdbgrid" component={TMDBGrid} preload={tmdbData} />
-    <Route path="destroy" component={DestroyPage} preload={destroyData} />
-    <Route path="grid" component={Grid} />
-    <Route path="text" component={TextPage} />
-    <Route path="firebolt" component={FireboltPage} />
-    <Route path="textposter" component={TextPosterPage} />
-    <Route path="positioning" component={PositioningPage} />
-    <Route path="layout" component={LayoutPage} />
-    <Route path="focusbasics" component={FocusBasicsPage} />
-    <Route path="transitions" component={TransitionsPage} />
-    <Route path="components" component={ComponentsPage} />
-    <Route path="focushandling" component={FocusHandlingPage} />
-    <Route path="keyhandling" component={KeyHandlingPage} />
-    <Route path="gradients" component={GradientsPage} />
-    <Route path="flex" component={FlexPage} />
-    <Route path="create" component={CreatePage} />
-    <Route path="viewport" component={ViewportPage} />
-    <Route path="flexsize" component={FlexSizePage} />
-    <Route path="flexmenu" component={FlexMenuPage} />
-    <Route path="flexcolumnsize" component={FlexColumnSizePage} />
-    <Route path="flexcolumn" component={FlexColumnPage} />
-    <Route path="flexgrow" component={FlexGrowPage} />
-    <Route path="superflex" component={SuperFlexPage} />
-    <Route path="buttonsmaterial" component={ButtonsMaterialPage} />
-    <Route path="entity/people/:id" component={People} />
-    <Route path="entity/:type/:id" component={Entity} preload={entityPreload} />
-    <Route path="*all" component={NotFound} />
-  </HashRouter>
+  <FocusStackProvider>
+    <HashRouter root={(props) => <App {...props} />}>
+      <Route path="" component={Browse} preload={browsePreload} />
+      <Route path="examples" component={Portal} />
+      <Route path="browse/:filter" component={Browse} preload={browsePreload} />
+      <Route path="tmdb" component={TMDB} preload={tmdbData} />
+      <Route path="loops" component={Loops} preload={tmdbData} />
+      <Route path="infinite" component={Infinite} preload={tmdbData} />
+      <Route path="tmdbgrid" component={TMDBGrid} preload={tmdbData} />
+      <Route path="destroy" component={DestroyPage} preload={destroyData} />
+      <Route path="grid" component={Grid} />
+      <Route path="text" component={TextPage} />
+      <Route path="firebolt" component={FireboltPage} />
+      <Route path="textposter" component={TextPosterPage} />
+      <Route path="positioning" component={PositioningPage} />
+      <Route path="layout" component={LayoutPage} />
+      <Route path="focusbasics" component={FocusBasicsPage} />
+      <Route path="transitions" component={TransitionsPage} />
+      <Route path="components" component={ComponentsPage} />
+      <Route path="focushandling" component={FocusHandlingPage} />
+      <Route path="keyhandling" component={KeyHandlingPage} />
+      <Route path="gradients" component={GradientsPage} />
+      <Route path="flex" component={FlexPage} />
+      <Route path="create" component={CreatePage} />
+      <Route path="viewport" component={ViewportPage} />
+      <Route path="flexsize" component={FlexSizePage} />
+      <Route path="flexmenu" component={FlexMenuPage} />
+      <Route path="flexcolumnsize" component={FlexColumnSizePage} />
+      <Route path="flexcolumn" component={FlexColumnPage} />
+      <Route path="flexgrow" component={FlexGrowPage} />
+      <Route path="superflex" component={SuperFlexPage} />
+      <Route path="buttonsmaterial" component={ButtonsMaterialPage} />
+      <Route path="entity/people/:id" component={People} />
+      <Route path="entity/:type/:id" component={Entity} preload={entityPreload} />
+      <Route path="*all" component={NotFound} />
+    </HashRouter>
+  </FocusStackProvider>
 ));

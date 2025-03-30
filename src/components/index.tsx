@@ -5,8 +5,8 @@ import {
   type NodeProps,
   Dynamic,
 } from "@lightningtv/solid";
-import { Row } from "@lightningtv/solid/primitives";
-import { createSignal, For, Index } from "solid-js";
+import { Column, Row } from "@lightningtv/solid/primitives";
+import { createEffect, createSignal, For, Index } from "solid-js";
 import styles, { buttonStyles } from "../styles";
 import { type Tile } from "../api/formatters/ItemFormatter";
 import { LazyRow } from "@lightningtv/solid/primitives";
@@ -36,6 +36,34 @@ export function Button(props) {
   return (
     <View {...props} forwardStates style={buttonStyles.container}>
       <Text style={buttonStyles.text}>{props.children}</Text>
+    </View>
+  );
+}
+
+export function AssetPanel(props) {
+  let panelRef, actionRef;
+  createEffect(() => {
+    if (props.open) {
+      panelRef.animate({
+        x: 1470,
+      }, { duration: 400, easing: "ease-in-out" }).start();
+      actionRef.setFocus();
+    } else {
+      panelRef.animate({
+        x: 1920,
+      }, { duration: 400, easing: "ease-in-out" }).start();
+    }
+  })
+
+  return (
+    <View {...props} x={1920} ref={panelRef} color={"#000000"} width={450} height={1080} zIndex={5}>
+      <Text x={75} y={50} fontSize={32}>{props.item?.title}</Text>
+
+      <Column ref={actionRef} x={75} y={200}>
+        <Button onEnter={props.close}>Record</Button>
+        <Button onEnter={props.close}>Watch</Button>
+        <Button onEnter={props.close}>Close</Button>
+      </Column>
     </View>
   );
 }
