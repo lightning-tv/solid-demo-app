@@ -128,6 +128,7 @@ const TMDB = (props) => {
       <AssetPanel onFocus={storeFocus} close={() => {
         setOpenPanel(false);
         restoreFocus();
+        return true;
       }} open={openPanel()} item={heroContent()} />
     </View>
   );

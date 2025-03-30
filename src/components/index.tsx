@@ -59,7 +59,7 @@ export function AssetPanel(props) {
     <View {...props} x={1920} ref={panelRef} color={"#000000"} width={450} height={1080} zIndex={5}>
       <Text x={75} y={50} fontSize={32}>{props.item?.title}</Text>
 
-      <Column ref={actionRef} x={75} y={200}>
+      <Column ref={actionRef} onLeft={props.close} onBack={props.close} x={75} y={200}>
         <Button onEnter={props.close}>Record</Button>
         <Button onEnter={props.close}>Watch</Button>
         <Button onEnter={props.close}>Close</Button>
