@@ -1,3 +1,12 @@
+
+import 'solid-devtools';
+import {setDebuggerOptions} from 'solid-devtools/setup';
+import {elementInterface} from "@lightningtv/solid/devtools";
+
+setDebuggerOptions({
+  eli: elementInterface,
+})
+
 import { createRenderer, Config, loadFonts } from "@lightningtv/solid";
 import {
   WebGlCoreRenderer,
@@ -12,7 +21,6 @@ import { Inspector } from "@lightningjs/renderer/inspector";
 import { HashRouter } from "@lightningtv/solid/primitives";
 import { Route } from "@solidjs/router";
 import { lazy } from "solid-js";
-import 'solid-devtools';
 import App from "./pages/App";
 import Browse from "./pages/Browse";
 import TMDB from "./pages/TMDB";
