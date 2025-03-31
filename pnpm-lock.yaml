@@ -11,7 +11,7 @@ overrides:
 
 patchedDependencies:
   '@solidjs/router':
-    hash: hnhvc47baca25dviao74hiryf4
+    hash: f7bb4a418fb6efb9a659bd0022fdb925bdd84911bd53efe26e1ba4016a1d8615
     path: patches/@solidjs__router.patch
 
 importers:
@@ -35,7 +35,7 @@ importers:
         version: 1.0.0
       '@lightningtv/solid':
         specifier: 3.0.0-0
-        version: 3.0.0-0(@lightningjs/renderer@3.0.0-beta3)(@solidjs/router@0.15.3(patch_hash=hnhvc47baca25dviao74hiryf4)(solid-js@1.9.5))(solid-js@1.9.5)
+        version: 3.0.0-0(@lightningjs/renderer@3.0.0-beta3)(@solidjs/router@0.15.3(patch_hash=f7bb4a418fb6efb9a659bd0022fdb925bdd84911bd53efe26e1ba4016a1d8615)(solid-js@1.9.5))(solid-js@1.9.5)
       '@solid-primitives/list':
         specifier: ^0.1.0
         version: 0.1.0(solid-js@1.9.5)
@@ -44,7 +44,7 @@ importers:
         version: 1.5.0(solid-js@1.9.5)
       '@solidjs/router':
         specifier: ^0.15.3
-        version: 0.15.3(patch_hash=hnhvc47baca25dviao74hiryf4)(solid-js@1.9.5)
+        version: 0.15.3(patch_hash=f7bb4a418fb6efb9a659bd0022fdb925bdd84911bd53efe26e1ba4016a1d8615)(solid-js@1.9.5)
       browserlist:
         specifier: ^1.0.1
         version: 1.0.1
@@ -3317,14 +3317,14 @@ snapshots:
 
   '@lightningtv/l3-ui-theme-base@1.0.0': {}
 
-  '@lightningtv/solid@3.0.0-0(@lightningjs/renderer@3.0.0-beta3)(@solidjs/router@0.15.3(patch_hash=hnhvc47baca25dviao74hiryf4)(solid-js@1.9.5))(solid-js@1.9.5)':
+  '@lightningtv/solid@3.0.0-0(@lightningjs/renderer@3.0.0-beta3)(@solidjs/router@0.15.3(patch_hash=f7bb4a418fb6efb9a659bd0022fdb925bdd84911bd53efe26e1ba4016a1d8615)(solid-js@1.9.5))(solid-js@1.9.5)':
     dependencies:
       '@lightningjs/renderer': 3.0.0-beta3
       '@lightningtv/core': 3.0.0-0(@lightningjs/renderer@3.0.0-beta3)
       '@solid-primitives/event-listener': 2.4.0(solid-js@1.9.5)
       '@solid-primitives/mouse': 2.1.0(solid-js@1.9.5)
       '@solid-primitives/scheduled': 1.5.0(solid-js@1.9.5)
-      '@solidjs/router': 0.15.3(patch_hash=hnhvc47baca25dviao74hiryf4)(solid-js@1.9.5)
+      '@solidjs/router': 0.15.3(patch_hash=f7bb4a418fb6efb9a659bd0022fdb925bdd84911bd53efe26e1ba4016a1d8615)(solid-js@1.9.5)
       solid-js: 1.9.5
 
   '@lightningtv/vite-hex-transform@1.1.0(terser@5.39.0)':
@@ -3530,7 +3530,7 @@ snapshots:
     dependencies:
       solid-js: 1.9.5
 
-  '@solidjs/router@0.15.3(patch_hash=hnhvc47baca25dviao74hiryf4)(solid-js@1.9.5)':
+  '@solidjs/router@0.15.3(patch_hash=f7bb4a418fb6efb9a659bd0022fdb925bdd84911bd53efe26e1ba4016a1d8615)(solid-js@1.9.5)':
     dependencies:
       solid-js: 1.9.5
 
