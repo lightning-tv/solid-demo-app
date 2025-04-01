@@ -14,7 +14,7 @@ patchedDependencies:
     hash: f7bb4a418fb6efb9a659bd0022fdb925bdd84911bd53efe26e1ba4016a1d8615
     path: patches/@solidjs__router.patch
   '@vitejs/plugin-legacy':
-    hash: cb997343403d8fc82ade2ce00cb9e481bb21498ccddef4d8301fee97c849cbc4
+    hash: e607e73fda2e2b6b5e0ac985fe7e9bf9064bc83e7a3ba4dcd95a3afa8e1f06a2
     path: patches/@vitejs__plugin-legacy.patch
 
 importers:
@@ -75,7 +75,7 @@ importers:
         version: 1.1.0(terser@5.39.0)
       '@vitejs/plugin-legacy':
         specifier: ^6.0.2
-        version: 6.0.2(patch_hash=cb997343403d8fc82ade2ce00cb9e481bb21498ccddef4d8301fee97c849cbc4)(terser@5.39.0)(vite@6.2.2(terser@5.39.0)(yaml@2.7.0))
+        version: 6.0.2(patch_hash=e607e73fda2e2b6b5e0ac985fe7e9bf9064bc83e7a3ba4dcd95a3afa8e1f06a2)(terser@5.39.0)(vite@6.2.2(terser@5.39.0)(yaml@2.7.0))
       gh-pages:
         specifier: ^6.3.0
         version: 6.3.0
@@ -3393,7 +3393,7 @@ snapshots:
 
   '@types/estree@1.0.6': {}
 
-  '@vitejs/plugin-legacy@6.0.2(patch_hash=cb997343403d8fc82ade2ce00cb9e481bb21498ccddef4d8301fee97c849cbc4)(terser@5.39.0)(vite@6.2.2(terser@5.39.0)(yaml@2.7.0))':
+  '@vitejs/plugin-legacy@6.0.2(patch_hash=e607e73fda2e2b6b5e0ac985fe7e9bf9064bc83e7a3ba4dcd95a3afa8e1f06a2)(terser@5.39.0)(vite@6.2.2(terser@5.39.0)(yaml@2.7.0))':
     dependencies:
       '@babel/core': 7.26.10
       '@babel/preset-env': 7.26.9(@babel/core@7.26.10)
