@@ -28,13 +28,13 @@
     "@lightningjs/renderer": "2.13.2",
     "@lightningtv/core": "2.7.7",
     "@lightningtv/l3-ui-theme-base": "^1.0.0",
-    "@lightningtv/solid": "2.7.12",
+    "@lightningtv/solid": "2.7.14",
     "@solid-primitives/list": "^0.1.0",
     "@solid-primitives/scheduled": "^1.5.0",
     "@solidjs/router": "^0.15.3",
     "browserlist": "^1.0.1",
     "proxy-polyfill": "^0.3.2",
-    "shaka-player": "^4.14.2",
+    "shaka-player": "^4.14.4",
     "solid-js": "^1.9.5",
     "vite-plugin-babel": "^1.3.0",
     "vitest": "^3.0.9",
@@ -49,7 +49,7 @@
     "prettier": "^3.5.3",
     "terser": "^5.39.0",
     "typescript": "^5.8.2",
-    "vite": "^6.2.2",
+    "vite": "^6.2.3",
     "vite-bundle-visualizer": "^1.2.1",
     "vite-plugin-solid": "^2.11.6"
   },
@@ -60,7 +60,6 @@
       "@lightningjs/renderer": "$@lightningjs/renderer"
     },
     "patchedDependencies": {
-      "@solidjs/router": "patches/@solidjs__router.patch",
       "@vitejs/plugin-legacy": "patches/@vitejs__plugin-legacy.patch"
     }
   },
