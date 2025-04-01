@@ -1,11 +1,9 @@
 
 import 'solid-devtools';
-import {setDebuggerOptions} from 'solid-devtools/setup';
+import {setElementInterface} from 'solid-devtools/setup';
 import {elementInterface} from "@lightningtv/solid/devtools";
 
-setDebuggerOptions({
-  eli: elementInterface,
-})
+setElementInterface(elementInterface)
 
 import { createRenderer, Config, loadFonts } from "@lightningtv/solid";
 import {
