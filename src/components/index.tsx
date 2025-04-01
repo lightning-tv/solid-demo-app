@@ -42,13 +42,14 @@ export function Button(props) {
 
 export function AssetPanel(props) {
   let panelRef, actionRef;
+
   createEffect(() => {
     if (props.open) {
       panelRef.animate({
         x: 1470,
       }, { duration: 400, easing: "ease-in-out" }).start();
       actionRef.setFocus();
-    } else {
+    } else if (panelRef.rendered) {
       panelRef.animate({
         x: 1920,
       }, { duration: 400, easing: "ease-in-out" }).start();

@@ -1,11 +1,14 @@
-import { createSignal, createSelector, For } from "solid-js";
+import { createSignal, createSelector, For, children, createEffect } from "solid-js";
 import { ElementNode, View, Text, assertTruthy } from "@lightningtv/solid";
-import { Column, Row } from "@lightningtv/solid/primitives";
+import { Column, Row, useFocusStack } from "@lightningtv/solid/primitives";
 import { useNavigate } from "@solidjs/router";
 import styles from "../styles";
 
-const Portal = () => {
+const Portal = (props) => {
+  let portalRef;
   const navigate = useNavigate();
+  const { storeFocus, restoreFocus } = useFocusStack();
+  const resolvedChildren = children(() => props.children);
   const isFirst = createSelector(() => {
     return 0;
   });
@@ -97,7 +100,7 @@ const Portal = () => {
     },
     {
       title: "TMDB",
-      id: "tmdb",
+      id: "examples/tmdb",
       description: "TMDB Example",
     },
     {
@@ -201,8 +204,15 @@ const Portal = () => {
     );
   }
 
+  createEffect(() => {
+    if (!resolvedChildren()) {
+      restoreFocus();
+    }
+  });
+
   return (
-    <View colorTop={0x446b9eff} colorBottom={0x2c4f7cff}>
+    <>
+    <View ref={portalRef} colorTop={0x446b9eff} colorBottom={0x2c4f7cff} onBlur={storeFocus} hidden={Boolean(resolvedChildren())}>
       <View x={120}>
         <View src="./assets/solidjs.png" width={101} height={90} y={40} />
         <Text fontSize={90} x={110} y={40}>
@@ -236,6 +246,8 @@ const Portal = () => {
         </Row>
       </Column>
     </View>
+    {resolvedChildren()}
+    </>
   );
 };
 

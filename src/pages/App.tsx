@@ -18,6 +18,7 @@ declare module "@lightningtv/solid" {
     Menu: (string | number)[];
     Escape: (string | number)[];
     Backspace: (string | number)[];
+    Back: (string | number)[];
   }
   interface ElementNode {
     heroContent?: boolean;
@@ -33,6 +34,7 @@ const App = (props) => {
     Menu: ["m"],
     Escape: ["Escape", 27],
     Backspace: ["Backspace", 8],
+    Back: ["b"],
     Left: ["ArrowLeft", 37],
     Right: ["ArrowRight", 39],
     Up: ["ArrowUp", 38],
@@ -101,6 +103,7 @@ const App = (props) => {
       onMenu={() => navigate("/")}
       style={{ width: 1920, height: 1080 }}
       onBackspace={focusNavDrawer}
+      onBack={() => navigate(-1)}
       onLeft={focusNavDrawer}
       onRight={() =>
         navDrawer.states.has("focus") &&

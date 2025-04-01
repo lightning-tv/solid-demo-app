@@ -51,8 +51,8 @@ const Entity = lazy(() => import("./pages/Entity"));
 const People = lazy(() => import("./pages/People"));
 const FireboltPage = lazy(() => import("./pages/Firebolt"));
 
-const urlParams = new URLSearchParams(window.location.search);
 let numImageWorkers = 3;
+const urlParams = new URLSearchParams(window.location.search);
 const numWorkers = urlParams.get("numImageWorkers");
 const screenSize = urlParams.get("size") || "default";
 const rendererMode = urlParams.get("mode") || "webgl";
@@ -125,9 +125,12 @@ render(() => (
   <FocusStackProvider>
     <HashRouter root={(props) => <App {...props} />}>
       <Route path="" component={Browse} preload={browsePreload} />
-      <Route path="examples" component={Portal} />
+      <Route path="examples" component={Portal}>
+        <Route path="/" />
+        <Route path="tmdb" component={TMDB} preload={tmdbData} />
+      </Route>
+
       <Route path="browse/:filter" component={Browse} preload={browsePreload} />
-      <Route path="tmdb" component={TMDB} preload={tmdbData} />
       <Route path="loops" component={Loops} preload={tmdbData} />
       <Route path="infinite" component={Infinite} preload={tmdbData} />
       <Route path="tmdbgrid" component={TMDBGrid} preload={tmdbData} />
