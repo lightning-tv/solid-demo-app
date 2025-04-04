@@ -37,7 +37,6 @@ import * as lng from "@lightningtv/solid";
 function createPersistentComponent<T extends Record<string, any>>(
   fn: (props: s.Accessor<T>) => s.JSX.Element,
 ): s.Component<T> {
-  let active = false
   let result: s.JSX.Element
   let owner: s.Owner | null
   let dispose: (() => void) | null = null
@@ -45,23 +44,18 @@ function createPersistentComponent<T extends Record<string, any>>(
   let detachedOwner = s.getOwner()
   return p => {
     setProps(() => p);
-    if (!active) {
+    if (dispose == null) {
       s.createRoot(d => {
         dispose = d;
-        active = true;
         result = fn(props);
       }, detachedOwner)
     }
-    let o = s.getOwner();
-    owner = o
+    let o = owner = s.getOwner();
     s.onCleanup(() => {
       queueMicrotask(() => {
-        if (active && owner === o) {
-          dispose!();
-          dispose = null;
-          owner = null;
-          active = false;
-          result = null;
+        if (dispose != null && owner === o) {
+          dispose();
+          dispose = owner = result = null;
         }
       })
     })
