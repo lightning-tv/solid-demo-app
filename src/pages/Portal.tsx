@@ -150,6 +150,11 @@ const Portal = () => {
       id: "viewport",
       description: "Events going in and out of viewport",
     },
+    {
+      title: "Keep Alive",
+      id: "keepalive",
+      description: "Reuse component between layouts",
+    },
   ];
 
   function DemoTile(props) {
