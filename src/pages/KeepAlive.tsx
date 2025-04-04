@@ -2,10 +2,11 @@ import * as s from "solid-js";
 import * as lng from "@lightningtv/solid";
 
 /**
- * This primitive allows for components to be reused between different layouts or states
+ * Creates a presistant component to be reused between different layouts
  * without losing their internal state or recreating elements.
  * 
- * The component will be disposed of when it is no longer needed used,
+ * The component will be created when needed
+ * and disposed of when it is no longer needed used,
  * or when the owner is destroyed.
  * 
  * Use cases:
