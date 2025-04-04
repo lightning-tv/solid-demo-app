@@ -1,14 +1,47 @@
 import * as s from "solid-js";
 import * as lng from "@lightningtv/solid";
 
-function createSingletonComponent<T extends Record<string, any>>(
+/**
+ * This primitive allows for components to be reused between different layouts or states
+ * without losing their internal state or recreating elements.
+ * 
+ * The component will be disposed of when it is no longer needed used,
+ * or when the owner is destroyed.
+ * 
+ * Use cases:
+ * - Preserve component state when switching between pages
+ * - Maintain animations or transitions between different layout states
+ * - Optimize performance by avoiding recreation of expensive components
+ * 
+ * @param fn - A function that takes props accessor and returns JSX to render
+ * @returns A component function that maintains a single persistent instance
+ * @example
+ * ```tsx
+ * const PersistentView = createPersistentComponent<{color: number}>(props => (
+ *   <view color={props().color}>
+ *     <text>This view persists!</text>
+ *   </view>
+ * ))
+ * 
+ * <view>
+ *   <text>Branch A</text>
+ *   {showAtA() && <PersistentView color={0xff0000ff} />}
+ * </view>
+ * <view>
+ *   <text>Branch B</text>
+ *   {showAtB() && <PersistentView color={0x00ff00ff} />}
+ * </view>
+ * ```
+ */
+function createPersistentComponent<T extends Record<string, any>>(
   fn: (props: s.Accessor<T>) => s.JSX.Element,
 ): s.Component<T> {
-  let active = false;
+  let active = false
   let result: s.JSX.Element
-  let owner: s.Owner | null;
+  let owner: s.Owner | null
   let dispose: (() => void) | null = null
-  let [props, setProps] = s.createSignal(null as any as T);
+  let [props, setProps] = s.createSignal(null as any as T)
+  let detachedOwner = s.getOwner()
   return p => {
     setProps(() => p);
     if (!active) {
@@ -16,7 +49,7 @@ function createSingletonComponent<T extends Record<string, any>>(
         dispose = d;
         active = true;
         result = fn(props);
-      })
+      }, detachedOwner)
     }
     let o = s.getOwner();
     owner = o
@@ -86,7 +119,7 @@ export default function KeepAlivePage() {
     setCounter((prev) => prev + 1);
   }, 1000);
 
-  const Comp = createSingletonComponent<{ text: string }>(props => <>
+  const Comp = createPersistentComponent<{ text: string }>(props => <>
     <view
       color={Math.floor(Math.random() * 0xffffff) << 8 | 0xff}
       x={Math.random() * 40}
