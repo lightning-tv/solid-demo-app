@@ -51,7 +51,7 @@ export function getInfo({ type, id }) {
     type === "movie"
       ? {
           rtCrit: 86,
-          rtFan: 92,
+          rtFan: 92
         }
       : {};
 
@@ -67,8 +67,8 @@ export function getInfo({ type, id }) {
         type === "movie"
           ? minutesToHMM(data.runtime) + "   " + formatDate(data.release_date)
           : `${justYear(data.first_air_date)} - ${justYear(data.last_air_date)}`,
-      reviews: rt,
+      reviews: rt
     },
-    ...data,
+    ...data
   }));
 }

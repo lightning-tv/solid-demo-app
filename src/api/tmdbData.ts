@@ -9,7 +9,6 @@ const handleResults = (response) => {
   });
 };
 
-
 const fetchPopular = (type) => {
   return handleResults(api.get(`/${type}/popular`));
 };
@@ -31,11 +30,11 @@ const fetchGenreMovies = (genres) => {
 };
 
 type RowItem = {
-    title: string;
-    items: any;
-    setItems?: any;
-    type: "Poster" | "Hero" | "PosterTitle";
-    height: number;
+  title: string;
+  items: any;
+  setItems?: any;
+  type: "Poster" | "Hero" | "PosterTitle";
+  height: number;
 };
 
 export function destroyData() {
@@ -43,11 +42,11 @@ export function destroyData() {
     title: "Best Adventure and Action movies",
     items: createResource(() => fetchGenreMovies(["adventure", "action"]))[0],
     type: "Hero",
-    height: 800,
+    height: 800
   } as const;
 
   return {
-    heroRow,
+    heroRow
   };
 }
 export function tmdbData() {
@@ -58,35 +57,35 @@ export function tmdbData() {
     items: popularMovies[0],
     setItems: popularMovies[1].mutate,
     type: "Poster",
-    height: 328,
+    height: 328
   });
 
   rows.push({
     title: "Best Western movies",
     items: createResource(() => fetchGenreMovies(["Western"]))[0],
     type: "Hero",
-    height: 720,
+    height: 720
   });
 
   rows.push({
     title: "Best Comedy movies",
     items: createResource(() => fetchGenreMovies(["Comedy"]))[0],
     type: "PosterTitle",
-    height: 400,
+    height: 400
   });
 
   rows.push({
     title: "Popular TV shows",
     items: createResource(() => fetchPopular("tv"))[0],
     type: "PosterTitle",
-    height: 400,
+    height: 400
   });
 
   const heroRow = {
     title: "Best Adventure and Action movies",
     items: createResource(() => fetchGenreMovies(["adventure", "action"]))[0],
     type: "Hero",
-    height: 720,
+    height: 720
   } as const;
   rows.push(heroRow);
 
@@ -94,14 +93,14 @@ export function tmdbData() {
     title: "Best Documentaries",
     items: createResource(() => fetchGenreMovies("Documentary"))[0],
     type: "PosterTitle",
-    height: 400,
+    height: 400
   });
 
   rows.push({
     title: "Best Western movies 2",
     items: createResource(() => fetchGenreMovies("Western"))[0],
     type: "PosterTitle",
-    height: 400,
+    height: 400
   });
 
   return {

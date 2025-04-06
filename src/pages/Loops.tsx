@@ -8,16 +8,17 @@ import { setGlobalBackground } from "../state";
 const Loops = (props) => {
   const [activeRow, setActiveRow] = createSignal(props.data.rows[0]);
 
-  let contentBlock, currentIndex = 0,
+  let contentBlock,
+    currentIndex = 0,
     solidLogo;
 
-    setGlobalBackground("#000000");
+  setGlobalBackground("#000000");
 
   const titleRowStyles = {
     fontFamily: "Raleway",
     fontSize: 24,
     height: 32,
-    lineHeight: 32,
+    lineHeight: 32
   };
 
   function switchRow(e) {
@@ -73,9 +74,7 @@ const Loops = (props) => {
           </Text>
           <Row gap={20} y={40} display="block">
             <For each={activeRow()?.items()}>
-            {(item, index) => (
-              <Poster x={index() * 210} {...item} />
-            )}
+              {(item, index) => <Poster x={index() * 210} {...item} />}
             </For>
           </Row>
         </View>
@@ -85,12 +84,11 @@ const Loops = (props) => {
             Map Loop
           </Text>
           <Row gap={20} y={40} display="block">
-            {activeRow()?.items()?.map((item, index) => (
-              <Poster x={index * 210} {...item} />
-            ))}
+            {activeRow()
+              ?.items()
+              ?.map((item, index) => <Poster x={index * 210} {...item} />)}
           </Row>
         </View>
-        
 
         <View x={160} height={300} forwardFocus={1} marginTop={30}>
           <Text skipFocus style={titleRowStyles}>
@@ -98,9 +96,7 @@ const Loops = (props) => {
           </Text>
           <Row gap={20} y={40} display="block">
             <Index each={activeRow()?.items()}>
-            {(item, index) => (
-              <Poster x={index * 210} {...item()} />
-            )}
+              {(item, index) => <Poster x={index * 210} {...item()} />}
             </Index>
           </Row>
         </View>
@@ -118,9 +114,7 @@ const Loops = (props) => {
             each={activeRow()?.items()}
             y={50}
           >
-            {(item, index) => (
-              <Poster x={index * 210} {...item()} />
-            )}
+            {(item, index) => <Poster x={index * 210} {...item()} />}
           </LazyUp>
         </View>
 
@@ -130,9 +124,13 @@ const Loops = (props) => {
           </Text>
           <Row gap={20} y={40} display="block">
             <List each={activeRow()?.items()}>
-            {(item, index) => (
-              <Poster x={index() * 210} {...item()} transition={{ x: { duration: 5550 } }} />
-            )}
+              {(item, index) => (
+                <Poster
+                  x={index() * 210}
+                  {...item()}
+                  transition={{ x: { duration: 5550 } }}
+                />
+              )}
             </List>
           </Row>
         </View>

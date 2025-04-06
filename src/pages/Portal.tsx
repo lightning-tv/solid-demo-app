@@ -23,27 +23,27 @@ const Portal = (props) => {
     {
       title: "Focus Basics",
       id: "focusbasics",
-      description: "Quick guide on Focus",
+      description: "Quick guide on Focus"
     },
     {
       title: "Key Handling",
       id: "keyhandling",
-      description: "Understanding Key Handling",
+      description: "Understanding Key Handling"
     },
     {
       title: "Loop Basics",
       id: "loops",
-      description: "Understanding For, Index, Lazy and List",
+      description: "Understanding For, Index, Lazy and List"
     },
     {
       title: "Infinite Items",
       id: "infinite",
-      description: "Learn how to manage large list of items",
+      description: "Learn how to manage large list of items"
     },
     {
       title: "Layout Basics",
       id: "layout",
-      description: "Quick guide on Layout",
+      description: "Quick guide on Layout"
     },
     {
       title: "Flex Menu",
@@ -53,106 +53,106 @@ const Portal = (props) => {
     {
       title: "Flex Row",
       id: "flex",
-      description: "Flex Row Implementation",
+      description: "Flex Row Implementation"
     },
     {
       title: "Flex Column",
       id: "flexcolumn",
-      description: "Flex Column Implementation",
+      description: "Flex Column Implementation"
     },
     {
       title: "Flex Grow",
       id: "flexgrow",
-      description: "Flex Grow Examples",
+      description: "Flex Grow Examples"
     },
     {
       title: "Flex Row Vertical Align",
       id: "flexsize",
-      description: "Flex Row Vertical Align Implementation",
+      description: "Flex Row Vertical Align Implementation"
     },
     {
       title: "Flex Column Vertical Align",
       id: "flexcolumnsize",
-      description: "Flex Column Vertical Align Implementation",
+      description: "Flex Column Vertical Align Implementation"
     },
     {
       title: "Flex Layout Tests",
       id: "superflex",
-      description: "Complicated flex layouts",
-    },
+      description: "Complicated flex layouts"
+    }
   ];
 
   const demos = [
     {
       title: "Positioning",
       id: "positioning",
-      description: "Positioning Elements",
+      description: "Positioning Elements"
     },
     {
       title: "Gradients",
       id: "gradients",
-      description: "Basic Gradients",
+      description: "Basic Gradients"
     },
     {
       title: "Transitions",
       id: "transitions",
-      description: "Comparing different Transitions",
+      description: "Comparing different Transitions"
     },
     {
       title: "TMDB",
       id: "examples/tmdb",
-      description: "TMDB Example",
+      description: "TMDB Example"
     },
     {
       title: "Grid Primitive for Layout",
       id: "tmdbgrid",
-      description: "Using Grid component",
+      description: "Using Grid component"
     },
     {
       title: "Firebolt Integration",
       id: "firebolt",
-      description: "Firebolt API Integration",
+      description: "Firebolt API Integration"
     },
     {
       title: "Components",
       id: "components",
-      description: "Reusable Components",
+      description: "Reusable Components"
     },
     {
       title: "Focus Handling",
       id: "focushandling",
-      description: "Dealing with Focus Handling",
+      description: "Dealing with Focus Handling"
     },
     {
       title: "Grid",
       id: "grid",
-      description: "Infinite Scroll Grid",
+      description: "Infinite Scroll Grid"
     },
     {
       title: "Destroy",
       id: "destroy",
-      description: "Using onDestroy to animate destruction",
+      description: "Using onDestroy to animate destruction"
     },
     {
       title: "Text",
       id: "text",
-      description: "Text layout with flexbox",
+      description: "Text layout with flexbox"
     },
     {
       title: "TextPoster",
       id: "textposter",
-      description: "Text layout with flex and Poster",
+      description: "Text layout with flex and Poster"
     },
     {
       title: "Create Elements",
       id: "create",
-      description: "Testing Show + children + inserting text",
+      description: "Testing Show + children + inserting text"
     },
     {
       title: "Viewport",
       id: "viewport",
-      description: "Events going in and out of viewport",
-    },
+      description: "Events going in and out of viewport"
+    }
   ];
 
   function DemoTile(props) {
@@ -165,8 +165,8 @@ const Portal = (props) => {
       transition: { color: true, scale: true },
       $focus: {
         scale: 1.1,
-        color: 0xffffffff,
-      },
+        color: 0xffffffff
+      }
     };
     const [hasFocus, setHasFocus] = createSignal(false);
 

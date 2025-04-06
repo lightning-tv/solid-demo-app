@@ -1,11 +1,11 @@
 import { createRenderer, Config, loadFonts } from "@lightningtv/solid";
 import {
   WebGlCoreRenderer,
-  SdfTextRenderer,
+  SdfTextRenderer
 } from "@lightningjs/renderer/webgl";
 import {
   CanvasCoreRenderer,
-  CanvasTextRenderer,
+  CanvasTextRenderer
 } from "@lightningjs/renderer/canvas";
 
 import { Inspector } from "@lightningjs/renderer/inspector";
@@ -21,6 +21,8 @@ import NotFound from "./pages/NotFound";
 import fonts from "./fonts";
 import { browsePreload } from "./api/browsePreload";
 import { entityPreload } from "./api/entityPreload";
+import Player from "./pages/Player";
+import LeftNavWrapper from "./pages/LeftNavWrapper";
 
 const Grid = lazy(() => import("./pages/Grid"));
 const Loops = lazy(() => import("./pages/Loops"));
@@ -66,7 +68,7 @@ const deviceLogicalPixelRatio = {
   "720": 0.666667,
   "1080": 1,
   "4k": 2,
-  default: window.innerHeight / 1080,
+  default: window.innerHeight / 1080
 }[screenSize];
 
 const logFps = true;
@@ -89,7 +91,7 @@ Config.rendererOptions = {
   // 720p = 0.666667, 1080p = 1, 1440p = 1.5, 2160p = 2
   deviceLogicalPixelRatio,
   devicePhysicalPixelRatio: 1,
-  createImageBitmapSupport: "auto",
+  createImageBitmapSupport: "auto"
 };
 
 // Ideally you'd do two separate builds for canvas and webgl to reduce bundle size.
@@ -124,42 +126,46 @@ loadFonts(fonts);
 render(() => (
   <FocusStackProvider>
     <HashRouter root={(props) => <App {...props} />}>
-      <Route path="" component={Browse} preload={browsePreload} />
-      <Route path="examples" component={Portal}>
-        <Route path="/" />
-        <Route path="tmdb" component={TMDB} preload={tmdbData} />
+      <Route path="" component={LeftNavWrapper}>
+        <Route path="" component={Browse} preload={browsePreload} />
+        <Route path="examples" component={Portal}>
+          <Route path="/" />
+          <Route path="tmdb" component={TMDB} preload={tmdbData} />
+        </Route>
+        <Route path="browse/:filter" component={Browse} preload={browsePreload} />
+        <Route path="loops" component={Loops} preload={tmdbData} />
+        <Route path="infinite" component={Infinite} preload={tmdbData} />
+        <Route path="tmdbgrid" component={TMDBGrid} preload={tmdbData} />
+        <Route path="destroy" component={DestroyPage} preload={destroyData} />
+        <Route path="grid" component={Grid} />
+        <Route path="text" component={TextPage} />
+        <Route path="firebolt" component={FireboltPage} />
+        <Route path="textposter" component={TextPosterPage} />
+        <Route path="positioning" component={PositioningPage} />
+        <Route path="layout" component={LayoutPage} />
+        <Route path="focusbasics" component={FocusBasicsPage} />
+        <Route path="transitions" component={TransitionsPage} />
+        <Route path="components" component={ComponentsPage} />
+        <Route path="focushandling" component={FocusHandlingPage} />
+        <Route path="keyhandling" component={KeyHandlingPage} />
+        <Route path="gradients" component={GradientsPage} />
+        <Route path="flex" component={FlexPage} />
+        <Route path="create" component={CreatePage} />
+        <Route path="viewport" component={ViewportPage} />
+        <Route path="flexsize" component={FlexSizePage} />
+        <Route path="flexmenu" component={FlexMenuPage} />
+        <Route path="flexcolumnsize" component={FlexColumnSizePage} />
+        <Route path="flexcolumn" component={FlexColumnPage} />
+        <Route path="flexgrow" component={FlexGrowPage} />
+        <Route path="superflex" component={SuperFlexPage} />
+        <Route path="buttonsmaterial" component={ButtonsMaterialPage} />
+        <Route path="entity/people/:id" component={People} />
+        <Route path="entity/:type/:id" component={Entity} preload={entityPreload} />
+        <Route path="*all" component={NotFound} />
       </Route>
-
-      <Route path="browse/:filter" component={Browse} preload={browsePreload} />
-      <Route path="loops" component={Loops} preload={tmdbData} />
-      <Route path="infinite" component={Infinite} preload={tmdbData} />
-      <Route path="tmdbgrid" component={TMDBGrid} preload={tmdbData} />
-      <Route path="destroy" component={DestroyPage} preload={destroyData} />
-      <Route path="grid" component={Grid} />
-      <Route path="text" component={TextPage} />
-      <Route path="firebolt" component={FireboltPage} />
-      <Route path="textposter" component={TextPosterPage} />
-      <Route path="positioning" component={PositioningPage} />
-      <Route path="layout" component={LayoutPage} />
-      <Route path="focusbasics" component={FocusBasicsPage} />
-      <Route path="transitions" component={TransitionsPage} />
-      <Route path="components" component={ComponentsPage} />
-      <Route path="focushandling" component={FocusHandlingPage} />
-      <Route path="keyhandling" component={KeyHandlingPage} />
-      <Route path="gradients" component={GradientsPage} />
-      <Route path="flex" component={FlexPage} />
-      <Route path="create" component={CreatePage} />
-      <Route path="viewport" component={ViewportPage} />
-      <Route path="flexsize" component={FlexSizePage} />
-      <Route path="flexmenu" component={FlexMenuPage} />
-      <Route path="flexcolumnsize" component={FlexColumnSizePage} />
-      <Route path="flexcolumn" component={FlexColumnPage} />
-      <Route path="flexgrow" component={FlexGrowPage} />
-      <Route path="superflex" component={SuperFlexPage} />
-      <Route path="buttonsmaterial" component={ButtonsMaterialPage} />
-      <Route path="entity/people/:id" component={People} />
-      <Route path="entity/:type/:id" component={Entity} preload={entityPreload} />
-      <Route path="*all" component={NotFound} />
+      <Route path="player">
+        <Route path=":id" component={Player} />
+      </Route>
     </HashRouter>
   </FocusStackProvider>
 ));

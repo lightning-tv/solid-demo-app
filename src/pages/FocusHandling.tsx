@@ -6,9 +6,9 @@ const styles = {
   button: {
     alpha: 0.4,
     $focus: {
-      alpha: 1,
-    },
-  },
+      alpha: 1
+    }
+  }
 };
 function Button(props) {
   return (
@@ -30,8 +30,8 @@ const PositioningPage = () => {
     height: 240,
     $focus: {
       width: 900,
-      transition: true,
-    },
+      transition: true
+    }
   };
 
   return (

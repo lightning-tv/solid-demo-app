@@ -7,15 +7,20 @@ import {
 } from "@lightningtv/solid";
 import { onMount } from "solid-js";
 import { setGlobalBackground } from "../state";
+import { init, load, play } from "../video";
+import { useNavigate } from "@solidjs/router";
 
-const TextPage = () => {
+const Player = () => {
+  let parent;
+  const navigate = useNavigate();
   const OverviewContainer = {
     width: 900,
     height: 500,
     y: 350,
     x: 150,
     gap: 25,
-    display: "flex",
+    display: "block",
+    position: "absolute",
     flexDirection: "column",
     justifyContent: "flexStart",
     color: hexColor("00000000")
@@ -110,35 +115,18 @@ const TextPage = () => {
 
   onMount(() => {
     setGlobalBackground("#000000");
+    parent = document.querySelector('[data-testid="player"]') as HTMLElement;
+    init(parent);
+    load({
+      streamUrl:
+        "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8"
+    });
+    play();
   });
 
-  return (
-    <>
-      <View autofocus style={OverviewContainer}>
-        <Text style={Title}>Title of the Page</Text>
-        <Text style={SubTitle}>Tag line for the page</Text>
-        <Text style={Overview}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel
-          tempor tellus. Sed eu leo purus. Vestibulum sollicitudin eget tellus a
-          varius. Phasellus est turpis, volutpat sed blandit sit amet, rutrum
-          sit amet mauris. In dignissim elit orci, a sollicitudin ipsum faucibus
-          et. Quisque vel quam rutrum, faucibus augue sed, scelerisque nunc.
-        </Text>
-        <View style={SublineContainer}>
-          <Text style={Subline}>Subline Text</Text>
-          <View width={28} height={28} src={"./assets/rt-popcorn.png"}></View>
-          <Text style={Subline}>More Text</Text>
-        </View>
-      </View>
+  return <View autofocus onBack={() => navigate(-1)}>
 
-      <View width={600} display="flex" gap={20} height={42} y={200} x={150}>
-        <Text style={Title}>Flex Grow</Text>
-        <View flexGrow={1} height={4} y={19} color={"#ff3000"} />
-        <View flexGrow={3} height={4} y={19} color={"#ff30ff"} />
-        <View flexGrow={1} height={4} y={19} color={"#eeba2c"} />
-      </View>
-    </>
-  );
+  </View>;
 };
 
-export default TextPage;
+export default Player;

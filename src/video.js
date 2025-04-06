@@ -4,10 +4,10 @@ let player;
 let videoElement;
 
 export const state = {
-  playingState: false,
+  playingState: false
 };
 
-const init = async (element) => {
+export const init = async (element) => {
   shaka.polyfill.installAll(); // polyfilling for devices that need it.
 
   videoElement = element;
@@ -24,7 +24,9 @@ const init = async (element) => {
     player = new shaka.Player();
     await player.attach(videoElement);
 
-    videoElement.autoplay = false;
+    videoElement.autoplay = true;
+    videoElement.preload = true;
+    videoElement.muted = true;
 
     player.addEventListener("error", (err) => {
       console.error(err);
@@ -37,7 +39,7 @@ const init = async (element) => {
  * @param {Object} config - The player configuration.
  * @returns {Promise<void>}
  */
-const load = async (config) => {
+export const load = async (config) => {
   if (!player || !videoElement) {
     throw "Player not initialized yet";
   }
@@ -45,18 +47,18 @@ const load = async (config) => {
   await player.load(config.streamUrl);
 };
 
-const play = () => {
+export const play = () => {
   videoElement.play().then(() => {
     state.playingState = true;
   });
 };
 
-const pause = () => {
+export const pause = () => {
   videoElement.pause();
   state.playingState = false;
 };
 
-const destroy = async () => {
+export const destroy = async () => {
   await player.destroy();
 
   player = null;
@@ -64,20 +66,18 @@ const destroy = async () => {
   videoElement = null;
 };
 
-const getCurrentTime = () => {
+export const getCurrentTime = () => {
   return videoElement.currentTime;
 };
 
-const getVideoDuration = () => {
+export const getVideoDuration = () => {
   return videoElement.duration;
 };
 
-const getTimeFormat = () => {
+export const getTimeFormat = () => {
   let secondsToMmSs = (seconds) =>
     new Date(seconds * 1000).toISOString().substr(14, 5);
-  return `${secondsToMmSs(videoElement.currentTime)} : ${secondsToMmSs(
-    Math.floor(videoElement.duration)
-  )}`;
+  return `${secondsToMmSs(videoElement.currentTime)} : ${secondsToMmSs(Math.floor(videoElement.duration))}`;
 };
 
 export default {
@@ -89,5 +89,5 @@ export default {
   getVideoDuration,
   getTimeFormat,
   state,
-  destroy,
+  destroy
 };
