@@ -10,8 +10,8 @@ export default defineConfig({
     solidPlugin({
       solid: {
         moduleName: "@lightningtv/solid",
-        generate: "universal",
-      },
+        generate: "universal"
+      }
     }),
     legacy({
       targets: ["chrome>=38", "not IE 11"],
@@ -20,18 +20,18 @@ export default defineConfig({
       additionalLegacyPolyfills: ["whatwg-fetch"],
       modernPolyfills: [
         // Safari 11 has modules, but throws > ReferenceError: Can't find variable: globalThis
-        "es.global-this",
-      ],
-    }),
+        "es.global-this"
+      ]
+    })
   ],
   build: {
     targets: ["chrome>=69"],
     minify: false,
-    sourcemap: false,
+    sourcemap: false
   },
   resolve: {
     alias: {
-      theme: "@lightningjs/l3-ui-theme-base",
+      theme: "@lightningjs/l3-ui-theme-base"
     },
     dedupe: [
       "solid-js",
@@ -40,26 +40,26 @@ export default defineConfig({
       "@lightningjs/renderer",
       "@lightningtv/core",
       "@lightningtv/solid",
-      "@lightningtv/solid/primitives",
-    ],
+      "@lightningtv/solid/primitives"
+    ]
   },
   optimizeDeps: {
     exclude: [
       "@lightningtv/solid",
       "@lightningtv/core",
-      "@lightningjs/renderer",
-    ],
+      "@lightningjs/renderer"
+    ]
   },
   server: {
     port: 5174,
     hmr: true,
     headers: {
       "Cross-Origin-Opener-Policy": "same-origin",
-      "Cross-Origin-Embedder-Policy": "require-corp",
-    },
+      "Cross-Origin-Embedder-Policy": "require-corp"
+    }
   },
   test: {
     exclude: [...configDefaults.exclude, "packages/template/*"],
-    globals: true,
-  },
+    globals: true
+  }
 });

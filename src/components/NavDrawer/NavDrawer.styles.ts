@@ -13,14 +13,14 @@ export default {
     transition: {
       x: {
         duration: 250,
-        easing: "ease-in-out",
-      },
+        easing: "ease-in-out"
+      }
     },
     x: 8,
     $focus: {
       width: 500,
-      x: theme.layout.marginX,
-    },
+      x: theme.layout.marginX
+    }
   } satisfies IntrinsicNodeStyleProps,
   Gradient: {
     zIndex: 99,
@@ -31,9 +31,9 @@ export default {
     height: 1080,
     $focus: {
       alpha: 1,
-      width: 1600,
+      width: 1600
     },
-    transition: { alpha: true, width: true },
+    transition: { alpha: true, width: true }
   } satisfies IntrinsicNodeStyleProps,
   NavButton: {
     zIndex: 102,
@@ -42,11 +42,11 @@ export default {
     borderRadius: 8,
     color: 0,
     $focus: {
-      color: "#424242",
+      color: "#424242"
     },
     $active: {
       width: 328,
-      height: 70,
-    },
-  } satisfies IntrinsicNodeStyleProps,
+      height: 70
+    }
+  } satisfies IntrinsicNodeStyleProps
 };

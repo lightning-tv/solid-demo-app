@@ -1,5 +1,11 @@
 import { createEffect, on, createSignal, createMemo } from "solid-js";
-import { ElementNode, activeElement, View, Text, NodeProps } from "@lightningtv/solid";
+import {
+  ElementNode,
+  activeElement,
+  View,
+  Text,
+  NodeProps
+} from "@lightningtv/solid";
 import { Grid } from "@lightningtv/solid/primitives";
 import { setGlobalBackground } from "../state";
 import ContentBlock from "../components/ContentBlock";

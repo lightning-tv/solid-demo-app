@@ -1,17 +1,13 @@
-import {
-  Text,
-  TextStyles,
-  View,
-} from "@lightningtv/solid";
+import { Text, TextStyles, View } from "@lightningtv/solid";
 
 import { createSignal, createEffect } from "solid-js";
 import { setGlobalBackground } from "../state";
 import { Row } from "@lightningtv/solid/primitives";
-import { Lifecycle, Account, Device, Localization } from '@firebolt-js/sdk';
+import { Lifecycle, Account, Device, Localization } from "@firebolt-js/sdk";
 export default function Firebolt() {
   const fireboltApis = ["Lifecycle", "Audio", "Make", "Model", "latlong"];
   const [activeIndex, setActiveIndex] = createSignal(0);
-  const [data, setData] = createSignal('');
+  const [data, setData] = createSignal("");
   setGlobalBackground("#000000");
 
   createEffect(() => {
@@ -48,13 +44,15 @@ export default function Firebolt() {
     fontWeight: "bold",
     textAlign: "center",
     $focus: {
-      color: "#446b9e",
+      color: "#446b9e"
     }
   };
 
   return (
     <View>
-      <Text y={-120} fontSize={24} center>Press Right and Left to change API</Text>
+      <Text y={-120} fontSize={24} center>
+        Press Right and Left to change API
+      </Text>
       <Row autofocus center y={-60} onSelectedChanged={setActiveIndex}>
         {fireboltApis.map((api, index) => (
           <Text style={apiStyle}>{api}</Text>

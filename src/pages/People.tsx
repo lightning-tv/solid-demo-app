@@ -3,7 +3,7 @@ import {
   Text,
   View,
   Show,
-  assertTruthy,
+  assertTruthy
 } from "@lightningtv/solid";
 import { Column } from "@lightningtv/solid/primitives";
 import { useParams } from "@solidjs/router";
@@ -33,7 +33,7 @@ const People = () => {
     height: 440,
     x: 130,
     y: 180,
-    borderRadius: 30,
+    borderRadius: 30
   };
 
   function onEnter(this: ElementNode) {

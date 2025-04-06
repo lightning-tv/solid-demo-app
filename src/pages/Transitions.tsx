@@ -52,7 +52,7 @@ const Default = () => {
         transition={{ y: { duration: 1000 } }}
         onAnimation={{
           animating: onStart,
-          stopped: onEnd,
+          stopped: onEnd
         }}
       />
 
@@ -66,7 +66,7 @@ const Default = () => {
         transition={{ y: { duration: 500, delay: 1000 } }}
         onAnimation={{
           animating: onStart,
-          stopped: onEnd,
+          stopped: onEnd
         }}
       />
 
@@ -79,7 +79,7 @@ const Default = () => {
         color="#3b82f6"
         transition={{ y: { duration: 500, easing: "ease-in-out" } }}
         onAnimation={{
-          stopped: onEnd,
+          stopped: onEnd
         }}
       />
 
@@ -92,7 +92,7 @@ const Default = () => {
         color="#2563eb"
         transition={{ y: { duration: 3000, easing: "ease-in-out-back" } }}
         onAnimation={{
-          stopped: onEnd,
+          stopped: onEnd
         }}
       />
 
@@ -104,7 +104,7 @@ const Default = () => {
         y={y()}
         color="#1e3a8a"
         transition={{
-          y: { duration: 800, easing: "cubic-bezier(1,-0.64,.39,1.44)" },
+          y: { duration: 800, easing: "cubic-bezier(1,-0.64,.39,1.44)" }
         }}
       />
     </View>

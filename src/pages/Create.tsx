@@ -3,7 +3,7 @@ import {
   Text,
   View,
   combineStyles,
-  hexColor,
+  hexColor
 } from "@lightningtv/solid";
 import { Show, children, createSignal, onMount } from "solid-js";
 import { setGlobalBackground } from "../state";
@@ -18,7 +18,7 @@ const CreatePage = () => {
     display: "flex",
     flexDirection: "column",
     justifyContent: "flexStart",
-    color: hexColor("00000000"),
+    color: hexColor("00000000")
   } satisfies IntrinsicNodeStyleProps;
 
   const SublineContainer = {
@@ -28,15 +28,15 @@ const CreatePage = () => {
     display: "flex",
     flexDirection: "row",
     justifyContent: "flexStart",
-    color: hexColor("00000000"),
+    color: hexColor("00000000")
   } satisfies IntrinsicNodeStyleProps;
 
   const Title = {
-    fontSize: 42,
+    fontSize: 42
   };
 
   const Subline = {
-    fontSize: 26,
+    fontSize: 26
   };
 
   let myBox, childRef;
@@ -61,7 +61,7 @@ const CreatePage = () => {
     width: 400,
     height: 300,
     // Solid blue
-    color: "#0000ff",
+    color: "#0000ff"
   } as const;
 
   const someOtherStyle = {
@@ -69,8 +69,8 @@ const CreatePage = () => {
     color: "#f54242",
     $focus: {
       // pretty blue
-      color: "#4287f5",
-    },
+      color: "#4287f5"
+    }
   };
 
   function ChildTest(props) {
@@ -125,20 +125,20 @@ const CreatePage = () => {
   const borderStyles = {
     borderLeft: {
       width: 8,
-      color: 0x05b2b626,
+      color: 0x05b2b626
     },
     borderTop: {
       width: 8,
-      color: 0x25a2bd26,
+      color: 0x25a2bd26
     },
     borderRight: {
       width: 8,
-      color: 0x05b2b626,
+      color: 0x05b2b626
     },
     borderBottom: {
       width: 8,
-      color: 0xc5b23626,
-    },
+      color: 0xc5b23626
+    }
   } as const;
 
   const childTestPassedStyles = {
@@ -146,8 +146,8 @@ const CreatePage = () => {
     color: "#cccccc",
     $focus: {
       // black
-      color: "#000000",
-    },
+      color: "#000000"
+    }
   };
 
   const childTestPassedStyles2 = {
@@ -155,8 +155,8 @@ const CreatePage = () => {
     color: "#ffffff",
     $focus: {
       // white something...
-      color: "#f6f6cc",
-    },
+      color: "#f6f6cc"
+    }
   };
 
   function hasFocus(elm) {
