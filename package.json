@@ -24,10 +24,10 @@
   "dependencies": {
     "@firebolt-js/sdk": "^1.5.0",
     "@lightningjs/l3-ui-theme-base": "^0.3.3",
-    "@lightningjs/renderer": "3.0.0-beta3",
-    "@lightningtv/core": "3.0.0-0",
+    "@lightningjs/renderer": "3.0.0-beta5",
+    "@lightningtv/core": "3.0.0-2",
     "@lightningtv/l3-ui-theme-base": "^1.0.0",
-    "@lightningtv/solid": "3.0.0-0",
+    "@lightningtv/solid": "3.0.0-2",
     "@solid-primitives/list": "^0.1.0",
     "@solid-primitives/scheduled": "^1.5.0",
     "@solidjs/router": "^0.15.3",
