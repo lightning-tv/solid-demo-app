@@ -11,7 +11,7 @@ overrides:
 
 patchedDependencies:
   '@solidjs/router':
-    hash: hnhvc47baca25dviao74hiryf4
+    hash: f7bb4a418fb6efb9a659bd0022fdb925bdd84911bd53efe26e1ba4016a1d8615
     path: patches/@solidjs__router.patch
 
 importers:
@@ -35,7 +35,7 @@ importers:
         version: 1.0.0
       '@lightningtv/solid':
         specifier: 3.0.0-2
-        version: 3.0.0-2(@lightningjs/renderer@3.0.0-beta5)(@solidjs/router@0.15.3(patch_hash=hnhvc47baca25dviao74hiryf4)(solid-js@1.9.5))(solid-js@1.9.5)
+        version: 3.0.0-2(@lightningjs/renderer@3.0.0-beta5)(@solidjs/router@0.15.3(patch_hash=f7bb4a418fb6efb9a659bd0022fdb925bdd84911bd53efe26e1ba4016a1d8615)(solid-js@1.9.5))(solid-js@1.9.5)
       '@solid-primitives/list':
         specifier: ^0.1.0
         version: 0.1.0(solid-js@1.9.5)
@@ -44,7 +44,7 @@ importers:
         version: 1.5.0(solid-js@1.9.5)
       '@solidjs/router':
         specifier: ^0.15.3
-        version: 0.15.3(patch_hash=hnhvc47baca25dviao74hiryf4)(solid-js@1.9.5)
+        version: 0.15.3(patch_hash=f7bb4a418fb6efb9a659bd0022fdb925bdd84911bd53efe26e1ba4016a1d8615)(solid-js@1.9.5)
       browserlist:
         specifier: ^1.0.1
         version: 1.0.1
@@ -86,8 +86,8 @@ importers:
         specifier: ^3.5.3
         version: 3.5.3
       solid-devtools:
-        specifier: ^0.33.0
-        version: 0.33.0(solid-js@1.9.5)(vite@6.2.2(terser@5.39.0)(yaml@2.7.0))
+        specifier: ^0.34.0
+        version: 0.34.0(solid-js@1.9.5)(vite@6.2.2(terser@5.39.0)(yaml@2.7.0))
       terser:
         specifier: ^5.39.0
         version: 5.39.0
@@ -1089,18 +1089,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@solid-devtools/debugger@0.26.0':
-    resolution: {integrity: sha512-36QxZ+s/lY60E+Pb9q0eTsdqgaog4c823WIj5dC2LFdGrGXbVGBQEj6k7CgvMnEETdwndrd0Fm72fQyYPlZrVA==}
-    peerDependencies:
-      solid-js: ^1.9.0
-
   '@solid-devtools/debugger@0.27.0':
     resolution: {integrity: sha512-z0mqbjKmPUZ3x3mlEVTSbMmlMP+DTHjrk4P2L1Bk6352Oy7CkgAL6UNWuxVGlWGueK+9pL60n53045A0ofoEFQ==}
-    peerDependencies:
-      solid-js: ^1.9.0
-
-  '@solid-devtools/shared@0.19.0':
-    resolution: {integrity: sha512-OGo6l84f9X5YEAqSEM4Xl94+xKXSqmACMzKWsAqO0BStLBMVL0vIVu286AQk5XkNxn11/EB9wrdkZc9GUzKlxA==}
     peerDependencies:
       solid-js: ^1.9.0
 
@@ -1109,18 +1099,8 @@ packages:
     peerDependencies:
       solid-js: ^1.9.0
 
-  '@solid-primitives/bounds@0.0.122':
-    resolution: {integrity: sha512-kUq/IprOdFr/rg2upon5lQGOoTnDAmxQS4ASKK2l+VwoKSctdPwgu/4qJxEITZikL+nB0myYZzBZWptySV0cRg==}
-    peerDependencies:
-      solid-js: ^1.6.12
-
   '@solid-primitives/bounds@0.1.0':
     resolution: {integrity: sha512-mPci7ji6cvQIjexYaWgy75mLkip1YxlUijFa8B1PkuYfL13FtGrl1AzPvA2vq8fV5LNysuq3ghwgUFFwaqAR6w==}
-    peerDependencies:
-      solid-js: ^1.6.12
-
-  '@solid-primitives/cursor@0.0.115':
-    resolution: {integrity: sha512-8nEmUN/sacXPChwuJOAi6Yi6VnxthW/Jk8VGvvcF38AenjUvOA6FHI6AkJILuFXjQw1PGxia1YbH/Mn77dPiOA==}
     peerDependencies:
       solid-js: ^1.6.12
 
@@ -1149,11 +1129,6 @@ packages:
     peerDependencies:
       solid-js: ^1.6.12
 
-  '@solid-primitives/platform@0.1.2':
-    resolution: {integrity: sha512-sSxcZfuUrtxcwV0vdjmGnZQcflACzMfLriVeIIWXKp8hzaS3Or3tO6EFQkTd3L8T5dTq+kTtLvPscXIpL0Wzdg==}
-    peerDependencies:
-      solid-js: ^1.6.12
-
   '@solid-primitives/platform@0.2.0':
     resolution: {integrity: sha512-x5Tmed85MxRYMNy7LKV88JBjR7ju7Vd8a56Q7CcyMN0i2sPY8/VB82uT/SFD4ncWDxYWOs5zmwBPQBDPHUNOsw==}
     peerDependencies:
@@ -1179,18 +1154,8 @@ packages:
     peerDependencies:
       solid-js: ^1.6.12
 
-  '@solid-primitives/static-store@0.0.8':
-    resolution: {integrity: sha512-ZecE4BqY0oBk0YG00nzaAWO5Mjcny8Fc06CdbXadH9T9lzq/9GefqcSe/5AtdXqjvY/DtJ5C6CkcjPZO0o/eqg==}
-    peerDependencies:
-      solid-js: ^1.6.12
-
   '@solid-primitives/static-store@0.1.0':
     resolution: {integrity: sha512-6Coau0Kv/dF83UQpbBzc+gnJafOQAPe2jCbB4jmTK5UocsR5cWmFBVRm3kin+nZFVaO4WkuELw0cKANWgTVh8Q==}
-    peerDependencies:
-      solid-js: ^1.6.12
-
-  '@solid-primitives/styles@0.0.114':
-    resolution: {integrity: sha512-SFXr16mgr6LvZAIj6L7i59HHg+prAmIF8VP/U3C6jSHz68Eh1G71vaWr9vlJVpy/j6bh1N8QUzu5CgtvIC92OQ==}
     peerDependencies:
       solid-js: ^1.6.12
 
@@ -2093,8 +2058,8 @@ packages:
     resolution: {integrity: sha512-bSiSngZ/jWeX93BqeIAbImyTbEihizcwNjFoRUIY/T1wWQsfsm2Vw1agPKylXvQTU7iASGdHhyqRlqQzfz+Htg==}
     engines: {node: '>=18'}
 
-  solid-devtools@0.33.0:
-    resolution: {integrity: sha512-xRB4Jhgns3dBuM/s0j70BpXKy77sNjISud9xXBv60qC4cnJ/TcuVHI1t+05luj1BEKJVQSokqIaVoZWcjqA9yw==}
+  solid-devtools@0.34.0:
+    resolution: {integrity: sha512-TpMZMCoxVOe5rkWQoHzly8FTIdfnLu63lls+OfQCu8+EF+11SnkuzVJ7MxsezfXXRxZqtPMwaD20CK79Xvd5hg==}
     peerDependencies:
       solid-js: ^1.9.0
       vite: ^2.2.3 || ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0
@@ -3342,14 +3307,14 @@ snapshots:
 
   '@lightningtv/l3-ui-theme-base@1.0.0': {}
 
-  '@lightningtv/solid@3.0.0-2(@lightningjs/renderer@3.0.0-beta5)(@solidjs/router@0.15.3(patch_hash=hnhvc47baca25dviao74hiryf4)(solid-js@1.9.5))(solid-js@1.9.5)':
+  '@lightningtv/solid@3.0.0-2(@lightningjs/renderer@3.0.0-beta5)(@solidjs/router@0.15.3(patch_hash=f7bb4a418fb6efb9a659bd0022fdb925bdd84911bd53efe26e1ba4016a1d8615)(solid-js@1.9.5))(solid-js@1.9.5)':
     dependencies:
       '@lightningjs/renderer': 3.0.0-beta5
       '@lightningtv/core': 3.0.0-2(@lightningjs/renderer@3.0.0-beta5)
       '@solid-primitives/event-listener': 2.4.0(solid-js@1.9.5)
       '@solid-primitives/mouse': 2.1.0(solid-js@1.9.5)
       '@solid-primitives/scheduled': 1.5.0(solid-js@1.9.5)
-      '@solidjs/router': 0.15.3(patch_hash=hnhvc47baca25dviao74hiryf4)(solid-js@1.9.5)
+      '@solidjs/router': 0.15.3(patch_hash=f7bb4a418fb6efb9a659bd0022fdb925bdd84911bd53efe26e1ba4016a1d8615)(solid-js@1.9.5)
       solid-js: 1.9.5
     optionalDependencies:
       '@solid-devtools/debugger': 0.27.0(solid-js@1.9.5)
@@ -3438,21 +3403,6 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.36.0':
     optional: true
 
-  '@solid-devtools/debugger@0.26.0(solid-js@1.9.5)':
-    dependencies:
-      '@nothing-but/utils': 0.17.0
-      '@solid-devtools/shared': 0.19.0(solid-js@1.9.5)
-      '@solid-primitives/bounds': 0.0.122(solid-js@1.9.5)
-      '@solid-primitives/cursor': 0.0.115(solid-js@1.9.5)
-      '@solid-primitives/event-listener': 2.4.0(solid-js@1.9.5)
-      '@solid-primitives/keyboard': 1.3.0(solid-js@1.9.5)
-      '@solid-primitives/platform': 0.1.2(solid-js@1.9.5)
-      '@solid-primitives/rootless': 1.5.0(solid-js@1.9.5)
-      '@solid-primitives/scheduled': 1.5.0(solid-js@1.9.5)
-      '@solid-primitives/static-store': 0.0.8(solid-js@1.9.5)
-      '@solid-primitives/utils': 6.3.0(solid-js@1.9.5)
-      solid-js: 1.9.5
-
   '@solid-devtools/debugger@0.27.0(solid-js@1.9.5)':
     dependencies:
       '@nothing-but/utils': 0.17.0
@@ -3464,20 +3414,6 @@ snapshots:
       '@solid-primitives/rootless': 1.5.0(solid-js@1.9.5)
       '@solid-primitives/scheduled': 1.5.0(solid-js@1.9.5)
       '@solid-primitives/static-store': 0.1.0(solid-js@1.9.5)
-      '@solid-primitives/utils': 6.3.0(solid-js@1.9.5)
-      solid-js: 1.9.5
-    optional: true
-
-  '@solid-devtools/shared@0.19.0(solid-js@1.9.5)':
-    dependencies:
-      '@nothing-but/utils': 0.17.0
-      '@solid-primitives/event-listener': 2.4.0(solid-js@1.9.5)
-      '@solid-primitives/media': 2.3.0(solid-js@1.9.5)
-      '@solid-primitives/refs': 1.1.0(solid-js@1.9.5)
-      '@solid-primitives/rootless': 1.5.0(solid-js@1.9.5)
-      '@solid-primitives/scheduled': 1.5.0(solid-js@1.9.5)
-      '@solid-primitives/static-store': 0.0.8(solid-js@1.9.5)
-      '@solid-primitives/styles': 0.0.114(solid-js@1.9.5)
       '@solid-primitives/utils': 6.3.0(solid-js@1.9.5)
       solid-js: 1.9.5
 
@@ -3493,27 +3429,12 @@ snapshots:
       '@solid-primitives/styles': 0.1.0(solid-js@1.9.5)
       '@solid-primitives/utils': 6.3.0(solid-js@1.9.5)
       solid-js: 1.9.5
-    optional: true
-
-  '@solid-primitives/bounds@0.0.122(solid-js@1.9.5)':
-    dependencies:
-      '@solid-primitives/event-listener': 2.4.0(solid-js@1.9.5)
-      '@solid-primitives/resize-observer': 2.1.0(solid-js@1.9.5)
-      '@solid-primitives/static-store': 0.0.8(solid-js@1.9.5)
-      '@solid-primitives/utils': 6.3.0(solid-js@1.9.5)
-      solid-js: 1.9.5
 
   '@solid-primitives/bounds@0.1.0(solid-js@1.9.5)':
     dependencies:
       '@solid-primitives/event-listener': 2.4.0(solid-js@1.9.5)
       '@solid-primitives/resize-observer': 2.1.0(solid-js@1.9.5)
       '@solid-primitives/static-store': 0.1.0(solid-js@1.9.5)
-      '@solid-primitives/utils': 6.3.0(solid-js@1.9.5)
-      solid-js: 1.9.5
-    optional: true
-
-  '@solid-primitives/cursor@0.0.115(solid-js@1.9.5)':
-    dependencies:
       '@solid-primitives/utils': 6.3.0(solid-js@1.9.5)
       solid-js: 1.9.5
 
@@ -3549,14 +3470,9 @@ snapshots:
       '@solid-primitives/utils': 6.3.0(solid-js@1.9.5)
       solid-js: 1.9.5
 
-  '@solid-primitives/platform@0.1.2(solid-js@1.9.5)':
-    dependencies:
-      solid-js: 1.9.5
-
   '@solid-primitives/platform@0.2.0(solid-js@1.9.5)':
     dependencies:
       solid-js: 1.9.5
-    optional: true
 
   '@solid-primitives/refs@1.1.0(solid-js@1.9.5)':
     dependencies:
@@ -3580,19 +3496,8 @@ snapshots:
     dependencies:
       solid-js: 1.9.5
 
-  '@solid-primitives/static-store@0.0.8(solid-js@1.9.5)':
-    dependencies:
-      '@solid-primitives/utils': 6.3.0(solid-js@1.9.5)
-      solid-js: 1.9.5
-
   '@solid-primitives/static-store@0.1.0(solid-js@1.9.5)':
     dependencies:
-      '@solid-primitives/utils': 6.3.0(solid-js@1.9.5)
-      solid-js: 1.9.5
-
-  '@solid-primitives/styles@0.0.114(solid-js@1.9.5)':
-    dependencies:
-      '@solid-primitives/rootless': 1.5.0(solid-js@1.9.5)
       '@solid-primitives/utils': 6.3.0(solid-js@1.9.5)
       solid-js: 1.9.5
 
@@ -3601,13 +3506,12 @@ snapshots:
       '@solid-primitives/rootless': 1.5.0(solid-js@1.9.5)
       '@solid-primitives/utils': 6.3.0(solid-js@1.9.5)
       solid-js: 1.9.5
-    optional: true
 
   '@solid-primitives/utils@6.3.0(solid-js@1.9.5)':
     dependencies:
       solid-js: 1.9.5
 
-  '@solidjs/router@0.15.3(patch_hash=hnhvc47baca25dviao74hiryf4)(solid-js@1.9.5)':
+  '@solidjs/router@0.15.3(patch_hash=f7bb4a418fb6efb9a659bd0022fdb925bdd84911bd53efe26e1ba4016a1d8615)(solid-js@1.9.5)':
     dependencies:
       solid-js: 1.9.5
 
@@ -4561,13 +4465,13 @@ snapshots:
       ansi-styles: 6.2.1
       is-fullwidth-code-point: 5.0.0
 
-  solid-devtools@0.33.0(solid-js@1.9.5)(vite@6.2.2(terser@5.39.0)(yaml@2.7.0)):
+  solid-devtools@0.34.0(solid-js@1.9.5)(vite@6.2.2(terser@5.39.0)(yaml@2.7.0)):
     dependencies:
       '@babel/core': 7.26.10
       '@babel/plugin-syntax-typescript': 7.25.9(@babel/core@7.26.10)
       '@babel/types': 7.26.10
-      '@solid-devtools/debugger': 0.26.0(solid-js@1.9.5)
-      '@solid-devtools/shared': 0.19.0(solid-js@1.9.5)
+      '@solid-devtools/debugger': 0.27.0(solid-js@1.9.5)
+      '@solid-devtools/shared': 0.19.1(solid-js@1.9.5)
       solid-js: 1.9.5
     optionalDependencies:
       vite: 6.2.2(terser@5.39.0)(yaml@2.7.0)

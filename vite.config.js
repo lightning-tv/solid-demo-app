@@ -7,10 +7,17 @@ import { configDefaults } from "vitest/config";
 
 export default defineConfig({
   plugins: [
-    hexColorTransform(),
+    hexColorTransform({
+      include: ["src/**/*.{ts,tsx,js,jsx}"],
+    }),
     devtools({
       /* features options - all disabled by default */
-      autoname: true, // e.g. enable autoname
+      autoname: true,
+      locator: {
+        jsxLocation: true,
+        componentLocation: true,
+        targetIDE: "vscode",
+      },
     }),
     solidPlugin({
       solid: {
