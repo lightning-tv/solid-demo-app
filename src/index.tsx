@@ -159,6 +159,7 @@ render(() => (
     <Route path="flexcolumn" component={FlexColumnPage} />
     <Route path="flexgrow" component={FlexGrowPage} />
     <Route path="superflex" component={SuperFlexPage} />
+    <Route path="keepalive" component={lazy(() => import('./pages/KeepAlive.jsx'))} />
     <Route path="buttonsmaterial" component={ButtonsMaterialPage} />
     <Route path="entity/people/:id" component={People} />
     <Route path="entity/:type/:id" component={Entity} preload={entityPreload} />
