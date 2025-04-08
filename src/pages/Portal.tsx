@@ -155,6 +155,11 @@ const Portal = () => {
       id: "keepalive",
       description: "Reuse component between layouts",
     },
+    {
+      title: "Suspense",
+      id: "suspense",
+      description: "Using Suspense to load data",
+    },
   ];
 
   function DemoTile(props) {
