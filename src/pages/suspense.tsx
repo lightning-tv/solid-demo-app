@@ -2,6 +2,23 @@ import * as s from "solid-js";
 import * as lng from "@lightningtv/solid";
 import {setGlobalBackground} from "../state";
 
+/**
+ * Tracks all resources inside a component and renders a fallback until they are all resolved.
+ * 
+ * ```tsx
+ * const [data] = createResource(async () => ...);
+ *
+ * <Suspense fallback={<LoadingIndicator />}>
+ *   <view>
+ *     <text>{data()}</text>
+ *   </view>
+ * </Suspense>
+ * ```
+ * 
+ * This is a modified version of the SolidJS Suspense component that works with Lightning.
+ * 
+ * @see https://docs.solidjs.com/reference/components/suspense
+ */
 function Suspense(props: {
   fallback?: s.JSX.Element;
   children: s.JSX.Element;
@@ -9,11 +26,11 @@ function Suspense(props: {
   
   let children: s.JSX.Element;
 
-  let suspense = s.children(() => s.createComponent(s.Suspense, {
+  let suspense = s.Suspense({
     get children() {
-      return children = s.children(() => props.children) as any
+      return [children = s.children(() => props.children) as any];
     },
-  }))
+  }) as any as () => s.JSX.Element;
 
   return <>
     {suspense() ?? props.fallback}
@@ -44,7 +61,7 @@ export default function SuspensePage() {
 
   const [data, {refetch}] = s.createResource(async () => {
     await new Promise(r => setTimeout(r, 1600));
-    return "Hello World" + '!'.repeat(++lastCount);
+    return ++lastCount
   })
 
   return <>
@@ -74,7 +91,7 @@ export default function SuspensePage() {
             s.onMount(() => {
               const interval = setInterval(() => {
                 setCount(prev => prev + 1);
-              }, 100);
+              }, 200);
           
               s.onCleanup(() => clearInterval(interval));
             });
@@ -85,7 +102,7 @@ export default function SuspensePage() {
             })
           }}
         >
-          <text>{data()}</text>
+          <text>Hello World{'!'.repeat(data() ?? 0)} (Press Enter to refetch)</text>
         </view>
       </Suspense>
     </view>
