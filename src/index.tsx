@@ -23,6 +23,7 @@ import { browsePreload } from "./api/browsePreload";
 import { entityPreload } from "./api/entityPreload";
 import Player from "./pages/Player";
 import LeftNavWrapper from "./pages/LeftNavWrapper";
+import KeyboardPage from './pages/Keyboard';
 
 const Grid = lazy(() => import("./pages/Grid"));
 const Loops = lazy(() => import("./pages/Loops"));
@@ -158,6 +159,7 @@ render(() => (
         <Route path="flexcolumn" component={FlexColumnPage} />
         <Route path="flexgrow" component={FlexGrowPage} />
         <Route path="superflex" component={SuperFlexPage} />
+        <Route path="keyboard" component={KeyboardPage} />
         <Route path="buttonsmaterial" component={ButtonsMaterialPage} />
         <Route path="entity/people/:id" component={People} />
         <Route path="entity/:type/:id" component={Entity} preload={entityPreload} />

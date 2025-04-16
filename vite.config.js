@@ -47,7 +47,8 @@ export default defineConfig({
     exclude: [
       "@lightningtv/solid",
       "@lightningtv/core",
-      "@lightningjs/renderer"
+      "@lightningjs/renderer",
+      "@lightningtv/solid-ui"
     ]
   },
   server: {
