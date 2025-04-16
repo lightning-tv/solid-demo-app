@@ -29,6 +29,7 @@
     "@lightningtv/core": "2.7.7",
     "@lightningtv/l3-ui-theme-base": "^1.0.0",
     "@lightningtv/solid": "2.7.14",
+    "@lightningtv/solid-ui": "^1.0.0",
     "@solid-primitives/list": "^0.1.0",
     "@solid-primitives/scheduled": "^1.5.0",
     "@solidjs/router": "^0.15.3",
