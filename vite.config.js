@@ -23,6 +23,7 @@ export default defineConfig({
       solid: {
         moduleName: "@lightningtv/solid",
         generate: "universal",
+        builtIns: [],
       },
     }),
     legacy({
