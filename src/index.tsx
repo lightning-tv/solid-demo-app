@@ -1,3 +1,10 @@
+
+import 'solid-devtools';
+import {setElementInterface} from 'solid-devtools/setup';
+import {elementInterface} from "@lightningtv/solid/devtools";
+
+setElementInterface(elementInterface)
+
 import { createRenderer, Config, loadFonts } from "@lightningtv/solid";
 import {
   WebGlCoreRenderer,
@@ -106,23 +113,23 @@ if (rendererMode === "canvas") {
 const { renderer, render } = createRenderer();
 loadFonts(fonts);
 // Prepare for RC3 of Renderer
-// import {
-//   Rounded,
-//   RoundedWithBorder,
-//   RoundedWithShadow,
-//   RoundedWithBorderAndShadow,
-//   RadialGradient,
-//   LinearGradient,
-//   HolePunch,
-// } from '@lightningjs/renderer/webgl/shaders';
-// const shManager = renderer.stage.shManager;
-// shManager.registerShaderType('rounded', Rounded)
-// shManager.registerShaderType('roundedWithBorder', RoundedWithBorder)
-// shManager.registerShaderType('roundedWithShadow', RoundedWithShadow)
-// shManager.registerShaderType('roundedWithBorderAndShadow', RoundedWithBorderAndShadow)
-// shManager.registerShaderType('radialGradient', RadialGradient)
-// shManager.registerShaderType('linearGradient', LinearGradient)
-// shManager.registerShaderType('holePunch', HolePunch)
+import {
+  Rounded,
+  RoundedWithBorder,
+  RoundedWithShadow,
+  RoundedWithBorderAndShadow,
+  RadialGradient,
+  LinearGradient,
+  HolePunch,
+} from '@lightningjs/renderer/webgl/shaders';
+const shManager = renderer.stage.shManager;
+shManager.registerShaderType('rounded', Rounded)
+shManager.registerShaderType('roundedWithBorder', RoundedWithBorder)
+shManager.registerShaderType('roundedWithShadow', RoundedWithShadow)
+shManager.registerShaderType('roundedWithBorderWithShadow', RoundedWithBorderAndShadow)
+shManager.registerShaderType('radialGradient', RadialGradient)
+shManager.registerShaderType('linearGradient', LinearGradient)
+shManager.registerShaderType('holePunch', HolePunch)
 render(() => (
   <FocusStackProvider>
     <HashRouter root={(props) => <App {...props} />}>
@@ -157,6 +164,8 @@ render(() => (
         <Route path="flexcolumnsize" component={FlexColumnSizePage} />
         <Route path="flexcolumn" component={FlexColumnPage} />
         <Route path="flexgrow" component={FlexGrowPage} />
+        <Route path="keepalive" component={lazy(() => import('./pages/KeepAlive.jsx'))} />
+        <Route path="suspense" component={lazy(() => import('./pages/suspense.jsx'))} />
         <Route path="superflex" component={SuperFlexPage} />
         <Route path="buttonsmaterial" component={ButtonsMaterialPage} />
         <Route path="entity/people/:id" component={People} />

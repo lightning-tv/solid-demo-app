@@ -25,10 +25,10 @@
   "dependencies": {
     "@firebolt-js/sdk": "^1.5.0",
     "@lightningjs/l3-ui-theme-base": "^0.3.3",
-    "@lightningjs/renderer": "2.13.2",
-    "@lightningtv/core": "2.7.7",
+    "@lightningjs/renderer": "3.0.0-beta7",
+    "@lightningtv/core": "3.0.0-2",
     "@lightningtv/l3-ui-theme-base": "^1.0.0",
-    "@lightningtv/solid": "2.7.14",
+    "@lightningtv/solid": "3.0.0-2",
     "@solid-primitives/list": "^0.1.0",
     "@solid-primitives/scheduled": "^1.5.0",
     "@solidjs/router": "^0.15.3",
@@ -47,6 +47,7 @@
     "husky": "^9.1.7",
     "lint-staged": "^15.5.0",
     "prettier": "^3.5.3",
+    "solid-devtools": "^0.34.0",
     "terser": "^5.39.0",
     "typescript": "^5.8.2",
     "vite": "^6.2.3",
@@ -58,9 +59,6 @@
       "@lightningtv/core": "$@lightningtv/core",
       "@lightningtv/solid": "$@lightningtv/solid",
       "@lightningjs/renderer": "$@lightningjs/renderer"
-    },
-    "patchedDependencies": {
-      "@vitejs/plugin-legacy": "patches/@vitejs__plugin-legacy.patch"
     }
   },
   "lint-staged": {
@@ -68,5 +66,6 @@
       "prettier --write"
     ],
     "*.{js,cjs,md}": "prettier --write"
-  }
+  },
+  "packageManager": "pnpm@9.4.0+sha512.f549b8a52c9d2b8536762f99c0722205efc5af913e77835dbccc3b0b0b2ca9e7dc8022b78062c17291c48e88749c70ce88eb5a74f1fa8c4bf5e18bb46c8bd83a"
 }
