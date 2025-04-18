@@ -3,7 +3,7 @@ import {
   IntrinsicNodeStyleProps,
   Text,
   View,
-  hexColor,
+  hexColor
 } from "@lightningtv/solid";
 import { Column, Row } from "@lightningtv/solid/primitives";
 import { createSignal, onMount } from "solid-js";
@@ -16,7 +16,7 @@ const FlexColumnPage = () => {
     width: 1920,
     y: 100,
     height: 880,
-    color: hexColor("00000000"),
+    color: hexColor("00000000")
   } satisfies IntrinsicNodeStyleProps;
 
   const ColumnStyles = {
@@ -25,13 +25,13 @@ const FlexColumnPage = () => {
     justifyContent: "flexStart",
     color: "#4dabf5",
     height: 850,
-    width: 80,
+    width: 80
   } satisfies IntrinsicNodeStyleProps;
 
   const rowTitle = {
     fontSize: 44,
     y: 20,
-    x: 150,
+    x: 150
   };
 
   function Block(props) {
@@ -39,7 +39,7 @@ const FlexColumnPage = () => {
       width: randSize(),
       height: 80,
       x: 5,
-      color: "#1769aa",
+      color: "#1769aa"
     };
 
     return <View {...props} style={styles} />;

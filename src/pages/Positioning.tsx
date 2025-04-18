@@ -20,9 +20,9 @@ const PositioningPage = () => {
     xNested: 0,
     bar2: {
       direction: "up",
-      v: "10%",
+      v: "10%"
     },
-    bar3: "10%",
+    bar3: "10%"
   });
 
   setTimeout(() => {
@@ -31,7 +31,7 @@ const PositioningPage = () => {
       xD: prevState.xD + 200,
       xC: prevState.xC + 100,
       xB: prevState.xB + 50,
-      xA: prevState.xA + 25,
+      xA: prevState.xA + 25
     }));
   }, 4000);
 
@@ -41,7 +41,7 @@ const PositioningPage = () => {
     setInterval(() => {
       setState((prevState) => ({
         ...prevState,
-        yNested: prevState.yNested === 0 ? 50 : 0,
+        yNested: prevState.yNested === 0 ? 50 : 0
       }));
     }, 2000)
   );
@@ -50,7 +50,7 @@ const PositioningPage = () => {
     setInterval(() => {
       setState((prevState) => ({
         ...prevState,
-        xNested: prevState.xNested === 0 ? 150 : 0,
+        xNested: prevState.xNested === 0 ? 150 : 0
       }));
     }, 1000)
   );
@@ -59,7 +59,7 @@ const PositioningPage = () => {
     setInterval(() => {
       setState((prevState) => ({
         ...prevState,
-        bar3: Math.ceil(Math.random() * 96) + "",
+        bar3: Math.ceil(Math.random() * 96) + ""
       }));
     }, 2000)
   );
@@ -76,12 +76,8 @@ const PositioningPage = () => {
             ...prevState.bar2,
             v: newV + "%",
             direction:
-              newV >= 90
-                ? "down"
-                : newV <= 10
-                  ? "up"
-                  : prevState.bar2.direction,
-          },
+              newV >= 90 ? "down" : newV <= 10 ? "up" : prevState.bar2.direction
+          }
         };
       });
     }, 400)
@@ -153,7 +149,7 @@ const PositioningPage = () => {
                 x={state().xNested}
                 transition={{
                   x: { duration: 300, easing: "ease" },
-                  y: { duration: 300, easing: "ease" },
+                  y: { duration: 300, easing: "ease" }
                 }}
                 color="#065f46"
               />

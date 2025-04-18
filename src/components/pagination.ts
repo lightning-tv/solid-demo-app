@@ -22,6 +22,6 @@ export function createInfiniteScroll(fetcher: (page: number) => Promise<any>) {
     setPage,
     setPages,
     end,
-    setEnd,
+    setEnd
   };
 }

@@ -47,11 +47,11 @@ export function convertItemsToTiles(items: any[] = []): Tile[] {
     item,
     entityInfo: {
       type: item.media_type || "people",
-      id: item.id,
+      id: item.id
     },
     heroContent: {
       title: item.title || item.name,
-      description: item.overview,
-    },
+      description: item.overview
+    }
   }));
 }

@@ -1,7 +1,7 @@
 import { createEffect, on, createSignal } from "solid-js";
 import { ElementNode, activeElement, View, Text } from "@lightningtv/solid";
-import { LazyRow, LazyColumn } from "@lightningtv/solid/primitives";
-import { Hero, TitleRow } from "../components";
+import { LazyRow, LazyColumn, useFocusStack } from "@lightningtv/solid/primitives";
+import { Hero, TitleRow, AssetPanel } from "../components";
 import styles from "../styles";
 import { setGlobalBackground } from "../state";
 import ContentBlock from "../components/ContentBlock";
@@ -9,6 +9,8 @@ import { debounce } from "@solid-primitives/scheduled";
 
 const TMDB = (props) => {
   const [heroContent, setHeroContent] = createSignal({});
+  const [openPanel, setOpenPanel] = createSignal(false);
+  const { storeFocus, restoreFocus } = useFocusStack();
   let contentBlock,
     solidLogo,
     firstRun = true;
@@ -24,7 +26,7 @@ const TMDB = (props) => {
       activeElement,
       (elm) => {
         if (!elm) return;
-        const item = elm.item || {} as any;
+        const item = elm.item || ({} as any);
 
         if (firstRun) {
           item.backdrop && setGlobalBackground(item.backdrop);
@@ -54,7 +56,7 @@ const TMDB = (props) => {
   }
 
   return (
-    <>
+    <View forwardFocus={2}>
       <View
         ref={solidLogo}
         width={300}
@@ -94,6 +96,7 @@ const TMDB = (props) => {
         each={props.data.rows}
         id="BrowseColumn"
         onSelectedChanged={onSelectedChanged}
+        onEnter={() => setOpenPanel(true)}
         autofocus={props.data.rows[0].items()}
         gap={40}
         transition={{ y: { duration: 300, easing: "ease-in-out" } }}
@@ -122,7 +125,12 @@ const TMDB = (props) => {
           )
         }
       </LazyColumn>
-    </>
+      <AssetPanel onFocus={storeFocus} close={() => {
+        setOpenPanel(false);
+        restoreFocus();
+        return true;
+      }} open={openPanel()} item={heroContent()} />
+    </View>
   );
 };
 

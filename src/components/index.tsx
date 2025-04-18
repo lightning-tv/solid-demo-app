@@ -3,16 +3,23 @@ import {
   View,
   Text,
   type NodeProps,
-  Dynamic,
+  Dynamic
 } from "@lightningtv/solid";
-import { Row } from "@lightningtv/solid/primitives";
-import { createSignal, For, Index } from "solid-js";
+import { Column, Row } from "@lightningtv/solid/primitives";
+import { createEffect, createSignal, For, Index } from "solid-js";
 import styles, { buttonStyles } from "../styles";
 import { type Tile } from "../api/formatters/ItemFormatter";
 import { LazyRow } from "@lightningtv/solid/primitives";
 
 export function Thumbnail(props: IntrinsicNodeProps & { item: Tile }) {
-  return <View {...props} src={props.item.src} item={props.item} style={styles.Thumbnail} />;
+  return (
+    <View
+      {...props}
+      src={props.item.src}
+      item={props.item}
+      style={styles.Thumbnail}
+    />
+  );
 }
 
 export function FocusRing(props: IntrinsicNodeProps) {
@@ -40,16 +47,45 @@ export function Button(props) {
   );
 }
 
+export function AssetPanel(props) {
+  let panelRef, actionRef;
+
+  createEffect(() => {
+    if (props.open) {
+      panelRef.animate({
+        x: 1470,
+      }, { duration: 400, easing: "ease-in-out" }).start();
+      actionRef.setFocus();
+    } else if (panelRef.rendered) {
+      panelRef.animate({
+        x: 1920,
+      }, { duration: 400, easing: "ease-in-out" }).start();
+    }
+  })
+
+  return (
+    <View {...props} x={1920} ref={panelRef} color={"#000000"} width={450} height={1080} zIndex={5}>
+      <Text x={75} y={50} fontSize={32}>{props.item?.title}</Text>
+
+      <Column ref={actionRef} onLeft={props.close} onBack={props.close} x={75} y={200}>
+        <Button onEnter={props.close}>Record</Button>
+        <Button onEnter={props.close}>Watch</Button>
+        <Button onEnter={props.close}>Close</Button>
+      </Column>
+    </View>
+  );
+}
+
 const heroTransition = {
   duration: 300,
-  easing: "cubic-bezier(0.20, 1.00, 0.80, 1.00)",
+  easing: "cubic-bezier(0.20, 1.00, 0.80, 1.00)"
 };
 
 const titleRowStyles = {
   fontFamily: "Raleway",
   fontSize: 24,
   height: 32,
-  lineHeight: 32,
+  lineHeight: 32
 };
 
 export function TitleRow(props: TileRowProps) {
@@ -58,12 +94,7 @@ export function TitleRow(props: TileRowProps) {
       <Text skipFocus style={titleRowStyles}>
         {props.title}
       </Text>
-      <LazyRow
-        gap={20}
-        upCount={11}
-        each={props.items}
-        y={50}
-      >
+      <LazyRow gap={20} upCount={11} each={props.items} y={50}>
         {(item) => (
           <Dynamic component={typeToComponent[props.row.type]} item={item()} />
         )}
@@ -80,9 +111,9 @@ const posterStyles = {
   color: "#b0b0b0",
   //borderRadius: 8,
   transition: {
-    scale: { duration: 200, easing: "linear" },
+    scale: { duration: 200, easing: "linear" }
   },
-  $focus: { scale: 1.1, color: "#fff" },
+  $focus: { scale: 1.1, color: "#fff" }
 };
 
 export function Poster(props: NodeProps) {
@@ -110,12 +141,12 @@ const posterTitleStyles = {
   alpha: 0,
   $focus: {
     alpha: 1,
-    y: 288,
+    y: 288
   },
   transition: {
     y: heroTransition,
-    alpha: heroTransition,
-  },
+    alpha: heroTransition
+  }
 } as const;
 
 export function PosterTitle(props: NodeProps & { title: string }) {
@@ -142,14 +173,14 @@ const heroStyles = {
   colorBottom: "#000",
   //borderRadius: 8,
   transition: {
-    scale: heroTransition,
+    scale: heroTransition
   },
-  $focus: { scale: 1.05 },
+  $focus: { scale: 1.05 }
 };
 
 const heroTextStyles = {
   fontFamily: "Raleway",
-  contain: "width",
+  contain: "width"
 } as const;
 
 export function Hero(
@@ -203,7 +234,7 @@ export function Hero(
 const typeToComponent = {
   Poster: Poster,
   Hero: Hero,
-  PosterTitle: PosterTitle,
+  PosterTitle: PosterTitle
 };
 
 const BlockStyle = {
@@ -211,8 +242,8 @@ const BlockStyle = {
   border: { width: 0, color: "#000000" },
   $focus: {
     border: { width: 4, color: "#FFF" },
-    alpha: 1,
-  },
+    alpha: 1
+  }
 };
 export function Block(props) {
   return (

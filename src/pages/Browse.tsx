@@ -4,13 +4,13 @@ import {
   on,
   createSignal,
   Show,
-  For,
+  For
 } from "solid-js";
 import {
   ElementNode,
   View,
   activeElement,
-  assertTruthy,
+  assertTruthy
 } from "@lightningtv/solid";
 import { Column } from "@lightningtv/solid/primitives";
 import { useNavigate, usePreloadRoute } from "@solidjs/router";
@@ -47,7 +47,7 @@ const Browse = (props) => {
       (elm) => {
         if (!elm) return;
 
-        const item = elm.item || {} as any;
+        const item = elm.item || ({} as any);
 
         if (firstRun) {
           // no content set yet, set right away
