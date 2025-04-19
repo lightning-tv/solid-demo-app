@@ -4,6 +4,7 @@ import legacy from "@vitejs/plugin-legacy";
 import devtools from "solid-devtools/vite";
 import hexColorTransform from "@lightningtv/vite-hex-transform";
 import { configDefaults } from "vitest/config";
+import path from "path";
 
 export default defineConfig({
   plugins: [
@@ -44,7 +45,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      theme: "@lightningjs/l3-ui-theme-base"
+      theme: path.resolve(__dirname, "src/theme.ts")
     },
     dedupe: [
       "solid-js",

@@ -24,10 +24,8 @@
   "license": "ISC",
   "dependencies": {
     "@firebolt-js/sdk": "^1.5.0",
-    "@lightningjs/l3-ui-theme-base": "^0.3.3",
     "@lightningjs/renderer": "3.0.0-beta7",
     "@lightningtv/core": "3.0.0-3",
-    "@lightningtv/l3-ui-theme-base": "^1.0.0",
     "@lightningtv/solid": "3.0.0-3",
     "@solid-primitives/list": "^0.1.0",
     "@solid-primitives/scheduled": "^1.5.0",

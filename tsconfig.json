@@ -14,7 +14,7 @@
     "noImplicitAny": false,
     "customConditions": ["@lightningtv/source"],
     "paths": {
-      "theme": ["./node_modules/@lightningjs/l3-ui-theme-base"]
-    },
+      "theme": ["./src/theme.ts"]
+    }
   }
 }
