@@ -1,6 +1,6 @@
-import { createEffect, on, createSignal, For, Index } from "solid-js";
-import { ElementNode, View, Text } from "@lightningtv/solid";
-import { LazyUp, Column, Row } from "@lightningtv/solid/primitives";
+import { createSignal, For, Index } from "solid-js";
+import { View, Text } from "@lightningtv/solid";
+import { LazyRow, Column, Row } from "@lightningtv/solid/primitives";
 import { List } from "@solid-primitives/list";
 import { Poster } from "../components";
 import { setGlobalBackground } from "../state";
@@ -103,11 +103,9 @@ const Loops = (props) => {
 
         <View x={160} height={300} forwardFocus={1} marginTop={30}>
           <Text skipFocus style={titleRowStyles}>
-            LazyUp Loop
+            Lazy Row Loop
           </Text>
-          <LazyUp
-            component={Row}
-            direction="row"
+          <LazyRow
             display="block"
             gap={20}
             upCount={5}
@@ -115,7 +113,7 @@ const Loops = (props) => {
             y={50}
           >
             {(item, index) => <Poster x={index * 210} {...item()} />}
-          </LazyUp>
+          </LazyRow>
         </View>
 
         <View x={160} height={300} forwardFocus={1} marginTop={30}>

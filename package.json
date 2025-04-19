@@ -26,9 +26,9 @@
     "@firebolt-js/sdk": "^1.5.0",
     "@lightningjs/l3-ui-theme-base": "^0.3.3",
     "@lightningjs/renderer": "3.0.0-beta7",
-    "@lightningtv/core": "3.0.0-2",
+    "@lightningtv/core": "3.0.0-3",
     "@lightningtv/l3-ui-theme-base": "^1.0.0",
-    "@lightningtv/solid": "3.0.0-2",
+    "@lightningtv/solid": "3.0.0-3",
     "@solid-primitives/list": "^0.1.0",
     "@solid-primitives/scheduled": "^1.5.0",
     "@solidjs/router": "^0.15.3",
@@ -53,13 +53,6 @@
     "vite": "^6.2.3",
     "vite-bundle-visualizer": "^1.2.1",
     "vite-plugin-solid": "^2.11.6"
-  },
-  "pnpm": {
-    "overrides": {
-      "@lightningtv/core": "$@lightningtv/core",
-      "@lightningtv/solid": "$@lightningtv/solid",
-      "@lightningjs/renderer": "$@lightningjs/renderer"
-    }
   },
   "lint-staged": {
     "*.{ts,tsx}": [

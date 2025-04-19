@@ -4,11 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-overrides:
-  '@lightningtv/core': 3.0.0-2
-  '@lightningtv/solid': 3.0.0-2
-  '@lightningjs/renderer': 3.0.0-beta7
-
 importers:
 
   .:
@@ -23,14 +18,14 @@ importers:
         specifier: 3.0.0-beta7
         version: 3.0.0-beta7
       '@lightningtv/core':
-        specifier: 3.0.0-2
-        version: 3.0.0-2(@lightningjs/renderer@3.0.0-beta7)
+        specifier: 3.0.0-3
+        version: 3.0.0-3(@lightningjs/renderer@3.0.0-beta7)
       '@lightningtv/l3-ui-theme-base':
         specifier: ^1.0.0
         version: 1.0.0
       '@lightningtv/solid':
-        specifier: 3.0.0-2
-        version: 3.0.0-2(@lightningjs/renderer@3.0.0-beta7)(@solidjs/router@0.15.3(solid-js@1.9.5))(solid-js@1.9.5)
+        specifier: 3.0.0-3
+        version: 3.0.0-3(@lightningjs/renderer@3.0.0-beta7)(@solidjs/router@0.15.3(solid-js@1.9.5))(solid-js@1.9.5)
       '@solid-primitives/list':
         specifier: ^0.1.0
         version: 0.1.0(solid-js@1.9.5)
@@ -956,18 +951,18 @@ packages:
     resolution: {integrity: sha512-yY5sbDeK+hEPdMohKdAC+TyEEkCaFhNm5oYKRIbA/tAGl0qqhq7qOguUkbLQEfYy7BtUmDLyjBt6sI73a+oypQ==}
     engines: {node: '>= 18.0.0', npm: '>= 10.0.0', pnpm: '>= 8.9.2'}
 
-  '@lightningtv/core@3.0.0-2':
-    resolution: {integrity: sha512-aDIQlCp1+oK6rQL9ZSn4y/yTK7cIaiW1fOoKPinXKUJKiuU+fIOIyu2kAeNW/AMTl/YjTdMqXuwtW1Tcy5F65g==}
+  '@lightningtv/core@3.0.0-3':
+    resolution: {integrity: sha512-sJsek0PexD97plIRio61bdpMG7lVXU4Uwu7aVEhq8+aqOiIN9XSokN9ku/YVV3pdr5PrndxUFkrpBOHHt1awtA==}
     peerDependencies:
-      '@lightningjs/renderer': 3.0.0-beta7
+      '@lightningjs/renderer': ^3.0.0-beta6
 
   '@lightningtv/l3-ui-theme-base@1.0.0':
     resolution: {integrity: sha512-yxjhkNfcN4cDwsrD5Nd1jRqxM/ZetqVG9EppCIEbqaECflw11RI0GvhS7+Wpi4R++4lqsQEYqTN+UVRs56iTMQ==}
 
-  '@lightningtv/solid@3.0.0-2':
-    resolution: {integrity: sha512-S4Z08Hu9BO4G3UX6QoYxvZIJEj8YmkWCNLta48d7qepytWq4t5/dVwIZqrc1GGJh3aNFygDFJC0+B2aYbvxnmg==}
+  '@lightningtv/solid@3.0.0-3':
+    resolution: {integrity: sha512-e5BTEw9gms9QX9O0gW4KU/MYQBzUs9geao3NSqOK1eEcvwQwFvQ/PtiOEl5JRMfAhB1ls35eiUQWN066H1t7RA==}
     peerDependencies:
-      '@lightningjs/renderer': 3.0.0-beta7
+      '@lightningjs/renderer': ^3.0.0-beta3
       '@solidjs/router': ^0.15.1
       solid-js: '*'
 
@@ -3301,16 +3296,16 @@ snapshots:
 
   '@lightningjs/renderer@3.0.0-beta7': {}
 
-  '@lightningtv/core@3.0.0-2(@lightningjs/renderer@3.0.0-beta7)':
+  '@lightningtv/core@3.0.0-3(@lightningjs/renderer@3.0.0-beta7)':
     dependencies:
       '@lightningjs/renderer': 3.0.0-beta7
 
   '@lightningtv/l3-ui-theme-base@1.0.0': {}
 
-  '@lightningtv/solid@3.0.0-2(@lightningjs/renderer@3.0.0-beta7)(@solidjs/router@0.15.3(solid-js@1.9.5))(solid-js@1.9.5)':
+  '@lightningtv/solid@3.0.0-3(@lightningjs/renderer@3.0.0-beta7)(@solidjs/router@0.15.3(solid-js@1.9.5))(solid-js@1.9.5)':
     dependencies:
       '@lightningjs/renderer': 3.0.0-beta7
-      '@lightningtv/core': 3.0.0-2(@lightningjs/renderer@3.0.0-beta7)
+      '@lightningtv/core': 3.0.0-3(@lightningjs/renderer@3.0.0-beta7)
       '@solid-primitives/event-listener': 2.4.0(solid-js@1.9.5)
       '@solid-primitives/mouse': 2.1.0(solid-js@1.9.5)
       '@solid-primitives/scheduled': 1.5.0(solid-js@1.9.5)
