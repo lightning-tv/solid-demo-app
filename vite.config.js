@@ -6,7 +6,10 @@ import hexColorTransform from "@lightningtv/vite-hex-transform";
 import { configDefaults } from "vitest/config";
 import path from "path";
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
+  define: {
+    __DEV__: mode !== "production"
+  },
   plugins: [
     hexColorTransform({
       include: ["src/**/*.{ts,tsx,js,jsx}"]
@@ -76,4 +79,4 @@ export default defineConfig({
     exclude: [...configDefaults.exclude, "packages/template/*"],
     globals: true
   }
-});
+}));
