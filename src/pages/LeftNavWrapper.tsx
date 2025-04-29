@@ -26,9 +26,10 @@ declare module "@lightningtv/solid" {
 }
 
 const LeftNavWrapper = (props) => {
-  
+
   const navigate = useNavigate();
   const announcer = useAnnouncer();
+  announcer.debug = true;
   announcer.enabled = false;
 
   let navDrawer, lastFocused;

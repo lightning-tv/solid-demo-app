@@ -84,7 +84,9 @@ const Entity = (props) => {
    */
   return (
     <Show when={props.data.entity()}>
-      <View x={170} onUp={() => entityActions.setFocus()} onEscape={onEscape}>
+      <View x={170} onUp={() => entityActions.setFocus()} onEscape={onEscape}
+        announce={[props.data.entity().heroContent.title, 'PAUSE-1', props.data.entity().heroContent.description]}
+        announceContext="Press LEFT or RIGHT to review items, press UP or DOWN to review categories, press CENTER to select">
         <ContentBlock
           y={260}
           content={props.data.entity().heroContent}
@@ -121,6 +123,7 @@ const Entity = (props) => {
             <TileRow
               onFocus={onRowFocus}
               onEnter={onEnter}
+              announce={'Recommendations'}
               items={props.data.recommendations()}
               width={1620}
             />
@@ -128,6 +131,7 @@ const Entity = (props) => {
               Cast and Crew
             </Text>
             <TileRow
+              announce={'Cast and Crew'}
               onFocus={onRowFocusAnimate}
               onEnter={onEnter}
               items={props.data.credits()}

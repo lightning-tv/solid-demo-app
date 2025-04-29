@@ -15,8 +15,10 @@ export function Thumbnail(props: IntrinsicNodeProps & { item: Tile }) {
   return (
     <View
       {...props}
+      id="thumbnail"
       src={props.item.src}
       item={props.item}
+      announce={[props.item.title, 'PAUSE-1', props.item.overview]}
       style={styles.Thumbnail}
     />
   );
@@ -34,14 +36,14 @@ export interface TileRowProps extends IntrinsicNodeProps {
 export function TileRow(props: TileRowProps) {
   return (
     <Row {...props} style={styles.Row}>
-      <Index each={props.items}>{(item) => <Thumbnail item={item()} />}</Index>
+      <Index each={props.items}>{(item, index) => <Thumbnail item={item()} announceContext={`${index + 1} of ${props.items.length}`} />}</Index>
     </Row>
   );
 }
 
 export function Button(props) {
   return (
-    <View {...props} forwardStates style={buttonStyles.container}>
+    <View {...props} announce={[props.children, 'button']} forwardStates style={buttonStyles.container}>
       <Text style={buttonStyles.text}>{props.children}</Text>
     </View>
   );
