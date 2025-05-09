@@ -15,8 +15,8 @@ importers:
         specifier: 3.0.0-beta7
         version: 3.0.0-beta7
       '@lightningtv/core':
-        specifier: 3.0.0-3
-        version: 3.0.0-3(@lightningjs/renderer@3.0.0-beta7)
+        specifier: 3.0.0-6
+        version: 3.0.0-6(@lightningjs/renderer@3.0.0-beta7)
       '@lightningtv/solid':
         specifier: 3.0.0-5
         version: 3.0.0-5(@lightningjs/renderer@3.0.0-beta7)(@solidjs/router@0.15.3(solid-js@1.9.5))(solid-js@1.9.5)
@@ -911,8 +911,8 @@ packages:
     resolution: {integrity: sha512-yY5sbDeK+hEPdMohKdAC+TyEEkCaFhNm5oYKRIbA/tAGl0qqhq7qOguUkbLQEfYy7BtUmDLyjBt6sI73a+oypQ==}
     engines: {node: '>= 18.0.0', npm: '>= 10.0.0', pnpm: '>= 8.9.2'}
 
-  '@lightningtv/core@3.0.0-3':
-    resolution: {integrity: sha512-sJsek0PexD97plIRio61bdpMG7lVXU4Uwu7aVEhq8+aqOiIN9XSokN9ku/YVV3pdr5PrndxUFkrpBOHHt1awtA==}
+  '@lightningtv/core@3.0.0-6':
+    resolution: {integrity: sha512-DMmRyzfpY4P40/9/sTOV6It5QK5psfZyO/8B3/tTkpN1KlUDlrcXHq7yDXO76ThFTpRpby58b80Bq2uMkHm1ag==}
     peerDependencies:
       '@lightningjs/renderer': ^3.0.0-beta6
 
@@ -3058,14 +3058,14 @@ snapshots:
 
   '@lightningjs/renderer@3.0.0-beta7': {}
 
-  '@lightningtv/core@3.0.0-3(@lightningjs/renderer@3.0.0-beta7)':
+  '@lightningtv/core@3.0.0-6(@lightningjs/renderer@3.0.0-beta7)':
     dependencies:
       '@lightningjs/renderer': 3.0.0-beta7
 
   '@lightningtv/solid@3.0.0-5(@lightningjs/renderer@3.0.0-beta7)(@solidjs/router@0.15.3(solid-js@1.9.5))(solid-js@1.9.5)':
     dependencies:
       '@lightningjs/renderer': 3.0.0-beta7
-      '@lightningtv/core': 3.0.0-3(@lightningjs/renderer@3.0.0-beta7)
+      '@lightningtv/core': 3.0.0-6(@lightningjs/renderer@3.0.0-beta7)
       '@solid-primitives/event-listener': 2.4.0(solid-js@1.9.5)
       '@solid-primitives/mouse': 2.1.2(solid-js@1.9.5)
       '@solid-primitives/scheduled': 1.5.0(solid-js@1.9.5)

@@ -25,7 +25,7 @@
   "dependencies": {
     "@firebolt-js/sdk": "^1.5.0",
     "@lightningjs/renderer": "3.0.0-beta7",
-    "@lightningtv/core": "3.0.0-3",
+    "@lightningtv/core": "3.0.0-6",
     "@lightningtv/solid": "3.0.0-5",
     "@solid-primitives/list": "^0.1.0",
     "@solid-primitives/scheduled": "^1.5.0",
