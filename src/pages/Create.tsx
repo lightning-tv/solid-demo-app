@@ -154,6 +154,7 @@ const CreatePage = () => {
   }
 
   return (
+    <>
     <View style={OverviewContainer}>
       <Text style={Title}>Title of the Page</Text>
       <View style={SublineContainer}>
@@ -182,6 +183,13 @@ const CreatePage = () => {
       />
       <PosTest x={100} y={100} />
     </View>
+    <View x={1100} y={50} width={200} height={200} linearGradient={{
+        colors: [0xffc107ff, 0xff9800ff, 0xff5252ff],
+        angle: 4.1,
+        stops: [0, 0.5, 1]
+      }}>
+      </View>
+    </>
   );
 };
 

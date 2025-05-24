@@ -105,7 +105,6 @@ const LeftNavWrapper = (props) => {
           {lastKey()}
         </Text>
       </View>
-
       <Text x={270} y={20} fontSize={24} contain="width" width={800}>
         {lastError()}
       </Text>

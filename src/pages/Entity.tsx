@@ -18,6 +18,7 @@ import * as player from "../video";
 
 const Entity = (props) => {
   const [backdropAlpha, setBackdropAlpha] = createSignal(0);
+  const [playFocused, setPlayFocused] = createSignal(false);
   const navigate = useNavigate();
 
   createEffect(
@@ -89,6 +90,7 @@ const Entity = (props) => {
         announceContext="Press LEFT or RIGHT to review items, press UP or DOWN to review categories, press CENTER to select">
         <ContentBlock
           y={260}
+          marquee={playFocused()}
           content={props.data.entity().heroContent}
         ></ContentBlock>
         <Row
@@ -101,7 +103,7 @@ const Entity = (props) => {
           onDown={() => columnRef.setFocus()}
           onEnter={onEnterTrailer}
         >
-          <Button width={300} autofocus={props.data.entity()}>
+          <Button width={300} autofocus={props.data.entity()} onFocusChanged={setPlayFocused}>
             Play
           </Button>
           <Button width={300}>Resume</Button>
