@@ -96,7 +96,7 @@ export function TitleRow(props: TileRowProps) {
       <Text skipFocus style={titleRowStyles}>
         {props.title}
       </Text>
-      <LazyRow gap={20} upCount={11} each={props.items} y={50}>
+      <LazyRow gap={20} upCount={11} sync each={props.items} y={50}>
         {(item) => (
           <Dynamic component={typeToComponent[props.row.type]} item={item()} />
         )}

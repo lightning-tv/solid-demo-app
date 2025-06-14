@@ -82,6 +82,7 @@ const logFps = true;
 Config.debug = false;
 // Config.keyDebug = true;
 Config.animationsEnabled = animationsEnabled === "true";
+Config.simpleAnimationsEnabled = true;
 Config.fontSettings.fontFamily = "Roboto";
 Config.fontSettings.color = "#f6f6f6";
 Config.fontSettings.fontSize = 32;
@@ -113,23 +114,23 @@ if (rendererMode === "canvas") {
 const { renderer, render } = createRenderer();
 loadFonts(fonts);
 // Prepare for RC3 of Renderer
-import {
-  Rounded,
-  RoundedWithBorder,
-  RoundedWithShadow,
-  RoundedWithBorderAndShadow,
-  RadialGradient,
-  LinearGradient,
-  HolePunch,
-} from '@lightningjs/renderer/webgl/shaders';
-const shManager = renderer.stage.shManager;
-shManager.registerShaderType('rounded', Rounded)
-shManager.registerShaderType('roundedWithBorder', RoundedWithBorder)
-shManager.registerShaderType('roundedWithShadow', RoundedWithShadow)
-shManager.registerShaderType('roundedWithBorderWithShadow', RoundedWithBorderAndShadow)
-shManager.registerShaderType('radialGradient', RadialGradient)
-shManager.registerShaderType('linearGradient', LinearGradient)
-shManager.registerShaderType('holePunch', HolePunch)
+// import {
+//   Rounded,
+//   RoundedWithBorder,
+//   RoundedWithShadow,
+//   RoundedWithBorderAndShadow,
+//   RadialGradient,
+//   LinearGradient,
+//   HolePunch,
+// } from '@lightningjs/renderer/webgl/shaders';
+// const shManager = renderer.stage.shManager;
+// shManager.registerShaderType('rounded', Rounded)
+// shManager.registerShaderType('roundedWithBorder', RoundedWithBorder)
+// shManager.registerShaderType('roundedWithShadow', RoundedWithShadow)
+// shManager.registerShaderType('roundedWithBorderWithShadow', RoundedWithBorderAndShadow)
+// shManager.registerShaderType('radialGradient', RadialGradient)
+// shManager.registerShaderType('linearGradient', LinearGradient)
+// shManager.registerShaderType('holePunch', HolePunch)
 render(() => (
   <FocusStackProvider>
     <HashRouter root={(props) => <App {...props} />}>

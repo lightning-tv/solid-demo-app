@@ -10,7 +10,7 @@ const Default = () => {
 
   setTimeout(() => {
     setY(1080 - 50 - 200);
-  }, 750);
+  }, 1750);
 
   function onStart() {
     console.log("start");
@@ -50,6 +50,7 @@ const Default = () => {
         y={y()}
         color="#93c5fd"
         transition={{ y: { duration: 1000 } }}
+        // This doesn't work with simple animation
         onAnimation={{
           animating: onStart,
           stopped: onEnd
