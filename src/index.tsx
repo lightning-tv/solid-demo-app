@@ -73,6 +73,7 @@ if (numWorkers) {
 
 const deviceLogicalPixelRatio = {
   "720": 0.666667,
+  "medium": 0.8,
   "1080": 1,
   "4k": 2,
   default: window.innerHeight / 1080
