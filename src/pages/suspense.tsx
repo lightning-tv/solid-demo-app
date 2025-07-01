@@ -2,44 +2,6 @@ import * as s from "solid-js";
 import * as lng from "@lightningtv/solid";
 import {setGlobalBackground} from "../state";
 
-/**
- * Tracks all resources inside a component and renders a fallback until they are all resolved.
- * 
- * ```tsx
- * const [data] = createResource(async () => ...);
- *
- * <Suspense fallback={<LoadingIndicator />}>
- *   <view>
- *     <text>{data()}</text>
- *   </view>
- * </Suspense>
- * ```
- * 
- * This is a modified version of the SolidJS Suspense component that works with Lightning.
- * 
- * @see https://docs.solidjs.com/reference/components/suspense
- */
-function Suspense(props: {
-  fallback?: s.JSX.Element;
-  children: s.JSX.Element;
-}): s.JSX.Element {
-  
-  let children: s.JSX.Element;
-
-  let suspense = s.Suspense({
-    get children() {
-      return [children = s.children(() => props.children) as any];
-    },
-  }) as any as () => s.JSX.Element;
-
-  return <>
-    {suspense() ?? props.fallback}
-    <view hidden>
-      {suspense() ? null : children}
-    </view>
-  </>
-}
-
 function fadeIn(el: lng.ElementNode) {
   el.alpha = 0;
   el
@@ -66,7 +28,7 @@ export default function SuspensePage() {
 
   return <>
     <view forwardFocus={0}>
-      <Suspense fallback={<>
+      <s.Suspense fallback={<>
         <view
           onCreate={fadeIn}
           onDestroy={fadeOut}
@@ -78,12 +40,14 @@ export default function SuspensePage() {
       </>}>
         <view
           autofocus
+          preserve
           onCreate={fadeIn}
-          onDestroy={fadeOut}
+          onRender={fadeIn}
+          onRemove={fadeOut}
           onEnter={() => {refetch()}}
           display="flex"
           center
-          ref={() => {
+          ref={(elm) => {
 
             // Count will persist even after refetch
             const [count, setCount] = s.createSignal(0);
@@ -92,8 +56,11 @@ export default function SuspensePage() {
               const interval = setInterval(() => {
                 setCount(prev => prev + 1);
               }, 200);
-          
-              s.onCleanup(() => clearInterval(interval));
+
+              s.onCleanup(() => {
+                clearInterval(interval)
+                elm.destroy();
+              });
             });
 
             // This effect will be suspensed when the data is loading
@@ -104,7 +71,7 @@ export default function SuspensePage() {
         >
           <text>Hello World{'!'.repeat(data() ?? 0)} (Press Enter to refetch)</text>
         </view>
-      </Suspense>
+      </s.Suspense>
     </view>
   </>
 };
