@@ -31,7 +31,7 @@ const FlexGrow = () => {
 
   function Block(props) {
     const styles = {
-      width: props.flexGrow ? undefined : 200, // Allow flexible width if flexGrow exists
+      width: props.flexGrow ? 0 : 200, // Allow flexible width if flexGrow exists
       height: 100,
       y: 5
     };

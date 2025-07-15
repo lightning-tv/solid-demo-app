@@ -2,6 +2,7 @@ import { createSignal, createSelector, For, children, createEffect } from "solid
 import { ElementNode, View, Text, assertTruthy } from "@lightningtv/solid";
 import { Column, Row, useFocusStack } from "@lightningtv/solid/primitives";
 import { useNavigate } from "@solidjs/router";
+import { Announcer } from "@lightningtv/solid/primitives";
 import styles from "../styles";
 
 const Portal = (props) => {
@@ -102,6 +103,11 @@ const Portal = (props) => {
       title: "TMDB",
       id: "examples/tmdb",
       description: "TMDB Example"
+    },
+    {
+      title: "Login and Forms",
+      id: "login",
+      description: "Login with forms Example"
     },
     {
       title: "Grid Primitive for Layout",
@@ -219,6 +225,10 @@ const Portal = (props) => {
       restoreFocus();
     }
   });
+
+  setTimeout(() => {
+    Announcer.speak('Welcome to the examples');
+  }, 1000);
 
   return (
     <>

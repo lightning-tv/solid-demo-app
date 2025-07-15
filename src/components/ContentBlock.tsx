@@ -1,4 +1,5 @@
 import { View, Text } from "@lightningtv/solid";
+import { Marquee } from "@lightningtv/solid/primitives";
 import { For, Show } from "solid-js";
 import theme from "theme";
 
@@ -19,9 +20,8 @@ const HeadlineStyles = {
   fontWeight: 700,
   maxLines: 1,
   width: blockWidth,
-  contain: "width"
 };
-const Headline = (props) => <Text {...props} style={HeadlineStyles}></Text>;
+const Headline = (props) => <Marquee {...props} textProps={HeadlineStyles}></Marquee>;
 
 const DescriptionStyles = {
   ...theme.typography.body1,
@@ -99,7 +99,7 @@ const Metadata = (props) => (
 
 const ContentBlock = (props) => (
   <View id="contentBlock" style={ContentBlockStyle} {...props}>
-    <Headline>{props.content.title}</Headline>
+    <Headline marquee={props.marquee}>{props.content.title}</Headline>
     <Description>{props.content.description}</Description>
     <Show when={props.content.voteCount}>
       <Metadata
