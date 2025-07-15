@@ -5,5 +5,9 @@
   "title": "Solid Demo App",
   "main": "index.html",
   "icon": "icon.png",
-  "largeIcon": "largeIcon.png"
+  "largeIcon": "largeIcon.png",
+  "disableBackHistoryAPI": true,
+  "accessibility": {
+    "supportsAudioGuidance": true
+  }
 }

@@ -94,22 +94,25 @@ export default function NavDrawer(props) {
         onFocus={onFocus}
         onBlur={onBlur}
         style={styles.Column}
+        announce={"Main Menu"}
         scroll="none"
       >
         <NavButton
           onEnter={() => handleNavigate("/browse/all")}
+          announce={["Trending Browse", "button"]}
           icon="trending"
         >
           Trending
         </NavButton>
-        <NavButton icon="movie" onEnter={() => handleNavigate("/browse/movie")}>
+        <NavButton icon="movie" announce={["Movies Browse", "button"]} onEnter={() => handleNavigate("/browse/movie")}>
           Movies
         </NavButton>
-        <NavButton icon="tv" onEnter={() => handleNavigate("/browse/tv")}>
+        <NavButton icon="tv" announce={["TV Browse", "button"]} onEnter={() => handleNavigate("/browse/tv")}>
           TV
         </NavButton>
         <NavButton
           icon="experiment"
+          announce={["Examples", "button"]}
           onEnter={() => handleNavigate("/examples")}
         >
           Examples

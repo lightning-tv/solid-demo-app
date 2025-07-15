@@ -73,6 +73,7 @@ if (numWorkers) {
 
 const deviceLogicalPixelRatio = {
   "720": 0.666667,
+  "medium": 0.8,
   "1080": 1,
   "4k": 2,
   default: window.innerHeight / 1080
@@ -82,6 +83,7 @@ const logFps = true;
 Config.debug = false;
 // Config.keyDebug = true;
 Config.animationsEnabled = animationsEnabled === "true";
+Config.simpleAnimationsEnabled = true;
 Config.fontSettings.fontFamily = "Roboto";
 Config.fontSettings.color = "#f6f6f6";
 Config.fontSettings.fontSize = 32;

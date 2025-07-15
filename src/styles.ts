@@ -56,14 +56,20 @@ export default {
     zIndex: 2
   },
   Thumbnail: {
-    borderRadius: roundPoster ? 16 : 0,
     width: 185,
     height: 278,
     scale: 1,
     zIndex: 2,
-    transition: { scale: { duration: 250, easing: "ease-in-out" } },
+    transition: {
+      scale: { duration: 250, easing: "linear" },
+      border: { duration: 250, easing: "linear" },
+    },
+    borderRadius: roundPoster ? 16 : 0,
     border: { width: 0, color: 0x00000000 },
-    $focus: { scale: 1.1, border: { color: "#2c4f7cE8", width: 8 } }
+    $focus: {
+      scale: 1.1,
+      border: { color: "#2c4f7cE8", width: 8 },
+    }
   },
   FocusRing: {
     borderRadius: 16,
