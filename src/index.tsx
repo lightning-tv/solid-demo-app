@@ -59,6 +59,7 @@ const SuperFlexPage = lazy(() => import("./pages/SuperFlex"));
 const Entity = lazy(() => import("./pages/Entity"));
 const People = lazy(() => import("./pages/People"));
 const FireboltPage = lazy(() => import("./pages/Firebolt"));
+const LoginPage = lazy(() => import("./pages/Login"));
 
 let numImageWorkers = 3;
 const urlParams = new URLSearchParams(window.location.search);
@@ -73,6 +74,7 @@ if (numWorkers) {
 
 const deviceLogicalPixelRatio = {
   "720": 0.666667,
+  "medium": 0.8,
   "1080": 1,
   "4k": 2,
   default: window.innerHeight / 1080
@@ -82,6 +84,7 @@ const logFps = true;
 Config.debug = false;
 // Config.keyDebug = true;
 Config.animationsEnabled = animationsEnabled === "true";
+Config.simpleAnimationsEnabled = true;
 Config.fontSettings.fontFamily = "Roboto";
 Config.fontSettings.color = "#f6f6f6";
 Config.fontSettings.fontSize = 32;
@@ -147,6 +150,7 @@ render(() => (
         <Route path="grid" component={Grid} />
         <Route path="text" component={TextPage} />
         <Route path="firebolt" component={FireboltPage} />
+        <Route path="login" component={LoginPage} />
         <Route path="textposter" component={TextPosterPage} />
         <Route path="positioning" component={PositioningPage} />
         <Route path="layout" component={LayoutPage} />

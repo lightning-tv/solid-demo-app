@@ -2,7 +2,8 @@ import API_KEY_V4 from "./key";
 const API_BASE = "https://api.themoviedb.org/3";
 let tmdbConfig;
 let baseImageUrl;
-const basePosterSize = "w185";
+const urlParams = new URLSearchParams(window.location.search);
+const basePosterSize = urlParams.get("posterSize") || "w185";
 
 const defaultFetchParams = {
   headers: {
