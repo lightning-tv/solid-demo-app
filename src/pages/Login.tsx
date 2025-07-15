@@ -1,9 +1,6 @@
-import {
-  Text,
-  View,
-} from "@lightningtv/solid";
-import { createSignal, onMount } from "solid-js";
-import { Column } from "@lightningtv/solid/primitives";
+import * as s from "solid-js";
+import * as lng from "@lightningtv/solid";
+import * as lngp from "@lightningtv/solid/primitives";
 import { setGlobalBackground } from "../state";
 import Input from "../components/Input";
 import {Keyboard} from "../components/Keyboard";
@@ -219,38 +216,37 @@ const LoginPage = () => {
       ],
     ],
   };
-  const keyEvent = createSignal("");
-  const valueSignal = createSignal("");
+  const keyEvent = s.createSignal("");
+  const valueSignal = s.createSignal("");
   const [ _keyEvent, setKeyEvent ] = keyEvent;
 
   const onEnter: lng.KeyHandler = (_e, _keyboard, key) => {
     if (typeof key.key === "string") {
       setKeyEvent(key.key as string);
     }
-    else if (typeof key.key === "object") {
+    else if (typeof key.key === "object" && key.key && 'title' in key.key) {
       if (key.key.title === 'save' || key.key.title === 'Save') {
         console.log('perform save action', valueSignal[0]());
         return true;
       }
       setKeyEvent(key.key.title as string);
     }
-
   };
 
-  onMount(() => {
+  s.onMount(() => {
     setGlobalBackground("#000000");
   });
 
   return (
-      <View width={1080} x={350} y={100}>
-        <Column autofocus selected={1} scroll={"none"}>
-          <Text skipFocus style={Title}>
+      <view width={1080} x={350} y={100}>
+        <lngp.Column autofocus selected={1} scroll={"none"}>
+          <text skipFocus style={Title}>
             Username
-          </Text>
+          </text>
           <Input valueSignal={valueSignal} keyEvents={keyEvent} />
           <Keyboard width={550} formats={formats} onEnter={onEnter} />
-        </Column>
-      </View>
+        </lngp.Column>
+      </view>
   );
 };
 

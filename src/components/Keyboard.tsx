@@ -1,14 +1,14 @@
-import { type Component, createMemo, createSignal, Index, Show, Signal, Switch, Match, Setter } from 'solid-js';
-import { View, Text, type NodeProps, type TextStyles, type NodeStyles } from '@lightningtv/solid';
-import { Row, Column, chainFunctions } from '@lightningtv/solid/primitives';
+import * as s from 'solid-js';
+import * as lng from '@lightningtv/solid';
+import * as lngp from '@lightningtv/solid/primitives';
 import Input from './Input';
 
-const actionKeyContainerStyle: NodeStyles = {
+const actionKeyContainerStyle: lng.NodeStyles = {
   width: 144,
   alpha: 0.8,
   height: 60,
   scale: 1,
-  get color() { return '#0000FF' },
+  color: '#0000FF',
   borderRadius: 6,
   $focus: {
     alpha: 1,
@@ -17,7 +17,7 @@ const actionKeyContainerStyle: NodeStyles = {
   transition: { scale: true },
 };
 
-const ActionKeyIconStyle: NodeStyles = {
+const ActionKeyIconStyle: lng.NodeStyles = {
   y: 6,
   x: 48,
   width: 48,
@@ -25,30 +25,30 @@ const ActionKeyIconStyle: NodeStyles = {
   color: '#c6c6c6',
 };
 
-const keyContainerStyle: NodeStyles = {
+const keyContainerStyle: lng.NodeStyles = {
   height: 60,
-  get color() { return '#000000' },
+  color: '#000000',
   scale: 1,
   borderRadius: 6,
   $focus: {
     scale: 1.05,
-    get color() { return '#0000FF' },
+    color: '#0000FF',
   },
 };
 
-const BaseKeyTextStyle: TextStyles = {
+const BaseKeyTextStyle: lng.TextStyles = {
   fontSize: 42,
   lineHeight: 60,
 };
 
-const KeyText: TextStyles = {
+const KeyText: lng.TextStyles = {
   ...BaseKeyTextStyle,
   width: 48,
   contain: 'both',
   textAlign: 'center',
 };
 
-export function onKeyPressWhenKeyboardOpen(setKeyEvent: Setter<string>, event: KeyboardEvent) {
+export function onKeyPressWhenKeyboardOpen(setKeyEvent: s.Setter<string>, event: KeyboardEvent) {
   if (event.key.length === 1)
     setKeyEvent(event.key);
   else if (event.key === 'Backspace')
@@ -58,90 +58,110 @@ export function onKeyPressWhenKeyboardOpen(setKeyEvent: Setter<string>, event: K
   return false;
 };
 
+export interface KeyProps extends lng.NodeProps {
+  key?: string;
+  title?: string;
+  textColor?: string;
+}
 
-export const Key: Component<NodeProps & { key: string; title?: string; textColor?: string }> = props => (
-  <View width={48} {...props} style={keyContainerStyle}>
-    <Text style={KeyText}>{props.key || props.title}</Text>
-  </View>
+export const Key: s.Component<KeyProps> = props => (
+  <view width={48} {...props} style={keyContainerStyle}>
+    <text style={KeyText}>{props.key || props.title}</text>
+  </view>
 );
 
-export const ActionKey: Component<NodeProps & { key: any }> = props => (
-  <Switch>
-    <Match when={typeof props.key === 'string'}>
-      <View
+export interface ActionKeyProps extends lng.NodeProps {
+  key: string
+}
+
+export const ActionKey: s.Component<ActionKeyProps> = props => (
+  <lng.Switch>
+    <lng.Match when={typeof props.key === 'string'}>
+      <view
         {...props}
         key={props.key}
         display='flex'
         padding={20}
         style={keyContainerStyle}
       >
-        <Text style={BaseKeyTextStyle}>{props.key}</Text>
-      </View>
-    </Match>
-    <Match when={props.key.icon}>
-      <View {...props} key={props.key.key} style={actionKeyContainerStyle}>
-        <View src={`${props.key.icon}`} style={ActionKeyIconStyle} />
-      </View>
-    </Match>
-    <Match when={true}>
-      <View
+        <text style={BaseKeyTextStyle}>{props.key}</text>
+      </view>
+    </lng.Match>
+    <lng.Match when={props.key.icon}>
+      <view {...props} key={props.key.key} style={actionKeyContainerStyle}>
+        <view src={`${props.key.icon}`} style={ActionKeyIconStyle} />
+      </view>
+    </lng.Match>
+    <lng.Match when={true}>
+      <view
         {...props}
         key={props.key.key}
         display='flex'
         padding={20}
         style={/* @once */ props.key?.size ? actionKeyContainerStyle : keyContainerStyle}
       >
-        <Text style={BaseKeyTextStyle}>{props.key.title}</Text>
-      </View>
-    </Match>
-  </Switch>
+        <text style={BaseKeyTextStyle}>{props.key.title}</text>
+      </view>
+    </lng.Match>
+  </lng.Switch>
 );
 
-export const Keyboard: Component<NodeProps & { formats: any, onEnter: any }> = props => {
-  const [ layout, setLayout ] = createSignal('default');
-  const config = createMemo(() => (props.formats[layout()]));
+export const Keyboard: s.Component<lng.NodeProps & { formats: any, onEnter: any }> = props => {
+  const [layout, setLayout] = s.createSignal('default');
+  const config = s.createMemo(() => (props.formats[layout()]));
   const onEnter = (_e, _keyboard, key) => {
     if (typeof key.key === "string") {
       return false;
     }
 
     if (key.key.title === 'shift') {
-      setLayout(layout() === 'uppercase' ? 'default' : 'uppercase');
+      setLayout(p => p === 'uppercase' ? 'default' : 'uppercase');
       return true;
     }
 
     if (key.key.title === 'symbol') {
-      setLayout(layout() === 'symbol' ? 'default' : 'symbol');
+      setLayout(p => p === 'symbol' ? 'default' : 'symbol');
       return true;
     }
 
     return false;
   };
 
-  const handleEnter = chainFunctions(onEnter, props.onEnter);
+  const handleEnter = lngp.chainFunctions(onEnter, props.onEnter);
 
-  return <Column transition={false} {...props} gap={12} plinko scroll='none' onEnter={handleEnter}>
-    <Index each={config()}>
+  return <lngp.Column transition={false} {...props} gap={12} scroll='none' onEnter={handleEnter}>
+    <lng.For each={config()}>
       {keyRow => (
-        <Row gap={6} justifyContent='center' scroll='none'>
-          <Index each={keyRow()}>
+        <view display='flex' justifyContent='center' gap={6}
+          forwardFocus={lngp.spatialForwardFocus}
+          onLeft={lngp.navigableHandleNavigation}
+          onRight={lngp.navigableHandleNavigation}
+        >
+          <lng.For each={keyRow}>
             {key =>
-              <Show when={typeof key() === 'string' && (key() as string).length === 1}
-                fallback={<ActionKey key={key()} />}>
-                <Key key={key() as string} />
-              </Show>
+              <s.Show when={typeof key === 'string' && (key as string).length === 1}
+                fallback={<ActionKey key={key} />}>
+                <Key key={key as string} />
+              </s.Show>
             }
-          </Index>
-        </Row>
+          </lng.For>
+        </view>
       )}
-    </Index>
-  </Column>
+    </lng.For>
+  </lngp.Column>
   ;
 };
 
-export const FullScreenKeyboard: Component<NodeProps & { type: any, valueSignal: Signal<string>, placeholder?: string }> = props => {
-  const keyEvents = createSignal('');
-  const [ _keyEvent, setKeyEvent ] = keyEvents;
+export interface FullScreenKeyboardProps extends lng.NodeProps {
+  type?: 'default' | 'uppercase' | 'symbol';
+  valueSignal: s.Signal<string>;
+  placeholder?: string;
+  formats?: any;
+}
+
+export const FullScreenKeyboard: s.Component<FullScreenKeyboardProps> = props => {
+  const keyEvents = s.createSignal('');
+  const [_keyEvent, setKeyEvent] = keyEvents;
 
   const onEnter = (_e, _keyboard, key) => {
     if (key.key === 'save' || key.key === 'Save')
@@ -154,7 +174,7 @@ export const FullScreenKeyboard: Component<NodeProps & { type: any, valueSignal:
   };
 
   return (
-    <View
+    <view
       {...props}
       width={1920}
       height={1080}
@@ -173,10 +193,10 @@ export const FullScreenKeyboard: Component<NodeProps & { type: any, valueSignal:
         mask='•'
       />
 
-      <Column y={270}>
-        <Keyboard onEnter={onEnter} />
-      </Column>
+      <lngp.Column y={270}>
+        <Keyboard onEnter={onEnter} formats={props.formats} />
+      </lngp.Column>
 
-    </View>
+    </view>
   );
 };
