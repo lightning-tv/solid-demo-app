@@ -151,6 +151,7 @@ render(() => (
         <Route path="text" component={TextPage} />
         <Route path="firebolt" component={FireboltPage} />
         <Route path="login" component={LoginPage} />
+        <Route path="nested" component={lazy(() => import('./pages/Nested'))} />
         <Route path="textposter" component={TextPosterPage} />
         <Route path="positioning" component={PositioningPage} />
         <Route path="layout" component={LayoutPage} />

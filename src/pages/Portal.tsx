@@ -110,6 +110,11 @@ const Portal = (props) => {
       description: "Login with forms Example"
     },
     {
+      title: "Nested Modal",
+      id: "nested",
+      description: "Nested Right Modal Example"
+    },
+    {
       title: "Grid Primitive for Layout",
       id: "tmdbgrid",
       description: "Using Grid component"

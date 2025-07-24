@@ -44,7 +44,7 @@ export function TileRow(props: TileRowProps) {
 export function Button(props) {
   return (
     <View {...props} announce={[props.children, 'button']} forwardStates style={buttonStyles.container}>
-      <Text style={buttonStyles.text}>{props.children}</Text>
+      <Text style={buttonStyles.text}>{props.children || props.title}</Text>
     </View>
   );
 }
