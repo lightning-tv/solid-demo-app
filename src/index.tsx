@@ -16,8 +16,8 @@ import {
 } from "@lightningjs/renderer/canvas";
 
 import { Inspector } from "@lightningjs/renderer/inspector";
-import { HashRouter, FocusStackProvider } from "@lightningtv/solid/primitives";
-import { Route } from "@solidjs/router";
+import { HashRouter, FocusStackProvider, KeepAliveRoute, KeepAliveWrapper } from "@lightningtv/solid/primitives";
+import { Route, Navigate } from "@solidjs/router";
 import { lazy } from "solid-js";
 import App from "./pages/App";
 import Browse from "./pages/Browse";
@@ -137,12 +137,13 @@ render(() => (
   <FocusStackProvider>
     <HashRouter root={(props) => <App {...props} />}>
       <Route path="" component={LeftNavWrapper}>
-        <Route path="" component={Browse} preload={browsePreload} />
+        <Route path="" component={() => <Navigate href="/browse/all" />} />
         <Route path="examples" component={Portal}>
           <Route path="/" />
           <Route path="tmdb" component={TMDB} preload={tmdbData} />
         </Route>
-        <Route path="browse/:filter" component={Browse} preload={browsePreload} />
+        {/* <Route path="browse/:filter" component={KeepAliveWrapper(Browse)} preload={browsePreload} /> */}
+        <KeepAliveRoute id="browse" path="browse/:filter" component={Browse} preload={browsePreload} />
         <Route path="loops" component={Loops} preload={tmdbData} />
         <Route path="infinite" component={Infinite} preload={tmdbData} />
         <Route path="tmdbgrid" component={TMDBGrid} preload={tmdbData} />

@@ -50,6 +50,7 @@ export default defineConfig(({ mode }) => ({
     alias: {
       theme: path.resolve(__dirname, "src/theme.ts")
     },
+    conditions: ["@lightningtv/source"],
     dedupe: [
       "solid-js",
       "solid-js/universal",
