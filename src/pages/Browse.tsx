@@ -12,9 +12,9 @@ import {
   activeElement,
   assertTruthy
 } from "@lightningtv/solid";
-import { Column } from "@lightningtv/solid/primitives";
+import { Column, VirtualGrid } from "@lightningtv/solid/primitives";
 import { useNavigate, usePreloadRoute } from "@solidjs/router";
-import { TileRow } from "../components";
+import { Thumbnail, TileRow } from "../components";
 import styles from "../styles";
 import { setGlobalBackground } from "../state";
 import { createInfiniteScroll } from "../components/pagination";
@@ -41,59 +41,43 @@ const Browse = (props) => {
     600
   );
 
-  createEffect(
-    on(
-      activeElement,
-      (elm) => {
-        if (!elm) return;
+  function updateContentBlock(_index, _col, elm) {
+    if (!elm) return;
 
-        const item = elm.item || ({} as any);
+    const item = elm.item || ({} as any);
 
-        if (firstRun) {
-          // no content set yet, set right away
-          if (item.backdrop) {
-            setGlobalBackground(item.backdrop);
-          }
+    if (firstRun) {
+      // no content set yet, set right away
+      if (item.backdrop) {
+        setGlobalBackground(item.backdrop);
+      }
 
-          if (item.heroContent) {
-            setHeroContent(item.heroContent);
-          }
+      if (item.heroContent) {
+        setHeroContent(item.heroContent);
+      }
 
-          preload(`/browse/tv`, { preloadData: true });
-          preload(`/browse/movie`, { preloadData: true });
+      // preload(`/browse/tv`, { preloadData: true });
+      // preload(`/browse/movie`, { preloadData: true });
 
-          firstRun = false;
-          return;
-        }
-
-        if (item.href) {
-          preload(item.href, { preloadData: true });
-        }
-
-        if (item.backdrop) {
-          delayedBackgrounds(item.backdrop);
-        }
-
-        if (item.heroContent) {
-          delayedHero(item.heroContent);
-        }
-      },
-      { defer: true }
-    )
-  );
-
-  function onRowFocus(this: ElementNode) {
-    (this.children[this.selected || 0] as ElementNode).setFocus();
-    setcolumnY((this.y || 0) * -1 + 24);
-    let numPages = provider().pages().length;
-    this.parent!.selected = this.parent!.children.indexOf(this);
-
-    if (
-      numPages === 0 ||
-      (this.parent!.selected && this.parent!.selected >= numPages - 2)
-    ) {
-      provider().setPage((p) => p + 1);
+      firstRun = false;
+      return;
     }
+
+    if (item.href) {
+      // preload(item.href, { preloadData: true });
+    }
+
+    if (item.backdrop) {
+      delayedBackgrounds(item.backdrop);
+    }
+
+    if (item.heroContent) {
+      delayedHero(item.heroContent);
+    }
+  }
+
+  function onEndReached(this: ElementNode) {
+    provider().setPage((p) => p + 1);
   }
 
   function onEnter(this: ElementNode) {
@@ -110,28 +94,26 @@ const Browse = (props) => {
     <Show when={provider().pages().length}>
       <ContentBlock y={360} x={162} content={heroContent()} />
       <View clipping style={styles.itemsContainer}>
-        <Column
-          id="BrowseColumn"
-          plinko
+        <VirtualGrid
+          y={24}
+          x={160}
+          id="BrowseGrid"
+          scroll="always"
           announce={`All Trending ${props.params.filter}`}
-          y={columnY()}
-          scroll="none"
+          onEnter={onEnter}
+          itemsPerRow={7}
+          gap={45}
+          numberOfRows={2}
+          rowsBuffer={2}
+          onSelectedChanged={updateContentBlock}
+          onEndReached={onEndReached}
+          width={1620}
           autofocus
-          style={styles.Column}
-        >
-          <For each={provider().pages()}>
-            {(items) => (
-              <TileRow
-                id="TileRow"
-                items={items}
-                width={1620}
-                onFocus={onRowFocus}
-                onEnter={onEnter}
-                announceContext="Press LEFT or RIGHT to review items, press UP or DOWN to review categories, press CENTER to select"
-              />
-            )}
-          </For>
-        </Column>
+          each={provider().pages()}>
+          {(item) =>
+            <Thumbnail item={item()} />
+          }
+        </VirtualGrid>
       </View>
     </Show>
   );
