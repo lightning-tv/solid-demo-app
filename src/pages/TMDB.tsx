@@ -41,7 +41,9 @@ const TMDB = (props) => {
     )
   );
 
-  function onSelectedChanged(this: ElementNode, selectedIndex, column, row) {
+  function onRowChanged(this: ElementNode, selectedIndex, column, row, lastIndex) {
+    if (selectedIndex === lastIndex) return;
+
     const values =
       selectedIndex === 0 ? { y: 300, alpha: 1 } : { y: 200, alpha: 0 };
     contentBlock
@@ -95,7 +97,7 @@ const TMDB = (props) => {
         upCount={3}
         each={props.data.rows}
         id="BrowseColumn"
-        onSelectedChanged={onSelectedChanged}
+        onSelectedChanged={onRowChanged}
         onEnter={() => setOpenPanel(true)}
         autofocus={props.data.rows[0].items()}
         gap={40}

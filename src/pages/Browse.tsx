@@ -101,10 +101,10 @@ const Browse = (props) => {
           scroll="always"
           announce={`All Trending ${props.params.filter}`}
           onEnter={onEnter}
-          itemsPerRow={7}
-          gap={45}
-          numberOfRows={2}
-          rowsBuffer={2}
+          columns={7}
+          gap={50}
+          rows={2}
+          buffer={2}
           onSelectedChanged={updateContentBlock}
           onEndReached={onEndReached}
           width={1620}
