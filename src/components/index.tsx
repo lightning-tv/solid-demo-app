@@ -5,7 +5,7 @@ import {
   type NodeProps,
   Dynamic
 } from "@lightningtv/solid";
-import { Column, Row, VirtualList } from "@lightningtv/solid/primitives";
+import { Column, Row, VirtualRow } from "@lightningtv/solid/primitives";
 import { createEffect, createSignal, For, Index } from "solid-js";
 import styles, { buttonStyles } from "../styles";
 import { type Tile } from "../api/formatters/ItemFormatter";
@@ -95,11 +95,11 @@ export function TitleRow(props: TileRowProps) {
       <Text skipFocus style={titleRowStyles}>
         {props.title}
       </Text>
-      <VirtualList gap={20} displaySize={9} each={props.items} y={50}>
+      <VirtualRow gap={20} displaySize={9} each={props.items} y={50}>
         {(item) => (
           <Dynamic component={typeToComponent[props.row.type]} item={item()} />
         )}
-      </VirtualList>
+      </VirtualRow>
     </View>
   );
 }

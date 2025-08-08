@@ -90,8 +90,8 @@ export function tmdbData() {
   rows.push(heroRow);
 
   rows.push({
-    title: "Best Documentaries",
-    items: createResource(() => fetchGenreMovies("Documentary"))[0],
+    title: "Best Animations",
+    items: createResource(() => fetchGenreMovies("Animation"))[0],
     type: "PosterTitle",
     height: 400
   });

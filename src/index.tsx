@@ -92,7 +92,7 @@ Config.fontSettings.fontSize = 32;
 
 Config.rendererOptions = {
   fpsUpdateInterval: logFps ? 1000 : 0,
-  // inspector: import.meta.env.DEV ? Inspector : undefined,
+  inspector: import.meta.env.DEV ? Inspector : undefined,
   // textureMemory: {
   //   criticalThreshold: 80e6,
   // },
