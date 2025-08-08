@@ -18,8 +18,8 @@ importers:
         specifier: 2.11.0
         version: 2.11.0(@lightningjs/renderer@2.16.0)
       '@lightningtv/solid':
-        specifier: 2.10.0
-        version: 2.10.0(@lightningjs/renderer@2.16.0)(@solidjs/router@0.15.3(solid-js@1.9.7))(solid-js@1.9.7)
+        specifier: 2.10.2
+        version: 2.10.2(@lightningjs/renderer@2.16.0)(@solidjs/router@0.15.3(solid-js@1.9.7))(solid-js@1.9.7)
       '@solid-primitives/list':
         specifier: ^0.1.0
         version: 0.1.0(solid-js@1.9.7)
@@ -916,8 +916,8 @@ packages:
     peerDependencies:
       '@lightningjs/renderer': ^2.16.0
 
-  '@lightningtv/solid@2.10.0':
-    resolution: {integrity: sha512-+3S2P2lN9fj8TPB6IlJ8eMTmZOaAXJf+gCGhqXIB33Ul6ckV9R74667yNgGDpgQnRCDlzbtQbctdTapGICOrFw==}
+  '@lightningtv/solid@2.10.2':
+    resolution: {integrity: sha512-D6kIGx7CMn0dcgpnXuK8ey8s2YIQ7XHZNQhDR18LSlHJZnLFVmXS7zWfyM+54aJsY+nseHkpze8FGEjBf7fmdg==}
     peerDependencies:
       '@solidjs/router': ^0.15.1
       solid-js: '*'
@@ -3116,14 +3116,14 @@ snapshots:
     dependencies:
       '@lightningjs/renderer': 2.16.0
 
-  '@lightningtv/solid@2.10.0(@lightningjs/renderer@2.16.0)(@solidjs/router@0.15.3(solid-js@1.9.7))(solid-js@1.9.7)':
+  '@lightningtv/solid@2.10.2(@lightningjs/renderer@2.16.0)(@solidjs/router@0.15.3(solid-js@1.9.7))(solid-js@1.9.7)':
     dependencies:
       '@lightningtv/core': 2.11.0(@lightningjs/renderer@2.16.0)
-      '@solid-primitives/event-listener': 2.4.0(solid-js@1.9.7)
+      '@solid-primitives/event-listener': 2.4.3(solid-js@1.9.7)
       '@solid-primitives/keyed': 1.5.2(solid-js@1.9.7)
       '@solid-primitives/list': 0.1.2(solid-js@1.9.7)
       '@solid-primitives/mouse': 2.1.4(solid-js@1.9.7)
-      '@solid-primitives/scheduled': 1.5.0(solid-js@1.9.7)
+      '@solid-primitives/scheduled': 1.5.2(solid-js@1.9.7)
       '@solidjs/router': 0.15.3(solid-js@1.9.7)
       solid-js: 1.9.7
     optionalDependencies:
@@ -3401,7 +3401,6 @@ snapshots:
   '@solid-primitives/scheduled@1.5.2(solid-js@1.9.7)':
     dependencies:
       solid-js: 1.9.7
-    optional: true
 
   '@solid-primitives/static-store@0.1.0(solid-js@1.9.7)':
     dependencies:
