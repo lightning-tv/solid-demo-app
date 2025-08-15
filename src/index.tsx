@@ -61,7 +61,7 @@ const People = lazy(() => import("./pages/People"));
 const FireboltPage = lazy(() => import("./pages/Firebolt"));
 const LoginPage = lazy(() => import("./pages/Login"));
 
-let numImageWorkers = 3;
+let numImageWorkers = 4;
 const urlParams = new URLSearchParams(window.location.search);
 const numWorkers = urlParams.get("numImageWorkers");
 const screenSize = urlParams.get("size") || "default";
@@ -101,7 +101,8 @@ Config.rendererOptions = {
   // 720p = 0.666667, 1080p = 1, 1440p = 1.5, 2160p = 2
   deviceLogicalPixelRatio,
   devicePhysicalPixelRatio: 1,
-  createImageBitmapSupport: "auto"
+  createImageBitmapSupport: "auto",
+  targetFPS: 30,
 };
 
 // Ideally you'd do two separate builds for canvas and webgl to reduce bundle size.
