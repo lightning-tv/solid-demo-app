@@ -5,27 +5,79 @@ import {elementInterface} from "@lightningtv/solid/devtools";
 
 setElementInterface(elementInterface)
 
-import { createRenderer, Config, loadFonts } from "@lightningtv/solid";
-import {
-  WebGlCoreRenderer,
-  SdfTextRenderer
-} from "@lightningjs/renderer/webgl";
-import {
-  CanvasCoreRenderer,
-  CanvasTextRenderer
-} from "@lightningjs/renderer/canvas";
+import * as s from "solid-js";
+import * as router from "@solidjs/router";
+import * as lng from "@lightningtv/solid";
+import * as lngp from "@lightningtv/solid/primitives";
 
-import { Inspector } from "@lightningjs/renderer/inspector";
-import { HashRouter, FocusStackProvider } from "@lightningtv/solid/primitives";
-import { Route } from "@solidjs/router";
-import { lazy } from "solid-js";
+import fonts from "./fonts";
+
+
+let numImageWorkers = 3;
+const urlParams = new URLSearchParams(window.location.search);
+const numWorkers = urlParams.get("numImageWorkers");
+const screenSize = urlParams.get("size") || "default";
+const rendererMode = urlParams.get("mode") || "webgl";
+const animationsEnabled = urlParams.get("animate") || "true";
+
+if (numWorkers) {
+  numImageWorkers = parseInt(numWorkers);
+}
+
+const deviceLogicalPixelRatio = {
+  "720": 0.666667,
+  "1080": 1,
+  "4k": 2,
+  default: window.innerHeight / 1080
+}[screenSize];
+
+const logFps = true;
+lng.Config.debug = false;
+// Config.keyDebug = true;
+lng.Config.animationsEnabled = animationsEnabled === "true";
+lng.Config.fontSettings.fontFamily = "Roboto";
+lng.Config.fontSettings.color = "#f6f6f6";
+lng.Config.fontSettings.fontSize = 32;
+// Config.focusDebug = true;
+
+lng.Config.rendererOptions = {
+  fpsUpdateInterval: logFps ? 1000 : 0,
+  // textureMemory: {
+  //   criticalThreshold: 80e6,
+  // },
+  numImageWorkers, // temp fix for renderer bug
+  // Set the resolution based on window height
+  // 720p = 0.666667, 1080p = 1, 1440p = 1.5, 2160p = 2
+  deviceLogicalPixelRatio,
+  devicePhysicalPixelRatio: 1,
+  createImageBitmapSupport: "auto"
+};
+
+// Ideally you'd do two separate builds for canvas and webgl to reduce bundle size.
+if (rendererMode === "canvas") {
+  lng.useCanvasFontEngine()
+  lng.useCanvasRenderEngine()
+} else {
+  lng.useSdfFontEngine()
+  lng.useWebglRenderEngine()
+}
+
+const { renderer, render } = lng.createRenderer();
+
+lng.loadFonts(fonts);
+
+lng.registerDefaultShaders(renderer.stage.shManager);
+
+
+const Route = router.Route;
+const lazy = s.lazy;
+
 import App from "./pages/App";
 import Browse from "./pages/Browse";
 import TMDB from "./pages/TMDB";
 import DestroyPage from "./pages/Destroy";
 import { tmdbData, destroyData } from "./api/tmdbData";
 import NotFound from "./pages/NotFound";
-import fonts from "./fonts";
 import { browsePreload } from "./api/browsePreload";
 import { entityPreload } from "./api/entityPreload";
 import Player from "./pages/Player";
@@ -60,79 +112,9 @@ const Entity = lazy(() => import("./pages/Entity"));
 const People = lazy(() => import("./pages/People"));
 const FireboltPage = lazy(() => import("./pages/Firebolt"));
 
-let numImageWorkers = 3;
-const urlParams = new URLSearchParams(window.location.search);
-const numWorkers = urlParams.get("numImageWorkers");
-const screenSize = urlParams.get("size") || "default";
-const rendererMode = urlParams.get("mode") || "webgl";
-const animationsEnabled = urlParams.get("animate") || "true";
-
-if (numWorkers) {
-  numImageWorkers = parseInt(numWorkers);
-}
-
-const deviceLogicalPixelRatio = {
-  "720": 0.666667,
-  "1080": 1,
-  "4k": 2,
-  default: window.innerHeight / 1080
-}[screenSize];
-
-const logFps = true;
-Config.debug = false;
-// Config.keyDebug = true;
-Config.animationsEnabled = animationsEnabled === "true";
-Config.fontSettings.fontFamily = "Roboto";
-Config.fontSettings.color = "#f6f6f6";
-Config.fontSettings.fontSize = 32;
-// Config.focusDebug = true;
-
-Config.rendererOptions = {
-  fpsUpdateInterval: logFps ? 1000 : 0,
-  inspector: import.meta.env.DEV ? Inspector : undefined,
-  // textureMemory: {
-  //   criticalThreshold: 80e6,
-  // },
-  numImageWorkers, // temp fix for renderer bug
-  // Set the resolution based on window height
-  // 720p = 0.666667, 1080p = 1, 1440p = 1.5, 2160p = 2
-  deviceLogicalPixelRatio,
-  devicePhysicalPixelRatio: 1,
-  createImageBitmapSupport: "auto"
-};
-
-// Ideally you'd do two separate builds for canvas and webgl to reduce bundle size.
-if (rendererMode === "canvas") {
-  Config.rendererOptions.fontEngines = [CanvasTextRenderer];
-  Config.rendererOptions.renderEngine = CanvasCoreRenderer;
-} else {
-  Config.rendererOptions.fontEngines = [SdfTextRenderer];
-  Config.rendererOptions.renderEngine = WebGlCoreRenderer;
-}
-
-const { renderer, render } = createRenderer();
-loadFonts(fonts);
-// Prepare for RC3 of Renderer
-import {
-  Rounded,
-  RoundedWithBorder,
-  RoundedWithShadow,
-  RoundedWithBorderAndShadow,
-  RadialGradient,
-  LinearGradient,
-  HolePunch,
-} from '@lightningjs/renderer/webgl/shaders';
-const shManager = renderer.stage.shManager;
-shManager.registerShaderType('rounded', Rounded)
-shManager.registerShaderType('roundedWithBorder', RoundedWithBorder)
-shManager.registerShaderType('roundedWithShadow', RoundedWithShadow)
-shManager.registerShaderType('roundedWithBorderWithShadow', RoundedWithBorderAndShadow)
-shManager.registerShaderType('radialGradient', RadialGradient)
-shManager.registerShaderType('linearGradient', LinearGradient)
-shManager.registerShaderType('holePunch', HolePunch)
 render(() => (
-  <FocusStackProvider>
-    <HashRouter root={(props) => <App {...props} />}>
+  <lngp.FocusStackProvider>
+    <router.HashRouter root={(props) => <App {...props} />}>
       <Route path="" component={LeftNavWrapper}>
         <Route path="" component={Browse} preload={browsePreload} />
         <Route path="examples" component={Portal}>
@@ -175,6 +157,6 @@ render(() => (
       <Route path="player">
         <Route path=":id" component={Player} />
       </Route>
-    </HashRouter>
-  </FocusStackProvider>
+    </router.HashRouter>
+  </lngp.FocusStackProvider>
 ));
