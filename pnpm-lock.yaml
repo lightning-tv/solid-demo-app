@@ -7,7 +7,6 @@ settings:
 overrides:
   '@lightningtv/core': 3.0.0-2
   '@lightningtv/solid': 3.0.0-2
-  '@lightningjs/renderer': 3.0.0-beta7
 
 importers:
 
@@ -19,9 +18,6 @@ importers:
       '@lightningjs/l3-ui-theme-base':
         specifier: ^0.3.3
         version: 0.3.3
-      '@lightningjs/renderer':
-        specifier: 3.0.0-beta7
-        version: 3.0.0-beta7
       '@lightningtv/core':
         specifier: 3.0.0-2
         version: 3.0.0-2(@lightningjs/renderer@3.0.0-beta7)
@@ -959,7 +955,7 @@ packages:
   '@lightningtv/core@3.0.0-2':
     resolution: {integrity: sha512-aDIQlCp1+oK6rQL9ZSn4y/yTK7cIaiW1fOoKPinXKUJKiuU+fIOIyu2kAeNW/AMTl/YjTdMqXuwtW1Tcy5F65g==}
     peerDependencies:
-      '@lightningjs/renderer': 3.0.0-beta7
+      '@lightningjs/renderer': ^3.0.0-beta4
 
   '@lightningtv/l3-ui-theme-base@1.0.0':
     resolution: {integrity: sha512-yxjhkNfcN4cDwsrD5Nd1jRqxM/ZetqVG9EppCIEbqaECflw11RI0GvhS7+Wpi4R++4lqsQEYqTN+UVRs56iTMQ==}
@@ -967,7 +963,7 @@ packages:
   '@lightningtv/solid@3.0.0-2':
     resolution: {integrity: sha512-S4Z08Hu9BO4G3UX6QoYxvZIJEj8YmkWCNLta48d7qepytWq4t5/dVwIZqrc1GGJh3aNFygDFJC0+B2aYbvxnmg==}
     peerDependencies:
-      '@lightningjs/renderer': 3.0.0-beta7
+      '@lightningjs/renderer': ^3.0.0-beta3
       '@solidjs/router': ^0.15.1
       solid-js: '*'
 

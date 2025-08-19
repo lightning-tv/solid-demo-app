@@ -33,7 +33,11 @@ function _get(path: string, params: RequestInit = {}) {
 function loadConfig() {
   return _get("/configuration").then((data) => {
     tmdbConfig = data;
-    baseImageUrl = data.images?.secure_base_url;
+    if (__LIGHTNING_DOM_RENDERING__ && import.meta.env.DEV) {
+      baseImageUrl = '/image_tmdb/'
+    } else {
+      baseImageUrl = data.images?.secure_base_url;
+    }
     return data;
   });
 }
