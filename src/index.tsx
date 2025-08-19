@@ -62,6 +62,10 @@ if (rendererMode === "canvas") {
   lng.useWebglRenderEngine()
 }
 
+if (import.meta.env.DEV) {
+  lng.useInspector()
+}
+
 const { renderer, render } = lng.createRenderer();
 
 lng.loadFonts(fonts);
