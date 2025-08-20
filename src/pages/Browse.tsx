@@ -113,7 +113,7 @@ const Browse = (props) => {
         <Column
           id="BrowseColumn"
           plinko
-          announce="All Trending - Week"
+          announce={`All Trending ${props.params.filter}`}
           y={columnY()}
           scroll="none"
           autofocus
@@ -122,10 +122,12 @@ const Browse = (props) => {
           <For each={provider().pages()}>
             {(items) => (
               <TileRow
+                id="TileRow"
                 items={items}
                 width={1620}
                 onFocus={onRowFocus}
                 onEnter={onEnter}
+                announceContext="Press LEFT or RIGHT to review items, press UP or DOWN to review categories, press CENTER to select"
               />
             )}
           </For>

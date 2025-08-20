@@ -1,6 +1,5 @@
 import {
   useFocusManager,
-  useAnnouncer,
   useMouse,
 } from "@lightningtv/solid/primitives";
 import { KeyMap, KeyHoldMap } from "@lightningtv/core/focusManager";

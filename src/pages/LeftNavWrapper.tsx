@@ -26,9 +26,10 @@ declare module "@lightningtv/solid" {
 }
 
 const LeftNavWrapper = (props) => {
-  
+
   const navigate = useNavigate();
   const announcer = useAnnouncer();
+  announcer.debug = true;
   announcer.enabled = false;
 
   let navDrawer, lastFocused;
@@ -104,7 +105,6 @@ const LeftNavWrapper = (props) => {
           {lastKey()}
         </Text>
       </View>
-
       <Text x={270} y={20} fontSize={24} contain="width" width={800}>
         {lastError()}
       </Text>
