@@ -245,13 +245,14 @@ const Portal = (props) => {
         </Text>
         <View y={140} height={1} width={1800} color={0xe8d7f9ff} />
       </View>
-      <Column scroll="none" y={200} x={170} gap={80} autofocus>
+      <Column scroll="none" y={200} x={170} gap={80} autofocus={!resolvedChildren()}>
         <Row
           onEnter={onEnter}
           gap={40}
           height={320}
           flexBoundary="contain"
           scroll="always"
+          throttleInput={250}
         >
           <For each={demos}>
             {(demo, i) => <DemoTile index={i()} {...demo} />}
