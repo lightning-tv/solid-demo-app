@@ -97,8 +97,22 @@ export function tmdbData() {
   });
 
   rows.push({
-    title: "Best Western movies 2",
-    items: createResource(() => fetchGenreMovies("Western"))[0],
+    title: "Best TV Movie Movies",
+    items: createResource(() => fetchGenreMovies("TV Movie"))[0],
+    type: "PosterTitle",
+    height: 400
+  });
+
+  rows.push({
+    title: "Best Science Fiction movies",
+    items: createResource(() => fetchGenreMovies("Science Fiction"))[0],
+    type: "Hero",
+    height: 720
+  });
+
+  rows.push({
+    title: "Best War Movies",
+    items: createResource(() => fetchGenreMovies("War"))[0],
     type: "PosterTitle",
     height: 400
   });

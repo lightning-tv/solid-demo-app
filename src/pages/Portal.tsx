@@ -140,6 +140,11 @@ const Portal = (props) => {
       description: "Infinite Scroll Grid"
     },
     {
+      title: "Virtual",
+      id: "virtual",
+      description: "Virtual Rows"
+    },
+    {
       title: "Destroy",
       id: "destroy",
       description: "Using onDestroy to animate destruction"

@@ -60,6 +60,7 @@ const Entity = lazy(() => import("./pages/Entity"));
 const People = lazy(() => import("./pages/People"));
 const FireboltPage = lazy(() => import("./pages/Firebolt"));
 const LoginPage = lazy(() => import("./pages/Login"));
+const VirtualPage = lazy(() => import("./pages/Virtual"));
 
 let numImageWorkers = 4;
 const urlParams = new URLSearchParams(window.location.search);
@@ -147,6 +148,7 @@ render(() => (
         <Route path="loops" component={Loops} preload={tmdbData} />
         <Route path="infinite" component={Infinite} preload={tmdbData} />
         <Route path="tmdbgrid" component={TMDBGrid} preload={tmdbData} />
+        <Route path="virtual" component={VirtualPage} preload={tmdbData} />
         <Route path="destroy" component={DestroyPage} preload={destroyData} />
         <Route path="grid" component={Grid} />
         <Route path="text" component={TextPage} />

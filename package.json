@@ -24,9 +24,9 @@
   "license": "ISC",
   "dependencies": {
     "@firebolt-js/sdk": "^1.5.0",
-    "@lightningjs/renderer": "2.16.0",
-    "@lightningtv/core": "2.11.0",
-    "@lightningtv/solid": "2.10.2",
+    "@lightningjs/renderer": "2.17.0",
+    "@lightningtv/core": "2.12.2",
+    "@lightningtv/solid": "2.10.12",
     "@solid-primitives/list": "^0.1.0",
     "@solid-primitives/scheduled": "^1.5.0",
     "@solidjs/router": "^0.15.3",

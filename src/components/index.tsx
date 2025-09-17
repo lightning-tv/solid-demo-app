@@ -95,9 +95,9 @@ export function TitleRow(props: TileRowProps) {
       <Text skipFocus style={titleRowStyles}>
         {props.title}
       </Text>
-      <VirtualRow gap={20} displaySize={9} each={props.items} y={50}>
-        {(item) => (
-          <Dynamic component={typeToComponent[props.row.type]} item={item()} />
+      <VirtualRow gap={20} displaySize={8} bufferSize={3} each={props.items} y={50} scroll={props.scroll} wrap={props.wrap} debugInfo>
+        {(item, index) => (
+          <Dynamic component={typeToComponent[props.row.type]} index={index()} item={item()} />
         )}
       </VirtualRow>
     </View>
@@ -121,6 +121,7 @@ export function Poster(props: NodeProps) {
   return (
     <View
       src={props.item?.src}
+      title={props.item?.shortTitle}
       backdrop={props.item?.backdrop}
       {...props}
       onFail={(node) => (node.src = "failback.png")}

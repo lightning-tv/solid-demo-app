@@ -22,7 +22,6 @@ import ContentBlock from "../components/ContentBlock";
 import { debounce } from "@solid-primitives/scheduled";
 
 const Browse = (props) => {
-  const [columnY, setcolumnY] = createSignal(0);
   const preload = usePreloadRoute();
   const [heroContent, setHeroContent] = createSignal({});
   const navigate = useNavigate();
