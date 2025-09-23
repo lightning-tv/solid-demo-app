@@ -74,15 +74,6 @@ const TextPosterPage = () => {
       y: 63,
       width: 1326,
       height: 954,
-      border: {
-        color: "#535353",
-        width: 1
-      },
-      borderRadius: 15,
-      linearGradient: {
-        colors: [0x2c2a3bff, 0x3a3847ff, 0x4c4859ff] as number[],
-        angle: 4.1
-      }
     },
     detailTitle: {
       x: 50,
@@ -127,7 +118,7 @@ const TextPosterPage = () => {
   });
 
   return (
-    <View style={styles.detailPane}>
+    <View id="TextPosterPage" style={styles.detailPane}>
       <Text style={styles.detailTitle}>Movie Name</Text>
       <View style={styles.detailImage} src="https://placehold.co/400x600.png" />
       <View style={styles.detailDescriptionPane}>

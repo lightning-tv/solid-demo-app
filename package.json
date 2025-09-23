@@ -24,10 +24,8 @@
   "license": "ISC",
   "dependencies": {
     "@firebolt-js/sdk": "^1.5.0",
-    "@lightningjs/l3-ui-theme-base": "^0.3.3",
-    "@lightningjs/renderer": "3.0.0-beta7",
+    "@lightningjs/renderer": "3.0.0-beta14",
     "@lightningtv/core": "3.0.0-2",
-    "@lightningtv/l3-ui-theme-base": "^1.0.0",
     "@lightningtv/solid": "3.0.0-2",
     "@solid-primitives/list": "^0.1.0",
     "@solid-primitives/scheduled": "^1.5.0",
@@ -35,7 +33,7 @@
     "browserlist": "^1.0.1",
     "proxy-polyfill": "^0.3.2",
     "shaka-player": "^4.14.4",
-    "solid-js": "^1.9.5",
+    "solid-js": "^1.9.7",
     "vite-plugin-babel": "^1.3.0",
     "vitest": "^3.0.9",
     "whatwg-fetch": "^3.6.20"
@@ -54,18 +52,11 @@
     "vite-bundle-visualizer": "^1.2.1",
     "vite-plugin-solid": "^2.11.6"
   },
-  "pnpm": {
-    "overrides": {
-      "@lightningtv/core": "$@lightningtv/core",
-      "@lightningtv/solid": "$@lightningtv/solid",
-      "@lightningjs/renderer": "$@lightningjs/renderer"
-    }
-  },
   "lint-staged": {
     "*.{ts,tsx}": [
       "prettier --write"
     ],
     "*.{js,cjs,md}": "prettier --write"
   },
-  "packageManager": "pnpm@9.4.0+sha512.f549b8a52c9d2b8536762f99c0722205efc5af913e77835dbccc3b0b0b2ca9e7dc8022b78062c17291c48e88749c70ce88eb5a74f1fa8c4bf5e18bb46c8bd83a"
+  "packageManager": "pnpm@10.8.0"
 }

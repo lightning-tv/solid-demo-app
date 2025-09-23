@@ -4,8 +4,12 @@ import legacy from "@vitejs/plugin-legacy";
 import devtools from "solid-devtools/vite";
 import hexColorTransform from "@lightningtv/vite-hex-transform";
 import { configDefaults } from "vitest/config";
+import path from "path";
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
+  define: {
+    __DEV__: mode !== "production"
+  },
   plugins: [
     hexColorTransform({
       include: ["src/**/*.{ts,tsx,js,jsx}"]
@@ -44,8 +48,9 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      theme: "@lightningjs/l3-ui-theme-base"
+      theme: path.resolve(__dirname, "src/theme.ts")
     },
+    conditions: ["@lightningtv/source"],
     dedupe: [
       "solid-js",
       "solid-js/universal",
@@ -75,4 +80,4 @@ export default defineConfig({
     exclude: [...configDefaults.exclude, "packages/template/*"],
     globals: true
   }
-});
+}));

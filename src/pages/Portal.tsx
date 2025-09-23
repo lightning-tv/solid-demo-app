@@ -2,6 +2,7 @@ import { createSignal, createSelector, For, children, createEffect } from "solid
 import { ElementNode, View, Text, assertTruthy } from "@lightningtv/solid";
 import { Column, Row, useFocusStack } from "@lightningtv/solid/primitives";
 import { useNavigate } from "@solidjs/router";
+import { Announcer } from "@lightningtv/solid/primitives";
 import styles from "../styles";
 
 const Portal = (props) => {
@@ -104,6 +105,16 @@ const Portal = (props) => {
       description: "TMDB Example"
     },
     {
+      title: "Login and Forms",
+      id: "login",
+      description: "Login with forms Example"
+    },
+    {
+      title: "Nested Modal",
+      id: "nested",
+      description: "Nested Right Modal Example"
+    },
+    {
       title: "Grid Primitive for Layout",
       id: "tmdbgrid",
       description: "Using Grid component"
@@ -127,6 +138,11 @@ const Portal = (props) => {
       title: "Grid",
       id: "grid",
       description: "Infinite Scroll Grid"
+    },
+    {
+      title: "Virtual",
+      id: "virtual",
+      description: "Virtual Rows"
     },
     {
       title: "Destroy",
@@ -220,6 +236,10 @@ const Portal = (props) => {
     }
   });
 
+  setTimeout(() => {
+    Announcer.speak('Welcome to the examples');
+  }, 1000);
+
   return (
     <>
     <View ref={portalRef} colorTop={0x446b9eff} colorBottom={0x2c4f7cff} onBlur={storeFocus} hidden={Boolean(resolvedChildren())}>
@@ -230,13 +250,14 @@ const Portal = (props) => {
         </Text>
         <View y={140} height={1} width={1800} color={0xe8d7f9ff} />
       </View>
-      <Column scroll="none" y={200} x={170} gap={80} autofocus>
+      <Column scroll="none" y={200} x={170} gap={80} autofocus={!resolvedChildren()}>
         <Row
           onEnter={onEnter}
           gap={40}
           height={320}
           flexBoundary="contain"
           scroll="always"
+          throttleInput={250}
         >
           <For each={demos}>
             {(demo, i) => <DemoTile index={i()} {...demo} />}

@@ -59,8 +59,10 @@ const SuperFlexPage = lazy(() => import("./pages/SuperFlex"));
 const Entity = lazy(() => import("./pages/Entity"));
 const People = lazy(() => import("./pages/People"));
 const FireboltPage = lazy(() => import("./pages/Firebolt"));
+const LoginPage = lazy(() => import("./pages/Login"));
+const VirtualPage = lazy(() => import("./pages/Virtual"));
 
-let numImageWorkers = 3;
+let numImageWorkers = 4;
 const urlParams = new URLSearchParams(window.location.search);
 const numWorkers = urlParams.get("numImageWorkers");
 const screenSize = urlParams.get("size") || "default";
@@ -73,6 +75,7 @@ if (numWorkers) {
 
 const deviceLogicalPixelRatio = {
   "720": 0.666667,
+  "medium": 0.8,
   "1080": 1,
   "4k": 2,
   default: window.innerHeight / 1080
@@ -82,6 +85,7 @@ const logFps = true;
 Config.debug = false;
 // Config.keyDebug = true;
 Config.animationsEnabled = animationsEnabled === "true";
+Config.simpleAnimationsEnabled = true;
 Config.fontSettings.fontFamily = "Roboto";
 Config.fontSettings.color = "#f6f6f6";
 Config.fontSettings.fontSize = 32;
@@ -98,7 +102,8 @@ Config.rendererOptions = {
   // 720p = 0.666667, 1080p = 1, 1440p = 1.5, 2160p = 2
   deviceLogicalPixelRatio,
   devicePhysicalPixelRatio: 1,
-  createImageBitmapSupport: "auto"
+  createImageBitmapSupport: "auto",
+  targetFPS: 30,
 };
 
 // Ideally you'd do two separate builds for canvas and webgl to reduce bundle size.
@@ -143,10 +148,13 @@ render(() => (
         <Route path="loops" component={Loops} preload={tmdbData} />
         <Route path="infinite" component={Infinite} preload={tmdbData} />
         <Route path="tmdbgrid" component={TMDBGrid} preload={tmdbData} />
+        <Route path="virtual" component={VirtualPage} preload={tmdbData} />
         <Route path="destroy" component={DestroyPage} preload={destroyData} />
         <Route path="grid" component={Grid} />
         <Route path="text" component={TextPage} />
         <Route path="firebolt" component={FireboltPage} />
+        <Route path="login" component={LoginPage} />
+        <Route path="nested" component={lazy(() => import('./pages/Nested'))} />
         <Route path="textposter" component={TextPosterPage} />
         <Route path="positioning" component={PositioningPage} />
         <Route path="layout" component={LayoutPage} />

@@ -157,6 +157,20 @@ const FlexSizePage = () => {
           <Block height={randSize()} />
           <Block height={randSize()} />
         </Row>
+
+        <Text style={rowTitle}>Space Around - No Margin Support</Text>
+        <Row
+          gap={gap}
+          justifyContent={"spaceAround"}
+          style={RowStyles}
+          onFocus={onFocus}
+        >
+          <Block height={randSize()} />
+          <Block height={randSize()} />
+          <Block height={randSize()} />
+          <Block height={randSize()} />
+          <Block height={randSize()} />
+        </Row>
       </Column>
     </>
   );

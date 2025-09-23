@@ -123,22 +123,11 @@ const CreatePage = () => {
   }
 
   const borderStyles = {
-    borderLeft: {
-      width: 8,
+    border: {
+      width: 0,
       color: 0x05b2b626
     },
-    borderTop: {
-      width: 8,
-      color: 0x25a2bd26
-    },
-    borderRight: {
-      width: 8,
-      color: 0x05b2b626
-    },
-    borderBottom: {
-      width: 8,
-      color: 0xc5b23626
-    }
+    borderRadius: 32
   } as const;
 
   const childTestPassedStyles = {
@@ -165,6 +154,7 @@ const CreatePage = () => {
   }
 
   return (
+    <>
     <View style={OverviewContainer}>
       <Text style={Title}>Title of the Page</Text>
       <View style={SublineContainer}>
@@ -190,10 +180,16 @@ const CreatePage = () => {
         color={"#00ff00"}
         x={900}
         y={400}
-        alpha={hasFocus(myBox) ? 1 : 0.2}
       />
       <PosTest x={100} y={100} />
     </View>
+    <View x={1100} y={50} width={200} height={200} linearGradient={{
+        colors: [0xffc107ff, 0xff9800ff, 0xff5252ff],
+        angle: 4.1,
+        stops: [0, 0.5, 1]
+      }}>
+      </View>
+    </>
   );
 };
 
