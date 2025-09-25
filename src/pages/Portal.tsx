@@ -211,7 +211,7 @@ const Portal = (props) => {
             fontSize={42}
             width={340}
             height={42}
-            contain="both"
+            contain="width"
             color={hasFocus() ? 0x000000ff : 0xffffffff}
           >
             {props.title}

@@ -7,19 +7,19 @@ export default [
     type: "msdf",
     fontFamily: "Roboto",
     descriptors: {
-      weight: 700
+      weight: 400
     },
-    atlasDataUrl: basePath + "fonts/Roboto-Bold.msdf.json",
-    atlasUrl: basePath + "fonts/Roboto-Bold.msdf.png"
+    atlasDataUrl: basePath + "fonts/Roboto-Regular.msdf.json",
+    atlasUrl: basePath + "fonts/Roboto-Regular.msdf.png"
   } as const,
   {
     type: "msdf",
     fontFamily: "Roboto",
     descriptors: {
-      weight: 400
+      weight: 700
     },
-    atlasDataUrl: basePath + "fonts/Roboto-Regular.msdf.json",
-    atlasUrl: basePath + "fonts/Roboto-Regular.msdf.png"
+    atlasDataUrl: basePath + "fonts/Roboto-Bold.msdf.json",
+    atlasUrl: basePath + "fonts/Roboto-Bold.msdf.png"
   } as const,
   {
     type: "msdf",

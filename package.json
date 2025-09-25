@@ -58,5 +58,5 @@
     ],
     "*.{js,cjs,md}": "prettier --write"
   },
-  "packageManager": "pnpm@10.8.0"
+  "packageManager": "pnpm@10.17.0"
 }
