@@ -197,7 +197,7 @@ const Portal = (props) => {
     const [hasFocus, setHasFocus] = createSignal(false);
 
     return (
-      <View {...props} onFocusChanged={setHasFocus} style={Container}>
+      <View {...props} onFocusChanged={setHasFocus} debug style={Container}>
         <View x={30}>
           <Text
             y={30}

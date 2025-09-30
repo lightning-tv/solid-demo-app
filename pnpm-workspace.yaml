@@ -1,4 +1,0 @@
-overrides:
-  "@lightningtv/core": link:../../../../Library/pnpm/global/5/node_modules/@lightningtv/core
-  "@lightningtv/solid": link:../../../../Library/pnpm/global/5/node_modules/@lightningtv/solid
-  # "@lightningjs/renderer": link:../../../../Library/pnpm/global/5/node_modules/@lightningjs/renderer
