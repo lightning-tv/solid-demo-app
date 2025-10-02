@@ -5,11 +5,10 @@ import {
   type NodeProps,
   Dynamic
 } from "@lightningtv/solid";
-import { Column, Row } from "@lightningtv/solid/primitives";
+import { Column, Row, VirtualRow } from "@lightningtv/solid/primitives";
 import { createEffect, createSignal, For, Index } from "solid-js";
 import styles, { buttonStyles } from "../styles";
 import { type Tile } from "../api/formatters/ItemFormatter";
-import { LazyRow } from "@lightningtv/solid/primitives";
 
 export function Thumbnail(props: IntrinsicNodeProps & { item: Tile }) {
   return (
@@ -96,11 +95,11 @@ export function TitleRow(props: TileRowProps) {
       <Text skipFocus style={titleRowStyles}>
         {props.title}
       </Text>
-      <LazyRow gap={20} upCount={11} sync each={props.items} y={50}>
-        {(item) => (
-          <Dynamic component={typeToComponent[props.row.type]} item={item()} />
+      <VirtualRow gap={20} displaySize={8} bufferSize={3} each={props.items} y={50} scroll={props.scroll} wrap={props.wrap} debugInfo>
+        {(item, index) => (
+          <Dynamic component={typeToComponent[props.row.type]} index={index()} item={item()} />
         )}
-      </LazyRow>
+      </VirtualRow>
     </View>
   );
 }
@@ -122,6 +121,7 @@ export function Poster(props: NodeProps) {
   return (
     <View
       src={props.item?.src}
+      title={props.item?.shortTitle}
       backdrop={props.item?.backdrop}
       {...props}
       onFail={(node) => (node.src = "failback.png")}

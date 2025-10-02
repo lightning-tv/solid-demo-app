@@ -1,17 +1,20 @@
 import {
+  createEffect,
   createMemo,
-  onCleanup,
+  on,
   createSignal,
-  Index
+  Show,
+  For
 } from "solid-js";
 import {
   ElementNode,
   View,
+  activeElement,
   assertTruthy
 } from "@lightningtv/solid";
-import { Column } from "@lightningtv/solid/primitives";
+import { Column, VirtualGrid } from "@lightningtv/solid/primitives";
 import { useNavigate, usePreloadRoute } from "@solidjs/router";
-import { TileRow } from "../components";
+import { Thumbnail, TileRow } from "../components";
 import styles from "../styles";
 import { setGlobalBackground } from "../state";
 import { createInfiniteScroll } from "../components/pagination";
@@ -19,15 +22,14 @@ import ContentBlock from "../components/ContentBlock";
 import { debounce } from "@solid-primitives/scheduled";
 
 const Browse = (props) => {
-  const [columnY, setcolumnY] = createSignal(0);
   const preload = usePreloadRoute();
   const [heroContent, setHeroContent] = createSignal({});
   const navigate = useNavigate();
-  let firstRun = true, browseColumn;
+  let firstRun = true;
 
   const provider = createMemo(() => {
     return createInfiniteScroll(props.data());
-  }, [props.data]);
+  });
 
   const delayedBackgrounds = debounce(
     (img: string) => setGlobalBackground(img),
@@ -38,57 +40,43 @@ const Browse = (props) => {
     600
   );
 
-  onCleanup(() => {
-    console.log('removing browse effects');
-  })
-
-  function updateContent(_index, _row, elm) {
+  function updateContentBlock(_index, _col, elm) {
     if (!elm) return;
 
-        const item = elm.item || ({} as any);
+    const item = elm.item || ({} as any);
 
-        if (firstRun) {
-          // no content set yet, set right away
-          if (item.backdrop) {
-            setGlobalBackground(item.backdrop);
-          }
+    if (firstRun) {
+      // no content set yet, set right away
+      if (item.backdrop) {
+        setGlobalBackground(item.backdrop);
+      }
 
-          if (item.heroContent) {
-            setHeroContent(item.heroContent);
-          }
+      if (item.heroContent) {
+        setHeroContent(item.heroContent);
+      }
 
-          preload(`/browse/tv`, { preloadData: true });
-          preload(`/browse/movie`, { preloadData: true });
+      // preload(`/browse/tv`, { preloadData: true });
+      // preload(`/browse/movie`, { preloadData: true });
 
-          firstRun = false;
-          return;
-        }
+      firstRun = false;
+      return;
+    }
 
-        if (item.href) {
-          preload(item.href, { preloadData: true });
-        }
+    if (item.href) {
+      // preload(item.href, { preloadData: true });
+    }
 
-        if (item.backdrop) {
-          delayedBackgrounds(item.backdrop);
-        }
+    if (item.backdrop) {
+      delayedBackgrounds(item.backdrop);
+    }
 
-        if (item.heroContent) {
-          delayedHero(item.heroContent);
-        }
+    if (item.heroContent) {
+      delayedHero(item.heroContent);
+    }
   }
 
-  function onRowFocus(this: ElementNode) {
-    (this.children[this.selected || 0] as ElementNode).setFocus();
-    setcolumnY((this.y || 0) * -1 + 24);
-    let numPages = provider().pages().length;
-    this.parent!.selected = this.parent!.children.indexOf(this);
-
-    if (
-      numPages === 0 ||
-      (this.parent!.selected && this.parent!.selected >= numPages - 2)
-    ) {
-      provider().setPage((p) => p + 1);
-    }
+  function onEndReached(this: ElementNode) {
+    provider().setPage((p) => p + 1);
   }
 
   function onEnter(this: ElementNode) {
@@ -102,35 +90,32 @@ const Browse = (props) => {
   }
 
   return (
-    <>
-      <ContentBlock y={360} x={162} content={heroContent()} forwardFocus={() => browseColumn.setFocus()} />
+    <Show when={provider().pages().length}>
+      <ContentBlock y={360} x={162} content={heroContent()} />
       <View clipping style={styles.itemsContainer}>
-        <Column
-          id="BrowseColumn"
-          ref={browseColumn}
-          plinko
+        <VirtualGrid
+          y={24}
+          x={160}
+          id="BrowseGrid"
+          scroll="always"
           announce={`All Trending ${props.params.filter}`}
-          y={columnY()}
-          scroll="none"
-          autofocus={provider().pages().length > 0}
-          style={styles.Column}
-        >
-          <Index each={provider().pages()}>
-            {(items) => (
-              <TileRow
-                id="TileRow"
-                onSelectedChanged={updateContent}
-                items={items()}
-                width={1620}
-                onFocus={onRowFocus}
-                onEnter={onEnter}
-                announceContext="Press LEFT or RIGHT to review items, press UP or DOWN to review categories, press CENTER to select"
-              />
-            )}
-          </Index>
-        </Column>
+          onEnter={onEnter}
+          columns={7}
+          gap={50}
+          rows={2}
+          buffer={2}
+          onSelectedChanged={updateContentBlock}
+          onEndReached={onEndReached}
+          onEndReachedThreshold={18}
+          width={1620}
+          autofocus
+          each={provider().pages()}>
+          {(item) =>
+            <Thumbnail item={item()} />
+          }
+        </VirtualGrid>
       </View>
-    </>
+    </Show>
   );
 };
 

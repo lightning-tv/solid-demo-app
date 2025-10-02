@@ -6,6 +6,7 @@
   "main": "index.js",
   "scripts": {
     "start": "vite --host --force",
+    "start:dom": "VITE_LIGHTNING_DOM_RENDERING=true vite --host --force",
     "start:prod": "vite --host --force --mode production",
     "build": "vite build --sourcemap=true",
     "build:tizen": "vite build --sourcemap=false --base=./ --outDir tizen --emptyOutDir false",
@@ -24,16 +25,16 @@
   "license": "ISC",
   "dependencies": {
     "@firebolt-js/sdk": "^1.5.0",
-    "@lightningjs/renderer": "2.16.0",
-    "@lightningtv/core": "2.10.0",
-    "@lightningtv/solid": "2.9.3",
+    "@lightningjs/renderer": "2.17.0",
+    "@lightningtv/core": "2.12.2",
+    "@lightningtv/solid": "2.10.12",
     "@solid-primitives/list": "^0.1.0",
     "@solid-primitives/scheduled": "^1.5.0",
     "@solidjs/router": "^0.15.3",
     "browserlist": "^1.0.1",
     "proxy-polyfill": "^0.3.2",
     "shaka-player": "^4.14.4",
-    "solid-js": "^1.9.5",
+    "solid-js": "^1.9.7",
     "vite-plugin-babel": "^1.3.0",
     "vitest": "^3.0.9",
     "whatwg-fetch": "^3.6.20"
