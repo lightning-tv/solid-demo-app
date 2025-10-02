@@ -6,6 +6,7 @@
   "main": "index.js",
   "scripts": {
     "start": "vite --host --force",
+    "start:dom": "VITE_LIGHTNING_DOM_RENDERING=true vite --host --force",
     "start:prod": "vite --host --force --mode production",
     "build": "vite build --sourcemap=true",
     "build:tizen": "vite build --sourcemap=false --base=./ --outDir tizen --emptyOutDir false",
