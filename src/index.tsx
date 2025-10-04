@@ -16,7 +16,7 @@ import {
 } from "@lightningjs/renderer/canvas";
 
 import { Inspector } from "@lightningjs/renderer/inspector";
-import { HashRouter, FocusStackProvider, KeepAliveRoute, KeepAliveWrapper } from "@lightningtv/solid/primitives";
+import { HashRouter, FocusStackProvider, KeepAliveRoute } from "@lightningtv/solid/primitives";
 import { Route, Navigate } from "@solidjs/router";
 import { lazy } from "solid-js";
 import App from "./pages/App";
@@ -145,7 +145,7 @@ render(() => (
           <Route path="tmdb" component={TMDB} preload={tmdbData} />
         </Route>
         {/* <Route path="browse/:filter" component={KeepAliveWrapper(Browse)} preload={browsePreload} /> */}
-        <KeepAliveRoute id="browse" path="browse/:filter" component={Browse} preload={browsePreload} shouldDispose={() => false} />
+        <KeepAliveRoute id="browse" path="browse/:filter" component={Browse} preload={browsePreload} />
         <Route path="loops" component={Loops} preload={tmdbData} />
         <Route path="infinite" component={Infinite} preload={tmdbData} />
         <Route path="tmdbgrid" component={TMDBGrid} preload={tmdbData} />
