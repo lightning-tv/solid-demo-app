@@ -16,11 +16,11 @@ importers:
         specifier: ^1.5.0
         version: 1.5.0
       '@lightningjs/renderer':
-        specifier: 2.17.0
-        version: 2.17.0
+        specifier: 2.18.2
+        version: 2.18.2
       '@lightningtv/core':
-        specifier: 2.12.2
-        version: 2.12.2(@lightningjs/renderer@2.17.0)
+        specifier: 2.13.0
+        version: 2.13.0(@lightningjs/renderer@2.18.2)
       '@lightningtv/solid':
         specifier: link:../../../../Library/pnpm/global/5/node_modules/@lightningtv/solid
         version: link:../../../../Library/pnpm/global/5/node_modules/@lightningtv/solid
@@ -911,12 +911,12 @@ packages:
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
-  '@lightningjs/renderer@2.17.0':
-    resolution: {integrity: sha512-WZ60yOUhqNGPXEpNmZH+9go6QrZeaOl2f/zfwNes/Ank71QwAqU3DaHU2eYBauv34j1hcOVvK0R8lPtriYKHFA==}
+  '@lightningjs/renderer@2.18.2':
+    resolution: {integrity: sha512-nMwJSUj0VzF48u76f4zwcEWUfqiZfeqa67iT4jSQ9vXJVyfOfS3XqpcgPYgSEm+7S1vcHQh7dVNbO/jdHAB63w==}
     engines: {node: '>= 20.9.0', npm: '>= 10.0.0', pnpm: '>= 8.9.2'}
 
-  '@lightningtv/core@2.12.2':
-    resolution: {integrity: sha512-yYwh05Ck8TKr6fNvEtGeAoz2ocZHFiF3jrF6FmyRa/jcrFPn0NHBZSUinHFSaeI3Mkgofe92EqLNJLEcS3+6kg==}
+  '@lightningtv/core@2.13.0':
+    resolution: {integrity: sha512-QOw28FuEnN9t/psqzEAIQtgjlLz72+i6DOERtUz6BCMXARENQd7+O9LcygfaFaYwTjF/uIvZJdYBv3R9FXC3+w==}
     peerDependencies:
       '@lightningjs/renderer': ^2.16.0
 
@@ -3028,11 +3028,11 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@lightningjs/renderer@2.17.0': {}
+  '@lightningjs/renderer@2.18.2': {}
 
-  '@lightningtv/core@2.12.2(@lightningjs/renderer@2.17.0)':
+  '@lightningtv/core@2.13.0(@lightningjs/renderer@2.18.2)':
     dependencies:
-      '@lightningjs/renderer': 2.17.0
+      '@lightningjs/renderer': 2.18.2
 
   '@lightningtv/vite-hex-transform@1.1.0(terser@5.39.0)':
     dependencies:

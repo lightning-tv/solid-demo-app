@@ -145,7 +145,7 @@ render(() => (
           <Route path="tmdb" component={TMDB} preload={tmdbData} />
         </Route>
         {/* <Route path="browse/:filter" component={KeepAliveWrapper(Browse)} preload={browsePreload} /> */}
-        <KeepAliveRoute id="browse" path="browse/:filter" component={Browse} preload={browsePreload} />
+        <KeepAliveRoute id="browse" path="browse/:filter" component={Browse} preload={browsePreload} shouldDispose={() => false} />
         <Route path="loops" component={Loops} preload={tmdbData} />
         <Route path="infinite" component={Infinite} preload={tmdbData} />
         <Route path="tmdbgrid" component={TMDBGrid} preload={tmdbData} />

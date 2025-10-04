@@ -1,10 +1,8 @@
 import {
-  createEffect,
   createMemo,
-  on,
   createSignal,
   Show,
-  For
+  onCleanup
 } from "solid-js";
 import {
   ElementNode,
@@ -26,6 +24,11 @@ const Browse = (props) => {
   const [heroContent, setHeroContent] = createSignal({});
   const navigate = useNavigate();
   let firstRun = true;
+  let vgRef;
+
+  onCleanup(() => {
+    console.log('cleanup');
+  })
 
   const provider = createMemo(() => {
     return createInfiniteScroll(props.data());
@@ -91,12 +94,13 @@ const Browse = (props) => {
 
   return (
     <Show when={provider().pages().length}>
-      <ContentBlock y={360} x={162} content={heroContent()} />
+      <ContentBlock y={360} x={162} content={heroContent()} forwardFocus={() => vgRef.setFocus()} />
       <View clipping style={styles.itemsContainer}>
         <VirtualGrid
           y={24}
           x={160}
           id="BrowseGrid"
+          ref={vgRef}
           scroll="always"
           announce={`All Trending ${props.params.filter}`}
           onEnter={onEnter}

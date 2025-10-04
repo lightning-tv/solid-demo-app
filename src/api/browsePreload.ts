@@ -1,17 +1,17 @@
-import { createMemo, onCleanup } from "solid-js";
+import * as s from "solid-js";
 import browseProvider from "./providers/browse";
 
 export function browsePreload(props) {
-  const params = props().params;
-  return createMemo((p) => {
-    if (p) {
+  let lastFilter = null;
+  return s.createMemo((p) => {
+    const params = props.params;
+    if (p && (!params.filter || lastFilter === params.filter)) {
       return p;
     }
     const provider = browseProvider(params.filter || "all");
     provider(1);
-    onCleanup(() => {
-      console.log('bye memo')
-    });
+    lastFilter = params.filter || lastFilter;
+
     return provider;
   });
 }
