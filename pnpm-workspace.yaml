@@ -1,3 +1,4 @@
-overrides:
-  solid: link:../../../../Library/pnpm/global/5/node_modules/@lightningtv/solid
-  '@lightningtv/solid': link:../../../../Library/pnpm/global/5/node_modules/@lightningtv/solid
+# overrides removed: caused pnpm to link to a non-existent global path
+# overrides:
+#   solid: link:../../../../Library/pnpm/global/5/node_modules/@lightningtv/solid
+#   '@lightningtv/solid': link:../../../../Library/pnpm/global/5/node_modules/@lightningtv/solid

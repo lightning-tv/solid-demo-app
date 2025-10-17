@@ -4,10 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-overrides:
-  solid: link:../../../../Library/pnpm/global/5/node_modules/@lightningtv/solid
-  '@lightningtv/solid': link:../../../../Library/pnpm/global/5/node_modules/@lightningtv/solid
-
 importers:
 
   .:
