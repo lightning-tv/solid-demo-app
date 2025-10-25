@@ -27,7 +27,7 @@
     "@firebolt-js/sdk": "^1.7.0",
     "@lightningjs/renderer": "2.18.4",
     "@lightningtv/core": "2.13.0",
-    "@lightningtv/solid": "^2.11.2",
+    "@lightningtv/solid": "^2.11.6",
     "@solid-primitives/list": "^0.1.2",
     "@solid-primitives/scheduled": "^1.5.2",
     "@solidjs/router": "^0.15.3",

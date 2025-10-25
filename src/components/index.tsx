@@ -5,17 +5,18 @@ import {
   type NodeProps,
   Dynamic
 } from "@lightningtv/solid";
-import { Column, Row, VirtualRow } from "@lightningtv/solid/primitives";
+import { Column, Row, VirtualRow, Image } from "@lightningtv/solid/primitives";
 import { createEffect, createSignal, For, Index } from "solid-js";
 import styles, { buttonStyles } from "../styles";
 import { type Tile } from "../api/formatters/ItemFormatter";
 
 export function Thumbnail(props: IntrinsicNodeProps & { item: Tile }) {
   return (
-    <View
+    <Image
       {...props}
       id="thumbnail"
       src={props.item.src}
+      placeholder="./assets/fallback.png"
       item={props.item}
       announce={[props.item.title, 'PAUSE-1', props.item.overview]}
       style={styles.Thumbnail}

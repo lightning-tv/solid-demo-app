@@ -18,8 +18,8 @@ importers:
         specifier: 2.13.0
         version: 2.13.0(@lightningjs/renderer@2.18.4)
       '@lightningtv/solid':
-        specifier: ^2.11.2
-        version: 2.11.2(@lightningjs/renderer@2.18.4)(@solidjs/router@0.15.3(solid-js@1.9.9))(solid-js@1.9.9)
+        specifier: ^2.11.6
+        version: 2.11.6(@lightningjs/renderer@2.18.4)(@solidjs/router@0.15.3(solid-js@1.9.9))(solid-js@1.9.9)
       '@solid-primitives/list':
         specifier: ^0.1.2
         version: 0.1.2(solid-js@1.9.9)
@@ -922,8 +922,8 @@ packages:
     peerDependencies:
       '@lightningjs/renderer': ^2.16.0
 
-  '@lightningtv/solid@2.11.2':
-    resolution: {integrity: sha512-ySJn9acUZc7oUBf3a0UxsffW6vOoEAHhPeIXyzN9/642hVCdP+6/3DkDuBSiTEg7E/4XRVaLgn97+eml+KYmhQ==}
+  '@lightningtv/solid@2.11.6':
+    resolution: {integrity: sha512-9EZ3egqgN8pHSb47pBB335NW7pvIwVR9DSCTKmo+Rg7VSpbXrRpwq96uGwaGqv3pQ9VGEyrZcNeZCL5r/RyHpA==}
     peerDependencies:
       '@solidjs/router': ^0.15.1
       solid-js: '*'
@@ -3009,7 +3009,7 @@ snapshots:
     dependencies:
       '@lightningjs/renderer': 2.18.4
 
-  '@lightningtv/solid@2.11.2(@lightningjs/renderer@2.18.4)(@solidjs/router@0.15.3(solid-js@1.9.9))(solid-js@1.9.9)':
+  '@lightningtv/solid@2.11.6(@lightningjs/renderer@2.18.4)(@solidjs/router@0.15.3(solid-js@1.9.9))(solid-js@1.9.9)':
     dependencies:
       '@lightningtv/core': 2.13.0(@lightningjs/renderer@2.18.4)
       '@solid-primitives/event-listener': 2.4.3(solid-js@1.9.9)
