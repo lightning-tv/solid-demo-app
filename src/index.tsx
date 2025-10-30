@@ -28,10 +28,10 @@ import NotFound from "./pages/NotFound";
 import fonts from "./fonts";
 import { browsePreload } from "./api/browsePreload";
 import { entityPreload } from "./api/entityPreload";
-import Player from "./pages/Player";
 import LeftNavWrapper from "./pages/LeftNavWrapper";
 import theme from 'theme';
 
+const Player = lazy(() => import("./pages/Player"));
 const Grid = lazy(() => import("./pages/Grid"));
 const Loops = lazy(() => import("./pages/Loops"));
 const Infinite = lazy(() => import("./pages/Infinite"));

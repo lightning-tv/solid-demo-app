@@ -14,7 +14,7 @@ import { setGlobalBackground } from "../state";
 import ContentBlock from "../components/ContentBlock";
 import { useNavigate } from "@solidjs/router";
 import styles from "../styles";
-import * as player from "../video";
+//import * as player from "../video";
 
 const Entity = (props) => {
   const [backdropAlpha, setBackdropAlpha] = createSignal(0);

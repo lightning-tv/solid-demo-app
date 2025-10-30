@@ -12,14 +12,14 @@ importers:
         specifier: ^1.7.0
         version: 1.7.0
       '@lightningjs/renderer':
-        specifier: 2.18.4
-        version: 2.18.4
+        specifier: 2.19.1
+        version: 2.19.1
       '@lightningtv/core':
-        specifier: 2.13.2
-        version: 2.13.2(@lightningjs/renderer@2.18.4)
+        specifier: 2.14.0
+        version: 2.14.0(@lightningjs/renderer@2.19.1)
       '@lightningtv/solid':
         specifier: ^2.11.6
-        version: 2.11.6(@lightningjs/renderer@2.18.4)(@solidjs/router@0.15.3(solid-js@1.9.9))(solid-js@1.9.9)
+        version: 2.11.6(@lightningjs/renderer@2.19.1)(@solidjs/router@0.15.3(solid-js@1.9.9))(solid-js@1.9.9)
       '@solid-primitives/list':
         specifier: ^0.1.2
         version: 0.1.2(solid-js@1.9.9)
@@ -913,14 +913,14 @@ packages:
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
 
-  '@lightningjs/renderer@2.18.4':
-    resolution: {integrity: sha512-zeEhfGlXcnn0knGyDGd6kmQrRceEZ9oZlCGhhA/XIFP7wvuKNJ+bM5bd1OzW4cjBT81mKuUrV210+8D8ZD5YwA==}
+  '@lightningjs/renderer@2.19.1':
+    resolution: {integrity: sha512-sxI9u91zqyYZrSqR9vQma0eWtUr0p32A2mFuX0l1K9bBuXt6F99cwJetM/Gya4vkquiPsVT++w+wfjQyzfYoAg==}
     engines: {node: '>= 20.9.0', npm: '>= 10.0.0', pnpm: '>= 8.9.2'}
 
-  '@lightningtv/core@2.13.2':
-    resolution: {integrity: sha512-S9xbNuQPiyFmKiNqGmmtwWzBkzcYBRchndFIvCzL+rg7FtkNNebgI1DBuSgXgVs+4YAI0Dg4+xIRgfQciB1lwg==}
+  '@lightningtv/core@2.14.0':
+    resolution: {integrity: sha512-o3EA/7HPTnfqSXK2slyCP/2xtAK/My/pvuu4zq4Xn+YgnJHOSQXSa6Cf/Y1Xfz/aPnen7N715s61vpyoUWx3fA==}
     peerDependencies:
-      '@lightningjs/renderer': ^2.16.0
+      '@lightningjs/renderer': ^2.19.1
 
   '@lightningtv/solid@2.11.6':
     resolution: {integrity: sha512-9EZ3egqgN8pHSb47pBB335NW7pvIwVR9DSCTKmo+Rg7VSpbXrRpwq96uGwaGqv3pQ9VGEyrZcNeZCL5r/RyHpA==}
@@ -3003,15 +3003,15 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@lightningjs/renderer@2.18.4': {}
+  '@lightningjs/renderer@2.19.1': {}
 
-  '@lightningtv/core@2.13.2(@lightningjs/renderer@2.18.4)':
+  '@lightningtv/core@2.14.0(@lightningjs/renderer@2.19.1)':
     dependencies:
-      '@lightningjs/renderer': 2.18.4
+      '@lightningjs/renderer': 2.19.1
 
-  '@lightningtv/solid@2.11.6(@lightningjs/renderer@2.18.4)(@solidjs/router@0.15.3(solid-js@1.9.9))(solid-js@1.9.9)':
+  '@lightningtv/solid@2.11.6(@lightningjs/renderer@2.19.1)(@solidjs/router@0.15.3(solid-js@1.9.9))(solid-js@1.9.9)':
     dependencies:
-      '@lightningtv/core': 2.13.2(@lightningjs/renderer@2.18.4)
+      '@lightningtv/core': 2.14.0(@lightningjs/renderer@2.19.1)
       '@solid-primitives/event-listener': 2.4.3(solid-js@1.9.9)
       '@solid-primitives/keyed': 1.5.2(solid-js@1.9.9)
       '@solid-primitives/list': 0.1.2(solid-js@1.9.9)
