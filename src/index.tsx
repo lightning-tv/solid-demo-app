@@ -30,6 +30,7 @@ import { browsePreload } from "./api/browsePreload";
 import { entityPreload } from "./api/entityPreload";
 import Player from "./pages/Player";
 import LeftNavWrapper from "./pages/LeftNavWrapper";
+import theme from 'theme';
 
 const Grid = lazy(() => import("./pages/Grid"));
 const Loops = lazy(() => import("./pages/Loops"));
@@ -87,7 +88,7 @@ Config.debug = false;
 Config.animationsEnabled = animationsEnabled === "true";
 Config.simpleAnimationsEnabled = true;
 Config.fontSettings.fontFamily = "Roboto";
-Config.fontSettings.color = "#f6f6f6";
+Config.fontSettings.color = theme.textPrimary;
 Config.fontSettings.fontSize = 32;
 // Config.focusDebug = true;
 

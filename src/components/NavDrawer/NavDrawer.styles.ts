@@ -16,10 +16,10 @@ export default {
         easing: "ease-in-out"
       }
     },
-    x: 8,
+    x: 24,
     $focus: {
       width: 500,
-      x: theme.layout.marginX
+      // x: theme.layout.marginX
     }
   } satisfies IntrinsicNodeStyleProps,
   Gradient: {
@@ -42,7 +42,7 @@ export default {
     borderRadius: 8,
     color: 0,
     $focus: {
-      color: "#424242"
+      color: theme.primaryLight,
     },
     $active: {
       width: 328,

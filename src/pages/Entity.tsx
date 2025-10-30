@@ -34,13 +34,13 @@ const Entity = (props) => {
   const columnY = 640;
 
   const Backdrop = {
-    color: "#000000",
+    colorTop: '#0E1218',
+    colorBottom: '#1A1F27',
     alpha: 0,
     width: 1900,
-    height: 890,
-    x: -160,
+    height: 1080,
+    x: -180,
     y: columnY,
-    borderRadius: 30
   };
 
   function onRowFocus(this: ElementNode) {
@@ -52,9 +52,9 @@ const Entity = (props) => {
 
   function onRowFocusAnimate(this: ElementNode) {
     this.children[this.selected || 0].setFocus();
-    columnRef.y = 200;
-    backdropRef.y = 160;
-    backdropRef.alpha = 0.9;
+    columnRef.y = 180;
+    backdropRef.y = 0;
+    backdropRef.alpha = 0.99;
   }
 
   function onEnter(this: ElementNode) {
@@ -149,7 +149,8 @@ const Entity = (props) => {
       </View>
       <View
         alpha={backdropAlpha()}
-        color={"#000000"}
+        colorTop={'#0E1218'}
+        colorBottom={'#1A1F27'}
         skipFocus
         zIndex={200}
         transition={{ alpha: true }}

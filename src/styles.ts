@@ -68,7 +68,7 @@ export default {
     border: { width: 0, color: 0x00000000 },
     $focus: {
       scale: 1.1,
-      border: { color: "#2c4f7cE8", width: 8 },
+      border: { color: theme.primaryLight, width: 8 },
     }
   },
   FocusRing: {
@@ -154,9 +154,10 @@ export default {
 const Button = {
   width: 300,
   height: 90,
-  color: "#323232cc",
+  color: theme.primary,
+  borderRadius: 12,
   $focus: {
-    color: "#FFF"
+    color: theme.primaryLight
   }
 } satisfies IntrinsicNodeStyleProps;
 
@@ -175,10 +176,7 @@ const ButtonText = {
   textAlign: "center",
   height: Button.height,
   width: Button.width,
-  color: "#FFF",
-  $focus: {
-    color: "#000"
-  }
+  color: theme.textPrimary,
 } satisfies IntrinsicTextNodeStyleProps;
 
 export const buttonStyles = {
