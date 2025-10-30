@@ -85,7 +85,7 @@ export default function NavDrawer(props) {
         <View x={0} y={100} src="./assets/tmdb.png" width={80} height={41} />
         <Text
           x={90}
-          y={110}
+          y={104}
           contain="width"
           width={160}
           fontSize={12}

@@ -110,10 +110,10 @@ export default {
     color: "#000000"
   },
   RowTitle: {
-    height: 60,
+    height: 44,
     width: 300,
-    marginBottom: -40,
-    fontSize: 36,
+    marginBottom: -54,
+    fontSize: 26,
     color: "#f0f0f0",
     zIndex: 2
   } satisfies IntrinsicTextNodeStyleProps,
