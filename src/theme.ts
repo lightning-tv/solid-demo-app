@@ -1,4 +1,40 @@
 export default {
+  // === Primary Brand ===
+  primary: "#2C4F7C",         // Solid Blue
+  primaryLight: "#4A7BD0",    // Lighter accent
+
+  // === Neutrals ===
+  backgroundDark: "#0E1218",
+  surface: "#1A1F27",
+  card: "#252C37",
+  textPrimary: "#E6E8EB",
+  textSecondary: "#7f848d",
+
+  // === Accents ===
+  success: "#4ADE80",
+  warning: "#FBBF24",
+  error: "#F87171",
+  // focusGlow: "rgba(74, 123, 208, 0.6)",
+
+  // === Gradients ===
+  blueDepth: "linear-gradient(180deg, rgba(44,79,124,0.9), rgba(10,15,20,0.95))",
+  midnightMist: "linear-gradient(180deg, #0E1218 0%, #1A1F27 100%)",
+
+  // === Light Mode ===
+  light: {
+    background: "#F5F7FA",
+    text: "#1E293B",
+    surface: "#FFFFFF",
+    accent: "#4A7BD0"
+  },
+
+  // === Dark Mode ===
+  dark: {
+    background: "#0E1218",
+    text: "#E6E8EB",
+    surface: "#1A1F27",
+    accent: "#4A7BD0"
+  },
   layout: {
     columnCount: 10,
     focusScale: 1.2,

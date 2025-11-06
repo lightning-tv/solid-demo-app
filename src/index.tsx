@@ -16,8 +16,8 @@ import {
 } from "@lightningjs/renderer/canvas";
 
 import { Inspector } from "@lightningjs/renderer/inspector";
-import { HashRouter, FocusStackProvider } from "@lightningtv/solid/primitives";
-import { Route } from "@solidjs/router";
+import { HashRouter, FocusStackProvider, KeepAliveRoute } from "@lightningtv/solid/primitives";
+import { Route, Navigate } from "@solidjs/router";
 import { lazy } from "solid-js";
 import App from "./pages/App";
 import Browse from "./pages/Browse";
@@ -28,9 +28,10 @@ import NotFound from "./pages/NotFound";
 import fonts from "./fonts";
 import { browsePreload } from "./api/browsePreload";
 import { entityPreload } from "./api/entityPreload";
-import Player from "./pages/Player";
 import LeftNavWrapper from "./pages/LeftNavWrapper";
+import theme from 'theme';
 
+const Player = lazy(() => import("./pages/Player"));
 const Grid = lazy(() => import("./pages/Grid"));
 const Loops = lazy(() => import("./pages/Loops"));
 const Infinite = lazy(() => import("./pages/Infinite"));
@@ -87,7 +88,7 @@ Config.debug = false;
 Config.animationsEnabled = animationsEnabled === "true";
 Config.simpleAnimationsEnabled = true;
 Config.fontSettings.fontFamily = "Roboto";
-Config.fontSettings.color = "#f6f6f6";
+Config.fontSettings.color = theme.textPrimary;
 Config.fontSettings.fontSize = 32;
 // Config.focusDebug = true;
 
@@ -139,12 +140,13 @@ render(() => (
   <FocusStackProvider>
     <HashRouter root={(props) => <App {...props} />}>
       <Route path="" component={LeftNavWrapper}>
-        <Route path="" component={Browse} preload={browsePreload} />
+        <Route path="" component={() => <Navigate href="/browse/all" />} />
         <Route path="examples" component={Portal}>
           <Route path="/" />
           <Route path="tmdb" component={TMDB} preload={tmdbData} />
         </Route>
-        <Route path="browse/:filter" component={Browse} preload={browsePreload} />
+        {/* <Route path="browse/:filter" component={KeepAliveWrapper(Browse)} preload={browsePreload} /> */}
+        <KeepAliveRoute id="browse" path="browse/:filter" component={Browse} preload={browsePreload} />
         <Route path="loops" component={Loops} preload={tmdbData} />
         <Route path="infinite" component={Infinite} preload={tmdbData} />
         <Route path="tmdbgrid" component={TMDBGrid} preload={tmdbData} />
