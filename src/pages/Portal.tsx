@@ -20,170 +20,45 @@ const Portal = (props) => {
     navigate("/" + entity.id);
   }
 
-  const flexDemos = [
-    {
-      title: "Focus Basics",
-      id: "focusbasics",
-      description: "Quick guide on Focus"
-    },
-    {
-      title: "Key Handling",
-      id: "keyhandling",
-      description: "Understanding Key Handling"
-    },
-    {
-      title: "Loop Basics",
-      id: "loops",
-      description: "Understanding For, Index, Lazy and List"
-    },
-    {
-      title: "Infinite Items",
-      id: "infinite",
-      description: "Learn how to manage large list of items"
-    },
-    {
-      title: "Layout Basics",
-      id: "layout",
-      description: "Quick guide on Layout"
-    },
-    {
-      title: "Flex Menu",
-      id: "flexmenu",
-      description: "Flex Menu On Right Implementation",
-    },
-    {
-      title: "Flex Row",
-      id: "flex",
-      description: "Flex Row Implementation"
-    },
-    {
-      title: "Flex Column",
-      id: "flexcolumn",
-      description: "Flex Column Implementation"
-    },
-    {
-      title: "Flex Grow",
-      id: "flexgrow",
-      description: "Flex Grow Examples"
-    },
-    {
-      title: "Flex Row Vertical Align",
-      id: "flexsize",
-      description: "Flex Row Vertical Align Implementation"
-    },
-    {
-      title: "Flex Column Vertical Align",
-      id: "flexcolumnsize",
-      description: "Flex Column Vertical Align Implementation"
-    },
-    {
-      title: "Flex Layout Tests",
-      id: "superflex",
-      description: "Complicated flex layouts"
-    }
+  const basicDemos = [
+    { title: "Focus Basics", id: "focusbasics", description: "Quick guide on Focus" },
+    { title: "Key Handling", id: "keyhandling", description: "Understanding Key Handling" },
+    { title: "Focus Handling", id: "focushandling", description: "Dealing with Focus Handling" },
+    { title: "Loop Basics", id: "loops", description: "Understanding For, Index, Lazy and List" },
+    { title: "Layout Basics", id: "layout", description: "Quick guide on Layout" },
+    { title: "Positioning", id: "positioning", description: "Positioning Elements" },
+    { title: "Text", id: "text", description: "Text layout with flexbox" },
+    { title: "TextPoster", id: "textposter", description: "Text layout with flex and Poster" },
+    { title: "Create Elements", id: "create", description: "Testing Show + children + inserting text" },
+    { title: "Destroy", id: "destroy", description: "Using onDestroy to animate destruction" },
+    { title: "Viewport", id: "viewport", description: "Events going in and out of viewport" },
   ];
 
-  const demos = [
-    {
-      title: "Positioning",
-      id: "positioning",
-      description: "Positioning Elements"
-    },
-    {
-      title: "Gradients",
-      id: "gradients",
-      description: "Basic Gradients"
-    },
-    {
-      title: "Transitions",
-      id: "transitions",
-      description: "Comparing different Transitions"
-    },
-    {
-      title: "TMDB",
-      id: "examples/tmdb",
-      description: "TMDB Example"
-    },
-    {
-      title: "Login and Forms",
-      id: "login",
-      description: "Login with forms Example"
-    },
-    {
-      title: "Nested Modal",
-      id: "nested",
-      description: "Nested Right Modal Example"
-    },
-    {
-      title: "Grid Primitive for Layout",
-      id: "tmdbgrid",
-      description: "Using Grid component"
-    },
-    {
-      title: "Firebolt Integration",
-      id: "firebolt",
-      description: "Firebolt API Integration"
-    },
-    {
-      title: "Components",
-      id: "components",
-      description: "Reusable Components"
-    },
-    {
-      title: "Focus Handling",
-      id: "focushandling",
-      description: "Dealing with Focus Handling"
-    },
-    {
-      title: "Grid",
-      id: "grid",
-      description: "Infinite Scroll Grid"
-    },
-    {
-      title: "Virtual",
-      id: "virtual",
-      description: "Virtual Rows"
-    },
-    {
-      title: "Destroy",
-      id: "destroy",
-      description: "Using onDestroy to animate destruction"
-    },
-    {
-      title: "Text",
-      id: "text",
-      description: "Text layout with flexbox"
-    },
-    {
-      title: "TextPoster",
-      id: "textposter",
-      description: "Text layout with flex and Poster"
-    },
-    {
-      title: "Create Elements",
-      id: "create",
-      description: "Testing Show + children + inserting text"
-    },
-    {
-      title: "Viewport",
-      id: "viewport",
-      description: "Events going in and out of viewport",
-    },
-    {
-      title: "Keep Alive",
-      id: "keepalive",
-      description: "Reuse component between layouts",
-    },
-    {
-      title: "Suspense",
-      id: "suspense",
-      description: "Using Suspense to load data",
-    },
-    {
-      title: "Tags",
-      id: "tags",
-      description: "Tags Page"
-    },
+  const flexDemos = [
+    { title: "Flex Row", id: "flex", description: "Flex Row Implementation" },
+    { title: "Flex Column", id: "flexcolumn", description: "Flex Column Implementation" },
+    { title: "Flex Grow", id: "flexgrow", description: "Flex Grow Examples" },
+    { title: "Flex Row Vertical Align", id: "flexsize", description: "Flex Row Vertical Align Implementation" },
+    { title: "Flex Column Vertical Align", id: "flexcolumnsize", description: "Flex Column Vertical Align Implementation" },
+    { title: "Flex Menu", id: "flexmenu", description: "Flex Menu On Right Implementation" },
+    { title: "Flex Layout Tests", id: "superflex", description: "Complicated flex layouts" },
+    { title: "Gradients", id: "gradients", description: "Basic Gradients" },
+    { title: "Transitions", id: "transitions", description: "Comparing different Transitions" },
+  ];
+
+  const advancedDemos = [
+    { title: "TMDB", id: "examples/tmdb", description: "TMDB Example" },
+    { title: "Login and Forms", id: "login", description: "Login with forms Example" },
+    { title: "Nested Modal", id: "nested", description: "Nested Right Modal Example" },
+    { title: "Components", id: "components", description: "Reusable Components" },
+    { title: "Grid Primitive for Layout", id: "tmdbgrid", description: "Using Grid component" },
+    { title: "Grid", id: "grid", description: "Infinite Scroll Grid" },
+    { title: "Virtual", id: "virtual", description: "Virtual Rows" },
+    { title: "Infinite Items", id: "infinite", description: "Learn how to manage large list of items" },
+    { title: "Firebolt Integration", id: "firebolt", description: "Firebolt API Integration" },
+    { title: "Keep Alive", id: "keepalive", description: "Reuse component between layouts" },
+    { title: "Suspense", id: "suspense", description: "Using Suspense to load data" },
+    { title: "Tags", id: "tags", description: "Tags Page" },
   ];
 
   function DemoTile(props) {
@@ -191,11 +66,9 @@ const Portal = (props) => {
       width: 370,
       height: 320,
       borderRadius: 6,
-      scale: 1,
       color: "#182b44",
-      transition: { color: true, scale: true },
+      transition: { color: true },
       $focus: {
-        scale: 1.1,
         color: 0xffffffff
       }
     };
@@ -255,21 +128,27 @@ const Portal = (props) => {
         </Text>
         <View y={140} height={1} width={1800} color={0xe8d7f9ff} />
       </View>
-      <Column scroll="none" y={200} x={170} gap={80} autofocus={!resolvedChildren()}>
+      <View clipping y={140} x={150}>
+      <Column scroll="auto" y={20} x={20} gap={20} autofocus={!resolvedChildren()}>
+        <View forwardFocus={1} height={400}>
+          <Text style={styles.RowTitle} fontSize={42}>Core Concepts</Text>
+          <Row
+            y={48}
+            onEnter={onEnter}
+            gap={40}
+            height={320}
+            flexBoundary="contain"
+            scroll="always"
+          >
+            <For each={basicDemos}>
+              {(demo, i) => <DemoTile index={i()} {...demo} />}
+            </For>
+          </Row>
+        </View>
+        <View forwardFocus={1} height={400}>
+        <Text style={styles.RowTitle} fontSize={42}>Flexbox & Styling</Text>
         <Row
-          onEnter={onEnter}
-          gap={40}
-          height={320}
-          flexBoundary="contain"
-          scroll="always"
-          throttleInput={250}
-        >
-          <For each={demos}>
-            {(demo, i) => <DemoTile index={i()} {...demo} />}
-          </For>
-        </Row>
-
-        <Row
+          y={48}
           onEnter={onEnter}
           gap={40}
           height={320}
@@ -280,7 +159,24 @@ const Portal = (props) => {
             {(demo, i) => <DemoTile index={i()} {...demo} />}
           </For>
         </Row>
+        </View>
+        <View forwardFocus={1} height={400}>
+          <Text style={styles.RowTitle} fontSize={42}>Patterns & Examples</Text>
+          <Row
+            y={48}
+            onEnter={onEnter}
+            gap={40}
+            height={320}
+            flexBoundary="contain"
+            scroll="always"
+          >
+            <For each={advancedDemos}>
+              {(demo, i) => <DemoTile index={i()} {...demo} />}
+            </For>
+          </Row>
+        </View>
       </Column>
+      </View>
     </View>
     {resolvedChildren()}
     </>
