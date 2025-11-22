@@ -128,7 +128,7 @@ const Portal = (props) => {
         </Text>
         <View y={140} height={1} width={1800} color={0xe8d7f9ff} />
       </View>
-      <View clipping y={140} x={150}>
+      <View clipping y={146} x={150}>
       <Column scroll="auto" y={20} x={20} gap={20} autofocus={!resolvedChildren()}>
         <View forwardFocus={1} height={400}>
           <Text style={styles.RowTitle} fontSize={42}>Core Concepts</Text>
