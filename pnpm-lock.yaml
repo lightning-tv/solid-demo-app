@@ -4,9 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-overrides:
-  '@lightningtv/solid': link:../../../../Library/pnpm/global/5/node_modules/@lightningtv/solid
-
 importers:
 
   .:
@@ -21,8 +18,8 @@ importers:
         specifier: 2.14.0
         version: 2.14.0(@lightningjs/renderer@2.19.1)
       '@lightningtv/solid':
-        specifier: link:../../../../Library/pnpm/global/5/node_modules/@lightningtv/solid
-        version: link:../../../../Library/pnpm/global/5/node_modules/@lightningtv/solid
+        specifier: ^2.12.3
+        version: 2.12.3(@lightningjs/renderer@2.19.1)(@solidjs/router@0.15.3(solid-js@1.9.9))(solid-js@1.9.9)
       '@solid-primitives/list':
         specifier: ^0.1.2
         version: 0.1.2(solid-js@1.9.9)
@@ -988,6 +985,12 @@ packages:
     peerDependencies:
       '@lightningjs/renderer': ^2.19.1
 
+  '@lightningtv/solid@2.12.3':
+    resolution: {integrity: sha512-KPiyGgLDEuRmDpTnTHEk870NKoal6EFbNsrJ8X56qiWO8hsw82JzljOc8sHjL3vUt+YFZ103+BToqUl2+TBSBg==}
+    peerDependencies:
+      '@solidjs/router': ^0.15.1
+      solid-js: '*'
+
   '@lightningtv/vite-hex-transform@1.1.0':
     resolution: {integrity: sha512-rz//Xessfta3rRISPSW5IpMySdQYlXDJ7N1sVNrQVnsT6Ns+z9LYnj5JAxoc1qCLqj56eLkUXLYQhdLjIwQGLg==}
 
@@ -1141,6 +1144,11 @@ packages:
     peerDependencies:
       solid-js: ^1.6.12
 
+  '@solid-primitives/keyed@1.5.2':
+    resolution: {integrity: sha512-BgoEdqPw48URnI+L5sZIHdF4ua4Las1eWEBBPaoSFs42kkhnHue+rwCBPL2Z9ebOyQ75sUhUfOETdJfmv0D6Kg==}
+    peerDependencies:
+      solid-js: ^1.6.12
+
   '@solid-primitives/list@0.1.2':
     resolution: {integrity: sha512-gAnGUgXN9as0TBr2QAwLqWAbEo0ALqx2VI+lr7B2r8o3QFaFxiz7dw/qOx50Ko7TGcrYxgsYiwc9OYaS+eY89w==}
     peerDependencies:
@@ -1148,6 +1156,11 @@ packages:
 
   '@solid-primitives/media@2.3.3':
     resolution: {integrity: sha512-hQ4hLOGvfbugQi5Eu1BFWAIJGIAzztq9x0h02xgBGl2l0Jaa3h7tg6bz5tV1NSuNYVGio4rPoa7zVQQLkkx9dA==}
+    peerDependencies:
+      solid-js: ^1.6.12
+
+  '@solid-primitives/mouse@2.1.4':
+    resolution: {integrity: sha512-qZNh7FedzJMSrUX/BSd5Pjkv+Ct7vDr9TXVbXSdAKa4xMri0mwNi1eCbNbcEsq/FOsPVQLyt2d5oR7cQHBOg0A==}
     peerDependencies:
       solid-js: ^1.6.12
 
@@ -3315,6 +3328,21 @@ snapshots:
     dependencies:
       '@lightningjs/renderer': 2.19.1
 
+  '@lightningtv/solid@2.12.3(@lightningjs/renderer@2.19.1)(@solidjs/router@0.15.3(solid-js@1.9.9))(solid-js@1.9.9)':
+    dependencies:
+      '@lightningtv/core': 2.14.0(@lightningjs/renderer@2.19.1)
+      '@solid-primitives/event-listener': 2.4.3(solid-js@1.9.9)
+      '@solid-primitives/keyed': 1.5.2(solid-js@1.9.9)
+      '@solid-primitives/list': 0.1.2(solid-js@1.9.9)
+      '@solid-primitives/mouse': 2.1.4(solid-js@1.9.9)
+      '@solid-primitives/scheduled': 1.5.2(solid-js@1.9.9)
+      '@solidjs/router': 0.15.3(solid-js@1.9.9)
+      solid-js: 1.9.9
+    optionalDependencies:
+      '@solid-devtools/debugger': 0.28.1(solid-js@1.9.9)
+    transitivePeerDependencies:
+      - '@lightningjs/renderer'
+
   '@lightningtv/vite-hex-transform@1.1.0(terser@5.44.0)':
     dependencies:
       vite: 5.4.20(terser@5.44.0)
@@ -3454,11 +3482,23 @@ snapshots:
       '@solid-primitives/utils': 6.3.2(solid-js@1.9.9)
       solid-js: 1.9.9
 
+  '@solid-primitives/keyed@1.5.2(solid-js@1.9.9)':
+    dependencies:
+      solid-js: 1.9.9
+
   '@solid-primitives/list@0.1.2(solid-js@1.9.9)':
     dependencies:
       solid-js: 1.9.9
 
   '@solid-primitives/media@2.3.3(solid-js@1.9.9)':
+    dependencies:
+      '@solid-primitives/event-listener': 2.4.3(solid-js@1.9.9)
+      '@solid-primitives/rootless': 1.5.2(solid-js@1.9.9)
+      '@solid-primitives/static-store': 0.1.2(solid-js@1.9.9)
+      '@solid-primitives/utils': 6.3.2(solid-js@1.9.9)
+      solid-js: 1.9.9
+
+  '@solid-primitives/mouse@2.1.4(solid-js@1.9.9)':
     dependencies:
       '@solid-primitives/event-listener': 2.4.3(solid-js@1.9.9)
       '@solid-primitives/rootless': 1.5.2(solid-js@1.9.9)

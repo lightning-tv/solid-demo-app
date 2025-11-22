@@ -179,6 +179,11 @@ const Portal = (props) => {
       id: "suspense",
       description: "Using Suspense to load data",
     },
+    {
+      title: "Tags",
+      id: "tags",
+      description: "Tags Page"
+    },
   ];
 
   function DemoTile(props) {

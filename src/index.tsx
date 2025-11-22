@@ -62,6 +62,7 @@ const People = lazy(() => import("./pages/People"));
 const FireboltPage = lazy(() => import("./pages/Firebolt"));
 const LoginPage = lazy(() => import("./pages/Login"));
 const VirtualPage = lazy(() => import("./pages/Virtual"));
+const TagsPage = lazy(() => import("./pages/Tags"));
 
 let numImageWorkers = 4;
 const urlParams = new URLSearchParams(window.location.search);
@@ -105,6 +106,7 @@ Config.rendererOptions = {
   devicePhysicalPixelRatio: 1,
   createImageBitmapSupport: "auto",
   targetFPS: 30,
+  //boundsMargin: 200,
 };
 
 // Ideally you'd do two separate builds for canvas and webgl to reduce bundle size.
@@ -177,6 +179,7 @@ render(() => (
         <Route path="keepalive" component={lazy(() => import('./pages/KeepAlive.jsx'))} />
         <Route path="suspense" component={lazy(() => import('./pages/suspense.jsx'))} />
         <Route path="superflex" component={SuperFlexPage} />
+        <Route path="tags" component={TagsPage} />
         <Route path="buttonsmaterial" component={ButtonsMaterialPage} />
         <Route path="entity/people/:id" component={People} />
         <Route path="entity/:type/:id" component={Entity} preload={entityPreload} />
