@@ -91,6 +91,7 @@ Config.simpleAnimationsEnabled = true;
 Config.fontSettings.fontFamily = "Roboto";
 Config.fontSettings.color = theme.textPrimary;
 Config.fontSettings.fontSize = 32;
+Config.domRendererEnabled = false;
 // Config.focusDebug = true;
 
 Config.rendererOptions = {
