@@ -39,10 +39,11 @@ export default {
     zIndex: 102,
     height: 70,
     width: 100,
-    borderRadius: 8,
+    borderRadius: 0,
     color: 0,
     $focus: {
       color: theme.primaryLight,
+      borderRadius: 8,
     },
     $active: {
       width: 328,

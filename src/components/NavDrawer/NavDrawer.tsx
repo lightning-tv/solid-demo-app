@@ -81,7 +81,7 @@ export default function NavDrawer(props) {
         x={30}
         y={15}
         zIndex={105}
-        alpha={props.showWidgets ? 1 : 0.01}
+        alpha={props.showWidgets ? 1 : 0}
       >
         <Text y={8} x={80} fontSize={28} color={theme.textSecondary}>
           Built With:

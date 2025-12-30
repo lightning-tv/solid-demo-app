@@ -37,6 +37,7 @@ const Loops = lazy(() => import("./pages/Loops"));
 const Infinite = lazy(() => import("./pages/Infinite"));
 const TMDBGrid = lazy(() => import("./pages/TMDBGrid"));
 const Portal = lazy(() => import("./pages/Portal"));
+const MatrixPage = lazy(() => import("./pages/Matrix"));
 const TextPage = lazy(() => import("./pages/Text"));
 const TextPosterPage = lazy(() => import("./pages/TextPoster"));
 const CreatePage = lazy(() => import("./pages/Create"));
@@ -156,6 +157,7 @@ render(() => (
         <Route path="virtual" component={VirtualPage} preload={tmdbData} />
         <Route path="destroy" component={DestroyPage} preload={destroyData} />
         <Route path="grid" component={Grid} />
+        <Route path="matrix" component={MatrixPage} />
         <Route path="text" component={TextPage} />
         <Route path="firebolt" component={FireboltPage} />
         <Route path="login" component={LoginPage} />
