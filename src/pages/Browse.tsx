@@ -110,7 +110,7 @@ const Browse = (props) => {
           buffer={2}
           onSelectedChanged={updateContentBlock}
           onEndReached={onEndReached}
-          onEndReachedThreshold={18}
+          onEndReachedThreshold={22}
           width={1620}
           autofocus
           each={provider().pages()}>

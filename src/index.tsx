@@ -37,6 +37,7 @@ const Loops = lazy(() => import("./pages/Loops"));
 const Infinite = lazy(() => import("./pages/Infinite"));
 const TMDBGrid = lazy(() => import("./pages/TMDBGrid"));
 const Portal = lazy(() => import("./pages/Portal"));
+const MatrixPage = lazy(() => import("./pages/Matrix"));
 const TextPage = lazy(() => import("./pages/Text"));
 const TextPosterPage = lazy(() => import("./pages/TextPoster"));
 const CreatePage = lazy(() => import("./pages/Create"));
@@ -62,6 +63,7 @@ const People = lazy(() => import("./pages/People"));
 const FireboltPage = lazy(() => import("./pages/Firebolt"));
 const LoginPage = lazy(() => import("./pages/Login"));
 const VirtualPage = lazy(() => import("./pages/Virtual"));
+const TagsPage = lazy(() => import("./pages/Tags"));
 
 let numImageWorkers = 4;
 const urlParams = new URLSearchParams(window.location.search);
@@ -90,6 +92,7 @@ Config.simpleAnimationsEnabled = true;
 Config.fontSettings.fontFamily = "Roboto";
 Config.fontSettings.color = theme.textPrimary;
 Config.fontSettings.fontSize = 32;
+Config.domRendererEnabled = false;
 // Config.focusDebug = true;
 
 Config.rendererOptions = {
@@ -104,7 +107,8 @@ Config.rendererOptions = {
   deviceLogicalPixelRatio,
   devicePhysicalPixelRatio: 1,
   createImageBitmapSupport: "auto",
-  targetFPS: 30,
+  targetFPS: 60,
+  //boundsMargin: 200,
 };
 
 // Ideally you'd do two separate builds for canvas and webgl to reduce bundle size.
@@ -153,6 +157,7 @@ render(() => (
         <Route path="virtual" component={VirtualPage} preload={tmdbData} />
         <Route path="destroy" component={DestroyPage} preload={destroyData} />
         <Route path="grid" component={Grid} />
+        <Route path="matrix" component={MatrixPage} />
         <Route path="text" component={TextPage} />
         <Route path="firebolt" component={FireboltPage} />
         <Route path="login" component={LoginPage} />
@@ -177,6 +182,7 @@ render(() => (
         <Route path="keepalive" component={lazy(() => import('./pages/KeepAlive.jsx'))} />
         <Route path="suspense" component={lazy(() => import('./pages/suspense.jsx'))} />
         <Route path="superflex" component={SuperFlexPage} />
+        <Route path="tags" component={TagsPage} />
         <Route path="buttonsmaterial" component={ButtonsMaterialPage} />
         <Route path="entity/people/:id" component={People} />
         <Route path="entity/:type/:id" component={Entity} preload={entityPreload} />

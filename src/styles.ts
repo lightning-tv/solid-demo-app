@@ -69,6 +69,14 @@ export default {
     $focus: {
       scale: 1.1,
       border: { color: theme.primaryLight, width: 6 },
+    },
+    $hover: {
+      scale: 1.07,
+      border: { color: theme.primaryLight, width: 3 },
+    },
+    $pressed: {
+      scale: 1.05,
+      border: { color: theme.primary, width: 6 },
     }
   },
   FocusRing: {

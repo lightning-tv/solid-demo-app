@@ -91,7 +91,7 @@ const LeftNavWrapper = (props) => {
       }
     >
       <Background />
-      <FPSCounter mountX={1} x={1910} y={10} alpha={showWidgets() ? 1 : 0.01} />
+      <FPSCounter mountX={1} x={1910} y={10} alpha={showWidgets() ? 1 : 0} />
       <View
         mountX={1}
         width={330}
@@ -108,14 +108,12 @@ const LeftNavWrapper = (props) => {
       <Text x={270} y={20} fontSize={24} contain="width" width={800}>
         {lastError()}
       </Text>
-      <View ref={pageContainer} forwardFocus={0}>
-        {props.children}
-      </View>
       <NavDrawer
         ref={navDrawer}
         focusPage={() => lastFocused.setFocus()}
         showWidgets={showWidgets()}
       />
+      <View id="pageContainer" ref={pageContainer} forwardFocus={0} children={props.children} />
     </View>
   );
 };

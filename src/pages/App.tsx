@@ -26,7 +26,13 @@ const App = (props) => {
         holdThreshold: 1000
       }
     );
-    // useMouse();
+     useMouse(undefined, 100, {
+      customStates: {
+        hoverState: '$hover',
+        pressedState: '$pressed',
+        pressedStateDuration: 150, // optional, default is 150ms
+      },
+    });
   return props.children;
 };
 
