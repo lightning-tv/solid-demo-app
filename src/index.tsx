@@ -107,7 +107,7 @@ Config.rendererOptions = {
   deviceLogicalPixelRatio,
   devicePhysicalPixelRatio: 1,
   createImageBitmapSupport: "auto",
-  targetFPS: 40,
+  targetFPS: 60,
   //boundsMargin: 200,
 };
 
