@@ -56,17 +56,12 @@ export default defineConfig(({ mode }) => ({
       "solid-js/universal",
       "@solidjs/router",
       "@lightningjs/renderer",
-      "@lightningtv/core",
       "@lightningtv/solid",
       "@lightningtv/solid/primitives"
     ]
   },
   optimizeDeps: {
-    exclude: [
-      "@lightningtv/solid",
-      "@lightningtv/core",
-      "@lightningjs/renderer"
-    ]
+    exclude: ["@lightningtv/solid", "@lightningjs/renderer"]
   },
   server: {
     port: 5174,

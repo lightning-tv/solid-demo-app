@@ -14,12 +14,9 @@ importers:
       '@lightningjs/renderer':
         specifier: 3.0.0-beta19
         version: 3.0.0-beta19
-      '@lightningtv/core':
-        specifier: 3.0.0-19
-        version: 3.0.0-19(@lightningjs/renderer@3.0.0-beta19)
       '@lightningtv/solid':
-        specifier: 3.0.0-19
-        version: 3.0.0-19(@solidjs/router@0.15.3(solid-js@1.9.9))(solid-js@1.9.9)
+        specifier: 3.0.0-22
+        version: 3.0.0-22(@solidjs/router@0.15.3(solid-js@1.9.9))(solid-js@1.9.9)
       '@solid-primitives/list':
         specifier: ^0.1.2
         version: 0.1.2(solid-js@1.9.9)
@@ -976,21 +973,16 @@ packages:
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
 
-  '@lightningjs/renderer@3.0.0-beta15':
-    resolution: {integrity: sha512-vG0ZZc7u9mXWJaSmMfJo1DgVTq14z8slQ3ZAugsHjUmKpmd5MUwxzCmK70jd29kuP07PwPcOwBQZIMd2DBa5+w==}
+  '@lightningjs/renderer@3.0.0-beta18':
+    resolution: {integrity: sha512-pScCmAcMaECH4/hxjuC0VsZwHnpyGvQ1+ezT+ESVdhSQFcR2Fzyx2+6LtkuiqUZH0uLwBi81AAm80YDIbN3hkA==}
     engines: {node: '>= 18.0.0', npm: '>= 10.0.0', pnpm: '>= 10.17.0'}
 
   '@lightningjs/renderer@3.0.0-beta19':
     resolution: {integrity: sha512-V3cEBZ0uPXeVSxAepDlNr5mGlrEgO2fB0CaWwBVDZsrQlOIGG48PjCnYX7PW3o/pukmi/QW74Bin7STXUMzXMA==}
     engines: {node: '>= 18.0.0', npm: '>= 10.0.0', pnpm: '>= 10.17.0'}
 
-  '@lightningtv/core@3.0.0-19':
-    resolution: {integrity: sha512-Gqo0qt1EkFT5/Lzct7RbkbDyW4hOf++FbLdk9a/W8/HLCC2jqArWHeyCmhd4U4Tu7FTrnAbJWw6/JQHIAQM57g==}
-    peerDependencies:
-      '@lightningjs/renderer': ^3.0.0-beta15
-
-  '@lightningtv/solid@3.0.0-19':
-    resolution: {integrity: sha512-FU4DhvTY3n/lH0O2DDG1ovCIYvq1chv0cLfipIQEObWOVGwAOAxY8Vqczw3pW7pY23Zg1xT/E0FojPak94GMmg==}
+  '@lightningtv/solid@3.0.0-22':
+    resolution: {integrity: sha512-GYnN+HqR8A1m8TDFw5+dZFovAosWe5f2DGYSRCVObXhxw7V45O3JVR4Ja3rUPZaZXorjwGMvywnuw1PDV4wEwQ==}
     peerDependencies:
       '@solidjs/router': ^0.15.1
       solid-js: '*'
@@ -1145,11 +1137,6 @@ packages:
 
   '@solid-primitives/keyboard@1.3.3':
     resolution: {integrity: sha512-9dQHTTgLBqyAI7aavtO+HnpTVJgWQA1ghBSrmLtMu1SMxLPDuLfuNr+Tk5udb4AL4Ojg7h9JrKOGEEDqsJXWJA==}
-    peerDependencies:
-      solid-js: ^1.6.12
-
-  '@solid-primitives/keyed@1.5.2':
-    resolution: {integrity: sha512-BgoEdqPw48URnI+L5sZIHdF4ua4Las1eWEBBPaoSFs42kkhnHue+rwCBPL2Z9ebOyQ75sUhUfOETdJfmv0D6Kg==}
     peerDependencies:
       solid-js: ^1.6.12
 
@@ -3326,32 +3313,20 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@lightningjs/renderer@3.0.0-beta15': {}
+  '@lightningjs/renderer@3.0.0-beta18': {}
 
   '@lightningjs/renderer@3.0.0-beta19': {}
 
-  '@lightningtv/core@3.0.0-19(@lightningjs/renderer@3.0.0-beta15)':
+  '@lightningtv/solid@3.0.0-22(@solidjs/router@0.15.3(solid-js@1.9.9))(solid-js@1.9.9)':
     dependencies:
-      '@lightningjs/renderer': 3.0.0-beta15
-
-  '@lightningtv/core@3.0.0-19(@lightningjs/renderer@3.0.0-beta19)':
-    dependencies:
-      '@lightningjs/renderer': 3.0.0-beta19
-
-  '@lightningtv/solid@3.0.0-19(@solidjs/router@0.15.3(solid-js@1.9.9))(solid-js@1.9.9)':
-    dependencies:
-      '@lightningjs/renderer': 3.0.0-beta15
-      '@lightningtv/core': 3.0.0-19(@lightningjs/renderer@3.0.0-beta15)
+      '@lightningjs/renderer': 3.0.0-beta18
       '@lightningtv/solid': 'link:'
       '@solid-primitives/event-listener': 2.4.3(solid-js@1.9.9)
-      '@solid-primitives/keyed': 1.5.2(solid-js@1.9.9)
       '@solid-primitives/list': 0.1.2(solid-js@1.9.9)
       '@solid-primitives/mouse': 2.1.4(solid-js@1.9.9)
       '@solid-primitives/scheduled': 1.5.2(solid-js@1.9.9)
       '@solidjs/router': 0.15.3(solid-js@1.9.9)
       solid-js: 1.9.9
-    optionalDependencies:
-      '@solid-devtools/debugger': 0.28.1(solid-js@1.9.9)
 
   '@lightningtv/vite-hex-transform@1.1.0(terser@5.44.0)':
     dependencies:
@@ -3490,10 +3465,6 @@ snapshots:
       '@solid-primitives/event-listener': 2.4.3(solid-js@1.9.9)
       '@solid-primitives/rootless': 1.5.2(solid-js@1.9.9)
       '@solid-primitives/utils': 6.3.2(solid-js@1.9.9)
-      solid-js: 1.9.9
-
-  '@solid-primitives/keyed@1.5.2(solid-js@1.9.9)':
-    dependencies:
       solid-js: 1.9.9
 
   '@solid-primitives/list@0.1.2(solid-js@1.9.9)':

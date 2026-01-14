@@ -23,10 +23,10 @@ function Icon(props: IconProps) {
     <View
       {...props}
       texture={sprite[props.name]}
-      width={sprite[props.name].props.width}
-      height={sprite[props.name].props.height}
-      x={(100 - (sprite[props.name].props.width || 0)) / 2}
-      y={(100 - (sprite[props.name].props.height || 0)) / 2}
+      width={sprite[props.name].props.w}
+      height={sprite[props.name].props.h}
+      x={(100 - (sprite[props.name].props.w || 0)) / 2}
+      y={(100 - (sprite[props.name].props.h || 0)) / 2}
     ></View>
   );
 }
