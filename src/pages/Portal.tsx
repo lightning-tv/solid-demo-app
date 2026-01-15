@@ -88,7 +88,7 @@ const Portal = (props) => {
             y={140}
             fontSize={42}
             width={340}
-            height={42}
+            maxHeight={42}
             contain="both"
             color={hasFocus() ? 0x000000ff : 0xffffffff}
           >

@@ -31,6 +31,9 @@ export function FocusRing(props: IntrinsicNodeProps) {
 export interface TileRowProps extends IntrinsicNodeProps {
   items: Tile[];
   title?: string;
+  rowType?: string;
+  gap?: number;
+  scroll?: string;
 }
 
 export function TileRow(props: TileRowProps) {

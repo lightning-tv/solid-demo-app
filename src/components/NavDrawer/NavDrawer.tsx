@@ -75,6 +75,7 @@ export default function NavDrawer(props) {
   return (
     <>
       <View
+        id="NavDrawer"
         flexItem={false}
         width={300}
         height={150}

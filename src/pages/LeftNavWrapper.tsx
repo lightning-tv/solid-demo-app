@@ -58,7 +58,7 @@ const LeftNavWrapper = (props) => {
     setShowWidgets(matchesPartial);
   });
 
-  const [lastKey, setLastKey] = createSignal<string | undefined>();
+  const [lastKey, setLastKey] = createSignal<string>('Last key: undefined');
   const [lastError, setLastError] = createSignal<string | undefined>();
   const keyPressHandler = (e) => {
     setLastKey(`Last key: ${e.key}, Code: ${e.keyCode}`);
@@ -68,6 +68,8 @@ const LeftNavWrapper = (props) => {
     setLastError((p) => (p || "") + "\n" + e.message);
   };
   document.addEventListener("onerror", displayError);
+  const windowSize = `${window.innerWidth}x${window.innerHeight}`;
+
   onCleanup(() => {
     document.removeEventListener("onerror", displayError);
     document.removeEventListener("keydown", keyPressHandler);
@@ -91,17 +93,22 @@ const LeftNavWrapper = (props) => {
       }
     >
       <Background />
-      <FPSCounter mountX={1} x={1910} y={10} alpha={showWidgets() ? 1 : 0} />
+      <FPSCounter mountX={1} x={1910} y={10} alpha={1} />
       <View
         mountX={1}
+        display="flex"
+        flexDirection="column"
         width={330}
-        height={28}
+        height={50}
         x={1910}
-        y={190}
+        y={202}
         color={0x000000ff}
         hidden={!showWidgets()}
       >
-        <Text fontSize={20} y={4} x={4}>
+        <Text x={8} fontSize={15}>
+          Window Size: {windowSize}
+        </Text>
+        <Text x={8} fontSize={15}>
           {lastKey()}
         </Text>
       </View>

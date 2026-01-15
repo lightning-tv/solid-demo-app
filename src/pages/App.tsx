@@ -2,7 +2,7 @@ import {
   useFocusManager,
   useMouse,
 } from "@lightningtv/solid/primitives";
-import { KeyMap, KeyHoldMap } from "@lightningtv/core/focusManager";
+import { KeyMap, KeyHoldMap } from "@lightningtv/solid/focusManager";
 
 const App = (props) => {
   useFocusManager(
