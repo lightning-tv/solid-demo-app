@@ -125,13 +125,13 @@ loadFonts(fonts);
 // Prepare for RC3 of Renderer
 import {
   Rounded,
-  RoundedWithBorder,
   RoundedWithShadow,
   RoundedWithBorderAndShadow,
   RadialGradient,
   LinearGradient,
   HolePunch,
 } from '@lightningjs/renderer/webgl/shaders';
+import { RoundedWithBorder } from '@lightningtv/solid/shaders';
 const shManager = renderer.stage.shManager;
 shManager.registerShaderType('rounded', Rounded)
 shManager.registerShaderType('roundedWithBorder', RoundedWithBorder)
