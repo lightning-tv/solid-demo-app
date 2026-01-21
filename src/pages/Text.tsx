@@ -93,19 +93,17 @@ const TextPage = () => {
 
   const SubTitle = {
     fontSize: 38,
-    fontWeight: 500
   };
 
   const Overview = {
     width: OverviewContainer.width,
     fontSize: 26,
-    fontWeight: "normal",
     contain: "width"
   } satisfies IntrinsicTextNodeStyleProps;
 
   const Subline = {
     fontSize: 26,
-    fontWeight: 100
+    fontWeight: "regular"
   };
 
   onMount(() => {
