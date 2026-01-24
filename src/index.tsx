@@ -97,10 +97,11 @@ Config.domRendererEnabled = false;
 
 Config.rendererOptions = {
   fpsUpdateInterval: logFps ? 1000 : 0,
-  inspector: import.meta.env.DEV ? Inspector : undefined,
-  // textureMemory: {
-  //   criticalThreshold: 80e6,
-  // },
+  // inspector: import.meta.env.DEV ? Inspector : undefined,
+  textureMemory: {
+    criticalThreshold: 120e6,
+    targetThresholdLevel: 0.8,
+  },
   numImageWorkers, // temp fix for renderer bug
   // Set the resolution based on window height
   // 720p = 0.666667, 1080p = 1, 1440p = 1.5, 2160p = 2
@@ -108,6 +109,7 @@ Config.rendererOptions = {
   devicePhysicalPixelRatio: 1,
   createImageBitmapSupport: "auto",
   targetFPS: 0,
+  enableClear: false,
   //boundsMargin: 200,
 };
 

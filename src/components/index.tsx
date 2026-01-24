@@ -99,7 +99,7 @@ export function TitleRow(props: TileRowProps) {
       <Text skipFocus style={titleRowStyles}>
         {props.title}
       </Text>
-      <VirtualRow gap={20} displaySize={8} bufferSize={3} each={props.items} y={50} scroll={props.scroll} wrap={props.wrap} debugInfo>
+      <VirtualRow gap={20} displaySize={8} bufferSize={3} each={props.items} y={50} scroll={props.scroll} wrap={props.wrap}>
         {(item, index) => (
           <Dynamic component={typeToComponent[props.row.type]} index={index()} item={item()} />
         )}
