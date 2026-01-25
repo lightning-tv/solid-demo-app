@@ -51,7 +51,7 @@ export default {
       fontFamily: 'Arial',
       fontSize: 75,
       lineHeight: 85,
-      fontWeight: 500,
+      fontWeight: 400,
       verticalAlign: 'middle',
       textBaseline: 'bottom'
     },
@@ -59,7 +59,7 @@ export default {
       fontFamily: 'Arial',
       fontSize: 50,
       lineHeight: 60,
-      fontWeight: 500,
+      fontWeight: 400,
       verticalAlign: 'middle',
       textBaseline: 'bottom'
     },
@@ -82,7 +82,7 @@ export default {
     headline1: {
       fontFamily: 'Arial',
       fontSize: 35,
-      fontWeight: 500,
+      fontWeight: 400,
       lineHeight: 48,
       verticalAlign: 'middle',
       textBaseline: 'bottom'
@@ -90,7 +90,7 @@ export default {
     headline2: {
       fontFamily: 'Arial',
       fontSize: 30,
-      fontWeight: 500,
+      fontWeight: 400,
       lineHeight: 40,
       verticalAlign: 'middle',
       textBaseline: 'bottom'
@@ -98,7 +98,7 @@ export default {
     headline3: {
       fontFamily: 'Arial',
       fontSize: 25,
-      fontWeight: 500,
+      fontWeight: 400,
       lineHeight: 36,
       verticalAlign: 'middle',
       textBaseline: 'bottom'
@@ -106,7 +106,7 @@ export default {
     body1: {
       fontFamily: 'Arial',
       fontSize: 25,
-      fontWeight: 300,
+      fontWeight: 400,
       lineHeight: 40,
       verticalAlign: 'middle',
       textBaseline: 'bottom'
@@ -114,7 +114,7 @@ export default {
     body2: {
       fontFamily: 'Arial',
       fontSize: 22,
-      fontWeight: 300,
+      fontWeight: 400,
       lineHeight: 32,
       verticalAlign: 'middle',
       textBaseline: 'bottom'
@@ -122,7 +122,7 @@ export default {
     body3: {
       fontFamily: 'Arial',
       fontSize: 20,
-      fontWeight: 300,
+      fontWeight: 400,
       lineHeight: 32,
       verticalAlign: 'middle',
       textBaseline: 'bottom'
