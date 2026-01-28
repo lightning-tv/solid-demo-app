@@ -12,8 +12,8 @@ importers:
         specifier: ^1.7.0
         version: 1.7.0
       '@lightningjs/renderer':
-        specifier: link:../renderer
-        version: link:../renderer
+        specifier: 3.0.0-beta20
+        version: 3.0.0-beta20
       '@lightningtv/solid':
         specifier: 3.0.0-23
         version: 3.0.0-23(@solidjs/router@0.15.3(solid-js@1.9.9))(solid-js@1.9.9)
@@ -975,6 +975,10 @@ packages:
 
   '@lightningjs/renderer@3.0.0-beta18':
     resolution: {integrity: sha512-pScCmAcMaECH4/hxjuC0VsZwHnpyGvQ1+ezT+ESVdhSQFcR2Fzyx2+6LtkuiqUZH0uLwBi81AAm80YDIbN3hkA==}
+    engines: {node: '>= 18.0.0', npm: '>= 10.0.0', pnpm: '>= 10.17.0'}
+
+  '@lightningjs/renderer@3.0.0-beta20':
+    resolution: {integrity: sha512-JsalgPEKvxc6q8cs9m2QW+aIwx9aET52nvU1OUhkO573Ae5WFJFM3MR/zTc2cPM3AJsa0alie98pKoGWrerO9g==}
     engines: {node: '>= 18.0.0', npm: '>= 10.0.0', pnpm: '>= 10.17.0'}
 
   '@lightningtv/solid@3.0.0-23':
@@ -3310,6 +3314,8 @@ snapshots:
       '@jridgewell/sourcemap-codec': 1.5.5
 
   '@lightningjs/renderer@3.0.0-beta18': {}
+
+  '@lightningjs/renderer@3.0.0-beta20': {}
 
   '@lightningtv/solid@3.0.0-23(@solidjs/router@0.15.3(solid-js@1.9.9))(solid-js@1.9.9)':
     dependencies:
