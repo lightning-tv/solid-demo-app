@@ -43,7 +43,15 @@ export default defineConfig(({ mode }) => ({
   ],
   build: {
     targets: ["chrome>=69"],
-    minify: false,
+    minify: "terser",
+    terserOptions: {
+      compress: false,
+      mangle: false,
+      format: {
+        comments: false,
+        beautify: true
+      }
+    },
     sourcemap: false
   },
   resolve: {
