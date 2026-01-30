@@ -1,19 +1,12 @@
+import "solid-devtools";
+import { setElementInterface } from "solid-devtools/setup";
+import { elementInterface } from "@lightningtv/solid/devtools";
 
-import 'solid-devtools';
-import {setElementInterface} from 'solid-devtools/setup';
-import {elementInterface} from "@lightningtv/solid/devtools";
-
-setElementInterface(elementInterface)
+setElementInterface(elementInterface);
 
 import { createRenderer, Config, loadFonts } from "@lightningtv/solid";
-import {
-  WebGlCoreRenderer,
-  SdfTextRenderer
-} from "@lightningjs/renderer/webgl";
-import {
-  CanvasCoreRenderer,
-  CanvasTextRenderer
-} from "@lightningjs/renderer/canvas";
+import { WebGlCoreRenderer, SdfTextRenderer } from "@lightningjs/renderer/webgl";
+import { CanvasCoreRenderer, CanvasTextRenderer } from "@lightningjs/renderer/canvas";
 
 import { Inspector } from "@lightningjs/renderer/inspector";
 import { HashRouter, FocusStackProvider, KeepAliveRoute } from "@lightningtv/solid/primitives";
@@ -29,7 +22,7 @@ import fonts from "./fonts";
 import { browsePreload } from "./api/browsePreload";
 import { entityPreload } from "./api/entityPreload";
 import LeftNavWrapper from "./pages/LeftNavWrapper";
-import theme from 'theme';
+import theme from "theme";
 
 const Player = lazy(() => import("./pages/Player"));
 const Grid = lazy(() => import("./pages/Grid"));
@@ -78,7 +71,7 @@ if (numWorkers) {
 
 const deviceLogicalPixelRatio = {
   "720": 0.666667,
-  "medium": 0.8,
+  medium: 0.8,
   "1080": 1,
   "4k": 2,
   default: window.innerHeight / 1080
@@ -99,8 +92,8 @@ Config.rendererOptions = {
   fpsUpdateInterval: logFps ? 1000 : 0,
   // inspector: import.meta.env.DEV ? Inspector : undefined,
   textureMemory: {
-    criticalThreshold: 120e6,
-    targetThresholdLevel: 0.8,
+    criticalThreshold: 200e6,
+    targetThresholdLevel: 0.8
   },
   numImageWorkers, // temp fix for renderer bug
   // Set the resolution based on window height
@@ -110,6 +103,8 @@ Config.rendererOptions = {
   createImageBitmapSupport: "auto",
   targetFPS: 0,
   enableClear: false,
+  enableAlphaChannel: true,
+  textureEnableAlphaFormats: ["png"]
   //boundsMargin: 200,
 };
 
@@ -131,17 +126,17 @@ import {
   RoundedWithBorderAndShadow,
   RadialGradient,
   LinearGradient,
-  HolePunch,
-} from '@lightningjs/renderer/webgl/shaders';
-import { RoundedWithBorder } from '@lightningtv/solid/shaders';
+  HolePunch
+} from "@lightningjs/renderer/webgl/shaders";
+import { RoundedWithBorder } from "@lightningtv/solid/shaders";
 const shManager = renderer.stage.shManager;
-shManager.registerShaderType('rounded', Rounded)
-shManager.registerShaderType('roundedWithBorder', RoundedWithBorder)
-shManager.registerShaderType('roundedWithShadow', RoundedWithShadow)
-shManager.registerShaderType('roundedWithBorderWithShadow', RoundedWithBorderAndShadow)
-shManager.registerShaderType('radialGradient', RadialGradient)
-shManager.registerShaderType('linearGradient', LinearGradient)
-shManager.registerShaderType('holePunch', HolePunch)
+shManager.registerShaderType("rounded", Rounded);
+shManager.registerShaderType("roundedWithBorder", RoundedWithBorder);
+shManager.registerShaderType("roundedWithShadow", RoundedWithShadow);
+shManager.registerShaderType("roundedWithBorderWithShadow", RoundedWithBorderAndShadow);
+shManager.registerShaderType("radialGradient", RadialGradient);
+shManager.registerShaderType("linearGradient", LinearGradient);
+shManager.registerShaderType("holePunch", HolePunch);
 render(() => (
   <FocusStackProvider>
     <HashRouter root={(props) => <App {...props} />}>
@@ -163,7 +158,7 @@ render(() => (
         <Route path="text" component={TextPage} />
         <Route path="firebolt" component={FireboltPage} />
         <Route path="login" component={LoginPage} />
-        <Route path="nested" component={lazy(() => import('./pages/Nested'))} />
+        <Route path="nested" component={lazy(() => import("./pages/Nested"))} />
         <Route path="textposter" component={TextPosterPage} />
         <Route path="positioning" component={PositioningPage} />
         <Route path="layout" component={LayoutPage} />
@@ -181,8 +176,8 @@ render(() => (
         <Route path="flexcolumnsize" component={FlexColumnSizePage} />
         <Route path="flexcolumn" component={FlexColumnPage} />
         <Route path="flexgrow" component={FlexGrowPage} />
-        <Route path="keepalive" component={lazy(() => import('./pages/KeepAlive.jsx'))} />
-        <Route path="suspense" component={lazy(() => import('./pages/suspense.jsx'))} />
+        <Route path="keepalive" component={lazy(() => import("./pages/KeepAlive.jsx"))} />
+        <Route path="suspense" component={lazy(() => import("./pages/suspense.jsx"))} />
         <Route path="superflex" component={SuperFlexPage} />
         <Route path="tags" component={TagsPage} />
         <Route path="buttonsmaterial" component={ButtonsMaterialPage} />

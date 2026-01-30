@@ -29,6 +29,9 @@ export default {
     alpha: 0,
     width: 200,
     height: 1080,
+    textureOptions: {
+      enableAlphaChannel: true
+    },
     $focus: {
       alpha: 1,
       width: 1600

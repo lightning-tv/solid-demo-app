@@ -1,6 +1,11 @@
 import { createEffect, on, createSignal } from "solid-js";
 import { ElementNode, activeElement, View, Text } from "@lightningtv/solid";
-import { LazyRow, LazyColumn, useFocusStack, VirtualRow } from "@lightningtv/solid/primitives";
+import {
+  LazyRow,
+  LazyColumn,
+  useFocusStack,
+  VirtualRow
+} from "@lightningtv/solid/primitives";
 import { Hero, TitleRow, AssetPanel } from "../components";
 import styles from "../styles";
 import { setGlobalBackground } from "../state";
@@ -41,7 +46,13 @@ const TMDB = (props) => {
     )
   );
 
-  function onRowChanged(this: ElementNode, selectedIndex, column, row, lastIndex) {
+  function onRowChanged(
+    this: ElementNode,
+    selectedIndex,
+    column,
+    row,
+    lastIndex
+  ) {
     if (selectedIndex === lastIndex) return;
 
     const values =
@@ -70,9 +81,26 @@ const TMDB = (props) => {
         <Text x={80} fontSize={28} color={0xf6f6f699}>
           Built With:
         </Text>
-        <View y={32} src="./assets/solidWord.png" width={280} height={52} />
+        <View
+          y={32}
+          src="./assets/solidWord.png"
+          width={280}
+          height={52}
+          textureOptions={{
+            transparency: true
+          }}
+        />
 
-        <View x={0} y={110} src="./assets/tmdb.png" width={80} height={41} />
+        <View
+          x={0}
+          y={110}
+          src="./assets/tmdb.png"
+          width={80}
+          height={41}
+          textureOptions={{
+            transparency: true
+          }}
+        />
         <Text
           x={90}
           y={110}
@@ -129,11 +157,16 @@ const TMDB = (props) => {
           )
         }
       </LazyColumn>
-      <AssetPanel onFocus={storeFocus} close={() => {
-        setOpenPanel(false);
-        restoreFocus();
-        return true;
-      }} open={openPanel()} item={heroContent()} />
+      <AssetPanel
+        onFocus={storeFocus}
+        close={() => {
+          setOpenPanel(false);
+          restoreFocus();
+          return true;
+        }}
+        open={openPanel()}
+        item={heroContent()}
+      />
     </View>
   );
 };

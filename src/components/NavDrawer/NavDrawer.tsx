@@ -1,10 +1,5 @@
 import { useMatch, useNavigate } from "@solidjs/router";
-import {
-  View,
-  Text,
-  IntrinsicNodeProps,
-  ElementNode
-} from "@lightningtv/solid";
+import { View, Text, IntrinsicNodeProps, ElementNode } from "@lightningtv/solid";
 import { Column } from "@lightningtv/solid/primitives";
 import styles from "./NavDrawer.styles";
 import { createMemo } from "solid-js";
@@ -65,10 +60,10 @@ export default function NavDrawer(props) {
   }
 
   const selectedButton = createMemo(() => {
-    if (useMatch(() => '/browse/all')()) return 366;
-    if (useMatch(() => '/browse/movie')()) return 462;
-    if (useMatch(() => '/browse/tv')()) return 548;
-    if (useMatch(() => '/examples')()) return 638;
+    if (useMatch(() => "/browse/all")()) return 366;
+    if (useMatch(() => "/browse/movie")()) return 462;
+    if (useMatch(() => "/browse/tv")()) return 548;
+    if (useMatch(() => "/examples")()) return 638;
     return 366;
   });
 
@@ -87,46 +82,58 @@ export default function NavDrawer(props) {
         <Text y={8} x={80} fontSize={28} color={theme.textSecondary}>
           Built With:
         </Text>
-        <View y={10} src="./assets/solidWord.png" width={280} height={52} />
+        <View
+          y={10}
+          src="./assets/solidWord.png"
+          width={280}
+          height={52}
+          textureOptions={{
+            enableAlphaChannel: true
+          }}
+        />
 
-        <View x={0} y={100} src="./assets/tmdb.png" width={80} height={41} />
-        <Text
-          x={90}
-          y={104}
-          contain="width"
-          width={160}
-          fontSize={12}
-          color={theme.textSecondary}
-        >
-          This product uses the TMDB API but is not endorsed or certified by
-          TMDB.
+        <View
+          x={0}
+          y={100}
+          src="./assets/tmdb.png"
+          width={80}
+          height={41}
+          textureOptions={{
+            enableAlphaChannel: true
+          }}
+        />
+        <Text x={90} y={104} contain="width" width={160} fontSize={12} color={theme.textSecondary}>
+          This product uses the TMDB API but is not endorsed or certified by TMDB.
         </Text>
       </View>
-      <Column
-        {...props}
-        onFocus={onFocus}
-        onBlur={onBlur}
-        style={styles.Column}
-        announce={"Main Menu"}
-        scroll="none"
-      >
+      <Column {...props} onFocus={onFocus} onBlur={onBlur} style={styles.Column} announce={"Main Menu"} scroll="none">
         <NavButton
           onEnter={() => handleNavigate("/browse/all")}
-          iconColor={'#fff'}
+          iconColor={"#fff"}
           announce={["Trending Browse", "button"]}
           icon="trending"
         >
           Trending
         </NavButton>
-        <NavButton icon="movie" iconColor={'#fff'} announce={["Movies Browse", "button"]} onEnter={() => handleNavigate("/browse/movie")}>
+        <NavButton
+          icon="movie"
+          iconColor={"#fff"}
+          announce={["Movies Browse", "button"]}
+          onEnter={() => handleNavigate("/browse/movie")}
+        >
           Movies
         </NavButton>
-        <NavButton icon="tv" iconColor={'#fff'} announce={["TV Browse", "button"]} onEnter={() => handleNavigate("/browse/tv")}>
+        <NavButton
+          icon="tv"
+          iconColor={"#fff"}
+          announce={["TV Browse", "button"]}
+          onEnter={() => handleNavigate("/browse/tv")}
+        >
           TV
         </NavButton>
         <NavButton
           icon="experiment"
-          iconColor={'#fff'}
+          iconColor={"#fff"}
           announce={["Examples", "button"]}
           onEnter={() => handleNavigate("/examples")}
         >
@@ -134,7 +141,7 @@ export default function NavDrawer(props) {
         </NavButton>
       </Column>
       <View skipFocus ref={backdrop} style={styles.Gradient} />
-      <View width={4} height={56} color={'#FFF'} x={22} y={selectedButton()} zIndex={100} />
+      <View width={4} height={56} color={"#FFF"} x={22} y={selectedButton()} zIndex={100} />
     </>
   );
 }

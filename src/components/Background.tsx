@@ -91,6 +91,9 @@ export default function Background() {
           color={hexColor(theme.color.materialBrand)}
           width={1920}
           height={1080}
+          textureOptions={{
+            enableAlphaChannel: true
+          }}
         />
         {/* <View
           ref={heroMask}
