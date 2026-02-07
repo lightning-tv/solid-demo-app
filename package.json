@@ -24,8 +24,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@lightningjs/renderer": "file:../solid-renderer",
-    "@lightningtv/solid": "3.0.0",
+    "@lightningjs/renderer": "3.0.0-beta20",
+    "@lightningtv/solid": "3.0.5",
     "@firebolt-js/sdk": "^1.7.0",
     "@solid-primitives/list": "^0.1.2",
     "@solid-primitives/scheduled": "^1.5.2",

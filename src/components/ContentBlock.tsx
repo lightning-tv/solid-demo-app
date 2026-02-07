@@ -19,7 +19,7 @@ const HeadlineStyles = {
   fontFamily: "Roboto",
   fontWeight: 700,
   maxLines: 1,
-  width: blockWidth,
+  width: blockWidth
 };
 const Headline = (props) => <Marquee {...props} textProps={HeadlineStyles}></Marquee>;
 
@@ -55,7 +55,8 @@ export const Badge = (props) => {
         borderRadius: 8,
         border: { width: 2, color: "0xffffffff" },
         display: "flex",
-        height: 36
+        height: 36,
+        width: 45
       }}
     >
       <Text lineHeight={36} style={BadgeStyle}>
@@ -82,13 +83,7 @@ const Metadata = (props) => (
     }}
   >
     <View y={-4} src="./assets/stars.png" width={188} height={31}></View>
-    <View
-      y={-4}
-      flexItem={false}
-      clipping
-      width={(188 * props.voteAverage) / 10}
-      height={31}
-    >
+    <View y={-4} flexItem={false} clipping width={(188 * props.voteAverage) / 10} height={31}>
       <View src="./assets/stars-full.png" width={188} height={31}></View>
     </View>
     <Text style={MetaTextStyle}>{props.voteCount} reviews</Text>

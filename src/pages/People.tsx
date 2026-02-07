@@ -1,10 +1,4 @@
-import {
-  ElementNode,
-  Text,
-  View,
-  Show,
-  assertTruthy
-} from "@lightningtv/solid";
+import { ElementNode, Text, View, Show, assertTruthy } from "@lightningtv/solid";
 import { Column } from "@lightningtv/solid/primitives";
 import { useParams } from "@solidjs/router";
 import { createResource, onMount } from "solid-js";
@@ -21,10 +15,7 @@ const People = () => {
   const navigate = useNavigate();
 
   const [data] = createResource(() => ({ ...params }), provider.getInfo);
-  const [credits] = createResource<any, Tile[]>(
-    () => ({ ...params }),
-    provider.getCredits
-  );
+  const [credits] = createResource<any, Tile[]>(() => ({ ...params }), provider.getCredits);
 
   const Backdrop = {
     color: "#000000",
@@ -50,25 +41,18 @@ const People = () => {
     <Show when={data()} keyed>
       <View
         src={data().backgroundImage}
-        width={400}
-        autosize
-        y={0}
-        x={1800}
-        mountX={1}
+        height={1000}
+        width={1000}
+        textureOptions={{
+          resizeMode: {
+            type: "contain"
+          }
+        }}
+        y={40}
+        right={400}
       />
-      <View
-        x={150}
-        y={200}
-        width={800}
-        gap={24}
-        style={styles.Column}
-        zIndex={3}
-      >
-        <Text
-          contain="width"
-          fontFamily={"Roboto"}
-          style={theme.typography.display2}
-        >
+      <View x={150} y={200} width={800} gap={24} style={styles.Column} zIndex={3}>
+        <Text contain="width" fontFamily={"Roboto"} style={theme.typography.display2}>
           {data().name}
         </Text>
         <Text contain="both" style={styles.peopleBio}>

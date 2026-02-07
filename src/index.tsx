@@ -9,9 +9,8 @@ import { WebGlCoreRenderer, SdfTextRenderer } from "@lightningjs/renderer/webgl"
 import { CanvasCoreRenderer, CanvasTextRenderer } from "@lightningjs/renderer/canvas";
 
 import { Inspector } from "@lightningjs/renderer/inspector";
-import { HashRouter, FocusStackProvider, KeepAliveRoute } from "@lightningtv/solid/primitives";
+import { HashRouter, FocusStackProvider, KeepAliveRoute, lazy } from "@lightningtv/solid/primitives";
 import { Route, Navigate } from "@solidjs/router";
-import { lazy } from "solid-js";
 import App from "./pages/App";
 import Browse from "./pages/Browse";
 import TMDB from "./pages/TMDB";
@@ -90,7 +89,7 @@ Config.domRendererEnabled = false;
 
 Config.rendererOptions = {
   fpsUpdateInterval: logFps ? 1000 : 0,
-  // inspector: import.meta.env.DEV ? Inspector : undefined,
+  inspector: import.meta.env.DEV ? Inspector : undefined,
   textureMemory: {
     criticalThreshold: 200e6,
     targetThresholdLevel: 0.8

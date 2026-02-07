@@ -1,11 +1,6 @@
 import { createEffect, on, createSignal } from "solid-js";
 import { ElementNode, activeElement, View, Text } from "@lightningtv/solid";
-import {
-  LazyRow,
-  LazyColumn,
-  useFocusStack,
-  VirtualRow
-} from "@lightningtv/solid/primitives";
+import { LazyRow, LazyColumn, useFocusStack, VirtualRow } from "@lightningtv/solid/primitives";
 import { Hero, TitleRow, AssetPanel } from "../components";
 import styles from "../styles";
 import { setGlobalBackground } from "../state";
@@ -21,10 +16,7 @@ const TMDB = (props) => {
     firstRun = true;
 
   const delayedBackgrounds = debounce(setGlobalBackground, 800);
-  const delayedHero = debounce(
-    (content: {}) => setHeroContent(content || {}),
-    600
-  );
+  const delayedHero = debounce((content: {}) => setHeroContent(content || {}), 600);
 
   createEffect(
     on(
@@ -46,80 +38,31 @@ const TMDB = (props) => {
     )
   );
 
-  function onRowChanged(
-    this: ElementNode,
-    selectedIndex,
-    column,
-    row,
-    lastIndex
-  ) {
+  function onRowChanged(this: ElementNode, selectedIndex, column, row, lastIndex) {
     if (selectedIndex === lastIndex) return;
 
-    const values =
-      selectedIndex === 0 ? { y: 300, alpha: 1 } : { y: 200, alpha: 0 };
-    contentBlock
-      .animate(values, { duration: 300, easing: "ease-in-out" })
-      .start();
+    const values = selectedIndex === 0 ? { y: 300, alpha: 1 } : { y: 200, alpha: 0 };
+    contentBlock.animate(values, { duration: 300, easing: "ease-in-out" }).start();
 
-    const values2 =
-      selectedIndex === 0 ? { y: 80, alpha: 1 } : { y: 0, alpha: 0 };
-    solidLogo
-      .animate(values2, { duration: 300, easing: "ease-in-out" })
-      .start();
+    const values2 = selectedIndex === 0 ? { y: 80, alpha: 1 } : { y: 0, alpha: 0 };
+    solidLogo.animate(values2, { duration: 300, easing: "ease-in-out" }).start();
   }
 
   return (
     <View forwardFocus={2}>
-      <View
-        ref={solidLogo}
-        width={300}
-        height={150}
-        x={162}
-        y={80}
-        zIndex={105}
-      >
+      <View ref={solidLogo} width={300} height={150} x={162} y={80} zIndex={105}>
         <Text x={80} fontSize={28} color={0xf6f6f699}>
           Built With:
         </Text>
-        <View
-          y={32}
-          src="./assets/solidWord.png"
-          width={280}
-          height={52}
-          textureOptions={{
-            transparency: true
-          }}
-        />
+        <View y={32} src="./assets/solidWord.png" width={280} height={52} />
 
-        <View
-          x={0}
-          y={110}
-          src="./assets/tmdb.png"
-          width={80}
-          height={41}
-          textureOptions={{
-            transparency: true
-          }}
-        />
-        <Text
-          x={90}
-          y={110}
-          contain="width"
-          width={160}
-          fontSize={12}
-          color={0xf6f6f699}
-        >
-          This product uses the TMDB API but is not endorsed or certified by
-          TMDB.
+        <View x={0} y={110} src="./assets/tmdb.png" width={80} height={41} />
+        <Text x={90} y={110} contain="width" width={160} fontSize={12} color={0xf6f6f699}>
+          This product uses the TMDB API but is not endorsed or certified by TMDB.
         </Text>
       </View>
 
-      <ContentBlock
-        ref={contentBlock}
-        y={300}
-        x={162}
-        content={heroContent()}
-      />
+      <ContentBlock ref={contentBlock} y={300} x={162} content={heroContent()} />
       <LazyColumn
         y={500}
         upCount={3}
@@ -130,14 +73,14 @@ const TMDB = (props) => {
         autofocus={props.data.rows[0].items()}
         gap={40}
         throttleInput={250}
-        transition={{ y: { duration: 300, easing: "ease-in-out" } }}
+        transition={{ y: { duration: 300, easing: "ease-out" } }}
         style={styles.Column}
       >
         {(row) =>
           row().type === "Hero" ? (
-            <VirtualRow
+            <LazyRow
               gap={80}
-              displaySize={3}
+              upCount={2}
               bufferSize={1}
               scroll="center"
               centerScroll
@@ -146,14 +89,9 @@ const TMDB = (props) => {
               height={row().height}
             >
               {(item) => <Hero item={item()} />}
-            </VirtualRow>
+            </LazyRow>
           ) : (
-            <TitleRow
-              row={row()}
-              title={row().title}
-              height={row().height}
-              items={row().items()}
-            />
+            <TitleRow row={row()} title={row().title} height={row().height} items={row().items()} />
           )
         }
       </LazyColumn>

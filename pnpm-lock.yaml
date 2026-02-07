@@ -12,11 +12,11 @@ importers:
         specifier: ^1.7.0
         version: 1.7.0
       '@lightningjs/renderer':
-        specifier: file:../solid-renderer
-        version: file:../solid-renderer
+        specifier: 3.0.0-beta20
+        version: 3.0.0-beta20
       '@lightningtv/solid':
-        specifier: 3.0.0
-        version: 3.0.0(@lightningjs/renderer@file:../solid-renderer)(@solidjs/router@0.15.3(solid-js@1.9.9))(solid-js@1.9.9)
+        specifier: 3.0.5
+        version: 3.0.5(@lightningjs/renderer@3.0.0-beta20)(@solidjs/router@0.15.3(solid-js@1.9.9))(solid-js@1.9.9)
       '@solid-primitives/list':
         specifier: ^0.1.2
         version: 0.1.2(solid-js@1.9.9)
@@ -973,13 +973,12 @@ packages:
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
 
-  '@lightningjs/renderer@file:../solid-renderer':
-    resolution: {directory: ../solid-renderer, type: directory}
+  '@lightningjs/renderer@3.0.0-beta20':
+    resolution: {integrity: sha512-JsalgPEKvxc6q8cs9m2QW+aIwx9aET52nvU1OUhkO573Ae5WFJFM3MR/zTc2cPM3AJsa0alie98pKoGWrerO9g==}
     engines: {node: '>= 18.0.0', npm: '>= 10.0.0', pnpm: '>= 10.17.0'}
 
-  '@lightningtv/solid@3.0.0':
-    resolution: {integrity: sha512-HFXvNm+fqAzG8x+IsMMpgOWRAQRwgqCP19X1cS/Rc0oNu1DDhJEUKduvfOsX/0GSdNU2C8zPUAflDq4053TfGw==}
-    version: 3.0.0
+  '@lightningtv/solid@3.0.5':
+    resolution: {integrity: sha512-Pj9aavlFFLF7nwqP72FThd0Hx0qGkAUel06VLuogbL7iyRHHzCem5inlqDmzlivNzyXk5O7mtxGH/jqwVWa37g==}
     peerDependencies:
       '@lightningjs/renderer': ^3.0.0-beta20
       '@solidjs/router': ^0.15.1
@@ -3311,11 +3310,11 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@lightningjs/renderer@file:../solid-renderer': {}
+  '@lightningjs/renderer@3.0.0-beta20': {}
 
-  '@lightningtv/solid@3.0.0(@lightningjs/renderer@file:../solid-renderer)(@solidjs/router@0.15.3(solid-js@1.9.9))(solid-js@1.9.9)':
+  '@lightningtv/solid@3.0.5(@lightningjs/renderer@3.0.0-beta20)(@solidjs/router@0.15.3(solid-js@1.9.9))(solid-js@1.9.9)':
     dependencies:
-      '@lightningjs/renderer': file:../solid-renderer
+      '@lightningjs/renderer': 3.0.0-beta20
       '@lightningtv/solid': 'link:'
       '@solid-primitives/event-listener': 2.4.3(solid-js@1.9.9)
       '@solid-primitives/list': 0.1.2(solid-js@1.9.9)
