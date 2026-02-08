@@ -118,6 +118,21 @@ const Portal = (props) => {
       description: "Login with forms Example"
     },
     {
+      title: "Small Image",
+      id: "image-performance",
+      description: "Performance test for loading images"
+    },
+    {
+      title: "Large Image",
+      id: "large-image-performance",
+      description: "Performance test for loading 4 large images"
+    },
+    {
+      title: "Mixed Image",
+      id: "mixed-image-performance",
+      description: "1 Large Image + 10 Posters"
+    },
+    {
       title: "Nested Modal",
       id: "nested",
       description: "Nested Right Modal Example"
@@ -154,7 +169,7 @@ const Portal = (props) => {
       id: "suspense",
       description: "Using Suspense to load data"
     },
-    { title: "Tags", id: "tags", description: "Tags Page" }
+    { title: "Tags", id: "tags", description: "Tags Page" },
   ];
 
   function DemoTile(props) {

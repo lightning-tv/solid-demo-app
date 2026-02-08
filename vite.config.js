@@ -8,7 +8,9 @@ import path from "path";
 
 export default defineConfig(({ mode }) => ({
   define: {
-    __DEV__: mode !== "production"
+    __DEV__: mode !== "production",
+    __RTT__: false,
+    __renderTextBatching__: true
   },
   plugins: [
     hexColorTransform({
