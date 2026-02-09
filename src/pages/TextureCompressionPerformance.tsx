@@ -6,6 +6,7 @@ const TextureCompressionPerformance = () => {
   const [loadTime, setLoadTime] = createSignal<string>("");
   const [status, setStatus] = createSignal<string>("Initializing...");
   const [loadedCount, setLoadedCount] = createSignal(0);
+  const basePath = import.meta.env.BASE_URL;
 
   // Track start time and individual image times
   let startTime = 0;
@@ -21,7 +22,7 @@ const TextureCompressionPerformance = () => {
         const id = i + 1;
         return {
           id: `img-${id}`,
-          src: `/assets/ktx/image-${id}.ktx`,
+          src: `${basePath}assets/ktx/image-${id}.ktx`,
           title: `Image ${id}`
         };
       });
