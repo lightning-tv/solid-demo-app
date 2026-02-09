@@ -73,7 +73,6 @@ const TMDB = (props) => {
         autofocus={props.data.rows[0].items()}
         gap={40}
         throttleInput={250}
-        transition={{ y: { duration: 300, easing: "ease-out" } }}
         style={styles.Column}
       >
         {(row) =>

@@ -139,7 +139,6 @@ export default {
     width: theme.layout.screenW - 2 * theme.layout.marginX,
     x: theme.layout.marginX + theme.layout.gutterX,
     y: 48,
-    transition: { y: { duration: 250, easing: "ease-in-out" } },
     zIndex: 2
   },
   Rect: {
