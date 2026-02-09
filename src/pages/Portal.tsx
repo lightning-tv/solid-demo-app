@@ -133,6 +133,11 @@ const Portal = (props) => {
       description: "1 Large Image + 10 Posters"
     },
     {
+      title: "Texture KTX",
+      id: "texture-compression-performance",
+      description: "Performance test for loading 25 KTX images"
+    },
+    {
       title: "Nested Modal",
       id: "nested",
       description: "Nested Right Modal Example"

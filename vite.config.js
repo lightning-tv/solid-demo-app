@@ -10,7 +10,8 @@ export default defineConfig(({ mode }) => ({
   define: {
     __DEV__: mode !== "production",
     __RTT__: false,
-    __renderTextBatching__: true
+    __renderTextBatching__: true,
+    __enableCompressedTextures__: true
   },
   plugins: [
     hexColorTransform({

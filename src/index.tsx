@@ -59,6 +59,7 @@ const TagsPage = lazy(() => import("./pages/Tags"));
 const ImagePerformance = lazy(() => import("./pages/ImagePerformance"));
 const LargeImagePerformance = lazy(() => import("./pages/LargeImagePerformance"));
 const MixedImagePerformance = lazy(() => import("./pages/MixedImagePerformance"));
+const TextureCompressionPerformance = lazy(() => import("./pages/TextureCompressionPerformance"));
 
 let numImageWorkers = 4;
 const urlParams = new URLSearchParams(window.location.search);
@@ -186,6 +187,7 @@ render(() => (
         <Route path="image-performance" component={ImagePerformance} />
         <Route path="large-image-performance" component={LargeImagePerformance} />
         <Route path="mixed-image-performance" component={MixedImagePerformance} />
+        <Route path="texture-compression-performance" component={TextureCompressionPerformance} />
 
         <Route path="*all" component={NotFound} />
       </Route>
