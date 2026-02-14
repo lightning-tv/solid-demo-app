@@ -68,7 +68,7 @@ export default {
     border: { width: 0, color: 0x00000000 },
     $focus: {
       scale: 1.1,
-      border: { color: theme.primaryLight, width: 6, gap: 0 },
+      border: { color: theme.primaryLight, width: 6, gap: 4, align: 'outside' },
     },
     $hover: {
       scale: 1.07,
