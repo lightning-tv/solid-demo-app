@@ -107,6 +107,11 @@ const Portal = (props) => {
       title: "Transitions",
       id: "transitions",
       description: "Comparing different Transitions"
+    },
+    {
+      title: "Complex Flex",
+      id: "complexflex",
+      description: "Complex Flex Layout with ~400 Nodes"
     }
   ];
 
@@ -174,7 +179,7 @@ const Portal = (props) => {
       id: "suspense",
       description: "Using Suspense to load data"
     },
-    { title: "Tags", id: "tags", description: "Tags Page" },
+    { title: "Tags", id: "tags", description: "Tags Page" }
   ];
 
   function DemoTile(props) {
@@ -234,15 +239,7 @@ const Portal = (props) => {
         hidden={Boolean(resolvedChildren())}
       >
         <View x={120}>
-          <View
-            src="./assets/solidjs.png"
-            width={101}
-            height={90}
-            y={40}
-            textureOptions={{
-              enableAlphaChannel: true
-            }}
-          />
+          <View src="./assets/solidjs.png" width={101} height={90} y={40} />
           <Text fontSize={90} x={110} y={40}>
             Examples
           </Text>

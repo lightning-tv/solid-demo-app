@@ -60,6 +60,7 @@ const ImagePerformance = lazy(() => import("./pages/ImagePerformance"));
 const LargeImagePerformance = lazy(() => import("./pages/LargeImagePerformance"));
 const MixedImagePerformance = lazy(() => import("./pages/MixedImagePerformance"));
 const TextureCompressionPerformance = lazy(() => import("./pages/TextureCompressionPerformance"));
+const ComplexFlexPage = lazy(() => import("./pages/ComplexFlex"));
 
 let numImageWorkers = 4;
 const urlParams = new URLSearchParams(window.location.search);
@@ -93,7 +94,7 @@ Config.domRendererEnabled = false;
 
 Config.rendererOptions = {
   fpsUpdateInterval: logFps ? 1000 : 0,
-  inspector: import.meta.env.DEV ? Inspector : undefined,
+  // inspector: import.meta.env.DEV ? Inspector : undefined,
   textureMemory: {
     criticalThreshold: 200e6,
     targetThresholdLevel: 0.8
@@ -106,7 +107,7 @@ Config.rendererOptions = {
   createImageBitmapSupport: "auto",
   boundsMargin: 100,
   targetFPS: 0,
-  enableClear: false,
+  enableClear: false
 };
 
 // Ideally you'd do two separate builds for canvas and webgl to reduce bundle size.
@@ -124,12 +125,12 @@ loadFonts(fonts);
 import {
   Rounded,
   RoundedWithShadow,
+  RoundedWithBorder,
   RoundedWithBorderAndShadow,
   RadialGradient,
   LinearGradient,
   HolePunch
 } from "@lightningjs/renderer/webgl/shaders";
-import { RoundedWithBorder } from "@lightningtv/solid/shaders";
 const shManager = renderer.stage.shManager;
 shManager.registerShaderType("rounded", Rounded);
 shManager.registerShaderType("roundedWithBorder", RoundedWithBorder);
@@ -188,6 +189,7 @@ render(() => (
         <Route path="large-image-performance" component={LargeImagePerformance} />
         <Route path="mixed-image-performance" component={MixedImagePerformance} />
         <Route path="texture-compression-performance" component={TextureCompressionPerformance} />
+        <Route path="complexflex" component={ComplexFlexPage} />
 
         <Route path="*all" component={NotFound} />
       </Route>
