@@ -11,7 +11,8 @@ export default defineConfig(({ mode }) => ({
     __DEV__: mode !== "production",
     __RTT__: false,
     __renderTextBatching__: true,
-    __enableCompressedTextures__: true
+    __enableCompressedTextures__: true,
+    LIGHTNING_DOM_RENDERING: false
   },
   plugins: [
     hexColorTransform({

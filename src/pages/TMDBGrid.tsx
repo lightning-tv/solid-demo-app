@@ -101,12 +101,13 @@ const TMDB = (props) => {
           x={12}
           y={12}
           autofocus={items()}
-          item={Poster}
           itemWidth={200}
           items={items()}
           columns={6}
           itemOffset={36}
-        />
+        >
+          {(props: any) => <Poster {...props} />}
+        </Grid>
       </View>
     </>
   );
