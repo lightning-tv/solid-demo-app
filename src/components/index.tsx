@@ -33,7 +33,10 @@ export interface TileRowProps extends IntrinsicNodeProps {
   title?: string;
   rowType?: string;
   gap?: number;
-  scroll?: string;
+  scroll?: "center" | "none" | "always" | "edge" | "auto";
+  wrap?: boolean;
+  selected?: number;
+  row?: any;
 }
 
 export function TileRow(props: TileRowProps) {
@@ -99,9 +102,9 @@ export function TitleRow(props: TileRowProps) {
       <Text skipFocus style={titleRowStyles}>
         {props.title}
       </Text>
-      <VirtualRow gap={20} displaySize={8} bufferSize={3} each={props.items} y={50} scroll={props.scroll} wrap={props.wrap}>
+      <VirtualRow gap={20} displaySize={8} bufferSize={3} each={props.items} y={50} scroll={props.scroll} wrap={props.wrap} selected={props.selected}>
         {(item, index) => (
-          <Dynamic component={typeToComponent[props.row.type]} index={index()} item={item()} />
+          <Dynamic component={typeToComponent[props.rowType || props.row?.type]} index={index()} item={item()} />
         )}
       </VirtualRow>
     </View>

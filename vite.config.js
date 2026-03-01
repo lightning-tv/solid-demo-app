@@ -12,7 +12,7 @@ export default defineConfig(({ mode }) => ({
     __RTT__: false,
     __renderTextBatching__: true,
     __enableCompressedTextures__: true,
-    LIGHTNING_DOM_RENDERING: false
+    LIGHTNING_DOM_RENDERING: true
   },
   plugins: [
     hexColorTransform({

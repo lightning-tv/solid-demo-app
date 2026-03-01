@@ -85,16 +85,16 @@ const logFps = true;
 Config.debug = false;
 // Config.keyDebug = true;
 Config.animationsEnabled = animationsEnabled === "true";
-Config.simpleAnimationsEnabled = true;
 Config.fontSettings.fontFamily = "Roboto";
 Config.fontSettings.color = theme.textPrimary;
 Config.fontSettings.fontSize = 32;
 Config.domRendererEnabled = false;
+Config.simpleAnimationsEnabled = true && !Config.domRendererEnabled;
 // Config.focusDebug = true;
 
 Config.rendererOptions = {
   fpsUpdateInterval: logFps ? 1000 : 0,
-  inspector: import.meta.env.DEV ? Inspector : undefined,
+  //inspector: import.meta.env.DEV ? Inspector : undefined,
   textureMemory: {
     criticalThreshold: 200e6,
     targetThresholdLevel: 0.8

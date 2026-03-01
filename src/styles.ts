@@ -62,7 +62,7 @@ export default {
     zIndex: 2,
     transition: {
       scale: { duration: 250, easing: "linear" },
-      border: { duration: 250, easing: "linear" },
+      // border: { duration: 250, easing: "linear" },
     },
     borderRadius: roundPoster ? 16 : 0,
     border: { width: 0, color: 0x00000000 },
