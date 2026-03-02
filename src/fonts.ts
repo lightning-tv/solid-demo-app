@@ -28,7 +28,11 @@ export default [
     atlasUrl: basePath + "fonts/Raleway-ExtraBold.msdf.png"
   } as const,
   {
-    fontFamily: "Roboto400",
+    fontFamily: "Roboto",
     fontUrl: basePath + "fonts/Roboto-Regular.ttf"
+  } as WebTrFontFaceOptions,
+  {
+    fontFamily: "Roboto700",
+    fontUrl: basePath + "fonts/Roboto-Bold.ttf"
   } as WebTrFontFaceOptions
 ];

@@ -51,9 +51,9 @@ export const Badge = (props) => {
     <View
       {...props}
       style={{
-        color: "0x00000099",
+        color: 0x00000099,
         borderRadius: 8,
-        border: { width: 2, color: "0xffffffff" },
+        border: { width: 2, color: 0xffffffff },
         display: "flex",
         height: 36,
         width: 45

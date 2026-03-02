@@ -88,7 +88,7 @@ export default function Background() {
         <View
           ref={heroMask}
           src="./assets/hero-mask-inverted.png"
-          color={hexColor(theme.color.materialBrand)}
+          color={0x000000ff}
           width={1920}
           height={1080}
         />
