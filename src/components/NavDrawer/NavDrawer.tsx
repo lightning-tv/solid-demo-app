@@ -13,16 +13,15 @@ interface NavButtonProps extends IntrinsicNodeProps {
 }
 
 const NavButtonTextStyles = {
-  fontSize: 38,
   x: 116,
-  y: 18,
-  height: 50,
+  fontSize: 38,
+  lineHeight: 70,
   alpha: 0,
   color: theme.textPrimary,
   $active: {
     alpha: 1
   }
-};
+} as const;
 
 function NavButton(props: NavButtonProps) {
   return (

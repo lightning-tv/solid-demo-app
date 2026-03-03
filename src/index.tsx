@@ -94,7 +94,7 @@ Config.simpleAnimationsEnabled = true && !Config.domRendererEnabled;
 
 Config.rendererOptions = {
   fpsUpdateInterval: logFps ? 1000 : 0,
-  //inspector: import.meta.env.DEV ? Inspector : undefined,
+  inspector: import.meta.env.DEV ? Inspector : undefined,
   textureMemory: {
     criticalThreshold: 200e6,
     targetThresholdLevel: 0.8

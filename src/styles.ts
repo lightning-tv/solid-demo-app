@@ -163,8 +163,16 @@ const Button = {
   height: 90,
   color: theme.primary,
   borderRadius: 12,
+  shadow: {
+    color: 0x0000007a,
+    projection: [0, 16, 24, -6],
+  },
   $focus: {
-    color: theme.primaryLight
+    color: theme.primaryLight,
+    shadow: {
+        color: 0x00000064,
+        projection: [0, 16, 24, -6],
+      },
   }
 } satisfies IntrinsicNodeStyleProps;
 
