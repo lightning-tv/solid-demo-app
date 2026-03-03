@@ -35,9 +35,7 @@ const DescriptionStyles = {
 
 const BadgeStyle = {
   fontSize: 16,
-  lineHeight: 20,
-  marginLeft: 13,
-  marginRight: 13
+  lineHeight: 38
 };
 
 const Description = (props) => (
@@ -53,15 +51,14 @@ export const Badge = (props) => {
       style={{
         color: 0x00000099,
         borderRadius: 8,
+        padding: 13,
         border: { width: 2, color: 0xffffffff },
         display: "flex",
         height: 36,
         width: 45
       }}
     >
-      <Text lineHeight={36} style={BadgeStyle}>
-        {props.children}
-      </Text>
+      <Text style={BadgeStyle}>{props.children}</Text>
     </View>
   );
 };
