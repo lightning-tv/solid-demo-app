@@ -103,7 +103,7 @@ Config.rendererOptions = {
   // Set the resolution based on window height
   // 720p = 0.666667, 1080p = 1, 1440p = 1.5, 2160p = 2
   deviceLogicalPixelRatio,
-  devicePhysicalPixelRatio: 1,
+  devicePhysicalPixelRatio: window.devicePixelRatio || 1,
   createImageBitmapSupport: "auto",
   boundsMargin: 100,
   targetFPS: 0,

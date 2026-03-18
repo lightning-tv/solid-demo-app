@@ -15,6 +15,7 @@
     "build:github:dev": "NODE_ENV=development vite build --sourcemap=true --mode development --base=/solid-demo-app/",
     "build:analyze": "vite-bundle-visualizer",
     "build:android": "vite build && npx cap sync android",
+    "build:android:apk": "npm run build:android && cd android && JAVA_HOME=/opt/homebrew/opt/openjdk@21 ANDROID_HOME=/opt/homebrew/share/android-commandlinetools ./gradlew assembleDebug",
     "deploy": "gh-pages -d dist -a",
     "preview": "vite preview --port 8080 --host",
     "tsc": "tsc",
@@ -27,8 +28,8 @@
   "dependencies": {
     "@capacitor/core": "^8.2.0",
     "@firebolt-js/sdk": "^1.7.0",
-    "@lightningjs/renderer": "3.0.0-beta22",
-    "@lightningtv/solid": "3.1.10",
+    "@lightningjs/renderer": "npm:@lightningtv/renderer",
+    "@lightningtv/solid": "3.1.16",
     "@solid-primitives/list": "^0.1.2",
     "@solid-primitives/scheduled": "^1.5.2",
     "@solidjs/router": "^0.15.3",
