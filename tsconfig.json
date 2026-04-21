@@ -4,6 +4,7 @@
     "target": "ES2019",
     "module": "esnext",
     "moduleResolution": "Bundler",
+    "lib": ["ES2021", "DOM"],
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "jsx": "preserve",
@@ -11,10 +12,11 @@
     "types": ["vite/client"],
     "noEmit": true,
     "isolatedModules": true,
+    "skipLibCheck": true,
     "noImplicitAny": false,
-    "customConditions": ["@lightningtv/source"],
     "paths": {
       "theme": ["./src/theme.ts"]
     }
-  }
+  },
+  "exclude": ["node_modules"]
 }

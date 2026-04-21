@@ -8,7 +8,8 @@
     "start": "vite --host --force",
     "start:dom": "VITE_LIGHTNING_DOM_RENDERING=true vite --host --force",
     "start:prod": "vite --host --force --mode production",
-    "storybook": "storybook dev -p 6006"
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
     "build": "vite build --sourcemap=true --emptyOutDir false",
     "build:tizen": "vite build --config vite.config.tizen.js --base=./ --outDir tizen --emptyOutDir false",
     "build:lg": "vite build --sourcemap=false --base=./ --outDir lg --emptyOutDir false && ares-package lg --outdir lg --no-minify",

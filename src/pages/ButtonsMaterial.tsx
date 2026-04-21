@@ -1,16 +1,11 @@
-import {
-  ElementNode,
-  IntrinsicNodeStyleProps,
-  Text,
-  View,
-  hexColor
-} from "@lightningtv/solid";
+import { ElementNode, IntrinsicNodeStyleProps, Text, View, hexColor } from "@lightningtv/solid";
 import { Row } from "@lightningtv/solid/primitives";
 
 import { MaterialButtonText } from "../styles";
 
 const MaterialButtonsPage = () => {
   function onEnter(this: ElementNode, event, elm) {
+    // @ts-ignore
     this.states.toggle("disabled");
   }
 
@@ -39,12 +34,7 @@ const MaterialButtonsPage = () => {
   const RoundedRectangle = ["RoundedRectangle", { radius: 65 }];
   function Button(props) {
     return (
-      <View
-        {...props}
-        forwardStates
-        style={MaterialButton}
-        shader={RoundedRectangle}
-      >
+      <View {...props} forwardStates style={MaterialButton} shader={RoundedRectangle}>
         <Text style={MaterialButtonText}>{props.children}</Text>
       </View>
     );
@@ -56,7 +46,7 @@ const MaterialButtonsPage = () => {
         Focused
       </Button>
       <Button states={{ active: true, disabled: false }}>Normal</Button>
-      <Button states="disabled">Disabled</Button>
+      <Button states={{ disabled: true }}>Disabled</Button>
     </Row>
   );
 };

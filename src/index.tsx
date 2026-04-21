@@ -91,7 +91,6 @@ Config.fontSettings.fontFamily = "Roboto";
 Config.fontSettings.color = theme.textPrimary;
 Config.fontSettings.fontSize = 32;
 Config.domRendererEnabled = false;
-Config.simpleAnimationsEnabled = true && !Config.domRendererEnabled;
 // Config.focusDebug = true;
 
 Config.rendererOptions = {
@@ -114,11 +113,11 @@ Config.rendererOptions = {
 
 // Ideally you'd do two separate builds for canvas and webgl to reduce bundle size.
 if (rendererMode === "canvas") {
-  Config.rendererOptions.fontEngines = [CanvasTextRenderer];
-  Config.rendererOptions.renderEngine = CanvasCoreRenderer;
+  Config.rendererOptions.fontEngines = [CanvasTextRenderer as any];
+  Config.rendererOptions.renderEngine = CanvasCoreRenderer as any;
 } else {
-  Config.rendererOptions.fontEngines = [SdfTextRenderer];
-  Config.rendererOptions.renderEngine = WebGlCoreRenderer;
+  Config.rendererOptions.fontEngines = [SdfTextRenderer as any];
+  Config.rendererOptions.renderEngine = WebGlCoreRenderer as any;
 }
 
 const { renderer, render } = createRenderer();

@@ -1,46 +1,42 @@
-import {
-  useFocusManager,
-  useMouse,
-} from "@lightningtv/solid/primitives";
-import { KeyMap, KeyHoldMap } from "@lightningtv/solid/focusManager";
+import { useFocusManager, useMouse } from "@lightningtv/solid/primitives";
+import { KeyMap } from "@lightningtv/solid";
 
 const App = (props) => {
   useFocusManager(
-      {
-        Announcer: ["a"],
-        Menu: ["m"],
-        Escape: ["Escape", 27],
-        Backspace: ["Backspace", 8, 10009],
-        Back: ["b"],
-        Left: ["ArrowLeft", 37],
-        Right: ["ArrowRight", 39],
-        Up: ["ArrowUp", 38],
-        Down: ["ArrowDown", 40],
-        Enter: ["Enter", 13],
-        Play: ['Play', 415],
-        Pause: ['Pause', 19],
-        PlayPause: ['PlayPause', 10252],
-        FastForward: ['FastForward', 417],
-        FastForward10: ['FastForward10', 10233],
-        Rewind: ['Rewind', 412],
-        Rewind10: ['Rewind10', 10232],
-        Stop: ['Stop', 413],
-    } satisfies KeyMap,
-      {
-        userKeyHoldMap: {
-          EnterHold: ["Enter", 13],
-          BackHold: ["b", 66]
-        } as unknown as KeyHoldMap,
-        holdThreshold: 1000
-      }
-    );
-     useMouse(undefined, 100, {
-      customStates: {
-        hoverState: '$hover',
-        pressedState: '$pressed',
-        pressedStateDuration: 150, // optional, default is 150ms
-      },
-    });
+    {
+      Announcer: ["a"],
+      Menu: ["m"],
+      Escape: ["Escape", 27],
+      Backspace: ["Backspace", 8, 10009],
+      Back: ["b"],
+      Left: ["ArrowLeft", 37],
+      Right: ["ArrowRight", 39],
+      Up: ["ArrowUp", 38],
+      Down: ["ArrowDown", 40],
+      Enter: ["Enter", 13],
+      Play: ["Play", 415],
+      Pause: ["Pause", 19],
+      PlayPause: ["PlayPause", 10252],
+      FastForward: ["FastForward", 417],
+      FastForward10: ["FastForward10", 10233],
+      Rewind: ["Rewind", 412],
+      Rewind10: ["Rewind10", 10232],
+      Stop: ["Stop", 413]
+    },
+    {
+      userKeyHoldMap: {
+        EnterHold: ["Enter", 13],
+        BackHold: ["b", 66]
+      } as any,
+      holdThreshold: 1000
+    }
+  );
+  useMouse(undefined, 100, {
+    customStates: {
+      hoverState: "$hover",
+      pressedState: "$pressed"
+    }
+  });
   return props.children;
 };
 

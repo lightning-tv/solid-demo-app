@@ -5,7 +5,7 @@ import { setGlobalBackground } from "../state";
 
 const ButtonContainer: NodeStyles = {
   display: "flex",
-  color: "#ffffff",
+  color: 0xffffffff,
   alignItems: "center",
   padding: 32,
   gap: 8,
@@ -14,6 +14,7 @@ const ButtonContainer: NodeStyles = {
     radius: { radius: 8 },
     border: {
       width: 2,
+      // @ts-ignore pretty sure the fix is on a more recent version
       color: "#000000CC"
     }
   }
@@ -22,11 +23,12 @@ const ButtonContainer: NodeStyles = {
 const CircleContainer: NodeStyles = {
   height: 50,
   width: 50,
-  color: "#ffffff",
+  color: 0xffffffff,
   effects: {
     radius: { radius: 50 },
     border: {
       width: 2,
+      // @ts-ignore
       color: "#000000CC"
     }
   }
@@ -55,14 +57,7 @@ const Button = (props) => {
 const CircleIcon = (props) => {
   return (
     <View style={CircleContainer}>
-      <View
-        x={25}
-        y={25}
-        mount={0.5}
-        src={props.icon}
-        width={30}
-        height={30}
-      ></View>
+      <View x={25} y={25} mount={0.5} src={props.icon} width={30} height={30}></View>
     </View>
   );
 };
@@ -73,7 +68,7 @@ const TextPosterPage = () => {
       x: 150,
       y: 63,
       width: 1326,
-      height: 954,
+      height: 954
     },
     detailTitle: {
       x: 50,
@@ -141,14 +136,11 @@ const TextPosterPage = () => {
           height={400}
           overflowSuffix="..."
         >
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-          rebum. Stet clita kasd gubergren, no sea takimata Lorem ipsum dolor
-          sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-          invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-          At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
-          kasd gubergren, no sea takimata Cast : Tom cruise, ma3ti
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+          clita kasd gubergren, no sea takimata Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+          eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
+          justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata Cast : Tom cruise, ma3ti
           benabdelkader, oussama ramzi
         </Text>
         <Row gap={20} autofocus>

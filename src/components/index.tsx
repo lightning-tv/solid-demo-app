@@ -105,7 +105,11 @@ const titleRowStyles = {
 };
 
 export function TitleRow(props: TileRowProps) {
-  const slug = () => props.title?.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '') || 'row';
+  const slug = () =>
+    props.title
+      ?.toLowerCase()
+      .replace(/\s+/g, "-")
+      .replace(/[^\w-]+/g, "") || "row";
   return (
     <View height={props.height} forwardFocus={1} marginTop={30}>
       <Text skipFocus style={titleRowStyles}>
@@ -122,7 +126,12 @@ export function TitleRow(props: TileRowProps) {
         selected={props.selected}
       >
         {(item, index) => (
-          <Dynamic component={typeToComponent[props.rowType || props.row?.type]} index={index()} item={item()} group={slug()} />
+          <Dynamic
+            component={typeToComponent[props.rowType || props.row?.type]}
+            index={index()}
+            item={item()}
+            group={slug()}
+          />
         )}
       </VirtualRow>
     </View>
@@ -141,7 +150,7 @@ const posterStyles = {
   $focus: { scale: 1.1, color: "#fff" }
 };
 
-export function Poster(props: NodeProps) {
+export function Poster(props: NodeProps & { item?: { src?: string; shortTitle?: string; backdrop?: string } }) {
   return (
     <View
       src={props.item?.src}
@@ -175,7 +184,9 @@ const posterTitleStyles = {
   }
 } as const;
 
-export function PosterTitle(props: NodeProps & { title: string }) {
+export function PosterTitle(
+  props: NodeProps & { title: string; item?: { src?: string; backdrop?: string; title?: string } }
+) {
   console.log(props.item?.title);
   return (
     <View

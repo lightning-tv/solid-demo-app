@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - "**"
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  ci-checks:
+    if: github.event_name != 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 10.17.0
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "pnpm"
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Build
+        run: pnpm build
+      - name: Type check
+        run: pnpm run tsc
+      - name: Lint & Prettier
+        run: pnpm run lint:fix:prettier
+
+  chromatic:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Use pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 10.17.0
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "pnpm"
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Build Storybook
+        run: pnpm run build-storybook
+      - name: Publish to Chromatic
+        if: github.ref != 'refs/heads/main'
+        run: pnpx chromatic --project-token=chpt_6601787c71d2014

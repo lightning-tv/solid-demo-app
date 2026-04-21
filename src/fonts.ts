@@ -1,5 +1,3 @@
-import { WebTrFontFaceOptions } from "@lightningtv/solid";
-
 const basePath = import.meta.env.BASE_URL;
 
 export default [
@@ -42,9 +40,9 @@ export default [
   {
     fontFamily: "Roboto",
     fontUrl: basePath + "fonts/Roboto-Regular.ttf"
-  } as WebTrFontFaceOptions,
+  },
   {
     fontFamily: "Roboto700",
     fontUrl: basePath + "fonts/Roboto-Bold.ttf"
-  } as WebTrFontFaceOptions
+  }
 ];

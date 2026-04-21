@@ -17,7 +17,7 @@ const Destroy = (props) => {
   onMount(() => setGlobalBackground("#333"));
 
   createEffect(
-    on([props.data.heroRow.items, heroIndex], ([heros, index]) => {
+    on([props.data.heroRow.items, heroIndex], ([heros, index]: [any, number]) => {
       if (heros) setHeroContent(heros[index]);
       // preload next image
       if (heros && index < heros.length - 1) {
@@ -40,32 +40,19 @@ const Destroy = (props) => {
   }
 
   function animateOut(node) {
-    return node
-      .animate({ y: 200, alpha: 0 }, { duration: 500, easing: "ease-in-out" })
-      .start()
-      .waitUntilStopped();
+    return node.animate({ y: 200, alpha: 0 }, { duration: 500, easing: "ease-in-out" }).start().waitUntilStopped();
   }
 
   function animateIn(node) {
     node.alpha = 0;
     node.y = -100;
-    return node
-      .animate({ y: 0, alpha: 1 }, { duration: 500, easing: "ease-in-out" })
-      .start()
-      .waitUntilStopped();
+    return node.animate({ y: 0, alpha: 1 }, { duration: 500, easing: "ease-in-out" }).start().waitUntilStopped();
   }
 
   return (
     <View x={300} y={200} onDown={onDown} onUp={onUp}>
       {/* The keyed attribue makes Solid destroy the old content and create a new copy allowing for the animation */}
-      <View
-        src={"assets/up.svg"}
-        width={350}
-        height={200}
-        x={450}
-        y={-200}
-        rotation={Math.PI}
-      />
+      <View src={"assets/up.svg"} width={350} height={200} x={450} y={-200} rotation={Math.PI} />
       <Show when={heroContent()} keyed>
         <Hero
           id="Hero"

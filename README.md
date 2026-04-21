@@ -18,8 +18,10 @@ Solid
 
 ## Getting started
 
+Remove the .template to the .env.template to create a .env file. This is where all the secrets of the application will be.
+
 Get an API Read Access Token from [TMDB API](https://developers.themoviedb.org/3/getting-started/introduction)
-and put the key in `src/api/key.js` with `export default 'KEY_VALUE'`
+and put the key in .env with the variable `VITE_API_KEY_V4`
 
 ```
 git clone https://github.com/lightning-tv/solid-demo-app

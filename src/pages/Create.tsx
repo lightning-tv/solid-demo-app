@@ -1,10 +1,4 @@
-import {
-  IntrinsicNodeStyleProps,
-  Text,
-  View,
-  combineStyles,
-  hexColor
-} from "@lightningtv/solid";
+import { IntrinsicNodeStyleProps, Text, View, combineStyles, hexColor } from "@lightningtv/solid";
 import { Show, children, createSignal, onMount } from "solid-js";
 import { setGlobalBackground } from "../state";
 
@@ -77,19 +71,10 @@ const CreatePage = () => {
     // This causes a parent not rendered error since we're rendering it twice in the template
     const resolved = children(() => props.children);
     return (
-      <View
-        {...props}
-        style={combineStyles(someOtherStyle, props.style, styleChild)}
-      >
+      <View {...props} style={combineStyles(combineStyles(someOtherStyle, props.style), styleChild)}>
         <View id="child1" width={100} height={100} color={"#ff0000"} y={25}>
           {resolved()}
-          <View
-            id="subChild"
-            x={150}
-            width={100}
-            height={100}
-            color={"#00ff00"}
-          />
+          <View id="subChild" x={150} width={100} height={100} color={"#00ff00"} />
           <Text>{props.title}</Text>
         </View>
         <View width={100} height={100} color={"#ffff00"} y={175}>
@@ -108,14 +93,7 @@ const CreatePage = () => {
         <View width={50} height={50} color={"#ff0000"} bottom={0}>
           <Text fontSize={18}>Bottom</Text>
         </View>
-        <View
-          width={50}
-          height={50}
-          color={"#ff0000"}
-          bottom={0}
-          right={0}
-          data={{ id: "BR" }}
-        >
+        <View width={50} height={50} color={"#ff0000"} bottom={0} right={0} data={{ id: "BR" }}>
           <Text fontSize={18}>BR</Text>
         </View>
       </View>
@@ -155,40 +133,33 @@ const CreatePage = () => {
 
   return (
     <>
-    <View style={OverviewContainer}>
-      <Text style={Title}>Title of the Page</Text>
-      <View style={SublineContainer}>
-        <Text>{emptyTest()}</Text>
-        <Text style={Subline}>Sub {insertTest()} Text</Text>
-        <Show when={insertTest()}>
-          <View width={28} height={28} src={"./assets/rt-popcorn.png"}></View>
-        </Show>
-        <Text style={Subline}>More Text</Text>
+      <View style={OverviewContainer}>
+        <Text style={Title}>Title of the Page</Text>
+        <View style={SublineContainer}>
+          <Text>{emptyTest()}</Text>
+          <Text style={Subline}>Sub {insertTest() ?? ""} Text</Text>
+          <Show when={insertTest()}>
+            <View width={28} height={28} src={"./assets/rt-popcorn.png"}></View>
+          </Show>
+          <Text style={Subline}>More Text</Text>
+        </View>
+        <ChildTest autofocus ref={childRef} style={combineStyles(childTestPassedStyles2, childTestPassedStyles)}>
+          <Text>Child Test</Text>
+        </ChildTest>
+        <View ref={myBox} style={borderStyles} width={100} height={100} color={"#00ff00"} x={900} y={400} />
+        <PosTest x={100} y={100} />
       </View>
-      <ChildTest
-        autofocus
-        ref={childRef}
-        style={combineStyles(childTestPassedStyles2, childTestPassedStyles)}
-      >
-        <Text>Child Test</Text>
-      </ChildTest>
       <View
-        ref={myBox}
-        style={borderStyles}
-        width={100}
-        height={100}
-        color={"#00ff00"}
-        x={900}
-        y={400}
-      />
-      <PosTest x={100} y={100} />
-    </View>
-    <View x={1100} y={50} width={200} height={200} linearGradient={{
-        colors: [0xffc107ff, 0xff9800ff, 0xff5252ff],
-        angle: 4.1,
-        stops: [0, 0.5, 1]
-      }}>
-      </View>
+        x={1100}
+        y={50}
+        width={200}
+        height={200}
+        linearGradient={{
+          colors: [0xffc107ff, 0xff9800ff, 0xff5252ff],
+          angle: 4.1,
+          stops: [0, 0.5, 1]
+        }}
+      ></View>
     </>
   );
 };

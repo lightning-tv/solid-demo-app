@@ -2,7 +2,7 @@ import { Component } from "solid-js";
 import { IntrinsicTextNodeStyleProps, Text, View } from "@lightningtv/solid";
 import type { Meta, StoryObj } from "storybook-solidjs-vite";
 
-export const customTheme = {
+const customTheme = {
   headlineBold: {
     fontFamily: "Roboto",
     fontSize: 38,

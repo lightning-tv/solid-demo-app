@@ -1,15 +1,5 @@
-import {
-  createMemo,
-  createSignal,
-  Show,
-  onCleanup
-} from "solid-js";
-import {
-  ElementNode,
-  View,
-  activeElement,
-  assertTruthy
-} from "@lightningtv/solid";
+import { createMemo, createSignal, Show, onCleanup } from "solid-js";
+import { ElementNode, View, activeElement, assertTruthy } from "@lightningtv/solid";
 import { Column, VirtualGrid, Image } from "@lightningtv/solid/primitives";
 import { useNavigate, usePreloadRoute } from "@solidjs/router";
 import { Thumbnail, TileRow } from "../components";
@@ -21,32 +11,26 @@ import { debounce } from "@solid-primitives/scheduled";
 
 const Browse = (props) => {
   const preload = usePreloadRoute();
-  const [heroContent, setHeroContent] = createSignal({});
+  const [heroContent, setHeroContent] = createSignal<any>({});
   const navigate = useNavigate();
   let firstRun = true;
   let vgRef;
 
   onCleanup(() => {
-    console.log('cleanup');
-  })
+    console.log("cleanup");
+  });
 
   const provider = createMemo(() => {
     return createInfiniteScroll(props.data());
   });
 
-  const delayedBackgrounds = debounce(
-    (img: string) => setGlobalBackground(img),
-    800
-  );
-  const delayedHero = debounce(
-    (content: {}) => setHeroContent(content || {}),
-    600
-  );
+  const delayedBackgrounds = debounce((img: string) => setGlobalBackground(img), 800);
+  const delayedHero = debounce((content: {}) => setHeroContent(content || {}), 600);
 
   function updateContentBlock(_index, _col, elm) {
     if (!elm) return;
 
-    const item = elm.item || ({} as any);
+    const item = (elm.item || {}) as any;
 
     if (firstRun) {
       // no content set yet, set right away
@@ -84,10 +68,13 @@ const Browse = (props) => {
 
   function onEnter(this: ElementNode) {
     this.display = "flex";
-    let entity = this.children.find((c) =>
-      c.states!.has("focus")
-    ) as ElementNode;
+    // @ts-ignore
+    let entity: ElementNode | undefined = this.children.find((c) => c.states!.has("focus")) as ElementNode;
+
+    // @ts-ignore
     assertTruthy(entity && entity.item?.href);
+
+    // @ts-ignore
     navigate(entity.item.href);
     return true;
   }
@@ -113,10 +100,9 @@ const Browse = (props) => {
           onEndReachedThreshold={22}
           width={1620}
           autofocus
-          each={provider().pages()}>
-          {(item) =>
-            <Thumbnail item={item()} />
-          }
+          each={provider().pages()}
+        >
+          {(item) => <Thumbnail item={item()} />}
         </VirtualGrid>
       </View>
     </Show>

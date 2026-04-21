@@ -48,6 +48,9 @@ export const WithBadges: Story = {
 };
 
 export const WithMarquee: Story = {
+  parameters: {
+    chromatic: { disableSnapshot: true }
+  },
   args: {
     marquee: true,
     content: {

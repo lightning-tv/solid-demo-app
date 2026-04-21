@@ -231,4 +231,4 @@ export default {
     shadowBrandElevated: 0x000000b3,
     shadowBrandText: 0x0000000
   }
-};
+} as const;

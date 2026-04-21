@@ -1,4 +1,4 @@
-import { View, Text } from "@lightningtv/solid";
+import { View, Text, IntrinsicNodeStyleProps, IntrinsicTextNodeStyleProps } from "@lightningtv/solid";
 import { Marquee } from "@lightningtv/solid/primitives";
 import { For, Show } from "solid-js";
 import theme from "theme";
@@ -68,7 +68,7 @@ const MetaTextStyle = {
   ...theme.typography.body2,
   fontFamily: "Roboto",
   fontWeight: 400
-};
+} satisfies IntrinsicTextNodeStyleProps;
 
 const Metadata = (props) => (
   <View

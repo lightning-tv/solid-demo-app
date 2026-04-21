@@ -210,7 +210,7 @@ const LoginPage = () => {
   const valueSignal = createSignal("");
   const [_keyEvent, setKeyEvent] = keyEvent;
 
-  const onEnter: lng.KeyHandler = (_e, _keyboard, key) => {
+  const onEnter = (_e, _keyboard, key) => {
     if (typeof key.key === "string") {
       setKeyEvent(key.key as string);
     } else if (typeof key.key === "object") {

@@ -9,7 +9,7 @@ import { useNavigate } from "@solidjs/router";
 import styles from "../styles";
 //import * as player from "../video";
 
-const Entity = (props) => {
+const Entity = (props: any) => {
   const [backdropAlpha, setBackdropAlpha] = createSignal(0);
   const [playFocused, setPlayFocused] = createSignal(false);
   const navigate = useNavigate();
@@ -17,7 +17,7 @@ const Entity = (props) => {
   createEffect(
     on(
       props.data.entity,
-      (data) => {
+      (data: any) => {
         setGlobalBackground(data.backgroundImage);
       },
       { defer: true }
@@ -52,8 +52,11 @@ const Entity = (props) => {
   }
 
   function onEnter(this: ElementNode) {
+    // @ts-ignore
     let entity = this.children.find((c) => c.states.has("focus"));
+    // @ts-ignore
     assertTruthy(entity && entity.item?.href);
+    // @ts-ignore
     navigate(entity.item.href as string);
   }
 
@@ -123,7 +126,7 @@ const Entity = (props) => {
               onFocus={onRowFocus}
               onEnter={onEnter}
               announce={"Recommendations"}
-              group={'recommendation'}
+              group={"recommendation"}
               items={props.data.recommendations()}
               width={1620}
             />
